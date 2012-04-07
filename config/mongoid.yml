@@ -1,0 +1,29 @@
+<% if ENV['MONGOHQ_URL'] %>
+<% mongohq = URI.parse(ENV['MONGOHQ_URL']) %>
+mongohq:
+  host: <%= mongohq.host %>
+  port: <%= mongohq.port %>
+  database: <%= mongohq.path.sub '/', '' %>
+  username: <%= mongohq.user %>
+  password: <%= mongohq.password %>
+<% end %>
+development:
+  host: localhost
+  database: blackdogproperty_development
+
+test:
+  host: localhost
+  database: blackdogproperty_test
+
+# set these environment variables on your prod server
+production:
+  host: <%= ENV['MONGOID_HOST'] %>
+  port: <%= ENV['MONGOID_PORT'] %>
+  username: <%= ENV['MONGOID_USERNAME'] %>
+  password: <%= ENV['MONGOID_PASSWORD'] %>
+  database: <%= ENV['MONGOID_DATABASE'] %>
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
