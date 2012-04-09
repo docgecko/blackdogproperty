@@ -2,11 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -19,29 +14,55 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'jquery-rails'
+
+gem 'inherited_resources', '1.3.0'
+gem 'devise'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'mongoid', '>= 2.0.0.beta.19'
+gem 'bson_ext'
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'redcarpet', '1.17.2'
+gem 'dalli'
+gem 'i18n', '0.6.0'
+gem 'high_voltage', '1.0.1'
+gem 'simple-navigation'
+gem 'carrierwave', '0.5.7'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick', '3.3'
+gem 'rack-rewrite', '1.0.2'
 
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development, :test do
+	gem 'rspec-rails', '>= 2.6.1'
+	gem 'cucumber-rails', :group => [:development, :test]
+	gem 'capybara', :group => [:development, :test]
+	gem 'autotest-rails', '4.1.1'
+	gem 'autotest-growl', '0.2.11'
+	gem 'guard-bundler'
+	gem 'guard-rspec'
+	gem 'guard-cucumber'
+	gem 'guard-livereload'
+	gem 'growl'
+	gem 'relish', '0.5.1'
+	gem 'colored'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+	gem 'hpricot'
+	gem 'ruby_parser'
+end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "cucumber-rails", :group => [:development, :test]
-gem "capybara", :group => [:development, :test]
-gem "devise"
-gem "haml", ">= 3.0.0"
-gem "haml-rails"
-gem "jquery-rails"
-gem "bson_ext"
-gem "mongoid", ">= 2.0.0.beta.19"
-gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
+group :test do
+	# Pretty printed test output
+	gem 'turn', :require => false
+	gem 'cucumber-rails'
+	gem 'database_cleaner', '>= 0.6.7'
+	gem 'mongoid-rspec', '>= 1.4.4'
+	gem 'factory_girl_rails', '>= 1.1.0'
+	gem 'launchy', '>= 2.0.5'
+end
