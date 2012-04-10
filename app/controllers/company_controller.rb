@@ -1,4 +1,4 @@
-class SalesController < InheritedResources::Base
+class CompanyController < InheritedResources::Base
   actions :index
   respond_to :html
   

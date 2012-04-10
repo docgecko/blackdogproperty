@@ -1,0 +1,82 @@
+- content_for :title do
+	Contact Us | BlackDog Property
+	
+- content_for :link_canonical do
+	contact
+	
+- content_for :head do
+	= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
+
+#title
+	%h1
+		We would love to help you!
+		%br/
+		Contact us to discuss
+		%i>< &nbsp;your project
+		\.
+
+#contact_form.left
+
+	= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
+
+		%table
+			%tr
+				%td.label= f.label :name, "Name"
+				%td= f.text_field :name, :size => 50, :maxlength => 100
+
+			%tr
+				%td.label= f.label :company, "Company"
+				%td= f.text_field :company, :size => 50, :maxlength => 250
+
+			%tr
+				%td.label= f.label :email, "Email"
+				%td= f.text_field :email, :size => 50, :maxlength => 250
+
+			%tr
+				%td.label= f.label :phone, "Telephone"
+				%td= f.text_field :phone, :size => 30, :maxlength => 250
+
+			%tr
+				%td.label{:style => "vertical-align: middle;"}= f.label :content, "How can we help?"
+				%td
+					= f.text_area :content, :cols => 38, :rows => 12
+
+
+		#update
+			.actions
+				= f.submit "Send your request", :class => 'button'
+				%br
+				%br
+
+#side.left
+	#contact
+		%table
+			%tr
+				%td.label{:width => "65px"} email:
+				%td= mail_to "contact@rocrabbit.com", "contact@rocrabbit.com", :encode => "hex"
+			%tr
+				%td.label tel: 
+				%td +351 966 362 024
+			%tr
+				%td.label skype:
+				%td rocrabbit
+		 
+	#address
+		%table
+			%tr
+				%td.label{:width => "65px"} address:
+				%td
+					Rua Almeida e Sousa 33 R/C Esq
+					%br/
+					1350-008 Lisboa
+					%br/
+					Portugal
+	
+	#find
+		%p join us:
+		#social
+			.bookmark= link_to image_tag("facebook.png"), "http://facebook.com/rocrabbit"
+			.bookmark= link_to image_tag("twitter.png"), "http://twitter.com/rocrabbit"
+	
+	#map
+	#comment= link_to "[view larger map in Google Maps]", "http://g.co/maps/8yzwf"

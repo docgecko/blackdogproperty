@@ -51,9 +51,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :welcome, 'home', root_url
     primary.item :sales, 'sales', sales_path
-    primary.item :rentals, 'rentals'
-    primary.item :renovation, 'renovation'
-    primary.item :services, 'services' do |s|
+    primary.item :rentals, 'rentals', rentals_path
+    primary.item :renovations, 'renovations', renovations_path
+    primary.item :services, 'services', services_path do |s|
       s.item :property, 'property management'
       s.item :client, 'client management'
       s.item :consultancy, 'consultancy services'
@@ -66,14 +66,14 @@ SimpleNavigation::Configuration.run do |navigation|
       s.item :language, 'language services'
       s.item :maintenance, 'property maintenance'
     end
-    primary.item :company, 'the company' do |s|
+    primary.item :company, 'the company', company_index_path do |s|
       s.item :about, 'about us'
       s.item :team, 'the team'
       s.item :accreditation, 'accreditation'
       s.item :testimonials, 'testimonials'
       s.item :gallery, 'show case'
     end
-    primary.item :contact, 'contact us'
+    primary.item :contact, 'contact us', contact_path
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

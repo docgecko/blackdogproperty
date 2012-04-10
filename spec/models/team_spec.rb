@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "sales/index.html.haml" do
+describe Team do
   pending "add some examples to (or delete) #{__FILE__}"
 end

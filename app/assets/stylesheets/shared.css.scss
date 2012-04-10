@@ -78,7 +78,7 @@ h3 {
 p {
 	text-align: justify;
 	padding-bottom: 0px;
-	font-size: 14px;
+	font-size: small;
 	line-height: 18px;
 	color: $white;
 	a {
@@ -245,10 +245,9 @@ hr {
 					position: relative;
 					padding: 15px;
 					margin: 0;
-					width: 738px;
+					width: 744px;
 					.image {
 						float: left;
-						margin: 10px;
 						border: 0pt none;
 					}
 					.details {
@@ -256,8 +255,22 @@ hr {
 							margin-top: 0;
 							text-align: justify;
 							padding-bottom: 0px;
-							font-size: 11px;
-							line-height: 13px;
+							font-size: small;
+							line-height: 15px;
+						}
+					}
+					.enquiry {
+						margin: 0;
+						padding: 10px 0;
+						h3 {
+							font-size: 19px;
+							font-weight: bold;
+							a {
+								color: $blue;
+								&:hover {
+									text-decoration: underline;
+								}
+							}
 						}
 					}
 				}

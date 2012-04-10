@@ -1,0 +1,27 @@
+// Place all the styles related to the Company controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about {
+	display: block;
+  height: 120px;
+	border: 1px solid transparent;
+	margin-bottom: 10px;
+	width: 744px;
+	.image {
+		margin: 0 10px;
+		img {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.services {
+		position: relative;
+		height: 90px;
+		margin: 15px 0;
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
