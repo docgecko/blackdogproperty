@@ -56,6 +56,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :services, 'services' do |s|
       s.item :property, 'property management'
       s.item :client, 'client management'
+      s.item :consultancy, 'consultancy services'
       s.item :marketing, 'marketing'
       s.item :investment, 'investment &amp; development'
       s.item :relocation, 'relocation'
