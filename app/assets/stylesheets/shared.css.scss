@@ -3,13 +3,23 @@ $gray: gray;
 $transparent: transparent;
 $black: #252122;
 $white: white;
+$blue: #97C3D6;
 
 $verdana: Verdana, arial, helvetica, sans-serif;
+$amsans: AmSans, "Am Sans";
+
+html, body {
+	height: 100%;
+}
 
 body { 
-  background-color: $black; 
+	background-image: url(d67browserbackground.gif);
+  background-color: $black;
   color: #666;
-  margin: 0 auto; 
+  margin: 0 auto;
+	&.home {
+		background-image: url(d997browserbackground.gif);
+	}
 }
 
 a {
@@ -22,6 +32,22 @@ body, p, ol, li ul, td {
   font-family: $verdana;
   font-size:   13px;
   line-height: 18px;
+}
+
+h1 {
+	text-align: left;
+	padding-bottom: 0px;
+	font-family: amsans;
+	font-size: 38px;
+	line-height: 47px;
+	font-weight: bold;
+	color: $white;
+	
+	margin: 0px;
+	letter-spacing: 0px;
+	font-style: normal;
+	font-weight: normal;
+	text-indent: 0px;
 }
 
 h2, h3 {
@@ -46,6 +72,20 @@ h3 {
 	margin: 0 0 10px 0;
 	a {
 		text-decoration: none;
+	}
+}
+
+p {
+	text-align: justify;
+	padding-bottom: 0px;
+	font-size: 14px;
+	line-height: 18px;
+	color: $white;
+	a {
+		color: $blue;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -85,15 +125,16 @@ hr {
 	height: auto !important;
 	height: 100%;
 	#header {
+		position: relative;
+		overflow: auto;
+		height: 173px;
 		width: 100%;
-		height: 95px;
 		margin: 0;
 		padding: 0;
-		position: relative;
 		.wrapper {
+			position: relative;
 			margin: 0 auto;
 			width: 920px;
-			position: relative;
 			#information {
 				position: absolute;
 				left: 597px;
@@ -136,7 +177,7 @@ hr {
 			#navigation {
 				position: absolute;
 				left: 78px;
-				top: 126px;
+				top: 133px;
 				z-index: 7;
 				margin-left: 0px;
 				margin-top: 0px;
@@ -153,14 +194,14 @@ hr {
 						display: inline;
 						position: relative;
 						float: left;
-						margin: 2px 8px 4px 8px;
+						margin: 4px 8px 4px 8px;
 						span, a {
 							padding: 4px 14px;
 							text-decoration: none;
 							color: $white;
 							&:hover {
 								background: black;
-							}							
+							}	  					
 						}
 					}
 				}
@@ -168,14 +209,74 @@ hr {
 		}
 	}
 	#page {
+		position: relative;
+		top: 0;
 		overflow: auto;
-	  margin: 40px auto 10px auto;
-		padding: 0 0 75px 0;
+	  margin: 10px auto;
+		padding: 0 0 120px 0;
 	  width: 100%;
 		.wrapper {
 			margin: 0 auto;
 		  width: 920px;
 			position: relative;
+			.block {
+				background-color: $black;
+				width: 774px;
+				margin: 0 73px;
+				padding: 0;
+				.gallery {
+					padding: 5px;
+					margin: 0;
+					width: 764px;
+				}
+				.textual {
+					padding: 5px 100px;
+					width: 574px;
+					margin: 0;
+					h1 {
+						font-family: $verdana;
+						font-weight: bold;
+						font-size: 16px;
+						color: $white;
+						margin: 0;
+					}
+				}
+				.border {
+					position: relative;
+					padding: 15px;
+					margin: 0;
+					width: 738px;
+					.image {
+						float: left;
+						margin: 10px;
+						border: 0pt none;
+					}
+					.details {
+						p {
+							margin-top: 0;
+							text-align: justify;
+							padding-bottom: 0px;
+							font-size: 11px;
+							line-height: 13px;
+						}
+					}
+				}
+			}
+			.title {
+				width: 774px;
+				margin: 33px auto 0 auto;
+				padding: 0 10px;
+				h1 {
+					width: 744px;
+					padding: 0 15px;
+				}
+			}
+			.line {
+				height: 6px;
+				background-image: url(linecopy.gif);
+				margin: 0 0 10px 0;
+				padding: 0;
+			}
 		}
 	}
 }
@@ -183,14 +284,17 @@ hr {
 #footer {
 	position: relative;
 	clear: both;
-	margin: 0;
+	margin: -120px 0 0 0;
 	padding: 0;
+	height: 120px;
 	width: 100%;
 	overflow: hidden;
+	background-color: $black;
+	clear:both;
 	.wrapper {
-		margin: 0 auto;
+		margin: 0 auto 15px auto;
+	  padding: 15px 40px;
 	  width: 920px;
-	  padding: 15px 40px 60px 40px;
 		text-align: left;
 		font-size: 0.75em;
 		.column {
@@ -225,12 +329,4 @@ hr {
 			margin: 0;
 		}
 	}
-}
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
 }

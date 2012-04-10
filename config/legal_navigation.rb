@@ -52,8 +52,8 @@ SimpleNavigation::Configuration.run do |navigation|
     
     primary.item :privacy, 'privacy statement'
     primary.item :terms, 'terms of use'
-    primary.item :statement, 'copyright statement'    
-    primary.item :copyright, '@2011-12 Black Dog Property'
+    primary.item :statement, 'copyright statement'  
+    primary.item :copyright, '@2011-12 Black Dog Property', root_url
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

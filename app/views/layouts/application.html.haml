@@ -12,18 +12,17 @@
 	= csrf_meta_tag
 	= render "shared/script/google_analytics"
 
-%body
+%body{:class => controller_name == "welcome" ? "home" : ""}
 	#main
 		#header
 			.wrapper
 				= render "shared/header/information"
 				= render "shared/header/logo"
 				= render "shared/header/navigation"
-		.clear
 		
 		#page
 			.wrapper
-				= yield	
+				= yield
 		
 	#footer
 		.wrapper
