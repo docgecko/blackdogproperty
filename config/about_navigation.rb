@@ -50,12 +50,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :about, 'about us'
-    primary.item :gallery, 'show case'
-    primary.item :testimonials, 'testimonials'
-    primary.item :contact, 'contact us'    
+    primary.item :welcome, 'home', root_url, :if => Proc.new { controller_name != 'welcome' }
+    primary.item :team, 'blackdog team', company_team_path
+    primary.item :contact, 'contact us', contact_path   
     primary.item :blog, 'blog', 'http://blackdogproperty.wordpress.com', :target => '_blank'
-    primary.item :faq, 'FAQs'
+    primary.item :faq, 'FAQs', static_path(:id => "faqs")
     
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

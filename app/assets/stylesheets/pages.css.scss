@@ -1,0 +1,13 @@
+// Place all the styles related to the Services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$orange: #F60;
+
+p {
+	&.question {
+		margin-bottom: 0;
+	}
+	&.answer {
+		color: $orange;
+	}
+}

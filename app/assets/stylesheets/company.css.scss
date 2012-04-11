@@ -25,3 +25,65 @@
 		}
 	}
 }
+
+.team {
+	position: relative;
+	margin: 9px 0px 9px 10px;
+	padding: 0 0 0 64px;
+	min-height: 287px;
+	width: 774px;
+	top: 0px;
+	left: 0px;
+	.panel {
+		position: relative;
+		display: inline;
+		float: left;
+		background-image: url(company/panel_decor_line.gif);
+		background-repeat: repeat-x;
+		padding: 15px 0 0 0;
+		margin: 20px 0 0 0;
+		width: 368px;
+		.name {
+			position: relative;
+			z-index: 6;
+			width: 100%;
+			h2 {
+				text-align: left;
+				font-size: 16px;
+				line-height: 19px;
+				font-weight: bold;
+				color: white;
+				margin: 0 0 12px 0;
+			}
+		}
+		.frame {
+			float: left;
+			background-image: url(company/frame_thumb_team.gif);
+			background-repeat: no-repeat;
+			margin: 0;
+			padding: 0;
+			height: 166px;
+			width: 137px;
+			z-index: 7;
+			.picture {
+				padding: 11px 10px 6px 9px;
+				margin: 0;
+				z-index: 8;
+			}
+		}
+		.profile {
+			float: right;
+			margin: 0;
+			overflow: auto;
+			height: 217px;
+			width: 220px;
+			z-index: 6;
+			p {
+				margin: 0 0 10px 0;
+				text-align: left;
+				font-size: 11px;
+				line-height: 14px;
+			}
+		}
+	}
+}

@@ -50,9 +50,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :privacy, 'privacy statement'
-    primary.item :terms, 'terms of use'
-    primary.item :statement, 'copyright statement'  
+    primary.item :privacy, 'privacy statement', static_path(:id => "privacy")
+    primary.item :terms, 'terms of use', static_path(:id => "terms")
+    primary.item :statement, 'copyright statement', static_path(:id => "copyright")  
     primary.item :copyright, '@2011-12 Black Dog Property', root_url
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
