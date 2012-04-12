@@ -252,6 +252,7 @@ hr {
 				}
 				.border {
 					position: relative;
+					float: left;
 					padding: 15px;
 					margin: 0;
 					width: 744px;
@@ -288,6 +289,7 @@ hr {
 					}
 				}
 				.bottom {
+					float: left;
 					background-image: url(box_bottom.gif);
 					height: 4px;
 					width: 774px;

@@ -63,3 +63,45 @@ Mairead has an enthusiasm for skiing and swimming and, due to her interest in Fr
 end
 puts 'All Team Members created'
 
+puts 'SETTING UP TESTIMONIALS'
+[
+  {
+    :name => 'John B',
+    :location => 'Eze, France',
+    :details => 'We have just come back from a holiday in one of your BlackDog accredited villas and it was amazing. We have never felt so relaxed and spoiled with every detail taken care of.
+
+We won\'t hesitate in recommending our friends and colleagues to visit your site. Thanks so much',
+    :order_no => '1',
+    :published => true
+  },
+  {
+    :name => 'Mr Peter W',
+    :location => 'Abergavenny',
+    :details => 'I consulted in BlackDog regarding the landscape and development of our garden.  I had received a number of ideas and possible solutions from other companies which had left me feeling uncertain.  Within 30 minutes of meeting Mark, his obvious knowledge of the situation had saved me approximately &pound;100k in building costs not to mention the avoided disruption. Very professional, very experienced and a delight to work with.
+
+BlackDog have subsequently undertaken a few projects for me, each one I can truly attest to their success. Just great guys to have around, courteous funny, but above all really made it happen. I would recommend them in an instant.',
+    :order_no => '2',
+    :published => true
+  },
+  {
+    :name => 'Mr Jet Blackwood',
+    :location => 'France',
+    :details => 'I contacted BlackDog to build a new pool and to develop a summer house. I cannot speak highly enough about the BlackDog team that did the work, it made a daunting task a really enjoyable experience.
+
+There were some changes that we requested during the build, each time BlackDog explained the options, the costs and relative benefits. This was done in a completely transparent way which allowed us to make the right decisions.
+
+Thanks to Mark and the guys',
+    :order_no => '3',
+    :published => true
+  },
+  {
+    :name => 'David Bristow',
+    :location => 'Hants',
+    :details => 'I asked Mark to find me a rental this summer that afforded me both a high standard of living close to great restaurants and the France vibe. What I found upon reaching the villa was that and more. Mark arranged everything for me, from restaurants to a scuba dive. The service and professionalism shown was without equal. I will be back next year. Thanks again.',
+    :order_no => '4',
+    :published => true
+  }
+].each do |c|
+  Testimonial.create(c)
+end
+puts 'All Testimonials created'

@@ -1,0 +1,12 @@
+.column
+	.testimonial{ :class => cycle('odd', 'even') }
+		.quotes= image_tag "company/quotes.png", :width => "58px", :height => "47px"
+		.details= markdown(testimonial.details)
+		.person
+			- if testimonial.name.present? and testimonial.location.present?
+				== #{testimonial.name}, #{testimonial.location}
+			- elsif testimonial.name.empty?
+				= testimonial.location
+			- else
+				= testimonial.name
+		%hr

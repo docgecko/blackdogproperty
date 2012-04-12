@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$silver: silver;
+
+
 .about {
 	display: block;
   height: 120px;
@@ -83,6 +86,42 @@
 				font-size: 11px;
 				line-height: 14px;
 			}
+		}
+	}
+}
+
+.column {
+	margin: 8px 0px 8px 9px;
+	width: 372px;
+	top: 0px;
+	left: 0px;
+	position: relative;
+	float: left;
+	.testimonial {
+		position: relative;
+		&.odd {
+			float: left;
+		}
+		&.even {
+			float: right;
+			margin-left: 8px;
+		}
+		.quotes {
+			float:left;
+		}
+		.details {
+			p {
+				margin-top: 0;
+				font-size: 11px;
+				line-height: 13px;
+			}
+		}
+		.person {
+			font-size: 11px;
+			line-height: 13px;
+			text-align: right;
+			font-weight: bold;
+			color: $silver;
 		}
 	}
 }
