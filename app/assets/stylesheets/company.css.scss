@@ -28,25 +28,24 @@
 
 .team {
 	position: relative;
-	margin: 9px 0px 9px 10px;
+	float: left;
+	margin: 9px 0px 14px 10px;
 	padding: 0 0 0 64px;
 	min-height: 287px;
 	width: 774px;
-	top: 0px;
-	left: 0px;
 	.panel {
 		position: relative;
 		display: inline;
 		float: left;
 		background-image: url(company/panel_decor_line.gif);
-		background-repeat: repeat-x;
+		background-repeat: no-repeat;
 		padding: 15px 0 0 0;
-		margin: 20px 0 0 0;
-		width: 368px;
+		margin: 10px 0 0 0;
+		width: 385px;
 		.name {
 			position: relative;
 			z-index: 6;
-			width: 100%;
+			width: 356px;
 			h2 {
 				text-align: left;
 				font-size: 16px;
@@ -72,11 +71,11 @@
 			}
 		}
 		.profile {
-			float: right;
-			margin: 0;
+			float: left;
+			margin: 0 0 0 10px;
 			overflow: auto;
 			height: 217px;
-			width: 220px;
+			width: 208px;
 			z-index: 6;
 			p {
 				margin: 0 0 10px 0;

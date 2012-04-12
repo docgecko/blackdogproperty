@@ -1,21 +1,15 @@
 - content_for :title do
-	Contact Us | BlackDog Property
-	
+	Sales | BlackDog Property
+
 - content_for :link_canonical do
-	contact
-	
-- content_for :head do
-	= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
+	sales
 
-#title
-	%h1
-		We would love to help you!
-		%br/
-		Contact us to discuss
-		%i>< &nbsp;your project
-		\.
+.title
+	%h1 BlackDog Sales
+	.line
 
-#contact_form.left
+.block
+	.border
 
 	= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 

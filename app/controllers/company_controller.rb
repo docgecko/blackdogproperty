@@ -6,5 +6,6 @@ class CompanyController < InheritedResources::Base
   end
   
   def team
+    @members = Member.where(published: true).asc(:order_no)
   end
 end
