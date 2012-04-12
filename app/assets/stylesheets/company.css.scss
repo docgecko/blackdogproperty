@@ -90,15 +90,17 @@ $silver: silver;
 	}
 }
 
-.column {
-	margin: 8px 0px 8px 9px;
-	width: 372px;
+.section {
+	position: relative;
+	margin: 22px 8px 8px 8px;
+	width: 758px;
 	top: 0px;
 	left: 0px;
-	position: relative;
 	float: left;
 	.testimonial {
 		position: relative;
+		width: 366px;
+		padding: 0 0 15px 0;
 		&.odd {
 			float: left;
 		}
@@ -122,6 +124,7 @@ $silver: silver;
 			text-align: right;
 			font-weight: bold;
 			color: $silver;
+			padding: 0 0 15px 0;
 		}
 	}
 }
