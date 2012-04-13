@@ -50,7 +50,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :about, 'about us', company_index_path
+    primary.item :about, 'about us', company_about_path
     primary.item :contact, 'contact us', contact_path
     primary.item :blog, 'blog', 'http://blackdogproperty.wordpress.com', :target => '_blank'
     primary.item :faq, 'FAQs', static_path(:id => "faqs")

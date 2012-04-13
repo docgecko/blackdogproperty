@@ -274,8 +274,9 @@ hr {
 						}
 					}
 					.enquiry {
+						float: left;
 						margin: 0;
-						padding: 10px 0;
+						padding: 20px 0 0 0;
 						h3 {
 							font-size: 19px;
 							font-weight: bold;
@@ -350,6 +351,32 @@ hr {
 							text-align: center;
 						}
 					}
+					.box {
+						background-color: white;
+						width: 222px;
+						padding: 10px;
+						margin: 0 6px 0 0;
+						float: left;
+						height: 240px;
+						h2 {
+							color: $black;
+							text-align: left;
+							padding: 0;
+							font-size: 16px;
+							line-height: 19px;
+						}
+						p {
+							font-size: 11px;
+							line-height: 13px;
+							color: black;
+							letter-spacing: 0px;
+							text-indent: 0px;
+							text-align: justify;
+						}
+						.img {
+							text-align: center;
+						}
+					}
 				}
 				.bottom {
 					float: left;
@@ -374,6 +401,9 @@ hr {
 				background-image: url(linecopy.gif);
 				margin: 0 0 10px 0;
 				padding: 0;
+				&.short {
+					width: 421px;
+				}
 			}
 		}
 		.head {
@@ -381,6 +411,7 @@ hr {
 			width: 770px;
 			margin: 0 73px;
 			padding: 0;
+			float: left;
 			.images {
 				float: left;
 				margin: 0 10px 0 0;
@@ -413,6 +444,7 @@ hr {
 			height: 6px;
 			margin: 0 73px 6px 73px;
 			z-index: 3;
+			float: left;
 		}
 	}
 }

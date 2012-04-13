@@ -1,0 +1,55 @@
+- content_for :title do
+	Renovations | BlackDog Property
+
+- content_for :link_canonical do
+	renovations
+
+.head
+	.images
+		.row
+			= image_tag "renovations/house.jpg"
+			= image_tag "renovations/mirror.jpg"
+		.row
+			= image_tag "renovations/bathroom.jpg"
+			= image_tag "renovations/building.jpg"
+
+	.description
+		%h1= ("About Renovation Services").upcase
+
+		%p When it comes to renovating a property there are always worries about how the work will be done, who will do it and what they will charge.  Many people experience poor building work, language and cultural challenges, unexpected charges and often a long time waiting for a job to complete, this leaves us disappointed.
+
+		%p BlackDog recognises this and has established a team of qualified individuals and craftsmen to undertake the renovations.  Our Clients are at the forefront of our minds and we will work tirelessly to achieve your dreams and aspirations within your budget. We pride ourselves on providing accurate and achievable timelines, costing and advice, ensuring you are kept informed at ever stage of the project.
+
+		%p Our team are professional and committed to excellence and quality of work and take pride and are proud of what they deliver at BlackDog.
+
+.break
+
+.block
+	.border
+		.box
+			%h2
+				BlackDog
+				%br
+				Renovation Team
+			
+			%p BlackDog Renovation team are qualified professionals who have been working in bespoke property renovation for some years.
+
+			%p Our architects are knowledgable in European culture, and try to enhance existing structures sympathetically whilst maintaining our guarantee to use only the finest materials. Our project management skills are exemplary, ensuring that deadlines are met, but with no compromise on quality.
+
+		.box
+			.img= image_tag "renovations/about.jpg", :height => "187px"
+
+		.box
+			%h2
+				Renovation
+				%br
+				Excellence
+			
+			%p When choosing materials for use in renovation we excel in creativity. We source exceptional and traditional skills and craftsmanship, to create an eclectic environment with visually stunning results.
+
+			%p BlackDog want to maintain their contemporary and classical reputation, blending culture with art, and natural materials with artefacts or reclaimed materials, to create breathtaking and individual homes.
+			
+		.enquiry
+			%h3= link_to "Make an enquiry about BlackDog Renovations", contact_path
+
+	.bottom

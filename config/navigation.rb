@@ -50,11 +50,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     primary.item :welcome, 'home', root_url
-    primary.item :locations, 'location', location_static_path(:consultancy)
-    primary.item :sales, 'sales', sales_path
-    primary.item :rentals, 'rentals', rentals_path
-    primary.item :renovations, 'renovations', renovations_path
-    primary.item :services, 'services', services_path do |s|
+    primary.item :locations, 'location', location_about_path
+    primary.item :sales, 'sales', sales_about_path
+    primary.item :rentals, 'rentals', rentals_about_path
+    primary.item :renovations, 'renovations', renovations_about_path
+    primary.item :services, 'services', services_about_path do |s|
       # s.item :property, 'property management'
       # s.item :client, 'client management'
       # s.item :marketing, 'marketing'
@@ -66,7 +66,7 @@ SimpleNavigation::Configuration.run do |navigation|
       # s.item :language, 'language services'
       # s.item :maintenance, 'property maintenance'
     end
-    primary.item :company, 'company', company_index_path do |s|
+    primary.item :company, 'company', company_about_path do |s|
       # s.item :about, 'about us'
       # s.item :team, 'the team'
       # s.item :accreditation, 'accreditation'

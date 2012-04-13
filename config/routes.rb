@@ -3,11 +3,20 @@ Blackdogproperty::Application.routes.draw do
   devise_for :users
   
   resources :sales, :only => :index
-  match '/location' => 'locations#index', :as => :location, :via => :get
+  match 'sales/about' => 'sales#about'
+
+  match 'location/about' => 'locations#about'
+  
   resources :rentals, :only => :index
+  match 'rentals/about' => 'rentals#about'
+
   resources :renovations, :only => :index
+  match 'renovations/about' => 'renovations#about'
+  
   resources :services, :only => :index  
-  resources :company, :only => :index
+  match 'services/about' => 'services#about'
+  
+  match 'company/about' => 'company#about'
   match 'company/team' => 'company#team'
   match 'company/testimonials' => 'company#testimonials'
 

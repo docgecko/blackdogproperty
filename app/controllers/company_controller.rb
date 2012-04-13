@@ -1,8 +1,8 @@
 class CompanyController < InheritedResources::Base
-  actions :index, :team
+  actions :about, :team, :testimonials
   respond_to :html
   
-  def index
+  def about
   end
   
   def team

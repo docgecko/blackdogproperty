@@ -1,7 +1,7 @@
 class SalesController < InheritedResources::Base
-  actions :index
+  actions :about
   respond_to :html
   
-  def index
+  def about
   end
 end
