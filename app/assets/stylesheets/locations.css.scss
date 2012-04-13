@@ -1,3 +1,44 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.countries {
+	position: relative;
+	top: -30px;
+	float: right;
+	height: 36px;
+	ul {
+	  height: 36px;
+		margin: 0px;
+		padding: 0px;
+		color: white;
+		line-height: 23px;
+		font-size: 16px;
+		text-align: center;
+		li {
+			display: inline;
+			position: relative;
+			float: left;
+			padding: 4px 0px 9px 0px;
+			margin: 0 6px 0 0;
+			background: url(linecopy.gif) no-repeat 50% 100%;
+			a {
+				height: 36px;
+				padding: 13px 15px 11px 15px;
+				text-decoration: none;
+				color: white;
+				&:hover {
+					background: url(location/button_locate.gif) repeat-x;
+				}	  					
+			}
+		}
+	}
+}
+
+.line {
+	width: 421px;
+	height: 6px;
+	background-image: url(linecopy.gif);
+	margin: 0 0 10px 0;
+	padding: 0;
+}
