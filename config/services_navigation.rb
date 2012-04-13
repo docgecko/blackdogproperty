@@ -50,7 +50,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :locations, 'location', locations_path
+    primary.item :locations, 'location', location_static_path(:consultancy)
     primary.item :sales, 'sales', sales_path
     primary.item :rentals, 'rentals', rentals_path
     primary.item :renovations, 'renovations', renovations_path

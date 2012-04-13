@@ -287,6 +287,69 @@ hr {
 							}
 						}
 					}
+					h2 {
+						color: $white;
+						text-align: left;
+						padding: 10px 0 0 0;
+						font-size: 16px;
+						line-height: 19px;
+					}
+					.package {
+						float: left;
+						margin: 0;
+						padding: 0;
+						width: 247px;
+						.name {
+							text-align: center;
+							font-weight: bold;
+							padding: 7px 0;
+							&.silver {
+								background-color: silver;
+								color: black;
+							}
+							&.gold {
+								background-color: darkGoldenrod;
+								color: white;
+							}
+							&.platinum {
+								background-color: lightSteelBlue;
+								color: black;
+							}
+						}
+						.points {
+							color: $white;
+							p {
+								text-align: center;
+								line-height: 13px;
+								font-size: 11px;
+							}
+							ul {
+								display: block;
+								list-style-type: disc;
+								li {
+									text-align: left;
+									padding-bottom: 0px;
+									line-height: 13px;
+									font-size: 11px;
+								}
+							}
+						}
+					}
+					.prices {
+						clear: both;
+						.value {
+							float: left;
+							margin: 0;
+							padding: 7px 0;
+							width: 247px;
+							background-color: black;
+							color: white;
+							font-weight: bold;
+							line-height: 13px;
+							font-size: 11px;
+							text-align: center;
+						}
+					}
 				}
 				.bottom {
 					float: left;
@@ -312,6 +375,44 @@ hr {
 				margin: 0 0 10px 0;
 				padding: 0;
 			}
+		}
+		.head {
+			position: relative;
+			width: 770px;
+			margin: 0 73px;
+			padding: 0;
+			.images {
+				float: left;
+				margin: 0 10px 0 0;
+				img {
+					margin: 1px;
+				}
+				.row {
+				}
+			}
+			.description {
+				h1 {
+					font-family: $verdana;
+					text-align: left;
+					padding: 10px 0 0 0;
+					font-size: 16px;
+					line-height: 19px;
+				}
+				p {
+					text-align: justify;
+					padding-bottom: 0px;
+					font-size: 12px;
+					margin-top: 15px;
+				}
+			}
+		}
+		.break {
+			background-image: url(location/line_full_width.gif);
+			background-repeat: no-repeat;
+			width: 774px;
+			height: 6px;
+			margin: 0 73px 6px 73px;
+			z-index: 3;
 		}
 	}
 }

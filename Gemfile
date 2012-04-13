@@ -44,6 +44,7 @@ group :development, :test do
 	gem 'guard-rspec'
 	gem 'guard-cucumber'
 	gem 'guard-livereload'
+	gem 'em-websocket'
 	gem 'growl'
 	gem 'relish', '0.5.1'
 	gem 'colored'
