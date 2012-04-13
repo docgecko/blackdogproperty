@@ -78,7 +78,7 @@ h3 {
 p {
 	text-align: justify;
 	padding-bottom: 0px;
-	font-size: small;
+	font-size: 12px;
 	line-height: 18px;
 	color: $white;
 	a {
@@ -125,8 +125,6 @@ hr {
 	height: auto !important;
 	height: 100%;
 	#header {
-		position: relative;
-		overflow: auto;
 		height: 173px;
 		width: 100%;
 		margin: 0;
@@ -182,6 +180,7 @@ hr {
 				margin-left: 0px;
 				margin-top: 0px;
 				ul {
+					position:relative;
 				  height: 22px;
 					margin: 0px;
 					padding: 0px;
@@ -203,22 +202,54 @@ hr {
 								background: black;
 							}	  					
 						}
+						ul {
+							margin: 0;
+							padding: 0;
+							display: none;
+							position: absolute;
+							color: white;
+							li {
+								width: 152px;
+								position: relative;
+								float: left;
+								margin: 0;
+								color: white;
+								span, a {
+									width: 142px;
+									padding: 2px 5px 3px 15px;
+									margin: 0;
+									line-height: 15px;
+									font-size: 12px;
+									font-family: Verdana, sans-serif;
+									text-align: left;
+									display: inline;
+									background-color: black;
+									color: white;
+									float: left;
+									&:hover {
+										color: black;
+										background-color: silver;
+									}
+								}
+							}
+						}
+						&:hover {
+							ul {
+								display: block;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 	#page {
-		position: relative;
-		top: 0;
-		overflow: auto;
 	  margin: 10px auto;
 		padding: 0 0 120px 0;
 	  width: 100%;
 		.wrapper {
 			margin: 0 auto;
 		  width: 920px;
-			position: relative;
 			.block {
 				background-color: $black;
 				width: 774px;
@@ -246,12 +277,11 @@ hr {
 					}
 					p {
 						text-align: justify;
-						font-size: small;
-						line-height: 15px;
+						font-size: 12px;
+						line-height: 18px;
 					}
 				}
 				.border {
-					position: relative;
 					float: left;
 					padding: 15px;
 					margin: 0;
@@ -269,8 +299,8 @@ hr {
 							margin-top: 0;
 							text-align: justify;
 							padding-bottom: 0px;
-							font-size: small;
-							line-height: 15px;
+							font-size: 12px;
+							line-height: 18px;
 						}
 					}
 					.enquiry {
@@ -278,8 +308,8 @@ hr {
 						margin: 0;
 						padding: 20px 0 0 0;
 						h3 {
-							font-size: 19px;
-							font-weight: bold;
+							font-size: 17px;
+							font-weight: normal;
 							a {
 								color: $blue;
 								&:hover {
@@ -385,6 +415,7 @@ hr {
 					width: 774px;
 					position: relative;
 					background-position: center bottom;
+					margin-bottom: 20px;
 				}
 			}
 			.title {

@@ -54,24 +54,24 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :sales, 'sales', sales_about_path
     primary.item :rentals, 'rentals', rentals_about_path
     primary.item :renovations, 'renovations', renovations_about_path
-    primary.item :services, 'services', services_about_path do |s|
-      # s.item :property, 'property management'
-      # s.item :client, 'client management'
-      # s.item :marketing, 'marketing'
-      # s.item :investment, 'investment &amp; development'
-      # s.item :relocation, 'relocation'
-      # s.item :chauffeur, 'chauffeur services'
-      # s.item :jet, 'private jet'
-      # s.item :security, 'security advice'
-      # s.item :language, 'language services'
-      # s.item :maintenance, 'property maintenance'
+    primary.item :services, 'services' do |s|
+      s.item :property, 'property management', services_static_path('property-management')
+      s.item :client, 'client management', services_static_path('client-management')
+      s.item :marketing, 'marketing', services_static_path('marketing')
+      s.item :investment, 'investment &amp; development', services_static_path('investment-development')
+      s.item :relocation, 'relocation', services_static_path('relocation')
+      s.item :chauffeur, 'chauffeur services', services_static_path('chauffeur')
+      s.item :jet, 'private jet', services_static_path('private-jet')
+      s.item :security, 'security advice', services_static_path('security')
+      s.item :language, 'language services', services_static_path('language')
+      s.item :maintenance, 'property maintenance', services_static_path('maintenance')
     end
-    primary.item :company, 'company', company_about_path do |s|
-      # s.item :about, 'about us'
-      # s.item :team, 'the team'
-      # s.item :accreditation, 'accreditation'
-      # s.item :testimonials, 'testimonials'
-      # s.item :gallery, 'show case'
+    primary.item :company, 'company' do |s|
+      s.item :about, 'about us', company_about_path
+      s.item :team, 'the team', company_team_path
+      s.item :accreditation, 'accreditation', company_static_path('blackdog-accreditation')
+      s.item :testimonials, 'testimonials', company_testimonials_path
+      s.item :gallery, 'show case'
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
