@@ -18,6 +18,7 @@ gem 'jquery-rails'
 
 gem 'inherited_resources', '1.3.0'
 gem 'devise'
+gem 'cancan'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'mongoid', '>= 2.0.0.beta.19'
 gem 'bson_ext'
@@ -31,6 +32,7 @@ gem 'simple-navigation'
 gem 'carrierwave', '0.5.7'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick', '3.3'
+gem 'kaminari', '0.13.0'
 gem 'rack-rewrite', '1.0.2'
 
 

@@ -1,0 +1,48 @@
+- content_for :title do
+	Sign up to InfraJobs
+	
+- content_for :link_canonical do
+	signup
+	
+- content_for :meta_description do
+	Sign up to create your InfraJobs account - manage all of your job adverts from one place
+
+- content_for :auth_header do
+	.cap.top
+	%h1 Sign up to InfraJobs
+	
+- content_for :auth_main do
+	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
+		= render 'shared/email_errors', :resource => resource
+		
+		%h2
+			Create your free account
+		%p
+			You account will be used to manage all of your job adverts.
+
+		%h2
+			= f.label :email, 'Email'
+			%br
+			= f.text_field :email, :maxlength => 255
+			
+		%h2
+			= f.label :password, 'Password'
+			%br
+			= f.password_field :password, :maxlength => 20
+
+		%h2
+			= f.label :password_confirmation, 'Password', :class => 'no_padding'
+			%span{:style => "font-size:11px;"} (again for confirmation)
+			%br
+			= f.password_field :password_confirmation, :maxlength => 20
+				
+		= f.submit "Sign up", :class => 'buttonBasic'
+
+- content_for :auth_footer do
+	.cap.bottom_white
+		
+- content_for :after do
+	
+	#after
+		Already have an account?
+		= render 'devise/shared/signin'

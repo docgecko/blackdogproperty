@@ -1,0 +1,33 @@
+- content_for :title do
+	Change your password
+
+- content_for :auth_header do
+	.cap.top
+	%h1 Change your password
+
+- content_for :auth_main do
+	= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+		/ = devise_error_messages!
+		= render 'shared/email_errors', :target => resource
+		
+		%h2
+			Reset your password
+		%p
+			Enter a new password below, and a second time to confirm it has been entered correctly.
+
+		= f.hidden_field :reset_password_token
+
+		%h2
+			= f.label :password
+			%br
+			= f.password_field :password, :maxlength => 20
+
+		%h2
+			= f.label :password_confirmation
+			%br
+			= f.password_field :password_confirmation, :maxlength => 20
+
+			= f.submit "Change my password", :class => 'buttonBasic'
+
+- content_for :auth_footer do
+	.cap.bottom_white

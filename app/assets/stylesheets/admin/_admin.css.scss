@@ -1,0 +1,24 @@
+@import "shared";
+
+/*---------- Tables ----------*/
+table {
+	th {
+		color: $blue;
+	}
+	td {
+		color: $white;
+	}
+	a {
+		color: $blue;
+		&:hover {
+			text-decoration: underline;	
+		}
+	}
+}
+
+a {
+	color: $blue;
+	&:hover {
+		text-decoration: underline;	
+	}
+}

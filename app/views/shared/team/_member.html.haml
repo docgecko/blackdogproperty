@@ -2,5 +2,5 @@
 	.name
 		%h2= member.name
 	.frame
-		.picture= image_tag member.image
+		.picture= image_tag member.avatar.url(:team), :size => "119x145"
 	.profile= markdown(member.profile)

@@ -1,0 +1,17 @@
+%h1 Listing admin_properties
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @admin_properties.each do |admin_property|
+    %tr
+      %td= link_to 'Show', admin_property
+      %td= link_to 'Edit', edit_admin_property_path(admin_property)
+      %td= link_to 'Destroy', admin_property, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Property', new_admin_property_path

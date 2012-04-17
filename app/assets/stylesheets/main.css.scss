@@ -1,122 +1,4 @@
-$silver: silver;
-$gray: gray;
-$transparent: transparent;
-$black: #252122;
-$white: white;
-$blue: #97C3D6;
-
-$verdana: Verdana, arial, helvetica, sans-serif;
-$amsans: AmSans, "Am Sans";
-
-html, body {
-	height: 100%;
-}
-
-body { 
-	background-image: url(d67browserbackground.gif);
-  background-color: $black;
-  color: #666;
-  margin: 0 auto;
-	&.home {
-		background-image: url(d997browserbackground.gif);
-	}
-}
-
-a {
-	&:active {
-		border:0;
-	}
-}
-
-body, p, ol, li ul, td {
-  font-family: $verdana;
-  font-size:   13px;
-  line-height: 18px;
-}
-
-h1 {
-	text-align: left;
-	padding-bottom: 0px;
-	font-family: amsans;
-	font-size: 38px;
-	line-height: 47px;
-	font-weight: bold;
-	color: $white;
-	
-	margin: 0px;
-	letter-spacing: 0px;
-	font-style: normal;
-	font-weight: normal;
-	text-indent: 0px;
-}
-
-h2, h3 {
-	font-family: $verdana;
-	font-weight: normal;
-}
-
-h2 {
-	font-size: 23px;
-	line-height: 1.1em;
-	padding: 0;
-	margin: 0 0 20px 0;
-	a {
-		text-decoration: none;
-	}
-}
-
-h3 {
-	font-size: 18px;
-	line-height: 1.1em;
-	padding: 0;
-	margin: 0 0 10px 0;
-	a {
-		text-decoration: none;
-	}
-}
-
-p {
-	text-align: justify;
-	padding-bottom: 0px;
-	font-size: 12px;
-	line-height: 18px;
-	color: $white;
-	a {
-		color: $blue;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-a {
-	margin: 0 0 3px 0;
-	padding: 0;
-	text-decoration: none;
-	&:hover {
-	}
-}
-
-hr { 
-  color: #DDD; 
-  background-color: #DDD;
-}
-
-.left {
-  float: left;
-  display: inline;
-}
-
-.right {
-  float: right;
-  display: inline;
-}
+@import "shared";
 
 /* Page Layout */
 
@@ -133,6 +15,35 @@ hr {
 			position: relative;
 			margin: 0 auto;
 			width: 920px;
+			#admin {
+				position: absolute;
+				left: -80px;
+				top: 180px;
+				margin: 0;
+				z-index: 8;
+				ul {
+					height: 17px;
+					margin: 0px;
+					padding: 0px;
+					color: $silver;
+					font-size: 10px;
+					text-align: left;
+					list-style-type: none;
+					li {
+						margin: 0 7px;
+						a {
+							line-height: 17px;
+							color: $silver;
+							overflow: hidden;
+							padding: 0 7px;
+							text-decoration: none;
+							&:hover {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
 			#information {
 				position: absolute;
 				left: 597px;
@@ -245,21 +156,35 @@ hr {
 	}
 	#page {
 	  margin: 10px auto;
-		padding: 0 0 120px 0;
+		padding: 0 0 50px 0;
 	  width: 100%;
+		float: left;
 		.wrapper {
 			margin: 0 auto;
 		  width: 920px;
+			.title {
+				width: 774px;
+				margin: 33px auto 0 auto;
+				padding: 0 10px;
+				h1 {
+					width: 744px;
+					padding: 0 15px;
+				}
+			}
+			.line {
+				height: 6px;
+				background-image: url(linecopy.gif);
+				margin: 0 0 10px 0;
+				padding: 0;
+				&.short {
+					width: 421px;
+				}
+			}
 			.block {
 				background-color: $black;
 				width: 774px;
-				margin: 0 73px;
-				padding: 0;
-				.gallery {
-					padding: 5px;
-					margin: 0;
-					width: 764px;
-				}
+				margin: 0 auto;
+				padding: 0;				
 				.textual {
 					padding: 5px 100px;
 					width: 574px;
@@ -418,24 +343,6 @@ hr {
 					margin-bottom: 20px;
 				}
 			}
-			.title {
-				width: 774px;
-				margin: 33px auto 0 auto;
-				padding: 0 10px;
-				h1 {
-					width: 744px;
-					padding: 0 15px;
-				}
-			}
-			.line {
-				height: 6px;
-				background-image: url(linecopy.gif);
-				margin: 0 0 10px 0;
-				padding: 0;
-				&.short {
-					width: 421px;
-				}
-			}
 		}
 		.head {
 			position: relative;
@@ -527,5 +434,29 @@ hr {
 			padding: 0 0 0 150px;
 			margin: 0;
 		}
+	}
+}
+
+/*---------- FLASHES ----------*/
+#flash {
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0 auto;
+	padding: 0;
+	width: 774px;
+	.alert {
+		margin-bottom: 10px;
+		padding: 10px;
+	  border: 1px solid $red;
+		background: $light-red;
+		color: $red;
+	}
+	.notice {
+		margin-bottom: 10px;
+		padding: 10px;
+		border: 1px solid $light-green;
+		background: $bright-green;
+		color: lighten(green, 1);
 	}
 }

@@ -71,7 +71,7 @@ SimpleNavigation::Configuration.run do |navigation|
       s.item :team, 'the team', company_team_path
       s.item :accreditation, 'accreditation', company_static_path('blackdog-accreditation')
       s.item :testimonials, 'testimonials', company_testimonials_path
-      s.item :gallery, 'show case'
+      s.item :show_case, 'gallery', company_static_path('gallery')
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
@@ -84,6 +84,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
     # primary.dom_class = 'menu-class'
+    primary.dom_class = 'sf-menu'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

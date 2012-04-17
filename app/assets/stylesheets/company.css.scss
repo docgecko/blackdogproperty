@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$silver: silver;
-
+@import "shared";
 
 .about {
 	display: block;
@@ -127,4 +126,29 @@ $silver: silver;
 			padding: 0 0 15px 0;
 		}
 	}
+}
+
+.show_case {
+	float: left;
+	margin: 24px 0 0 6px;
+	width: 832px;
+	min-height: 300px;
+	.area {
+		margin: 19px 0 0 14px;
+		width: 36px;
+		height: 212px;
+		h2 {
+			color: white;
+			text-align: center;
+			font-size: 32px;
+		}
+	}	
+}
+
+.rotate {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);		
 }

@@ -1,0 +1,189 @@
+body {
+  &.signin {
+    color: #000;
+		.wrapper {
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+			a:hover {
+	      color: #0033cc;
+	      background: none;
+	      text-decoration: underline; 
+			}
+	    div {
+	      &#LogoBox {
+	        margin-top: 50px; 
+				}
+	      &.signin_dialog {
+	        zoom: 100%; 
+				}
+	      &.signin {
+	        padding: 0;
+	        text-align: left;
+	        width: 464px;
+	        margin: 0 auto;
+	        font-size: 13px;
+				}
+				&#signinHeader {
+					margin: 0;
+					padding: 0;
+					.cap {
+						&.top {
+							z-index: 1;
+							width: 100%;
+							padding-top: 10px;
+						}
+					}
+				}
+				&#signinBody {
+					margin: 0;
+					padding: 25px;
+					h2 {
+						font-weight: normal;
+					}
+					a {
+						color: white;
+						&:hover {
+							text-decoration: none;
+							background-color: white;
+							color: white; 
+						} 
+					}
+				}
+				&#signinFooter {
+					.cap {
+						&.bottom_white {
+							z-index: 1;
+							width: 100%;
+							padding-top: 10px;
+						}
+					}
+					.cap {
+						&.bottom_grey {
+							z-index: 1;
+							width: 100%;
+							padding-bottom: 10px;
+						}
+					}
+				}
+			}	
+		}
+	}
+  &:first-of-type.signin div.signin {
+    border: none; 
+	}
+  &.signin div.signin {
+    p {
+      margin: 0 0 15px 0;
+      padding: 0; 
+		}
+    div {
+      &.flash {
+        padding: 7px 5px;
+        font-size: 12px;
+        margin: 15px 0; 
+			}
+      &.error {
+        border-top: 1px solid #900;
+        border-bottom: 1px solid #900;
+        color: #900;
+        background-color: #f5e6e6; 
+			}
+      &.confirm {
+        border-top: 1px solid #393;
+        border-bottom: 1px solid #393;
+        color: #393;
+        background-color: #e6f5ea; 
+			} 
+		}
+    h1 {
+		  color: white;
+      margin: 0;
+      padding: 20px 0 0 25px;
+		} 
+	}
+  &.lethe div.signin h1 {
+    margin-bottom: 5px; 
+	}
+  &.signin div.signin {
+    h2 {
+      color: white;
+      font-size: 14px;
+      margin: 0 0 2px 0;
+      padding: 0; 
+		}
+    input {
+      width: 275px;
+      font-size: 14px;
+      padding: 3px;
+      margin-bottom: 10px;
+      &.auto {
+        width: auto;
+				margin: 0 3px 10px 0;
+			}
+      &.buttonBasic {
+        width: auto;
+        font-size: 14px;
+        padding: 3px;
+        margin: 10px 0 0 0; 
+			} 
+		}
+    label {
+      margin-bottom: 0;
+			&.remember_me {
+				font-weight: normal;
+				font-size: 12px;
+			}
+      input {
+        margin-bottom: 0; 
+			} 
+		}
+    .footer {
+      padding: 15px 25px 5px 25px;
+      margin-top: 0;
+      a {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 3px;
+		    color: white;
+		    text-decoration: none;
+				line-height: 1.35em;
+		    &:hover {
+		      text-decoration: none;
+		 			color: #fff;
+				} 
+			}
+			&.cap {
+				&.body_grey {
+					z-index: 1;
+					width: 414px;
+					padding-top: 10px;
+				}
+			}
+		} 
+	} 
+}
+
+#after {
+	color: gray;
+	width: 460px;
+	font-size: 11px;
+	text-align: right;
+  margin: 10px auto;
+	a {
+		padding: 0.1em;
+		margin: 0 20px 0 0;
+		color: white;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+table.signin, table.signup, table.secret, table.confirm {
+	margin: 0;
+	td {
+		padding: 0 10px 0 0;
+	}
+}

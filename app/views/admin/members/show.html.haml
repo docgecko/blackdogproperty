@@ -1,0 +1,30 @@
+- content_for :title do
+	Admin << Show Member
+	
+%h1 Admin: Show Member
+
+%p
+	%b Title:
+	= resource.name
+
+%p
+	%b Image:
+%p
+	= image_tag resource.avatar.url(:team)
+
+%p
+	%b Profile:
+	= markdown(resource.profile)
+
+%p
+	%b Order No.
+	= resource.order_no
+	
+%p
+	%b Published?
+	= resource.published
+
+
+= link_to 'Edit', edit_admin_member_path(resource)
+\|
+= link_to 'Back', admin_members_path

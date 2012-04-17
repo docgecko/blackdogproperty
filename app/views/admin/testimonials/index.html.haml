@@ -1,0 +1,17 @@
+%h1 Listing admin_testimonials
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @admin_testimonials.each do |admin_testimonial|
+    %tr
+      %td= link_to 'Show', admin_testimonial
+      %td= link_to 'Edit', edit_admin_testimonial_path(admin_testimonial)
+      %td= link_to 'Destroy', admin_testimonial, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Testimonial', new_admin_testimonial_path

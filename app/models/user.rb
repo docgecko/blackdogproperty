@@ -39,4 +39,7 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  
+  # Other additional fields
+  field :admin, :type => Boolean, :default => false
 end

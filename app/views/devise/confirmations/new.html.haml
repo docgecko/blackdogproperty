@@ -1,0 +1,33 @@
+- content_for :title do
+	Resend confirmation
+	
+- content_for :link_canonical do
+	confirmation/new
+
+- content_for :auth_header do
+	.cap.top
+	%h1 Resend confirmation
+	
+- content_for :meta_description do
+	Resend confirmation - provide your email address to receive new confirmation instructions
+
+- content_for :auth_main do
+	= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:autocomplete => "off"}) do |f|
+		/ = devise_error_messages!
+		= render 'shared/email_errors', :target => resource
+		
+		%h2
+			Didn't receive confirmation instructions?
+		%p
+			Enter your email address below and we will send you new instructions.
+
+		%h2
+			= f.label :email, 'Enter your email address'
+			= f.text_field :email, :maxlength => 255
+
+		= f.submit "Resend confirmation instructions", :class => 'buttonBasic'
+			
+- content_for :auth_footer do
+	.footer.cap.body_grey
+		= render 'devise/shared/return_to_signin'
+	.cap.bottom_grey

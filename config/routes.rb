@@ -1,6 +1,12 @@
 Blackdogproperty::Application.routes.draw do
   
-  devise_for :users
+  namespace :admin do
+    resources :properties
+    resources :members
+    resources :testimonials
+  end
+
+  devise_for :users, :path => "/", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'confirmation' }
   
   resources :sales, :only => :index
   match 'sales/about' => 'sales#about'

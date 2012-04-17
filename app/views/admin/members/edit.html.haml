@@ -1,0 +1,10 @@
+- content_for :title do
+	Admin << Edit Member
+	
+%h1 Admin: Edit Member
+
+= render 'form'
+
+= link_to 'Show', admin_member_path
+\|
+= link_to 'Back', admin_members_path

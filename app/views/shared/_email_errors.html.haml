@@ -1,0 +1,6 @@
+- if resource.errors.any?
+	#flash
+		.alert
+			- resource.errors.full_messages.each do |msg|
+				= msg
+				%br

@@ -1,0 +1,39 @@
+- content_for :title do
+	Login to your account
+	
+- content_for :link_canonical do
+	login
+	
+- content_for :auth_header do
+	%h1 Login
+	
+- content_for :meta_description do
+	Login to your account
+
+- content_for :auth_main do
+	= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:autocomplete => "off"}) do |f|
+		= render 'shared/flashes', :target => resource
+		
+		%h2
+			= f.label :email
+			%br
+			= f.text_field :email, :maxlength => 255
+
+		%h2
+			= f.label :password
+			%br
+			= f.password_field :password, :maxlength => 20
+		
+		- if devise_mapping.rememberable?
+			%h2
+				= f.check_box :remember_me, :class => 'auto'
+				= f.label :remember_me, 'Keep me signed in for 2 weeks', :class => 'remember_me'
+				
+		= f.submit "Login", :class => 'buttonBasic'
+
+- content_for :auth_footer do
+	.footer.cap.body_grey
+		= render 'devise/shared/forgot_password'
+		%br
+		= render 'devise/shared/confirmation_instructions'
+	.cap.bottom_grey

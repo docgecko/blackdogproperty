@@ -1,0 +1,84 @@
+- content_for :head do
+	= javascript_include_tag "validate/user"
+
+- content_for :header_hanger do
+	= render 'shared/hanger/go_to_dashboard'
+
+- content_for :title do
+	My Account
+	
+- content_for :meta_description do
+	Sign up to create your InfraJobs account - manage all of your job adverts from one place
+		
+#open
+	= render 'shared/flashes'
+
+	#containerAccount
+		%h1 Update your account settings
+
+		= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off", :method => :put }) do |f|
+			= render 'shared/email_errors', :resource => resource
+
+			%hr
+		
+			%table#account
+				%tr
+					%td.label= f.label :first_name
+					%td
+						= f.text_field :first_name, :size => 50, :maxlength => 255
+				
+				%tr
+					%td.label= f.label :last_name
+					%td
+						= f.text_field :last_name, :size => 50, :maxlength => 255
+				
+				%tr
+					%td.label= f.label :email
+					%td
+						= f.text_field :email, :size => 50, :maxlength => 255
+						%p.note
+							This is how we will keep in touch with you (we do not share this information)
+
+				%tr
+					%td.label= f.label :password, "New password"
+					%td
+						= f.password_field :password, :size => 30, :maxlength => 20
+						%p.note
+							Leave blank if you don't want to change it.					
+								
+				%tr
+					%td.label= f.label :password_confirmation, "Confirm new password"
+					%td
+						= f.password_field :password_confirmation, :size => 30, :maxlength => 128
+						%p.note
+							6 characters or longer.
+						
+				%p
+					%td
+					%td
+						= f.check_box :receive_newsletter
+						= f.label :receive_newsletter, "I would like to receive InfraJobs news and offers", :class => 'receiveNewsletterLabel'
+				
+			#update
+				.actions
+					= f.submit "Update account settings", :id => "goupdate", :class => 'button'
+					%br
+					%br
+		
+			%hr
+
+			%table#delete
+				%tr
+					%td.label{:style => 'width: 183px'}= label_tag "Delete account"
+					%td
+						%span{:style => 'color: black'}
+							If you no longer want to use InfraJobs, you can
+							= link_to "deactivate your account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete
+							%br
+							%p.note
+								%strong
+									Note: Deactivation will permanently delete all of your information.
+								Please be certain that this is what your require.
+
+- content_for :footer do
+	= render 'shared/navigation/footer'
