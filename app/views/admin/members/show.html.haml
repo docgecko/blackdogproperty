@@ -3,26 +3,28 @@
 	
 %h1 Admin: Show Member
 
-%p
-	%b Title:
-	= resource.name
+%h4 Team Member Information
 
-%p
-	%b Image:
-%p
-	= image_tag resource.avatar.url(:team)
+%table
+	%tr
+		%td.label Title:
+		%td= resource.name
 
-%p
-	%b Profile:
-	= markdown(resource.profile)
+	%tr
+		%td Image:
+		%td= image_tag resource.avatar.url(:team)
 
-%p
-	%b Order No.
-	= resource.order_no
+	%tr
+		%td Profile:
+		%td= markdown(resource.profile)
+
+	%tr
+		%td Order No.
+		%td= resource.order_no
 	
-%p
-	%b Published?
-	= resource.published
+	%tr
+		%td Published?
+		%td= yes_or_no(resource.published)
 
 
 = link_to 'Edit', edit_admin_member_path(resource)

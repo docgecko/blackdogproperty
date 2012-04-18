@@ -1,6 +1,32 @@
-%p#notice= notice
+- content_for :title do
+	Admin << Show Testimonial
+	
+%h1 Admin: Show Testimonial
+
+%h4 Testimonial Information
+
+%table
+	%tr
+		%td.label Name:
+		%td= resource.name
+
+	%tr
+		%td Location:
+		%td= resource.location
+
+	%tr
+		%td Details:
+		%td= markdown(resource.details)
+
+	%tr
+		%td Order No.
+		%td= resource.order_no
+	
+	%tr
+		%td Published?
+		%td= yes_or_no(resource.published)
 
 
-= link_to 'Edit', edit_admin_testimonial_path(@admin_testimonial)
+= link_to 'Edit', edit_admin_testimonial_path(resource)
 \|
 = link_to 'Back', admin_testimonials_path

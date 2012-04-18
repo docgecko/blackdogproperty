@@ -1,29 +1,34 @@
 - content_for :title do
-  Admin << Listing Members
+	Admin << Listing Members
 
 %h1 Admin: Listing Members
 
-%table
-  %tr
-    %th Member
-    %th Image
-    %th Profile
-    %th Order No.
-    %th Published
-    %th
-    %th
-    %th
+%h4 Team Members Information
 
-  - collection.each do |member|
-    %tr
-      %td= member.name
-      %td= member.image
-      %td= markdown(member.profile)
-      %td= member.order_no
-      %td= member.published
-      %td= link_to 'Show', [:admin, member]
-      %td= link_to 'Edit', edit_admin_member_path(member)
-      %td= link_to 'Destroy', [:admin, member], :confirm => 'Are you sure?', :method => :delete
+%table
+	%tr
+		%th Member
+		%th Image
+		%th Profile
+		%th Order No.
+		%th Published
+		%th
+		%th
+		%th
+
+	- collection.each do |member|
+		%tr
+			%td= member.name
+			%td= image_tag member.avatar.url(:team)
+			%td= markdown(member.profile)
+			%td.center= member.order_no
+			%td.center= yes_or_no(member.published)
+			%td.links
+				= link_to 'Show', [:admin, member]
+				%br
+				= link_to 'Edit', edit_admin_member_path(member)
+				%br
+				= link_to 'Destroy', [:admin, member], :confirm => 'Are you sure?', :method => :delete
 
 %br
 

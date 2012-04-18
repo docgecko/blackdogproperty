@@ -1,16 +1,34 @@
-%h1 Listing admin_testimonials
+- content_for :title do
+	Admin << Listing Properties
+
+%h1 Admin: Listing Testimonials
+
+%h4 BlackDog Testimonials
 
 %table
-  %tr
-    %th
-    %th
-    %th
+	%tr
+		%th Name
+		%th Location
+		%th Details
+		%th Order No.
+		%th Published
+		%th
+		%th
+		%th
 
-  - @admin_testimonials.each do |admin_testimonial|
-    %tr
-      %td= link_to 'Show', admin_testimonial
-      %td= link_to 'Edit', edit_admin_testimonial_path(admin_testimonial)
-      %td= link_to 'Destroy', admin_testimonial, :confirm => 'Are you sure?', :method => :delete
+	- collection.each do |testimonial|
+		%tr
+			%td= testimonial.name
+			%td= testimonial.location
+			%td.justify= markdown(testimonial.details)
+			%td.center= testimonial.order_no
+			%td.center= yes_or_no(testimonial.published)
+			%td.links
+				= link_to 'Show', [:admin, testimonial]
+				%br
+				= link_to 'Edit', edit_admin_testimonial_path(testimonial)
+				%br
+				= link_to 'Destroy', [:admin, testimonial], :confirm => 'Are you sure?', :method => :delete
 
 %br
 

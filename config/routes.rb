@@ -1,7 +1,9 @@
 Blackdogproperty::Application.routes.draw do
   
   namespace :admin do
-    resources :properties
+    resources :properties do
+      resources :photos
+    end
     resources :members
     resources :testimonials
   end

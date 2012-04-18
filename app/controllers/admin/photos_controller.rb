@@ -1,5 +1,5 @@
 module Admin
-  class TestimonialsController < BaseController
+  class PhotosController < BaseController
     before_filter :authenticate_user!
     layout 'admin'
 

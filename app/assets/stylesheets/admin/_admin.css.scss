@@ -2,11 +2,38 @@
 
 /*---------- Tables ----------*/
 table {
+	margin-bottom: 15px;
 	th {
 		color: $blue;
+		text-align: left;
 	}
-	td {
-		color: $white;
+	tr {
+		td {
+			font-size: 12px;
+			margin-top: 0;
+			padding: 3px;
+			color: $white;
+			vertical-align: top;
+			&.label {
+				width: 200px;
+			}
+			&.center {
+				text-align: center;
+			}
+			&.left {
+				text-align: left;
+			}
+			&.justify {
+				text-align: justify;
+			}
+			&.links {
+				font-size: 10px;
+			}
+			p {
+				font-size: 12px;
+				margin-top: 0;
+			}
+		}		
 	}
 	a {
 		color: $blue;
@@ -21,4 +48,23 @@ a {
 	&:hover {
 		text-decoration: underline;	
 	}
+	&:hover {
+		color: $blue;
+	}
 }
+
+p {
+	&.note {
+		color: $gray;
+		margin: 0 0 5px 0;
+		padding: 0;
+	}
+}
+
+h4 {
+	padding-bottom: 7px;
+	font-size: 15px;
+	color: $blue;
+	border-bottom: thin dotted $gray;
+}
+

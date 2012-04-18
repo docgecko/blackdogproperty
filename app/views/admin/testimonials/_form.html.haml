@@ -1,10 +1,35 @@
-= form_for @admin_testimonial do |f|
-  -if @admin_testimonial.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@admin_testimonial.errors.count, "error")} prohibited this admin_testimonial from being saved:"
-      %ul
-        - @admin_testimonial.errors.full_messages.each do |msg|
-          %li= msg
+= form_for [:admin, resource], :html => { :autocomplete => "off" } do |f|
+	- if resource.errors.any?
+		#errorExplanation
+			%h2= "#{pluralize(resource.errors.count, "error")} prohibited this testimonial from being saved:"
+			%ul
+				- resource.errors.full_messages.each do |msg|
+					%li= msg
 
-  .actions
-    = f.submit 'Save'
+	%h4 Testimonial Details
+
+	%table
+		%tr
+			%td.label= f.label :name
+			%td= f.text_field :name, :size => 50
+
+		%tr
+			%td.label= f.label :location
+			%td= f.text_field :location, :size => 50
+
+		%tr
+			%td.label= f.label :details
+			%td= f.text_area :details, :size => "70x20"
+
+		%tr
+			%td.label= f.label :order_no
+			%td= f.text_field :order_no, :size => 2
+
+		%tr
+			%td.label= f.label :published, "Published?"
+			%td
+				= f.check_box :published
+				%p.note Note: check box if published
+
+	.actions
+		= f.submit 'Save'

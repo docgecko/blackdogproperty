@@ -1,7 +1,10 @@
-%h1 Editing admin_property
+- content_for :title do
+	Admin << Edit Property
+	
+%h1 Admin: Edit Property
 
 = render 'form'
 
-= link_to 'Show', @admin_property
+= link_to 'Show', admin_property_path
 \|
 = link_to 'Back', admin_properties_path

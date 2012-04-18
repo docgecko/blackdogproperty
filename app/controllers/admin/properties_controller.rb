@@ -7,7 +7,7 @@ module Admin
     respond_to :html
     
     def index
-      collection = resource_class.all.page
+      collection = resource_class.all.page.asc(:order_no)
     end
   end
 end

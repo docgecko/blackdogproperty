@@ -1,7 +1,10 @@
-%h1 Editing admin_testimonial
+- content_for :title do
+	Admin << Edit Testimonial
+	
+%h1 Admin: Edit Testimonial
 
 = render 'form'
 
-= link_to 'Show', @admin_testimonial
+= link_to 'Show', admin_testimonial_path
 \|
 = link_to 'Back', admin_testimonials_path

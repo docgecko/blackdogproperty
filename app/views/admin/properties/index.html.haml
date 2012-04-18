@@ -1,17 +1,52 @@
-%h1 Listing admin_properties
+- content_for :title do
+	Admin << Listing Properties
+
+%h1 Admin: Listing Properties
+
+%h4 Properties Information
 
 %table
-  %tr
-    %th
-    %th
-    %th
+	%tr
+		%th Title
+		%th Mini Bio
+		%th Reference
+		%th Images
+		%th Description
+		%th Facilities
+		%th Type
+		%th Price
+		%th Location
+		%th Order No.
+		%th Featured
+		%th Published
+		%th
+		%th
+		%th
 
-  - @admin_properties.each do |admin_property|
-    %tr
-      %td= link_to 'Show', admin_property
-      %td= link_to 'Edit', edit_admin_property_path(admin_property)
-      %td= link_to 'Destroy', admin_property, :confirm => 'Are you sure?', :method => :delete
+	- collection.each do |property|
+		%tr
+			%td= property.title
+			%td= property.bio
+			%td= property.reference
+			%td= link_to "Images", admin_photos_path
+			%td= markdown(property.description)
+			%td= markdown(property.facilities)
+			%td= property.type
+			%td
+				= property.price
+				%br
+				= property.price_details
+			%td== #{property.location} - Long:#{property.longitude}, Lat:#{property.latitude}
+			%td= property.order_no
+			%td= property.featured
+			%td= yes_or_no(property.published)
+			%td.links
+				= link_to 'Show', [:admin, property]
+				%br
+				= link_to 'Edit', edit_admin_property_path(property)
+				%br
+				= link_to 'Destroy', [:admin, property], :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New Property', new_admin_property_path
+= link_to 'New property', new_admin_property_path

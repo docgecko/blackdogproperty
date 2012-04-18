@@ -1,10 +1,103 @@
-= form_for @admin_property do |f|
-  -if @admin_property.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@admin_property.errors.count, "error")} prohibited this admin_property from being saved:"
-      %ul
-        - @admin_property.errors.full_messages.each do |msg|
-          %li= msg
+= form_for [:admin, resource], :html => { :multipart => true, :autocomplete => "off" } do |f|
+	- if resource.errors.any?
+		#errorExplanation
+			%h2= "#{pluralize(resource.errors.count, "error")} prohibited this property from being saved:"
+			%ul
+				- resource.errors.full_messages.each do |msg|
+					%li= msg
 
-  .actions
-    = f.submit 'Save'
+	%h4 General Property Information
+	
+	%table
+		%tr
+			%td.label= f.label :title
+			%td= f.text_field :title, :size => 50
+			
+		%tr
+			%td.label= f.label :location
+			%td= f.text_field :location, :size => 50
+
+		%tr
+			%td.label= f.label :type
+			%td
+				= f.radio_button :type, 0, :checked => params[:type] == 0
+				= f.label :type_rental, 'For rental'
+				%br/
+				= f.radio_button :type, 1, :checked => params[:type] == 1
+				= f.label :type_sale, 'For sale'
+				%br/
+				= f.radio_button :type, 2, :checked => params[:type] == 2
+				= f.label :type_renovation, 'Renovation'
+
+		%tr
+			%td.label= f.label :reference
+			%td= f.text_field :reference, :size => 50
+
+	%h4 Property Details
+
+	%table
+		%tr
+			%td.label= f.label :bio
+			%td= f.text_area :bio, :size => "70x10"
+
+		%tr
+			%td.label= f.label :description
+			%td= f.text_area :description, :size => "70x20"
+
+		%tr
+			%td.label= f.label :facilities
+			%td= f.text_area :facilities, :size => "50x20"
+
+	%h4 Property Pricing
+
+	%table
+		%tr
+			%td.label= f.label :price
+			%td
+				= f.text_field :price, :size => 20
+				%p.note Price required for sales properties only
+				 
+		%tr
+			%td.label= f.label :price_details
+			%td
+				= f.text_area :price_details, :size => "40x10"
+				%p.note Price details required for rental properties only
+
+
+	/ %p
+	/ 	%b= f.label :image
+	/ %p
+	/ 	- unless resource.new_record? || !resource.avatar?
+	/ 		= image_tag resource.avatar.url(:team), :alt => 'Avatar', :title => 'Current avatar'
+	/ 		%br
+	/ 	= f.file_field :avatar
+	/ 	= f.hidden_field :avatar_cache
+	/ 
+	/ 	%br
+	/ 	%p.note Optional - Provide the avatar of the member in GIF, JPG, or PNG image format.
+	/ 	%p.note Images larger than 154px high by 127px wide will be automatically resized.
+	/ 	- if resource.new_record? || !resource.avatar?
+	/ 		%p.note This image will appear on the BlackDog Team page.
+	/ 	- else 
+	/ 		#logoDelete
+	/ 			%p
+	/ 				= f.check_box :remove_avatar
+	/ 				= f.label :remove_avatar
+	/ 			%p.note Oops, don't want this current avatar! Delete it by ticking the Check Box above, or select a new avatar by pressing the Choose File button.
+	/ 			
+	/ %p
+	/ 	%b= f.label :profile
+	/ %p= f.text_area :profile, :size => "70x20"
+	/ 
+	/ %p
+	/ 	%b= f.label :order_no
+	/ %p= f.text_field :order_no, :size => 2
+	/ 
+	/ %p
+	/ 	%b= f.label :published, "Published?"
+	/ 	%p.note Check box if published
+	/ %p= f.check_box :published
+	/ 
+	/ 
+	/ .actions
+	/ 	= f.submit 'Save'
