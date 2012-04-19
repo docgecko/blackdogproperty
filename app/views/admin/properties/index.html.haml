@@ -3,20 +3,22 @@
 
 %h1 Admin: Listing Properties
 
-%h4 Properties Information
+= render 'shared/admin/breadcrumbs/property'
+
+%h4 BlackDog Properties
 
 %table
 	%tr
 		%th Title
-		%th Mini Bio
-		%th Reference
-		%th Images
-		%th Description
-		%th Facilities
-		%th Type
-		%th Price
 		%th Location
-		%th Order No.
+		%th Type
+		%th Ref.
+		%th Bio
+		%th Desc.
+		%th Facilities
+		%th Imgs
+		%th Price
+		%th Ord No
 		%th Featured
 		%th Published
 		%th
@@ -26,20 +28,25 @@
 	- collection.each do |property|
 		%tr
 			%td= property.title
-			%td= property.bio
-			%td= property.reference
-			%td= link_to "Images", admin_photos_path
-			%td= markdown(property.description)
-			%td= markdown(property.facilities)
-			%td= property.type
-			%td
-				= property.price
-				%br
-				= property.price_details
 			%td== #{property.location} - Long:#{property.longitude}, Lat:#{property.latitude}
-			%td= property.order_no
-			%td= property.featured
-			%td= yes_or_no(property.published)
+			%td= property.type
+			%td= property.reference
+			%td= truncate(property.bio, :length => 100, :omission => '... (more)')
+			%td= markdown(truncate(property.description, :length => 100, :omission => '... (more)'))
+			%td= markdown(truncate(property.facilities, :length => 100, :omission => '... (more)'))
+			%td.center
+				= link_to "Images", admin_property_photos_path(property.id)
+				%br
+				== p:#{photos_published = Photo.where(property_id: property.id, published: true).count}
+				%br
+				== t:#{photos_published = Photo.where(property_id: property.id).count}
+			%td
+				= property.price_sale
+				%br
+				= property.price_rental
+			%td.center= property.order_no
+			%td.center= property.featured
+			%td.center= yes_or_no(property.published)
 			%td.links
 				= link_to 'Show', [:admin, property]
 				%br

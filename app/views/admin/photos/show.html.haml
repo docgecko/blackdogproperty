@@ -1,0 +1,48 @@
+- content_for :title do
+	Admin << Show Photo
+	
+%h1 Admin: Show Photo
+
+%h4 Photo Details
+
+%table
+	%tr
+		%td.label Title
+		%td= resource.title
+
+	%tr
+		%td Description
+		%td= resource.description
+
+	%tr
+		%td Photos
+		%td
+			%table
+				%tr
+					%th Gallery
+					%th Slideshow
+					%th Thumbnail
+				%tr
+					%td= image_tag resource.image.url(:gallery)
+					%td= image_tag resource.image.url(:slide)
+					%td= image_tag resource.image.url(:thumb)
+
+%h4 Publish Details
+
+%table	
+	%tr
+		%td.label Order No.
+		%td= resource.order_no
+
+	%tr
+		%td Featured?
+		%td= yes_or_no(resource.featured)
+	
+	%tr
+		%td Published?
+		%td= yes_or_no(resource.published)
+
+
+= link_to 'Edit', edit_admin_property_photo_path(params[:property_id], resource)
+\|
+= link_to 'Back', admin_property_photos_path(params[:property_id])

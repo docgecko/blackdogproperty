@@ -68,3 +68,22 @@ h4 {
 	border-bottom: thin dotted $gray;
 }
 
+.block {
+	.border {
+		background-image: repeat-x;
+	}
+	&.admin	{
+		width: 1000px;					
+	}	
+}
+
+#breadcrumbs {
+	margin: 15px 0 0 0;
+	padding: 0;
+	color: $white;
+	a {
+		color: $blue;
+		&:hover {			
+		}
+	}
+}

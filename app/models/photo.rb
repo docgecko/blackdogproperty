@@ -6,14 +6,20 @@ class Photo
   # Fields
   field :title
   field :description
-  field :photo
+  field :image
   field :order_no, :type => Integer
+  field :featured
+  field :published, :type => Boolean, :default => false
   field :property_id
 
-  attr_accessible :title, :description,
-                  :photo, :photo_cache, :remove_photo, 
-                  :order_no, :property_id
+  attr_accessible :title, :description, 
+                  :image, :image_cache, :remove_image, 
+                  :order_no, :featured, :published, 
+                  :property_id
 
   # References
   belongs_to :property
+  
+  # Carrierwave
+  mount_uploader :image, PhotoUploader
 end

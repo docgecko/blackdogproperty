@@ -6,6 +6,8 @@
 				- resource.errors.full_messages.each do |msg|
 					%li= msg
 
+	= render 'shared/admin/breadcrumbs/property'
+
 	%h4 General Property Information
 	
 	%table
@@ -20,14 +22,10 @@
 		%tr
 			%td.label= f.label :type
 			%td
-				= f.radio_button :type, 0, :checked => params[:type] == 0
-				= f.label :type_rental, 'For rental'
-				%br/
-				= f.radio_button :type, 1, :checked => params[:type] == 1
-				= f.label :type_sale, 'For sale'
-				%br/
-				= f.radio_button :type, 2, :checked => params[:type] == 2
-				= f.label :type_renovation, 'Renovation'
+				- @types.each do |type|
+					= check_box_tag "property[type_ids][]", type.name, resource.type_ids.include?(type.name), :id => ("property_type_ids_#{type.name}")
+					= f.label "type_ids", type.description, :id => :check_box, :value => type.name
+					%br	
 
 		%tr
 			%td.label= f.label :reference
@@ -46,58 +44,58 @@
 
 		%tr
 			%td.label= f.label :facilities
-			%td= f.text_area :facilities, :size => "50x20"
+			%td= f.text_area :facilities, :size => "70x20"
 
 	%h4 Property Pricing
 
 	%table
 		%tr
-			%td.label= f.label :price
+			%td.label= f.label :price_sale
 			%td
-				= f.text_field :price, :size => 20
-				%p.note Price required for sales properties only
+				= f.text_field :price_sale, :size => 20
+				%p.note Note: price required for sales properties only
 				 
 		%tr
-			%td.label= f.label :price_details
+			%td.label= f.label :price_rental
 			%td
-				= f.text_area :price_details, :size => "40x10"
-				%p.note Price details required for rental properties only
+				= f.text_area :price_rental, :size => "40x10"
+				%p.note Note: price details required for rental properties only
 
+	%h4 GPS Details
 
-	/ %p
-	/ 	%b= f.label :image
-	/ %p
-	/ 	- unless resource.new_record? || !resource.avatar?
-	/ 		= image_tag resource.avatar.url(:team), :alt => 'Avatar', :title => 'Current avatar'
-	/ 		%br
-	/ 	= f.file_field :avatar
-	/ 	= f.hidden_field :avatar_cache
-	/ 
-	/ 	%br
-	/ 	%p.note Optional - Provide the avatar of the member in GIF, JPG, or PNG image format.
-	/ 	%p.note Images larger than 154px high by 127px wide will be automatically resized.
-	/ 	- if resource.new_record? || !resource.avatar?
-	/ 		%p.note This image will appear on the BlackDog Team page.
-	/ 	- else 
-	/ 		#logoDelete
-	/ 			%p
-	/ 				= f.check_box :remove_avatar
-	/ 				= f.label :remove_avatar
-	/ 			%p.note Oops, don't want this current avatar! Delete it by ticking the Check Box above, or select a new avatar by pressing the Choose File button.
-	/ 			
-	/ %p
-	/ 	%b= f.label :profile
-	/ %p= f.text_area :profile, :size => "70x20"
-	/ 
-	/ %p
-	/ 	%b= f.label :order_no
-	/ %p= f.text_field :order_no, :size => 2
-	/ 
-	/ %p
-	/ 	%b= f.label :published, "Published?"
-	/ 	%p.note Check box if published
-	/ %p= f.check_box :published
-	/ 
-	/ 
-	/ .actions
-	/ 	= f.submit 'Save'
+	%table
+		%tr
+			%td.label= f.label :longitude
+			%td= f.text_field :longitude, :size => 10
+
+		%tr
+			%td.label= f.label :latitude
+			%td= f.text_field :latitude, :size => 10
+
+		%tr
+			%td.label= f.label :gmaps
+			%td= f.text_field :gmaps, :size => 10
+
+	%h4 Publish Details
+	
+	%table
+		%tr
+			%td.label= f.label :order_no
+			%td= f.text_field :order_no, :size => 2
+
+		%tr
+			%td.label= f.label :featured, "Featured?"
+			%td
+				= f.check_box :featured
+				%p.note Note: check box if this properties images will appear on the Homepage
+
+		%tr
+			%td.label= f.label :published, "Published?"
+			%td
+				= f.check_box :published
+				%p.note Note: check box if published
+				
+	= render 'shared/admin/photos/manage', :property_id => @property.id
+
+	.actions
+		= f.submit 'Save'

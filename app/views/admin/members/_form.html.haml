@@ -14,7 +14,7 @@
 			%td= f.text_field :name, :size => 50
 
 		%tr
-			%td.label= f.label :image
+			%td.label= f.label :avatar, 'Photo'
 			%td
 				- unless resource.new_record? || !resource.avatar?
 					= image_tag resource.avatar.url(:team), :alt => 'Avatar', :title => 'Current avatar'

@@ -1,0 +1,63 @@
+= form_for [:admin, @property, resource], :html => { :multipart => true } do |f|
+	- if resource.errors.any?
+		#errorExplanation
+			%h2= "#{pluralize(resource.errors.count, "error")} prohibited this photo from being saved:"
+			%ul
+				- resource.errors.full_messages.each do |msg|
+					%li= msg
+
+	= render 'shared/admin/breadcrumbs/property'
+
+	%h4 Photo Details
+	
+	%table
+		%tr
+			%td.label= f.label :title
+			%td= f.text_field :title, :size => 50
+			
+		%tr
+			%td.label= f.label :description
+			%td= f.text_area :description, :size => "70x10"
+
+		%tr
+			%td.label= f.label :image
+			%td
+				- unless resource.new_record? || !resource.image?
+					= image_tag resource.image.url(:admin), :alt => 'Photo', :title => 'Current photo'
+					%br
+				= f.file_field :image
+				= f.hidden_field :image_cache
+
+				%br
+				%p.note Optional - Provide the photo of the property in GIF, JPG, or PNG image format.
+				%p.note Images will be automatically resized as gallery, slideshow and thumbnail images.
+				- if resource.new_record? || !resource.image?
+					%p.note This image will appear against the property listed above.
+				- else 
+					#logoDelete
+						%p
+							= f.check_box :remove_image
+							= f.label :remove_image
+						%p.note Oops, don't want this current photo! Delete it by ticking the Check Box above, or select a new photo by pressing the Choose File button.
+
+	%h4 Publish Details
+	
+	%table
+		%tr
+			%td.label= f.label :order_no
+			%td= f.text_field :order_no, :size => 2
+
+		%tr
+			%td.label= f.label :featured, "Featured?"
+			%td
+				= f.check_box :featured
+				%p.note Note: check box if this photo will appear on the listings pages
+
+		%tr
+			%td.label= f.label :published, "Published?"
+			%td
+				= f.check_box :published
+				%p.note Note: check box if published
+				
+	.actions
+		= f.submit 'Save'

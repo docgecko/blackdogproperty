@@ -1,30 +1,88 @@
 - content_for :title do
 	Admin << Show Property
-	
+
 %h1 Admin: Show Property
 
-%p
-	%b Title:
-	= resource.name
+= render 'shared/admin/breadcrumbs/property'
 
-%p
-	%b Image:
-%p
-	= image_tag resource.avatar.url(:team)
+%h4 Property Information
 
-%p
-	%b Profile:
-	= markdown(resource.profile)
+%table
+	%tr
+		%td.label Title:
+		%td= resource.title
 
-%p
-	%b Order No.
-	= resource.order_no
+	%tr
+		%td Location:
+		%td= resource.location
+
+	%tr
+		%td Type:
+		%td= property_types(resource.type_ids)
+
+	%tr
+		%td Reference:
+		%td= resource.reference
+
+%h4 Property Details
+
+%table
+	%tr
+		%td.label Bio
+		%td= resource.bio
+		
+	%tr
+		%td Description
+		%td= resource.description
+
+	%tr
+		%td Facilities
+		%td= resource.facilities
+
+%h4 Property Pricing
+
+%table
+	%tr
+		%td.label Sales Price
+		%td= resource.price_sale
+
+	%tr
+		%td Rental Price Details
+		%td= resource.price_rental
+
+%h4 GPS Details
+
+%table
+	%tr
+		%td.label Longitude
+		%td= resource.longitude
 	
-%p
-	%b Published?
-	= yes_or_no(resource.published)
+	%tr
+		%td Latitude
+		%td= resource.latitude
+
+	%tr
+		%td GMaps
+		%td= resource.gmaps
+		
+%h4 Publish Details
+
+%table
+	%tr
+		%td.label Order No.
+		%td= resource.order_no
+
+	%tr
+		%td Featured?
+		%td= yes_or_no(resource.featured)
+	
+	%tr
+		%td Published?
+		%td= yes_or_no(resource.published)
+		
+= render 'shared/admin/photos/manage',  :property_id => @property.id
 
 
-= link_to 'Edit', edit_admin_member_path(resource)
+= link_to 'Edit', edit_admin_property_path(resource)
 \|
-= link_to 'Back', admin_members_path
+= link_to 'Back', admin_properties_path

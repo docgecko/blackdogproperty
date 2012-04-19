@@ -24,10 +24,12 @@
 		
 		#page
 			.wrapper
-				.block
+				.block.admin
+					= render 'shared/flashes'
+				
+				.block.admin
 					.border
 						= yield
-					.bottom
 		
 	#footer
 		.wrapper

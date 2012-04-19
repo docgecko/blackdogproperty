@@ -38,16 +38,21 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :scale => [50, 50]
   # end
+  # All images have a 3x2 ratio (of width to height)
   version :gallery do
-    process :resize_to_limit => [304, 544]
+    process :resize_to_limit => [543, 362]
   end
 
   version :slide do
-    process :resize_to_limit => [258, 379]
+    process :resize_to_limit => [378, 252]
+  end
+  
+  version :admin do
+    process :resize_to_limit => [232, 155]
   end
 
   version :thumb do
-    process :resize_to_limit => [50, 75]
+    process :resize_to_limit => [75, 50]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

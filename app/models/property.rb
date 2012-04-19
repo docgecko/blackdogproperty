@@ -6,14 +6,14 @@ class Property
   # Fields
   field :title
   key :title
-  field :bio
+  field :location
   field :reference
+  field :bio
   field :description
   field :facilities
-  field :type, :type => Integer
-  field :price
-  field :price_details
-  field :location
+  field :type_ids
+  field :price_sale
+  field :price_rental
   field :longitude, :type => Float
   field :latitude, :type => Float
   field :gmaps, :type => Boolean
@@ -22,11 +22,15 @@ class Property
   field :published, :type => Boolean, :default => false
   
   # Setup accessible (or protected) attributes
-  attr_accessible :title, :bio, :decription, :facilities, :type, 
-                  :price, :price_details, :reference,
-                  :location, :longitude, :latitude, :gmaps,
+  attr_accessible :title, :location, :reference, :bio,
+                  :description, :facilities, :type_ids, 
+                  :price_sale, :price_rental, :reference,
+                  :longitude, :latitude, :gmaps,
                   :order_no, :featured, :published
 
   # References
-  has_many :photos
+  has_many :photos, :dependent => :destroy
+  accepts_nested_attributes_for :photos
+  has_and_belongs_to_many :types, inverse_of: nil
+  
 end
