@@ -78,12 +78,14 @@ h4 {
 }
 
 #breadcrumbs {
-	margin: 15px 0 0 0;
-	padding: 0;
-	color: $white;
-	a {
-		color: $blue;
-		&:hover {			
+	&.admin {
+		margin: 15px 0 0 0;
+		padding: 0;
+		color: $white;
+		a {
+			color: $blue;
+			&:hover {			
+			}
 		}
 	}
 }

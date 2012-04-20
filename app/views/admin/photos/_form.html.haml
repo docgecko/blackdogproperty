@@ -23,7 +23,7 @@
 			%td.label= f.label :image
 			%td
 				- unless resource.new_record? || !resource.image?
-					= image_tag resource.image.url(:admin), :alt => 'Photo', :title => 'Current photo'
+					= image_tag resource.image.url(:list), :alt => 'Photo', :title => 'Current photo'
 					%br
 				= f.file_field :image
 				= f.hidden_field :image_cache

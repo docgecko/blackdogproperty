@@ -50,10 +50,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :france, 'France', location_country_path('france')
-    primary.item :spain, 'Spain', location_country_path('spain')
-    primary.item :portugal, 'Portugal', location_country_path('portugal')
-    primary.item :italy, 'Italy', location_country_path('italy')
+    primary.item :all, 'All', rentals_path
+    primary.item :france, 'France', rentals_search_path('france')
+    primary.item :spain, 'Spain', rentals_search_path('spain')
+    primary.item :portugal, 'Portugal', rentals_search_path('portugal')
+    primary.item :italy, 'Italy', rentals_search_path('italy')
     
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

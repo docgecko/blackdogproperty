@@ -42,13 +42,13 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :gallery do
     process :resize_to_limit => [543, 362]
   end
-
+  
   version :slide do
     process :resize_to_limit => [378, 252]
   end
   
-  version :admin do
-    process :resize_to_limit => [232, 155]
+  version :list do
+    process :resize_to_limit => [300, 200]
   end
 
   version :thumb do

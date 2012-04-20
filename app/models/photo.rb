@@ -8,7 +8,7 @@ class Photo
   field :description
   field :image
   field :order_no, :type => Integer
-  field :featured
+  field :featured, :type => Boolean, :default => false
   field :published, :type => Boolean, :default => false
   field :property_id
 

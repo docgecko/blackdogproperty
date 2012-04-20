@@ -1,0 +1,17 @@
+- content_for :title do
+	== Rentals in #{params[:country_id]} | BlackDog Property
+	
+- content_for :link_canonical do
+	rentals
+	
+.title
+	%h1== Rentals in #{@country.name}
+	= render "shared/location/search_navigation"
+	.line.search
+
+#results
+	- if @properties.empty?
+		%h2 No rental properties found.
+	- else
+		- for property in @properties
+			= render "shared/rental/property", :property => property

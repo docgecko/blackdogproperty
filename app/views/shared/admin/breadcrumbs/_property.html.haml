@@ -1,7 +1,7 @@
-#breadcrumbs
+#breadcrumbs.admin
 	Quick Navigation » 
 	= link_to_unless_current "All Properties", admin_properties_path
-	-if (controller_name == 'properties' && action_name != 'index')
+	-if (controller_name == "properties" and (action_name == 'edit' or action_name == "show"))
 		» 
 		== #{resource.title} (#{link_to_unless_current 'show', admin_property_path}|#{link_to_unless_current 'edit', edit_admin_property_path})
 		» Photos

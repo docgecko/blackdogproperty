@@ -7,6 +7,7 @@ class Property
   field :title
   key :title
   field :location
+  field :country_id
   field :reference
   field :bio
   field :description
@@ -16,13 +17,13 @@ class Property
   field :price_rental
   field :longitude, :type => Float
   field :latitude, :type => Float
-  field :gmaps, :type => Boolean
+  field :country_id
   field :order_no, :type => Integer
-  field :featured, :type => Integer
+  field :featured, :type => Boolean, :default => false
   field :published, :type => Boolean, :default => false
   
   # Setup accessible (or protected) attributes
-  attr_accessible :title, :location, :reference, :bio,
+  attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :type_ids, 
                   :price_sale, :price_rental, :reference,
                   :longitude, :latitude, :gmaps,
@@ -32,5 +33,6 @@ class Property
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :photos
   has_and_belongs_to_many :types, inverse_of: nil
+  belongs_to :country
   
 end

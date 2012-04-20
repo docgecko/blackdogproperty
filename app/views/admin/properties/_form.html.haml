@@ -20,6 +20,10 @@
 			%td= f.text_field :location, :size => 50
 
 		%tr
+			%td.label=f.label :country
+			%td= f.collection_select :country_id, @countries, :id, :name
+		
+		%tr
 			%td.label= f.label :type
 			%td
 				- @types.each do |type|
@@ -40,11 +44,11 @@
 
 		%tr
 			%td.label= f.label :description
-			%td= f.text_area :description, :size => "70x20"
+			%td= f.text_area :description, :size => "100x20"
 
 		%tr
 			%td.label= f.label :facilities
-			%td= f.text_area :facilities, :size => "70x20"
+			%td= f.text_area :facilities, :size => "100x20"
 
 	%h4 Property Pricing
 
@@ -71,10 +75,6 @@
 		%tr
 			%td.label= f.label :latitude
 			%td= f.text_field :latitude, :size => 10
-
-		%tr
-			%td.label= f.label :gmaps
-			%td= f.text_field :gmaps, :size => 10
 
 	%h4 Publish Details
 	

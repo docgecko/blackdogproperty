@@ -1,0 +1,7 @@
+= link_to rental_path(property.id), :class => :property do
+	%span.featured
+		- @photo = Photo.first(conditions: { property_id: property.id })
+		= @photo.present? ? image_tag(@photo.image.url(:list)) : image_tag("services/logo_blackdog.jpg", :border => 0)
+	%span.short
+		%h2= property.title
+		%span.bio= markdown(truncate(property.bio, :length => 530, :omission => '... (continued)'))

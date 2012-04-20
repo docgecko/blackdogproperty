@@ -38,6 +38,53 @@ puts 'SETTING UP PROPERTY TYPES'
 end
 puts 'All property types created'
 
+puts 'SETTING UP COUNTRIES'
+[
+  {
+    :name => 'France', 
+    :description => 'France is one of the prominent countries of the European Union and still attracts so much interest from foreign residents looking to relocate overseas. The country is truly unique this has an amazing variety of climates, sun, sea and snow. It is steeped in history and its architecture is both classical and chic.
+
+France is one of the true metropolitan countries of the world, as it integrates into its own a variety of different cultures over the centuries, which has in the past resulted in a number of internal disputes. The country is heavily infused with certain elements of religion and culture prevalent in different areas.
+
+The country is well known for its love of the arts and architecture and has a long and great history, taking in revolutions, wars and major changes in the way that the country is run, full, vibrant and headstrong. Its freedom of speech has attracted a number of outspoken and controversial figures to lead its political governance and has placed all areas of society under discussion.
+
+The housing market in France has historically been a lot steadier than for example the UK market (and many other European partners). A large number of European residents relocating to France where property prices are on average substantially lower.
+
+However, there is a large difference in pricing, depending on location, with older housing less expensive than new builds (this is a market which has attracted UK buyers, who tend to look for history and character for their properties).'
+  },
+  {
+    :name => 'Portugal', 
+    :description => 'Looking for romance, discovering culture, living adventure, relaxing? Indulge yourself in Portugal.
+
+Portugal has something for everyone. It is a country renowned for its famous golf courses and a haven for the sports minded holiday maker.
+
+Portugal has plenty of museums, stunning architecture and acres of stunning countryside, as well as the magical town of Sintra with its hilltop fairy tale palace and ancient castle. It is easy to overlook the beautiful historic cities and rich cultural centre of Lisbon.
+
+Portugal is host to long open shores and beaches reaching out to crystal deep blue waters and offset by dramatic cliff-top backdrops and landscapes where you can explore and soak up the sun.'
+  },
+  {
+    :name => 'Spain', 
+    :description => 'Spain offers a captivating landscape, sun-drenched and untamed to the south of the wild and majestic Pyrenees where this passionate nation works a mysterious magic.
+
+Diversity is on offer within the vast stretches of coastline, emerald green mountains and acres of abundant olive groves. Spain is dappled with culture. The rich passion of Flamenco, the Toreros (bull fights) and a spectacular selection of culinary mouth-watering flavours bring colour and vibrancy to this eclectic country.
+
+Bordered the West by the Atlantic and the East by the Mediterranean, Spain\'s glittering beaches attract holiday makers who seek the sun, surfing and golf. A zest for life creates an intense hedonistic vibe in the effervescent cities and if there is one thing which Spanish love it is to eat, drink and party!'
+  },
+  {
+    :name => 'Italy', 
+    :description => 'Italy is located in Southern Europe on the Italian Peninsula and it\'s bordered by the Mediterranean Sea, which hosts two Italian Islands: Sardinia and Sicily, each corner of this beautiful country will take you back to ancient times to Romeo and Juliet the Roman empire, amphitheatres, the leaning tower of Pisa and more.
+
+Florence and its artistic productions and fashion, Rome, the capital city known as the eternal city, Venice, the romantic city built under water, Verona, an imposing city setting of the drama "Romeo and Juliet" and Milan, the most fashionable city in Italy.
+
+Nature has a special place in every trip to Italy; the amazing panoramic natural resources and landscapes such as: The Alps in the North, The Bay of Naples and Mt. Vesuvius are some of the most famous views.
+
+A trip to Italy is not only about culture, art, history, paintings and museums but about the exclusive restaurants, pizzerias, cafes and a vibrant and passionate nightlife - whatever your age.'
+  }
+].each do |u|
+  Country.create(u)
+end
+puts 'All countries created'
+
 puts 'SETTING UP TEAM MEMBERS'
 [
   {

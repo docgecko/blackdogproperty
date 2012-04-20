@@ -2,6 +2,7 @@ module Admin
   class PropertiesController < BaseController
     before_filter :authenticate_user!
     before_filter :all_types, :only => [ :new, :edit, :show, :index ]
+    before_filter :all_countries, :only => [ :new, :edit, :show, :index ]
     layout 'admin'
 
     actions :all
@@ -14,6 +15,10 @@ module Admin
     private
       def all_types
         @types = Type.all
+      end
+      
+      def all_countries
+        @countries = Country.all
       end
   end
 end

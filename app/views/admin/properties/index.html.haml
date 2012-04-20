@@ -11,6 +11,7 @@
 	%tr
 		%th Title
 		%th Location
+		%th Country
 		%th Type
 		%th Ref.
 		%th Bio
@@ -18,6 +19,10 @@
 		%th Facilities
 		%th Imgs
 		%th Price
+		%th
+			Long.
+			%br
+			Lat.
 		%th Ord No
 		%th Featured
 		%th Published
@@ -29,7 +34,8 @@
 		%tr
 			%td= property.title
 			%td== #{property.location} - Long:#{property.longitude}, Lat:#{property.latitude}
-			%td= property.type
+			%td= property.country.name
+			%td= property_types(property.type_ids)
 			%td= property.reference
 			%td= truncate(property.bio, :length => 100, :omission => '... (more)')
 			%td= markdown(truncate(property.description, :length => 100, :omission => '... (more)'))
@@ -44,6 +50,9 @@
 				= property.price_sale
 				%br
 				= property.price_rental
+			%td
+				-if property.longitude? && property.latitude?
+					== #{property.longitude}, #{property.latitude}
 			%td.center= property.order_no
 			%td.center= property.featured
 			%td.center= yes_or_no(property.published)

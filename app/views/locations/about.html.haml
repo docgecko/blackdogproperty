@@ -7,11 +7,11 @@
 .head
 	.images
 		.row
-			= link_to (image_tag "location/explore_france.jpg"), location_static_path("about-france")
-			= link_to (image_tag "location/explore_spain.jpg"), location_static_path("about-spain")
+			= link_to (image_tag "location/explore_france.jpg"), location_country_path("france")
+			= link_to (image_tag "location/explore_spain.jpg"), location_country_path("spain")
 		.row
-			= link_to (image_tag "location/explore_portugal.jpg"), location_static_path("about-portugal")
-			= link_to (image_tag "location/explore_italy.jpg"), location_static_path("about-italy")
+			= link_to (image_tag "location/explore_portugal.jpg"), location_country_path("portugal")
+			= link_to (image_tag "location/explore_italy.jpg"), location_country_path("italy")
 			
 	.description
 		%h1= ("Location Consultancy Services").upcase

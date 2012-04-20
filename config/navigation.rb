@@ -52,7 +52,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :welcome, 'home', root_url
     primary.item :locations, 'location', location_about_path
     primary.item :sales, 'sales', sales_about_path
-    primary.item :rentals, 'rentals', rentals_about_path
+    primary.item :rentals, 'rentals', rentals_path
     primary.item :renovations, 'renovations', renovations_about_path
     primary.item :services, 'services' do |s|
       s.item :property, 'property management', services_static_path('property-management')

@@ -1,0 +1,17 @@
+- content_for :title do
+	== About #{@country.name} | BlackDog Property
+
+- content_for :link_canonical do
+	== location/about/#{@country.id}
+	
+.title
+	%h1== About #{@country.name}
+	= render "shared/location/countries_navigation"
+	.line.short
+
+.block.site
+	.border
+		.details
+			%p= markdown(@country.description)
+
+	.bottom

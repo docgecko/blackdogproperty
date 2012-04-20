@@ -6,7 +6,7 @@
 
 .countries {
 	position: relative;
-	top: -30px;
+	top: -37px;
 	float: right;
 	height: 36px;
 	ul {
@@ -14,16 +14,19 @@
 		margin: 0px;
 		padding: 0px;
 		color: $white;
-		line-height: 23px;
+		line-height: 27px;
 		font-size: 16px;
 		text-align: center;
 		li {
 			display: inline;
 			position: relative;
 			float: left;
-			padding: 4px 0px 9px 0px;
+			padding: 9px 0px 7px 0px;
 			margin: 0 6px 0 0;
 			background: url(linecopy.gif) no-repeat 50% 100%;
+			&.selected {
+				background: url(location/button_locate.gif) repeat-x;
+			}
 			a {
 				height: 36px;
 				padding: 13px 15px 11px 15px;

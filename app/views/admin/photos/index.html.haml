@@ -23,7 +23,7 @@
 		%tr
 			%td= photo.title
 			%td= markdown(photo.description)
-			%td= image_tag photo.image.url(:admin)
+			%td= image_tag photo.image.url(:list)
 			%td= photo.order_no
 			%td= photo.featured
 			%td= yes_or_no(photo.published)

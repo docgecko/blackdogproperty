@@ -1,0 +1,19 @@
+- content_for :title do
+	== #{@property.title} | BlackDog Property
+
+- content_for :link_canonical do
+	== rental/#{@property.title}
+
+.breadcrumbs
+	= render 'shared/rental/breadcrumbs/property'
+
+.title
+	%h1= @property.title
+	.line
+
+.block.site
+	.border
+		.details
+
+
+	.bottom

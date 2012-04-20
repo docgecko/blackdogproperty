@@ -14,9 +14,10 @@ Blackdogproperty::Application.routes.draw do
   match 'sales/about' => 'sales#about'
 
   match 'location/about' => 'locations#about'
+  match 'location/about/:id' => 'locations#country', :as => :location_country, :via => :get
   
-  resources :rentals, :only => :index
-  match 'rentals/about' => 'rentals#about'
+  resources :rentals, :only => [ :index ]
+  match 'rentals/search/:country_id' => 'rentals#search', :as => :rentals_search, :via => :get
 
   resources :renovations, :only => :index
   match 'renovations/about' => 'renovations#about'

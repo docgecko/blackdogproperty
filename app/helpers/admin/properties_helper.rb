@@ -8,6 +8,6 @@ module Admin::PropertiesHelper
       type += @type.description
       type += ", "
     end
-    property_types = type
+    property_types = type.chop.chop
   end
 end

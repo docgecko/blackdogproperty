@@ -9,19 +9,23 @@
 
 %table
 	%tr
-		%td.label Title:
+		%td.label Title
 		%td= resource.title
 
 	%tr
-		%td Location:
+		%td Location
 		%td= resource.location
 
 	%tr
-		%td Type:
+		%td Country
+		%td= resource.country.name
+
+	%tr
+		%td Type
 		%td= property_types(resource.type_ids)
 
 	%tr
-		%td Reference:
+		%td Reference
 		%td= resource.reference
 
 %h4 Property Details
@@ -60,10 +64,6 @@
 	%tr
 		%td Latitude
 		%td= resource.latitude
-
-	%tr
-		%td GMaps
-		%td= resource.gmaps
 		
 %h4 Publish Details
 

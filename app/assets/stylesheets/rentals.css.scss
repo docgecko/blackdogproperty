@@ -1,3 +1,64 @@
 // Place all the styles related to the Rentals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared";
+
+#results {
+	position: relative;
+	float: left;
+	margin: 9px 0px 9px 10px;
+	padding: 0 0 0 64px;
+	min-height: 287px;
+	width: 774px;
+	.property {
+		position: relative;
+		display: inline;
+		float: left;
+		margin: 0;
+		padding: 10px;
+		background-image: url(box_background.gif);
+		background-repeat: repeat-y repeat-x;
+		background-size: 100%;
+		background-position: right top;
+		width: 754px;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+		filter: alpha(opacity=95);
+		-moz-opacity:0.95;
+		-khtml-opacity: 0.95;
+		opacity: 0.95;
+		&:hover {
+			-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: alpha(opacity=100);
+			-moz-opacity:1.0;
+			-khtml-opacity: 1.0;
+			opacity: 1.0;
+		}
+		.featured {
+			float: left;
+			margin: 0;
+			padding: 0;
+			width: 300px;
+			height: 200px;
+			text-align: center;
+			img {
+				
+			}
+		}
+		.short {
+			float: left;
+			width: 438px;
+			margin: 0 6px 0 10px;
+			h2 {
+			}
+			.bio {
+				p {
+				}
+			}
+		}
+	}
+}
+
+#breadcrumbs {
+	margin-left: 80px;
+}

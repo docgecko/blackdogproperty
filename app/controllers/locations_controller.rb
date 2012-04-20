@@ -4,4 +4,8 @@ class LocationsController < InheritedResources::Base
   
   def about
   end
+  
+  def country
+    @country = Country.find(params[:id])
+  end
 end
