@@ -4,10 +4,9 @@
 - content_for :link_canonical do
 	rentals
 	
-.title
-	%h1== All Rental Properties
-	= render "shared/location/search_navigation"
-	.line.search
+#search
+	= render 'shared/location/search_navigation'
+	%h1.short== All Rental Properties
 
 #results
 	- if @properties.empty?

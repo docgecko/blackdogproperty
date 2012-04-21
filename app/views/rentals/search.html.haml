@@ -3,11 +3,10 @@
 	
 - content_for :link_canonical do
 	rentals
-	
-.title
-	%h1== Rentals in #{@country.name}
-	= render "shared/location/search_navigation"
-	.line.search
+
+#search
+	= render 'shared/location/search_navigation'
+	%h1.short== Rentals in #{@country.name}
 
 #results
 	- if @properties.empty?
