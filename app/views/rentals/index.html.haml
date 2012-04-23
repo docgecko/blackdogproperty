@@ -5,12 +5,7 @@
 	rentals
 	
 #search
-	= render 'shared/location/search_navigation'
+	= render 'shared/rental/search_navigation'
 	%h1.short== All Rental Properties
 
-#results
-	- if @properties.empty?
-		%h2 No rental properties found.
-	- else
-		- for property in @properties
-			= render "shared/rental/property", :property => property
+= render 'shared/rental/results'

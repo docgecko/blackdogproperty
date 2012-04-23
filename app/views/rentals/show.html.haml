@@ -4,12 +4,12 @@
 - content_for :link_canonical do
 	== rental/#{@property.title}
 
-.breadcrumbs
-	= render 'shared/rental/breadcrumbs/property'
-
 .title
 	%h1= @property.title
 	.line
+
+.breadcrumbs
+	= render 'shared/rental/breadcrumbs'
 
 .block.site
 	.border

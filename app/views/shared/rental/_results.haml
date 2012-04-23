@@ -1,0 +1,12 @@
+#results
+	- if @properties.empty?
+		%h2 No rental properties found.
+	- else
+		- for property in @properties
+			= link_to rental_path(property.country_id, property.id), :class => :property do
+				%span.featured
+					- @photo = Photo.first(conditions: { property_id: property.id })
+					= @photo.present? ? image_tag(@photo.image.url(:list)) : image_tag("services/logo_blackdog.jpg", :border => 0, :width => "185px", :height => "200px")
+				%span.short
+					%h2= property.title
+					%span.bio= markdown(truncate(property.bio, :length => 530, :omission => '... (continued)'))

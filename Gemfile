@@ -35,11 +35,9 @@ gem 'mini_magick', '3.3'
 gem 'kaminari', '0.13.0'
 gem 'rack-rewrite', '1.0.2'
 
-
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'
-	gem 'cucumber-rails', :group => [:development, :test]
-	gem 'capybara', :group => [:development, :test]
+	gem 'capybara'
 	gem 'autotest-rails', '4.1.1'
 	gem 'autotest-growl', '0.2.11'
 	gem 'guard-bundler'
@@ -50,6 +48,10 @@ group :development, :test do
 	gem 'growl'
 	gem 'relish', '0.5.1'
 	gem 'colored'
+end
+
+group :test do
+	gem 'cucumber-rails'
 end
 
 group :development do

@@ -87,7 +87,7 @@
 				position: absolute;
 				left: 78px;
 				top: 133px;
-				z-index: 7;
+				z-index: 14;
 				margin-left: 0px;
 				margin-top: 0px;
 				ul {
@@ -187,6 +187,7 @@
 				background-color: $black;
 				margin: 0 auto;
 				padding: 0;
+				clear: both;
 				&.site {
 					width: 774px;
 				}

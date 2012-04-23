@@ -2,14 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#gallery {
-	padding: 5px;
-	margin: 0;
-	width: 764px;
-	.ad-gallery {
-	  width: 544px;
+.border {
+	position: relative;
+	width: 744px;
+	#gallery {
+		float: left;
+		padding: 6px;
+		margin: 0;
+		width: 400px;
 	}
-	.ad-gallery .ad-image-wrapper {
-	  height: 304px;
+	#descriptions {
+		position: relative;
+		float: left;
+		width: 247px;
+		height: 402px;
+		margin: 0 0 0 5px;
+		overflow: hidden;
+		.ad-image-description {
+		  position: relative;
+			margin: 5px 0 0 0;
+			padding: 0;
+			.ad-description-title {
+		    display: block;
+				text-align: left;
+				line-height: 19px;
+				font-size: 16px;
+				font-weight: normal;
+			}
+			span {
+		    display: block;
+				margin: 10px 10px 0 0;
+				padding: 0;
+				font-size: 12px;
+				line-height: 15px;
+				text-align: left;
+		  }
+		}
 	}
 }

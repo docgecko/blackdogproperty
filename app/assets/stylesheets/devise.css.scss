@@ -187,3 +187,9 @@ table.signin, table.signup, table.secret, table.confirm {
 		padding: 0 10px 0 0;
 	}
 }
+
+.block {
+	&.authentication {
+		width: 774px;
+	}
+}

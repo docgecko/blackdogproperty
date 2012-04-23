@@ -69,12 +69,15 @@ h4 {
 }
 
 .block {
-	.border {
-		background-image: repeat-x;
-	}
 	&.admin	{
 		width: 1000px;					
 	}	
+	.border {
+		background-image: repeat-x;
+		&.admin	{
+			width: 1000px;					
+		}	
+	}
 }
 
 #breadcrumbs {

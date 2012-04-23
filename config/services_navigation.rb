@@ -52,9 +52,8 @@ SimpleNavigation::Configuration.run do |navigation|
     
     primary.item :locations, 'location', location_about_path
     primary.item :sales, 'sales', sales_about_path
-    primary.item :rentals, 'rentals', rentals_about_path
+    primary.item :rentals, 'rentals', rentals_path
     primary.item :renovations, 'renovations', renovations_about_path
-    primary.item :services, 'services', services_about_path
     primary.item :show_case, 'gallery', company_static_path('gallery')
     
 

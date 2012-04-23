@@ -5,15 +5,17 @@
 	= render 'shared/script/gallery'
 
 .block.site
-	#gallery.ad-gallery
-		.ad-image-wrapper
-		.ad-controls
-		.ad-nav
-			.ad-thumbs
-				%ul.ad-thumb-list
-					%li= link_to (image_tag "company/profile_mark.jpg", :height => "100px"), "company/profile_mark.jpg"
-					%li= link_to (image_tag "company/profile_ted.jpg", :height => "100px"), "company/profile_ted.jpg"
-					%li= link_to (image_tag "company/profile_mairead.jpg", :height => "100px"), "company/profile_mairead.jpg"
+	.border
+		#gallery.ad-gallery
+			.ad-image-wrapper
+			.ad-controls
+			.ad-nav
+				.ad-thumbs
+					%ul.ad-thumb-list
+						- @photos.each do |p|
+							%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:gallery)
+		#descriptions
+	.bottom
 	
 .block.site
 	.textual
@@ -30,6 +32,4 @@
 		%p
 			= link_to "Contact BlackDog", contact_path
 			= ": 07540 706994"
-	
-	
-
+	.bottom
