@@ -58,13 +58,9 @@
 
 %table
 	%tr
-		%td.label Longitude
-		%td= resource.longitude
+		%td.label Coordinates (Lat., Long.)
+		%td== #{resource.coordinates[0]}, #{resource.coordinates[1]}
 	
-	%tr
-		%td Latitude
-		%td= resource.latitude
-		
 %h4 Publish Details
 
 %table

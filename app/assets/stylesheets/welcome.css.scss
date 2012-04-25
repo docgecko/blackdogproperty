@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "shared";
+
 .border {
 	position: relative;
 	width: 744px;
@@ -9,7 +11,9 @@
 		float: left;
 		padding: 6px;
 		margin: 0;
-		width: 400px;
+		&.home {
+			width: 400px;
+		}
 	}
 	#descriptions {
 		position: relative;

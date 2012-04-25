@@ -2,10 +2,14 @@
 	== #{@property.title} | BlackDog Property
 
 - content_for :link_canonical do
-	== rental/#{@property.title}
+	== rentals/in/#{@country.id}/#{@property.id}
+
+- content_for :scripts do
+	= render 'shared/script/rentals/gallery'
+	= render 'shared/script/rentals/tabs'
 
 .title
-	%h1= @property.title
+	%h1== #{@property.title} - #{@country.name}
 	.line
 
 .breadcrumbs
@@ -14,6 +18,32 @@
 .block.site
 	.border
 		.details
-
+		#gallery.property.ad-gallery
+			.ad-image-wrapper
+			.ad-controls
+			.ad-nav
+				.ad-thumbs
+					%ul.ad-thumb-list
+						- @photos.each do |p|
+							-if p.image.present?
+								%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:large)
+		#description
 
 	.bottom
+
+.block.site
+	.border
+		#tab-container
+			%ul.etabs
+				%li.tab= link_to "Description", "#tab_description"
+				%li.tab= link_to "Facilities", "#tab_facilities"
+				%li.tab= link_to "Location", "#tab_location"
+			.panel-container
+				#tab_description
+					= markdown(@property.description)
+
+				#tab_facilities
+					= markdown(@property.facilities)
+				
+				#tab_location
+					= gmaps4rails(@json)

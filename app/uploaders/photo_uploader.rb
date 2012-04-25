@@ -39,19 +39,28 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #   process :scale => [50, 50]
   # end
   # All images have a 3x2 ratio (of width to height)
+  version :large do
+    process :auto_orient
+    process :resize_to_limit => [750, 500]
+  end
+
   version :gallery do
+    process :auto_orient
     process :resize_to_limit => [543, 362]
   end
   
   version :slide do
+    process :auto_orient
     process :resize_to_limit => [378, 252]
   end
   
   version :list do
+    process :auto_orient
     process :resize_to_limit => [300, 200]
   end
 
   version :thumb do
+    process :auto_orient
     process :resize_to_limit => [75, 50]
   end
 
@@ -66,5 +75,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+  
+  def auto_orient 
+    manipulate! do |image| 
+      image.auto_orient 
+      image 
+    end 
+  end
 end

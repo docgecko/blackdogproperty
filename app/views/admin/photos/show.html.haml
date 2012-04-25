@@ -17,15 +17,30 @@
 	%tr
 		%td Photos
 		%td
-			%table
-				%tr
-					%th Gallery
-					%th Slideshow
-					%th Thumbnail
-				%tr
-					%td= image_tag resource.image.url(:gallery)
-					%td= image_tag resource.image.url(:slide)
-					%td= image_tag resource.image.url(:thumb)
+			-if resource.image.present?
+				%table
+					%tr
+						%th Show (individual rental & sales page)
+					%tr
+						%td= image_tag resource.image.url(:large)
+					%tr
+						%th Gallery (rental & sales listings)
+					%tr
+						%td= image_tag resource.image.url(:gallery)
+					%tr
+						%th Slideshow (gallery page slideshows)
+					%tr
+						%td= image_tag resource.image.url(:slide)
+					%tr
+						%th List (admin only)
+					%tr
+						%td= image_tag resource.image.url(:list)
+					%tr
+						%th Thumbnail
+					%tr
+						%td= image_tag resource.image.url(:thumb)
+			-else
+				%p.note No images have been saved for this property yet
 
 %h4 Publish Details
 

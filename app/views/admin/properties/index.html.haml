@@ -19,10 +19,6 @@
 		%th Facilities
 		%th Imgs
 		%th Price
-		%th
-			Long.
-			%br
-			Lat.
 		%th Ord No
 		%th Featured
 		%th Published
@@ -33,7 +29,7 @@
 	- collection.each do |property|
 		%tr
 			%td= property.title
-			%td== #{property.location} - Long:#{property.longitude}, Lat:#{property.latitude}
+			%td== #{property.location} - Lat:#{property.coordinates[0]}, Long:#{property.coordinates[1]}
 			%td= property.country.name
 			%td= property_types(property.type_ids)
 			%td= property.reference
@@ -50,9 +46,6 @@
 				= property.price_sale
 				%br
 				= property.price_rental
-			%td
-				-if property.longitude? && property.latitude?
-					== #{property.longitude}, #{property.latitude}
 			%td.center= property.order_no
 			%td.center= property.featured
 			%td.center= yes_or_no(property.published)

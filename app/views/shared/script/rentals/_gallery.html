@@ -1,0 +1,38 @@
+<script type="text/javascript">
+ $(function() {
+   var galleries = $('.ad-gallery').adGallery({
+ 		loader_image: 'assets/loader.gif',
+ 		width: 729, // Width of the image, set to false and it will read the CSS width
+ 		height: 486, // Height of the image, set to false and it will read the CSS height
+ 		thumb_opacity: 0.7, // Opacity that the thumbs fades to/from, (1 removes fade effect)
+ 		                 // Note that this effect combined with other effects might be resource intensive
+ 		                 // and make animations lag
+ 		start_at_index: 0, // Which image should be displayed at first? 0 is the first image
+ 		description_wrapper: $('#na'), // Either false or a jQuery object, if you want the image
+ 		                                         // to be placed somewhere else than on top of the image
+ 	  animate_first_image: false, // Should first image just be displayed, or animated in?
+ 	  animation_speed: 400, // Which ever effect is used to switch images, how long should it take?
+ 	  display_next_and_prev: true, // Can you navigate by clicking on the left/right on the image?
+ 	  display_back_and_forward: true, // Are you allowed to scroll the thumb list?
+ 	  scroll_jump: 0, // If 0, it jumps the width of the container
+ 	  slideshow: {
+ 	    enable: true,
+ 	    autostart: true,
+ 	    speed: 4000,
+ 	    start_label: 'Start',
+ 	    stop_label: 'Stop',
+ 	    stop_on_scroll: true, // Should the slideshow stop if the user scrolls the thumb list?
+ 	    countdown_prefix: '(', // Wrap around the countdown
+ 	    countdown_sufix: ')',
+ 	    onStart: function() {
+ 	      // Do something wild when the slideshow starts
+ 	    },
+ 	    onStop: function() {
+ 	      // Do something wild when the slideshow stops
+ 	    }
+ 		},
+ 	  effect: 'fade', // or 'slide-hori', 'slide-vert', 'fade', 'resize', 'none' or false
+ 	  enable_keyboard_move: true // Move to next/previous image with keyboard arrows?
+ 	});
+ });
+</script>

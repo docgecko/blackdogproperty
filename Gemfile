@@ -34,6 +34,8 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick', '3.3'
 gem 'kaminari', '0.13.0'
 gem 'rack-rewrite', '1.0.2'
+gem 'gmaps4rails'
+gem 'mongoid_spacial'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

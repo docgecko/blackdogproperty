@@ -69,12 +69,15 @@
 
 	%table
 		%tr
-			%td.label= f.label :longitude
-			%td= f.text_field :longitude, :size => 10
-
-		%tr
-			%td.label= f.label :latitude
-			%td= f.text_field :latitude, :size => 10
+			%td.label= f.label :coordinates
+			%td
+				%table{:style => "border-spacing: 0px"}
+					%tr
+						%th Latitude
+						%th Longitude
+					%tr
+						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[0]},
+						%td{:style => "padding: 0px"}= text_field_tag "property[coordinates][]", resource.coordinates[1]
 
 	%h4 Publish Details
 	
