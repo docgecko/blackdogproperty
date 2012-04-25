@@ -29,7 +29,7 @@
 	- collection.each do |property|
 		%tr
 			%td= property.title
-			%td== #{property.location} - Lat:#{property.coordinates[0]}, Long:#{property.coordinates[1]}
+			%td== #{property.location} - Lat:#{property.coordinates[0]}, Long:#{property.coordinates[1]}, Zoom:#{property.coordinates[2]}
 			%td= property.country.name
 			%td= property_types(property.type_ids)
 			%td= property.reference

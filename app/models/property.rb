@@ -18,6 +18,7 @@ class Property
   field :price_sale
   field :price_rental
   field :coordinates, type: Array, spacial: {lat: :latitude, lng: :longitude, return_array: true }
+  field :zoom, :type => Integer
   field :order_no, :type => Integer
   field :featured, :type => Boolean, :default => false
   field :published, :type => Boolean, :default => false
@@ -29,7 +30,7 @@ class Property
   attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :type_ids, 
                   :price_sale, :price_rental,
-                  :coordinates, :longitude, :latitude,
+                  :coordinates, :longitude, :latitude, :zoom,
                   :order_no, :featured, :published
 
   # References

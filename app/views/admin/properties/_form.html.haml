@@ -75,9 +75,11 @@
 					%tr
 						%th Latitude
 						%th Longitude
+						%th Zoom
 					%tr
-						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[0]},
-						%td{:style => "padding: 0px"}= text_field_tag "property[coordinates][]", resource.coordinates[1]
+						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[0], :size => 10},
+						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[1], :size => 10}:
+						%td{:style => "padding: 0px"}= f.text_field :zoom, :size => 3
 
 	%h4 Publish Details
 	

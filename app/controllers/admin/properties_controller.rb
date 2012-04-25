@@ -3,6 +3,7 @@ module Admin
     before_filter :authenticate_user!
     before_filter :all_types, :only => [ :new, :edit, :show, :index ]
     before_filter :all_countries, :only => [ :new, :edit, :show, :index ]
+    before_filter :map_property, :only => :show
     layout 'admin'
 
     actions :all
@@ -19,6 +20,13 @@ module Admin
       
       def all_countries
         @countries = Country.all
+      end
+      
+      def map_property
+        @propery = Property.find(params[:id])
+        # @gmap = @property.to_gmaps4rails do |property, marker|
+        #   marker.json :lat => property.latitude, :lng => property.longitude
+        # end
       end
   end
 end

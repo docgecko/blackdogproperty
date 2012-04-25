@@ -35,15 +35,34 @@
 	.border
 		#tab-container
 			%ul.etabs
-				%li.tab= link_to "Description", "#tab_description"
-				%li.tab= link_to "Facilities", "#tab_facilities"
-				%li.tab= link_to "Location", "#tab_location"
+				-if (@property.latitude.present? && @property.longitude.present?)
+					%li.tab= link_to "Location", "#tab_location"
+				-if @property.description.present?
+					%li.tab= link_to "Description", "#tab_description"
+				-if @property.facilities.present?
+					%li.tab= link_to "Facilities", "#tab_facilities"
+				-if @property.price_rental.present?
+					%li.tab= link_to "Price", "#tab_price"
+				%li.tab= link_to "Contact", "#tab_contact"
 			.panel-container
-				#tab_description
-					= markdown(@property.description)
+				- if @property.latitude.present? && @property.longitude.present?
+					#tab_location
+						= gmaps({ "map_options" => { "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true }, "markers" => { "data" => @gmap } } )
+						:javascript
+							$(document).ready(function() {
+								google.maps.event.trigger(map, "resize");
+							});
+				-if @property.description.present?
+					#tab_description
+						= markdown(@property.description)
 
-				#tab_facilities
-					= markdown(@property.facilities)
-				
-				#tab_location
-					= gmaps4rails(@json)
+				-if @property.facilities.present?
+					#tab_facilities
+						= markdown(@property.facilities)
+
+				-if @property.price_rental.present?
+					#tab_price
+						= markdown(@property.price_rental)
+
+				#tab_contact
+					%p== For further information about this property, please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex} or our #{link_to "enquiry form", contact_path}.

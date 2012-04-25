@@ -58,8 +58,11 @@
 
 %table
 	%tr
-		%td.label Coordinates (Lat., Long.)
-		%td== #{resource.coordinates[0]}, #{resource.coordinates[1]}
+		%td.label Coordinates ([Lat., Long.]: Zoom)
+		%td== [#{resource.latitude}, #{resource.longitude}]: #{resource.zoom}
+	%tr
+		%td= Property.find(params[:id]).id
+		/ %td= gmaps({ "map_options" => { "type" => "SATELLITE", "center_longitude" => 180, "auto_zoom" => false, "zoom" => 11, "auto_adjust" => true}, "markers" => { "data" => @gmap } } )
 	
 %h4 Publish Details
 
