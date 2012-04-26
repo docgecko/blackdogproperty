@@ -33,26 +33,26 @@
 %table
 	%tr
 		%td.label Bio
-		%td= resource.bio
+		%td= markdown(resource.bio)
 		
 	%tr
 		%td Description
-		%td= resource.description
+		%td= markdown(resource.description)
 
 	%tr
 		%td Facilities
-		%td= resource.facilities
+		%td= markdown(resource.facilities)
 
 %h4 Property Pricing
 
 %table
 	%tr
 		%td.label Sales Price
-		%td= resource.price_sale
+		%td= markdown(resource.price_sale)
 
 	%tr
 		%td Rental Price Details
-		%td= resource.price_rental
+		%td= markdown(resource.price_rental)
 
 %h4 GPS Details
 
@@ -61,8 +61,8 @@
 		%td.label Coordinates ([Lat., Long.]: Zoom)
 		%td== [#{resource.latitude}, #{resource.longitude}]: #{resource.zoom}
 	%tr
-		%td= Property.find(params[:id]).id
-		/ %td= gmaps({ "map_options" => { "type" => "SATELLITE", "center_longitude" => 180, "auto_zoom" => false, "zoom" => 11, "auto_adjust" => true}, "markers" => { "data" => @gmap } } )
+		%td
+		%td= render 'shared/gmaps', :locals => { resource => resource, @json => @json}
 	
 %h4 Publish Details
 

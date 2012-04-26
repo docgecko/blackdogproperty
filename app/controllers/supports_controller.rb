@@ -7,6 +7,7 @@ class SupportsController < InheritedResources::Base
   def new
     # id is required to deal with form
     @support = Support.new(:id => 1)
+    @hears = Hear.all
   end
 
   def create

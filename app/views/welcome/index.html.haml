@@ -5,16 +5,20 @@
 	= render 'shared/script/welcome/gallery'
 
 .block.site
-	.border
-		#gallery.home.ad-gallery
-			.ad-image-wrapper
-			.ad-controls
-			.ad-nav
-				.ad-thumbs
-					%ul.ad-thumb-list
-						- @photos.each do |p|
-							%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:gallery)
-		#descriptions
+	-if @photos
+		.border
+			#gallery.home.ad-gallery
+				.ad-image-wrapper
+				.ad-controls
+				.ad-nav
+					.ad-thumbs
+						%ul.ad-thumb-list
+							- @photos.each do |p|
+								%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:gallery)
+			#descriptions
+	-else
+		.textual
+			%h1 Latest project images to be shown here soon.
 	.bottom
 	
 .block.site

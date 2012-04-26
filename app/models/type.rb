@@ -13,5 +13,5 @@ class Type
   
   # References
   has_many :properties
-  
+    
 end

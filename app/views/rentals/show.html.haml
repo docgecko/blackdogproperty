@@ -18,16 +18,20 @@
 .block.site
 	.border
 		.details
-		#gallery.property.ad-gallery
-			.ad-image-wrapper
-			.ad-controls
-			.ad-nav
-				.ad-thumbs
-					%ul.ad-thumb-list
-						- @photos.each do |p|
-							-if p.image.present?
-								%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:large)
-		#description
+		-if @photos.present?
+			#gallery.property.ad-gallery
+				.ad-image-wrapper
+				.ad-controls
+				.ad-nav
+					.ad-thumbs
+						%ul.ad-thumb-list
+							- @photos.each do |p|
+								-if p.image.present?
+									%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:large)
+			#description
+		-else
+			%h2 Photos of this property will be available soon.
+			%p== Please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", contact_path} and we will email you when they appear here.
 
 	.bottom
 
@@ -47,7 +51,7 @@
 			.panel-container
 				- if @property.latitude.present? && @property.longitude.present?
 					#tab_location
-						= gmaps({ "map_options" => { "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true }, "markers" => { "data" => @gmap } } )
+						= gmaps({ "map_options" => { "type" => "HYBRID", "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true}, "markers" => { "data" => @json } } )
 						:javascript
 							$(document).ready(function() {
 								google.maps.event.trigger(map, "resize");
@@ -65,4 +69,4 @@
 						= markdown(@property.price_rental)
 
 				#tab_contact
-					%p== For further information about this property, please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex} or our #{link_to "enquiry form", contact_path}.
+					%p== For further information about this property, please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", contact_path}.

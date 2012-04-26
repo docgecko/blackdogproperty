@@ -14,7 +14,7 @@ class RentalsController < InheritedResources::Base
   def show
     @property = Property.find(params[:id])
     @photos = Photo.where(property_id: @property.id, published: true).order_by([:order_no, :asc])
-    @gmap = @property.to_gmaps4rails do |property, marker|
+    @json = @property.to_gmaps4rails do |property, marker|
       marker.json :lat => property.latitude, :lng => property.longitude
     end
   end

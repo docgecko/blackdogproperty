@@ -23,10 +23,12 @@ module Admin
       end
       
       def map_property
-        @propery = Property.find(params[:id])
-        # @gmap = @property.to_gmaps4rails do |property, marker|
-        #   marker.json :lat => property.latitude, :lng => property.longitude
-        # end
+        @property = Property.find(params[:id])
+        @json = '[{"lat":'
+        @json += @property.latitude.to_s
+        @json += ',"lng":'
+        @json += @property.longitude.to_s
+        @json += '}]'
       end
   end
 end

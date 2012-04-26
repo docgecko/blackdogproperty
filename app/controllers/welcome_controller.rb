@@ -4,6 +4,8 @@ class WelcomeController < InheritedResources::Base
   
   def index
     @property = Property.first(conditions: {featured: true, published: true })
-    @photos = Photo.where(property_id: @property.id, published: true).order_by([:featured, :desc], [:order_no, :asc])
+    if @property.present?
+      @photos = Photo.where(property_id: @property.id, published: true).order_by([:featured, :desc], [:order_no, :asc])
+    end
   end
 end

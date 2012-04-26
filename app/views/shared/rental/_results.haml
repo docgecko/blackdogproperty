@@ -9,4 +9,4 @@
 					= @photo.present? ? image_tag(@photo.image.url(:list)) : image_tag("services/logo_blackdog.jpg", :border => 0, :width => "185px", :height => "200px")
 				%span.short
 					%h2= property.title
-					%span.bio= markdown(truncate(property.bio, :length => 530, :omission => '... (continued)'))
+					%span.bio= markdown(truncate(property.bio, :length => 450, :omission => '... (more)'))

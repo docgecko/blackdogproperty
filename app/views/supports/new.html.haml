@@ -1,76 +1,59 @@
 - content_for :title do
-	Sales | BlackDog Property
+	Contact Us | BlackDog Property
 
 - content_for :link_canonical do
-	sales
+	contact
 
 .title
-	%h1 BlackDog Sales
+	%h1 Make an enquiry...
 	.line
 
 .block.site
 	.border
 
-	= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
+		= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 
-		%table
-			%tr
-				%td.label= f.label :name, "Name"
-				%td= f.text_field :name, :size => 50, :maxlength => 100
+			%table
+				%tr
+					%td.label= f.label :name, "Your Name"
+					%td= f.text_field :name, :size => 50, :maxlength => 100
 
-			%tr
-				%td.label= f.label :company, "Company"
-				%td= f.text_field :company, :size => 50, :maxlength => 250
+				%tr
+					%td.label= f.label :company, "Company"
+					%td= f.text_field :company, :size => 50, :maxlength => 250
 
-			%tr
-				%td.label= f.label :email, "Email"
-				%td= f.text_field :email, :size => 50, :maxlength => 250
+				%tr
+					%td.label= f.label :email, "Email"
+					%td= f.text_field :email, :size => 50, :maxlength => 250
 
-			%tr
-				%td.label= f.label :phone, "Telephone"
-				%td= f.text_field :phone, :size => 30, :maxlength => 250
+				%tr
+					%td.label= f.label :phone, "Telephone"
+					%td= f.text_field :phone, :size => 30, :maxlength => 250
 
-			%tr
-				%td.label{:style => "vertical-align: middle;"}= f.label :content, "How can we help?"
-				%td
-					= f.text_area :content, :cols => 38, :rows => 12
+				%tr
+					%td.label= f.label :location, "Location / Country"
+					%td= f.text_field :location, :size => 30, :maxlength => 250
 
+				%tr
+					%td.label= f.label :method, "How did you hear about us?"
+					%td
+						= f.select :method, ["Search engine", "Word of mouth", "Advertising", "Press", "Link from another site", "Existing client", "Referred by existing client"]
 
-		#update
-			.actions
-				= f.submit "Send your request", :class => 'button'
-				%br
-				%br
+				%tr
+					%td.label{:style => "vertical-align: middle;"}= f.label :content, "Other information..."
+					%td
+						= f.text_area :content, :cols => 38, :rows => 12
 
-#side.left
-	#contact
-		%table
-			%tr
-				%td.label{:width => "65px"} email:
-				%td= mail_to "contact@rocrabbit.com", "contact@rocrabbit.com", :encode => "hex"
-			%tr
-				%td.label tel: 
-				%td +351 966 362 024
-			%tr
-				%td.label skype:
-				%td rocrabbit
-		 
-	#address
-		%table
-			%tr
-				%td.label{:width => "65px"} address:
-				%td
-					Rua Almeida e Sousa 33 R/C Esq
-					%br/
-					1350-008 Lisboa
-					%br/
-					Portugal
+			%table
+				%tr
+					%td.label= f.label :hear, "I am interested in?"
+					%td
+						- @hears.each do |hear|
+							= check_box_tag "support[hear_ids][]", hear.name, resource.hear_ids.include?(hear.name), :id => ("support_hear_ids_#{hear.name}")
+							= f.label "hear_ids", hear.description, :id => :check_box, :value => hear.name
+							%br	
+						
+			#update
+				.actions
+					= f.submit "Send your request", :class => 'button'
 	
-	#find
-		%p join us:
-		#social
-			.bookmark= link_to image_tag("facebook.png"), "http://facebook.com/rocrabbit"
-			.bookmark= link_to image_tag("twitter.png"), "http://twitter.com/rocrabbit"
-	
-	#map
-	#comment= link_to "[view larger map in Google Maps]", "http://g.co/maps/8yzwf"

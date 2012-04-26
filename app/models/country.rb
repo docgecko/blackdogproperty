@@ -13,4 +13,5 @@ class Country
   
   # References
   has_many :properties
+  
 end
