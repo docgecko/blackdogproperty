@@ -1,6 +1,10 @@
 #results
 	- if @properties.empty?
-		%h2 No rental properties found.
+		.block
+			.border
+				%h2== Rental properties in #{@country.name} coming soon.
+				%p== Please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", contact_path} and we will email you when they become available.
+			.bottom
 	- else
 		- for property in @properties
 			= link_to rental_path(property.country_id, property.id), :class => :property do

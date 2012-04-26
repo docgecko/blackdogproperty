@@ -46,11 +46,11 @@
 
 			%table
 				%tr
-					%td.label= f.label :hear, "I am interested in?"
+					%td.label= f.label :source, "I am interested in?"
 					%td
-						- @hears.each do |hear|
-							= check_box_tag "support[hear_ids][]", hear.name, resource.hear_ids.include?(hear.name), :id => ("support_hear_ids_#{hear.name}")
-							= f.label "hear_ids", hear.description, :id => :check_box, :value => hear.name
+						- @sources.each do |source|
+							= check_box_tag "support[source_ids][]", source.name#, resource.source_ids.include?(source.name), :id => ("support_source_ids_#{source.name}")
+							= f.label "source_ids", source.name, :id => :check_box, :value => source.name
 							%br	
 						
 			#update

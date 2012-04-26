@@ -9,6 +9,9 @@ class RentalsController < InheritedResources::Base
   
   def search
     @properties = Property.where(:published => true, :type_ids => "rental", :country_id => params[:country_id]).asc(:order_no)
+    if params[:country_id].present?
+      @country = Country.find(params[:country_id])
+    end
   end
   
   def show

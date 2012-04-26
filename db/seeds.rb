@@ -11,7 +11,7 @@
 puts 'EMPTY THE MONGODB DATABASE'
 Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 
-puts 'SETTING UP HEAR ABOUT US'
+puts 'SETTING UP SOURCE'
 [
   {
     :name => 'Search engine',
@@ -35,9 +35,32 @@ puts 'SETTING UP HEAR ABOUT US'
     :name => 'Referred by existing client'
   }
 ].each do |u|
-  Hear.create(u)
+  Source.create(u)
 end
-puts 'All property hear about us created'
+puts 'All sources created'
+
+puts 'SETTING UP INTERESTS'
+[
+  {
+    :name => 'Location'
+  },
+  {
+    :name => 'Rentals'
+  },
+  {
+    :name => 'Sales'
+  },
+  {
+    :name => 'Renovation'
+  },
+  {
+    :name => 'Services'
+  }
+].each do |u|
+  Interest.create(u)
+end
+puts 'All interests created'
+
 
 puts 'SETTING UP TYPES'
 [

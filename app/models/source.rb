@@ -1,4 +1,4 @@
-class Hear
+class Source
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
@@ -12,5 +12,4 @@ class Hear
   
   # References
   has_many :supports
-  
 end
