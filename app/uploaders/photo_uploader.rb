@@ -40,7 +40,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
   # All images have a 3x2 ratio (of width to height)
   version :large do
-    process :auto_orient
+    # process :auto_orient
     process :resize_to_limit => [750, 500]
   end
 
