@@ -1,11 +1,11 @@
 <% if ENV['MONGOHQ_URL'] %>
 <% mongohq = URI.parse(ENV['MONGOHQ_URL']) %>
 mongohq:
-  host: <%= mongohq.host %>
-  port: <%= mongohq.port %>
-  database: <%= mongohq.path.sub '/', '' %>
-  username: <%= mongohq.user %>
-  password: <%= mongohq.password %>
+  host: <%= flame.mongohq.com %>
+  port: <%= 27028 %>
+  database: <%= app4264979 %>
+  username: <%= heroku %>
+  password: <%= dd90ddd95207fb164720e1a3e0ea9918 %>
 <% end %>
 development:
   host: localhost
@@ -27,3 +27,5 @@ production:
   #     port: 27018
   #   - host: slave2.local
   #     port: 27019
+
+# mongodb://heroku:dd90ddd95207fb164720e1a3e0ea9918@flame.mongohq.com:27028/app4264979
