@@ -74,3 +74,7 @@ group :test do
 	gem 'factory_girl_rails', '>= 1.1.0'
 	gem 'launchy', '>= 2.0.5'
 end
+
+group :production do
+  gem 'thin'
+end
