@@ -1,9 +1,11 @@
 require 'carrierwave/mongoid'
 
 CarrierWave.configure do |config|
-  config.storage = :grid_fs
-  config.grid_fs_connection = Mongoid.database
-  config.grid_fs_access_url = '/grid'
-  config.cache_dir = "uploads"
-  config.root = Rails.root.join('tmp')
+  config.fog_credentials = {
+      :provider => 'AWS'
+  }
+  config.fog_directory  = 'bdp-assets'                     # required
+  # config.fog_host       = 'https://assets.example.com'            # optional, defaults to nil
+  config.fog_public     = false                                   # optional, defaults to true
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end

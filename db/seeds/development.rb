@@ -66,7 +66,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'The Summer House was one of our first project renovations. Nestled in the hills just outside VilleFranche this 3 acre property was in a sad condition. Over some months we restored the property, sympathetically maintaining original features and the rustic charm which makes it such an outstanding holiday location.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/IMG_4598.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/IMG_4598.JPG')),
     :order_no => 1,
     :featured => false,
     :published => true,
@@ -75,7 +75,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'We created an impressive entrance to the Summer house, using local stone and fragrant plants to line the pathways.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/IMG_4494.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/IMG_4494.JPG')),
     :order_no => 2,
     :featured => false,
     :published => true,
@@ -84,7 +84,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'As the Summer House is nestled onto the side of a hill overlooking VilleFranche, we used local machinery and contractors to assist us with the more comprehensive structural work.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/CIMG1188.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/CIMG1188.JPG')),
     :order_no => 3,
     :featured => false,
     :published => true,
@@ -93,7 +93,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'As well as preparing the area for the large swimming pool, it was placed in a perfect position to enjoy the view of the mediterranean.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/CIMG1193.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/CIMG1193.JPG')),
     :order_no => 4,
     :featured => false,
     :published => true,
@@ -102,7 +102,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'Quality and beautiful materials were used throughout the build process.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/CIMG1243.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/CIMG1243.JPG')),
     :order_no => 5,
     :featured => false,
     :published => true,
@@ -111,7 +111,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'Our landscape team worked wonders on the grounds, planting locally grown shrubs and fragrant herbs, vines and clematis.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/IMG_4509.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/IMG_4509.JPG')),
     :order_no => 6,
     :featured => false,
     :published => true,
@@ -120,7 +120,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'The old ruin was transformed to become one of the most sought after properties in the region. Flagstone flooring and wide open spaces gave light and ambience to the internal space, whilst the provocative flavours of France were introduced in the colourscheme throughout.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/IMG_4791.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/IMG_4791.JPG')),
     :order_no => 7,
     :featured => false,
     :published => true,
@@ -129,7 +129,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => 'The Summer House',
     :description => 'Once renovated, BlackDog worked with the owner to turn the property into a thriving holiday rental business which yielded an attractive annual return. It became one of the first accredited properties, due to the exceptional standard of renovation and style.',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Peter/DSCF1187.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_peter/DSCF1187.JPG')),
     :order_no => 8,
     :featured => false,
     :published => true,
@@ -138,7 +138,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0075.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0075.JPG')),
     :order_no => 1,
     :featured => false,
     :published => true,
@@ -147,7 +147,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0080.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0080.JPG')),
     :order_no => 2,
     :featured => false,
     :published => true,
@@ -156,7 +156,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0087.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0087.JPG')),
     :order_no => 3,
     :featured => false,
     :published => true,
@@ -165,7 +165,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0094.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0094.JPG')),
     :order_no => 4,
     :featured => false,
     :published => true,
@@ -174,7 +174,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0099.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0099.JPG')),
     :order_no => 5,
     :featured => false,
     :published => true,
@@ -183,7 +183,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0116.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0116.JPG')),
     :order_no => 6,
     :featured => false,
     :published => true,
@@ -192,7 +192,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0139.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0139.JPG')),
     :order_no => 7,
     :featured => false,
     :published => true,
@@ -201,7 +201,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0150.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0150.JPG')),
     :order_no => 8,
     :featured => false,
     :published => true,
@@ -210,7 +210,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0154.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0154.JPG')),
     :order_no => 9,
     :featured => false,
     :published => true,
@@ -219,7 +219,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0170.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0170.JPG')),
     :order_no => 10,
     :featured => false,
     :published => true,
@@ -228,7 +228,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Graham/DSC_0178.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0178.JPG')),
     :order_no => 11,
     :featured => false,
     :published => true,
@@ -237,7 +237,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0228.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0228.JPG')),
     :order_no => 1,
     :featured => false,
     :published => true,
@@ -246,7 +246,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0229.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0229.JPG')),
     :order_no => 2,
     :featured => false,
     :published => true,
@@ -255,7 +255,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0230.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0230.JPG')),
     :order_no => 3,
     :featured => false,
     :published => true,
@@ -264,7 +264,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0231.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0231.JPG')),
     :order_no => 4,
     :featured => false,
     :published => true,
@@ -273,7 +273,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0233.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0233.JPG')),
     :order_no => 5,
     :featured => false,
     :published => true,
@@ -282,7 +282,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0234.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0234.JPG')),
     :order_no => 6,
     :featured => false,
     :published => true,
@@ -291,7 +291,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0235.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0235.JPG')),
     :order_no => 7,
     :featured => false,
     :published => true,
@@ -300,7 +300,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0236.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0236.JPG')),
     :order_no => 8,
     :featured => false,
     :published => true,
@@ -309,7 +309,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Stuart/DSC_0237.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0237.JPG')),
     :order_no => 9,
     :featured => false,
     :published => true,
@@ -318,7 +318,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0197.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0197.JPG')),
     :order_no => 1,
     :featured => false,
     :published => true,
@@ -327,7 +327,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0198.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0198.JPG')),
     :order_no => 2,
     :featured => false,
     :published => true,
@@ -336,7 +336,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0199.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0199.JPG')),
     :order_no => 3,
     :featured => false,
     :published => true,
@@ -345,7 +345,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0200.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0200.JPG')),
     :order_no => 4,
     :featured => false,
     :published => true,
@@ -354,7 +354,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0201.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0201.JPG')),
     :order_no => 5,
     :featured => false,
     :published => true,
@@ -363,7 +363,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0202.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0202.JPG')),
     :order_no => 6,
     :featured => false,
     :published => true,
@@ -372,7 +372,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0203.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0203.JPG')),
     :order_no => 7,
     :featured => false,
     :published => true,
@@ -381,7 +381,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0204.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0204.JPG')),
     :order_no => 8,
     :featured => false,
     :published => true,
@@ -390,7 +390,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0205.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0205.JPG')),
     :order_no => 9,
     :featured => false,
     :published => true,
@@ -399,7 +399,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0206.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0206.JPG')),
     :order_no => 10,
     :featured => false,
     :published => true,
@@ -408,7 +408,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0207.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0207.JPG')),
     :order_no => 11,
     :featured => false,
     :published => true,
@@ -417,7 +417,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0208.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0208.JPG')),
     :order_no => 12,
     :featured => false,
     :published => true,
@@ -426,7 +426,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0209.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0209.JPG')),
     :order_no => 13,
     :featured => false,
     :published => true,
@@ -435,7 +435,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0210.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0210.JPG')),
     :order_no => 14,
     :featured => false,
     :published => true,
@@ -444,7 +444,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0211.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0211.JPG')),
     :order_no => 15,
     :featured => false,
     :published => true,
@@ -453,7 +453,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0212.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0212.JPG')),
     :order_no => 16,
     :featured => false,
     :published => true,
@@ -462,7 +462,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0213.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0213.JPG')),
     :order_no => 17,
     :featured => false,
     :published => true,
@@ -471,7 +471,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0214.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0214.JPG')),
     :order_no => 18,
     :featured => false,
     :published => true,
@@ -480,7 +480,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0215.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0215.JPG')),
     :order_no => 19,
     :featured => false,
     :published => true,
@@ -489,7 +489,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0216.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0216.JPG')),
     :order_no => 20,
     :featured => false,
     :published => true,
@@ -498,7 +498,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0217.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0217.JPG')),
     :order_no => 21,
     :featured => false,
     :published => true,
@@ -507,7 +507,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0219.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0219.JPG')),
     :order_no => 22,
     :featured => false,
     :published => true,
@@ -516,7 +516,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0220.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0220.JPG')),
     :order_no => 23,
     :featured => false,
     :published => true,
@@ -525,7 +525,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0221.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0221.JPG')),
     :order_no => 24,
     :featured => false,
     :published => true,
@@ -534,7 +534,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
   {
     :title => '',
     :description => '',
-    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/Villa Tony/DSC_0222.JPG')),
+    :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0222.JPG')),
     :order_no => 25,
     :featured => false,
     :published => true,
