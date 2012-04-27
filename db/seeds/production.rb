@@ -29,7 +29,7 @@ puts 'SETTING UP TEAM MEMBERS'
 [
   {
     :name => 'Mark Tovey 07540 706994',
-    :avatar => File.open(File.join(Rails.root, 'app/assets/images/company/profile_mark.jpg'),
+    :avatar => File.open(File.join(Rails.root, 'app/assets/images/company/profile_mark.jpg')),
     :profile => 'With property being a stable investment in times of uncertainty, Mark\'s ability to find the right property at the right price, whilst always being mindful of a return on your investment is unrivalled.
 
 Mark is the founder of BlackDog Property and has realised a personal dream of finding and renovating outstanding properties in the most beautiful and prestigious area\'s of Europe.
