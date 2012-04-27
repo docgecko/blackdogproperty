@@ -174,7 +174,7 @@ puts 'All Testimonials created'
 puts 'SETTING UP PROPERTIES'
 [
   {
-    :title => 'Villa+Peter',
+    :title => 'Villa Peter',
     :location => 'Villefrance sur mer',
     :country_id => 'france',
     :reference => '',
