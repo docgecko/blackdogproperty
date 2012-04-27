@@ -29,7 +29,7 @@ puts 'SETTING UP TEAM MEMBERS'
 [
   {
     :name => 'Mark Tovey 07540 706994',
-    :avatar => File.open(File.join(Rails.root, 'assets/company/profile_mark.jpg'),
+    :avatar => File.open(File.join(Rails.root, 'assets/company/profile_mark.jpg')),
     :profile => 'With property being a stable investment in times of uncertainty, Mark\'s ability to find the right property at the right price, whilst always being mindful of a return on your investment is unrivalled.
 
 Mark is the founder of BlackDog Property and has realised a personal dream of finding and renovating outstanding properties in the most beautiful and prestigious area\'s of Europe.
@@ -44,14 +44,14 @@ Mark is a keen golfer, skier devoted dad to Hannah, Callum and of course Ted.',
   },
   {
     :name => 'Ted "Tiberius" Tovey',
-    :avatar => File.open(File.join(Rails.root, 'assets/company/profile_ted.jpg'),
+    :avatar => File.open(File.join(Rails.root, 'assets/company/profile_ted.jpg')),
     :profile => 'Ted is a lifelong companion to Mark. He is actively involved in all aspects of Mark\'s life, acting as a constant sounding board and confidant in all aspects of the business.',
     :order_no => '2',
     :published => true
   },
   {
     :name => 'Mairead McGinley',
-    :avatar => File.open(File.join(Rails.root, 'assets/company/profile_mairead.jpg'),
+    :avatar => File.open(File.join(Rails.root, 'assets/company/profile_mairead.jpg')),
     :profile => 'Mairead joins the BlackDog team as Associate Director based out of the VilleFranche office.
 
 Mairead demonstrates attention to detail and meticulous planning capability when locating and negotiating properties for our clients. With a strong background in business, Mairead has perfect judgement in balancing the needs of our clients and those of the property owners - a skill which cannot be underestimated.
