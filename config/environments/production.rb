@@ -1,6 +1,12 @@
 Blackdogproperty::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # Rewrite rules
+  config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+    r301 %r{.*}, 'http://blackdogproperty.com$&',
+      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != 'blackdogproperty.com' }
+  end
+  
   # Code is not reloaded between requests
   config.cache_classes = true
 
