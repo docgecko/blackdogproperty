@@ -3,7 +3,8 @@ class Support
   include Mongoid::Timestamps
 
   # Setup accessor attributes
-  attr_accessor :id, :name, :email, :company, :phone, :location, :method, :content, :source_id, :interest_ids
+  attr_accessor :id, :name, :email, :company, :phone, :location, 
+                :method, :content, :source_id, :interest_ids
   
   # References
   belongs_to :source
