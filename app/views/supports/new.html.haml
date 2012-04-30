@@ -10,12 +10,22 @@
 
 .block.site
 	.border
-
+	
 		= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
+		
+			= render 'shared/contact_errors'
 
+			%p{:style => "display:block;margin: 5px;"}
+				%span Please ensure you complete at least all of the mandatory fields (
+				%span.required>< *
+				%span>< ).
+	
 			%table
 				%tr
-					%td.label= f.label :name, "Your Name"
+					%td.label
+						= f.label :name do
+							Your Name
+							.required *
 					%td= f.text_field :name, :size => 50, :maxlength => 100
 
 				%tr
@@ -23,7 +33,10 @@
 					%td= f.text_field :company, :size => 50, :maxlength => 250
 
 				%tr
-					%td.label= f.label :email, "Email"
+					%td.label
+						= f.label :email do
+							Email
+							.required *
 					%td= f.text_field :email, :size => 50, :maxlength => 250
 
 				%tr
@@ -34,25 +47,31 @@
 					%td.label= f.label :location, "Location / Country"
 					%td= f.text_field :location, :size => 30, :maxlength => 250
 
+				/ %tr
+				/ 	%td.label= f.label :source, "How did you hear about us?"
+				/ 	%td
+				/ 		= f.collection_select :source, @sources, :name, :name, {:prompt => '-- Please select --'}
+				
 				%tr
-					%td.label= f.label :method, "How did you hear about us?"
+					%td.label
+						= f.label :source do
+							I am interested in?
+							.required *
 					%td
-						= f.select :method, ["Search engine", "Word of mouth", "Advertising", "Press", "Link from another site", "Existing client", "Referred by existing client"]
-
-				%tr
-					%td.label{:style => "vertical-align: middle;"}= f.label :content, "Other information..."
-					%td
-						= f.text_area :content, :cols => 38, :rows => 12
-
-			%table
-				%tr
-					%td.label= f.label :source, "I am interested in?"
-					%td
+						- @interests = Interest.all
 						- @interests.each do |interest|
 							= check_box_tag "support[interest_ids][]", interest.name, nil, :id => ("support_interest_ids_#{interest.id}")
 							= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.id
 							%br	
 						
+				%tr
+					%td.label{:style => "vertical-align: middle;"}
+						= f.label :content do
+							Other information
+							.required *
+					%td
+						= f.text_area :content, :cols => 38, :rows => 12
+
 			#update
 				.actions
 					= f.submit "Send your request", :class => 'button'

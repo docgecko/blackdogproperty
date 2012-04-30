@@ -34,9 +34,6 @@ module Blackdogproperty
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W( #{config.root}/lib )
     
-    # Configure middleware for using MongoHQ's GridFS (loaded via above autoload_paths)
-    # config.middleware.use "::ServeGridfsImage"
-
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

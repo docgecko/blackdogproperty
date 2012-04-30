@@ -1,5 +1,5 @@
 - content_for :title do
-	== Rentals in #{params[:country_id]} | BlackDog Property
+	== Rentals in #{@country.name} | BlackDog Property
 	
 - content_for :link_canonical do
 	== rentals/search/#{@country.id}

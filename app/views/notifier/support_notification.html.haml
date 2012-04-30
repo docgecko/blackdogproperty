@@ -1,0 +1,43 @@
+%h1 Contact - BlackDog Property
+
+%p== Hello #{@sender.name.blank? ? @sender.email : @sender.name}!
+
+%p Thank you contacting BlackDog Property.  The following enquiry has been send to our team:
+
+%hr
+
+%p
+	.strong Your name:
+	= @sender.name
+
+%p
+	.strong Company:
+	= @sender.company
+
+%p
+	.strong Email:
+	= @sender.email
+
+%p
+	.strong Telephone:
+	= @sender.phone
+
+%p
+	.strong Location / Country:
+	= @sender.location
+
+%p
+	.strong Interest(s):
+	= @sender.interest_ids.join(", ") if @sender.interest_ids
+
+%p
+	.strong Other information:
+	= @sender.content
+
+%hr
+
+%p We will respond to you shortly.
+
+%p Many thanks!
+
+%p The BlackDog Property Team

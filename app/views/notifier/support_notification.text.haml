@@ -1,0 +1,45 @@
++++++++++++++++++++++++++++++++++++++++++++++++
+Contact - BlackDog Property
++++++++++++++++++++++++++++++++++++++++++++++++
+\r\n
+\r\n
+== Hello #{@sender.name.blank? ? @sender.email : @sender.name}!
+\r\n
+\r\n
+Thank you contacting BlackDog Property.  The following enquiry has been send to our team:
+\r\n
+\r\n
++++++++++++++++++++++++++++++++++++++++++++++++
+\r\n
+\r\n
+== Your name: #{@sender.name}
+\r\n
+\r\n
+== Company: #{@sender.company}
+\r\n
+\r\n
+== Email: #{@sender.email}
+\r\n
+\r\n
+== Telephone: #{@sender.phone}
+\r\n
+\r\n
+== Location / Country: #{@sender.location}
+\r\n
+\r\n
+== Interest(s): #{@sender.interest_ids.join(", ") if @sender.interest_ids}
+\r\n
+\r\n
+== Other information: #{@sender.content}
+\r\n
+\r\n
++++++++++++++++++++++++++++++++++++++++++++++++
+\r\n
+\r\n
+We will respond to you shortly.
+\r\n
+\r\n
+Many thanks!
+\r\n
+\r\n
+The BlackDog Property Team

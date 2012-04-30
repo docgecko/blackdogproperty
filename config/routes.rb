@@ -32,6 +32,8 @@ Blackdogproperty::Application.routes.draw do
 
   resources :supports, :only => [:new, :create]
   match '/contact' => "supports#new", :as => :contact
+  resources :interests
+  resources :sources
   
   match 'location/:id' => 'high_voltage/pages#show', :as => :location_static, :via => :get
   match 'services/:id' => 'high_voltage/pages#show', :as => :services_static, :via => :get
