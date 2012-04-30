@@ -60,9 +60,10 @@
 					%td
 						- @interests = Interest.all
 						- @interests.each do |interest|
-							= check_box_tag "support[interest_ids][]", interest.name, nil, :id => ("support_interest_ids_#{interest.id}")
-							= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.id
-							%br	
+							%span
+								= check_box_tag "support[interest_ids][]", interest.name, nil, :id => ("support_interest_ids_#{interest.id}")
+								= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.id
+								%br	
 						
 				%tr
 					%td.label{:style => "vertical-align: middle;"}
