@@ -9,7 +9,7 @@ class Photo
   field :image
   field :order_no, :type => Integer
   field :featured, :type => Boolean, :default => false
-  field :published, :type => Boolean, :default => false
+  field :published, :type => Boolean, :default => true
   field :property_id
 
   attr_accessible :title, :description, 

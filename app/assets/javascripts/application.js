@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ad-gallery
+//= require jquery.easytabs.min
+//= require jquery.hashchange.min
+//= require jquery.placeholder.min
 //= require_tree .

@@ -27,7 +27,7 @@ module Blackdogproperty
       Devise::PasswordsController.layout "authentication"
       Devise::ConfirmationsController.layout "authentication"
       # Devise::RegistrationsController.layout "authentication"
-      Devise::Mailer.layout "mailer"
+      # Devise::Mailer.layout "mailer"
     }
     
     # Custom directories with classes and modules you want to be autoloadable.

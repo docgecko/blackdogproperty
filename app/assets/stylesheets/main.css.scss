@@ -584,6 +584,15 @@ hr {
 	}
 }
 
+.placeholder {
+	color: #999;
+	font-style: italic;
+	&:active, &:focus {
+		cursor:text;
+		color: #000;
+	}
+}
+
 /*---------- FLASHES ----------*/
 #flash {
 	text-align: center;

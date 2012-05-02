@@ -15,28 +15,58 @@
 	vertical-align: top;
 }
 
-.error_messages {
-  border: 2px solid #CF0000;
-  padding: 0px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  font-size: 12px;
-	h2 {
-	  text-align: left;
-	  font-weight: bold;
-	  padding: 5px 10px;
-	  margin: 0;
-	  background-color: #c00;
-	  color: white;
-	}
-	p {
-	  margin: 8px 10px;
-	}
-	ul {
-	  margin: 15px 0;
-		li {
-			font-size: 13px;
+#contact_form {
+	width: 450px;
+	margin-right: 20px;
+	table {
+		margin: 0;
+		tr {
+			margin: 0;
+			padding: 0;
+			td {
+			  padding: 0 10px 10px 0;
+				margin: 0;
+				font-weight: bold;
+				font-size: 14px;
+			  text-align: left;
+			  vertical-align: text-top;
+				color: $black;
+				&.label {
+					font-size: 14px;
+					font-weight: bold;
+					margin: 5px;
+					padding: 0 15px 0 0;
+					color: $black;
+					width: 99px;
+				}
+				input {
+					padding: 5px 2px;
+					font-size: 13px;
+					width: 340px;
+					&.error {
+						border-color: $blue;
+					}
+				}
+				.error {
+					font-size: 12px;
+					font-weight: bold;
+					color: $blue;
+				}
+				textarea {
+					font-size: 1em;
+					padding: 5px;
+				}
+				.required {
+					color: $blue;
+					float: right;
+					margin-left: 3px;
+				}
+			}
 		}
 	}
+}
+
+.field_with_errors {
+	display:inline;
 }
 

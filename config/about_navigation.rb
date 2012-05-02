@@ -52,7 +52,7 @@ SimpleNavigation::Configuration.run do |navigation|
     
     primary.item :welcome, 'home', root_url, :if => Proc.new { controller_name != 'welcome' }
     primary.item :team, 'blackdog team', company_team_path
-    primary.item :contact, 'contact us', contact_path   
+    primary.item :contact, 'contact us', new_support_path   
     primary.item :blog, 'blog', 'http://blackdogproperty.wordpress.com', :target => '_blank'
     primary.item :faq, 'FAQs', static_path(:id => "faqs")
     

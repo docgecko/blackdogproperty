@@ -30,10 +30,7 @@ Blackdogproperty::Application.routes.draw do
   match 'company/team' => 'company#team'
   match 'company/testimonials' => 'company#testimonials'
 
-  resources :supports, :only => [:new, :create]
-  match '/contact' => "supports#new", :as => :contact
-  resources :interests
-  resources :sources
+  resources :contact, :as => :supports, :controller => :supports, :only => [:new, :create]
   
   match 'location/:id' => 'high_voltage/pages#show', :as => :location_static, :via => :get
   match 'services/:id' => 'high_voltage/pages#show', :as => :services_static, :via => :get

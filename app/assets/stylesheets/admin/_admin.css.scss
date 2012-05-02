@@ -91,3 +91,28 @@ h4 {
 		}
 	}
 }
+
+.error_messages {
+  border: 2px solid #CF0000;
+  padding: 0px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+	h2 {
+	  text-align: left;
+	  font-weight: bold;
+	  padding: 5px 10px;
+	  margin: 0;
+	  background-color: #c00;
+	  color: white;
+	}
+	p {
+	  margin: 8px 10px;
+	}
+	ul {
+	  margin: 15px 0;
+		li {
+			font-size: 13px;
+		}
+	}
+}

@@ -3,22 +3,21 @@
 
 - content_for :link_canonical do
 	contact
-
+		
 .title
 	%h1 Make an enquiry...
 	.line
-
+	
 .block.site
 	.border
 	
 		= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 		
+			%p{:style => "display:block;margin: 0 5px;"}== Please complete the form below or if you prefer you can send us an #{mail_to "contact@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
+			%br
 			= render 'shared/contact_errors'
 
-			%p{:style => "display:block;margin: 5px;"}
-				%span Please ensure you complete at least all of the mandatory fields (
-				%span.required>< *
-				%span>< ).
+			= render 'shared/mandatory'
 	
 			%table
 				%tr
@@ -47,10 +46,10 @@
 					%td.label= f.label :location, "Location / Country"
 					%td= f.text_field :location, :size => 30, :maxlength => 250
 
-				/ %tr
-				/ 	%td.label= f.label :source, "How did you hear about us?"
-				/ 	%td
-				/ 		= f.collection_select :source, @sources, :name, :name, {:prompt => '-- Please select --'}
+				%tr
+					%td.label= f.label :source, "How did you hear about us?"
+					%td
+						= f.collection_select :source, Source.all, :name, :name, {:prompt => '-- Please select --'}
 				
 				%tr
 					%td.label
@@ -58,9 +57,8 @@
 							I am interested in?
 							.required *
 					%td
-						- @interests = Interest.all
-						- @interests.each do |interest|
-							%span
+						- Interest.all.each do |interest|
+							%span{:style => "display:block"}
 								= check_box_tag "support[interest_ids][]", interest.name, nil, :id => ("support_interest_ids_#{interest.id}")
 								= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.id
 								%br	
@@ -76,4 +74,3 @@
 			#update
 				.actions
 					= f.submit "Send your request", :class => 'button'
-	

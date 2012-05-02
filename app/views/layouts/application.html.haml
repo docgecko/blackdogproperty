@@ -12,7 +12,7 @@
 	= csrf_meta_tag
 	= render "shared/script/google_analytics"
 	= render "shared/script/superfish"
-
+		
 %body{:class => controller_name == "welcome" ? "home" : ""}
 	- if user_signed_in?
 		#auth	

@@ -7,31 +7,31 @@
 %hr
 
 %p
-	.strong Your name:
+	%strong Your name:
 	= @sender.name
 
 %p
-	.strong Company:
+	%strong Company:
 	= @sender.company
 
 %p
-	.strong Email:
+	%strong Email:
 	= @sender.email
 
 %p
-	.strong Telephone:
+	%strong Telephone:
 	= @sender.phone
 
 %p
-	.strong Location / Country:
+	%strong Location / Country:
 	= @sender.location
 
 %p
-	.strong Interest(s):
+	%strong Interest(s):
 	= @sender.interest_ids.join(", ") if @sender.interest_ids
 
 %p
-	.strong Other information:
+	%strong Other information:
 	= @sender.content
 
 %hr

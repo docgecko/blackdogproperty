@@ -1,10 +1,5 @@
-= form_for [:admin, resource], :html => { :multipart => true, :autocomplete => "off" } do |f|
-	- if resource.errors.any?
-		#errorExplanation
-			%h2= "#{pluralize(resource.errors.count, "error")} prohibited this property from being saved:"
-			%ul
-				- resource.errors.full_messages.each do |msg|
-					%li= msg
+= form_for [:admin, resource], :html => { :multipart => true, :autocomplete => "off", :onsubmit => "$('[placeholder]').placeholder('clear');" } do |f|
+	= render 'shared/resource_errors'
 
 	= render 'shared/admin/breadcrumbs/property'
 
@@ -12,8 +7,25 @@
 	
 	%table
 		%tr
-			%td.label= f.label :title
-			%td= f.text_field :title, :size => 50
+			%td.label
+				= f.label :title do
+					Title
+					-if action_name != 'edit'
+						%span.required *
+			%td
+				-if action_name == 'edit'
+					= f.text_field :title, :size => 95, :disabled => "disabled"
+					%p.note 
+						Url of property is: 
+						%span{:style => "color:white;"}= resource.id
+				-else
+					= f.text_field :title, :size => 95
+					%p.note
+						Note: this title will be converted into the property url
+						%br
+						It
+						%span{:style => "color:white;"} cannot be changed
+						once it is set here
 			
 		%tr
 			%td.label= f.label :location
@@ -21,12 +33,12 @@
 
 		%tr
 			%td.label=f.label :country
-			%td= f.collection_select :country_id, @countries, :id, :name
+			%td= f.collection_select :country_id, Country.all, :id, :name, { :prompt => '-- Please select --' }
 		
 		%tr
 			%td.label= f.label :type
 			%td
-				- @types.each do |type|
+				- Type.all.each do |type|
 					= check_box_tag "property[type_ids][]", type.name, resource.type_ids.include?(type.name), :id => ("property_type_ids_#{type.name}")
 					= f.label "type_ids", type.description, :id => :check_box, :value => type.name
 					%br	
@@ -77,16 +89,23 @@
 						%th Longitude
 						%th Zoom
 					%tr
-						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[0], :size => 10},
-						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[1], :size => 10}:
-						%td{:style => "padding: 0px"}= f.text_field :zoom, :size => 3
+						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[0], :size => 10, :placeholder => "0.0"},
+						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[1], :size => 10, :placeholder => "0.0"}:
+						%td{:style => "padding: 0px"}
+							= f.text_field :zoom, :size => 3, :placeholder => "11"
+							%p.note Note: the Zoom number is the suggested value.  You can use this or choose a different number.
+							%p.note Remember to actually type a Zoom number in the box.
 
 	%h4 Publish Details
 	
 	%table
 		%tr
 			%td.label= f.label :order_no
-			%td= f.text_field :order_no, :size => 2
+			%td
+				= f.text_field :order_no, :size => 2, :placeholder => "#{action_name == 'new' ? @order_no : resource.order_no}"
+				-if action_name != "edit"
+					%p.note Note: the number above is the next number in the sequence of property numbers. You can use this or choose a different number.
+					%p.note Remember to actually type an Order No. in the box.
 
 		%tr
 			%td.label= f.label :featured, "Featured?"
