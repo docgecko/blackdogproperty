@@ -11,7 +11,7 @@
 .block.site
 	.border
 	
-		= form_for @support, :url => { :action => :create }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
+		= form_for @support, :url => { :action => :create, :enquiry => params[:enquiry], :property_title => params[:property_title] }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 		
 			%p{:style => "display:block;margin: 0 5px;"}== Please complete the form below or if you prefer you can send us an #{mail_to "contact@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
 			%br
@@ -59,8 +59,8 @@
 					%td
 						- Interest.all.each do |interest|
 							%span{:style => "display:block"}
-								= check_box_tag "support[interest_ids][]", interest.name, nil, :id => ("support_interest_ids_#{interest.id}")
-								= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.id
+								= check_box_tag "support[interest_ids][]", interest.name, (interest.id == params[:enquiry] ? true : false), :id => ("support_interest_ids_#{interest.id}")
+								= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.name
 								%br	
 						
 				%tr
@@ -69,7 +69,10 @@
 							Other information
 							.required *
 					%td
-						= f.text_area :content, :cols => 38, :rows => 12
+						-if params[:property_title].present? &&
+							%textarea#support_content{:cols => "38", :name => "support[content]", :rows => "12"}== Enquiry about the following property: #{params[:property_title]}
+						-else
+							= f.text_area :content, :cols => 38, :rows => 12
 
 			#update
 				.actions

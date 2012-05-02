@@ -69,4 +69,4 @@
 						= markdown(@property.price_rental)
 
 				#tab_contact
-					%p== For further information about this property, please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex, :subject => "Rental Enquiry - " + @property.title} or by using our #{link_to "enquiry form", new_support_path}.
+					%p== For further information about this property, please contact us by #{mail_to "mark@blackdogproperty.com", "email", :encode => :hex, :subject => "Rental Enquiry - " + @property.title} or by using our #{link_to "enquiry form", { :controller => "supports", :action => "new", :enquiry => "rentals", :property_title => @property.title }}.
