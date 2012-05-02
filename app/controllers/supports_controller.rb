@@ -15,7 +15,7 @@ class SupportsController < InheritedResources::Base
     @support = Support.new(params[:support])
     if @support.save
       Notifier.support_notification(@support).deliver
-      redirect_to(root_url, :notice => "Thank you for your contact! We will respond shortly.")
+      redirect_to(root_url, :notice => "Thank you for your enquiry! We will respond shortly.")
     else
       render :new
     end
