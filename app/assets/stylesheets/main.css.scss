@@ -335,10 +335,11 @@ hr {
 					padding: 5px 100px;
 					width: 574px;
 					margin: 0;
-					background-image: url(box_background.gif);
-					background-repeat: repeat-y;
-					background-attachment: scroll;
-					background-position: center top;
+					background-color: $black;
+//					background-image: url(box_background.gif);
+//					background-repeat: repeat-y;
+//					background-attachment: scroll;
+//					background-position: center top;
 					h1 {
 						font-family: $verdana;
 						font-weight: bold;
@@ -356,10 +357,11 @@ hr {
 					float: left;
 					padding: 15px;
 					margin: 0;
-					background-image: url(box_background.gif);
-					background-repeat: repeat-y repeat-x;
-					background-size: 100%;
-					background-position: right top;
+					background-color: $black;
+//					background-image: url(box_background.gif);
+//					background-repeat: repeat-y repeat-x;
+//					background-size: 100%;
+//					background-position: right top;
 					.image {
 						float: left;
 						border: 0pt none;
@@ -480,7 +482,7 @@ hr {
 				}
 				.bottom {
 					float: left;
-					background-image: url(box_bottom.gif);
+//					background-image: url(box_bottom.gif);
 					height: 4px;
 					width: 100%;
 					position: relative;

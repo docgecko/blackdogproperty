@@ -50,11 +50,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :locations, 'location', location_about_path
-    primary.item :sales, 'sales', sales_about_path
-    primary.item :rentals, 'rentals', rentals_path
-    primary.item :renovations, 'renovations', renovations_about_path
-    primary.item :show_case, 'gallery', company_static_path('gallery')
+    primary.item :locations, 'Finding', location_about_path
+    primary.item :rentals, 'Renting', rentals_path
+    primary.item :renovations, 'Renovation', renovations_about_path
+    primary.item :sales, 'Sales', sales_about_path
+    primary.item :show_case, 'Gallery', company_static_path('gallery')
     
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

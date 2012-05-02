@@ -88,10 +88,11 @@
 		float: left;
 		margin: 0;
 		padding: 10px;
-		background-image: url(box_background.gif);
-		background-repeat: repeat-y repeat-x;
-		background-size: 100%;
-		background-position: right top;
+		background-color: $black;
+//		background-image: url(box_background.gif);
+//		background-repeat: repeat-y repeat-x;
+//		background-size: 100%;
+//		background-position: right top;
 		width: 754px;
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
 		filter: alpha(opacity=95);

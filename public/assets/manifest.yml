@@ -44,5 +44,5 @@ services/image_wine_glass.jpg: services/image_wine_glass-bcf7a4323295873cad9cc33
 services/image_world.jpg: services/image_world-38e042abc5b9076cf6d0f58903c40b4f.jpg
 services/logo_blackdog.jpg: services/logo_blackdog-082d9b8cb409f80c3777abec6e6ce475.jpg
 services/profile_ted.jpg: services/profile_ted-d292156b437089c06356d8fc75214095.jpg
-application.js: application-4152cf4201a221a7f50826f3b3492b7a.js
-application.css: application-e994bd40d8766d5b46a307072ee8e9ef.css
+application.js: application-3fa93f5e72dfdf88eddac6fdf739876c.js
+application.css: application-48e88407093728a94a230c3b89b3ef75.css

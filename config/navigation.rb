@@ -49,12 +49,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :welcome, 'home', root_url
-    primary.item :locations, 'location', location_about_path
-    primary.item :sales, 'sales', sales_about_path
-    primary.item :rentals, 'rentals', rentals_path
-    primary.item :renovations, 'renovations', renovations_about_path
-    primary.item :services, 'services' do |s|
+    primary.item :welcome, 'Home', root_url
+    primary.item :locations, 'Finding', location_about_path
+    primary.item :rentals, 'Renting', rentals_path
+    primary.item :renovations, 'Renovation', renovations_about_path
+    primary.item :services, 'Services' do |s|
       s.item :property, 'property management', services_static_path('property-management')
       s.item :client, 'client management', services_static_path('client-management')
       s.item :marketing, 'marketing', services_static_path('marketing')
@@ -66,7 +65,8 @@ SimpleNavigation::Configuration.run do |navigation|
       s.item :language, 'language services', services_static_path('language')
       s.item :maintenance, 'property maintenance', services_static_path('maintenance')
     end
-    primary.item :company, 'company' do |s|
+    primary.item :sales, 'Sales', sales_about_path
+    primary.item :company, 'Company' do |s|
       s.item :about, 'about us', company_about_path
       s.item :team, 'the team', company_team_path
       s.item :accreditation, 'accreditation', company_static_path('blackdog-accreditation')
