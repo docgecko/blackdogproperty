@@ -57,7 +57,7 @@
 							I am interested in?
 							.required *
 					%td
-						- Interest.all.each do |interest|
+						- Interest.all.asc(:name).each do |interest|
 							%span{:style => "display:block"}
 								= check_box_tag "support[interest_ids][]", interest.name, (interest.id == params[:enquiry] ? true : false), :id => ("support_interest_ids_#{interest.id}")
 								= f.label "interest_ids", interest.name, :id => :check_box, :value => interest.name

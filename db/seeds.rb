@@ -42,19 +42,19 @@ puts 'All sources created'
 puts 'SETTING UP INTERESTS'
 [
   {
-    :name => 'Location'
+    :name => 'Finding'
   },
   {
-    :name => 'Rentals'
-  },
-  {
-    :name => 'Sales'
+    :name => 'Renting'
   },
   {
     :name => 'Renovation'
   },
   {
     :name => 'Services'
+  },
+  {
+    :name => 'Sales'
   }
 ].each do |u|
   Interest.create(u)
