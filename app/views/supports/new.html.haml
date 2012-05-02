@@ -13,7 +13,7 @@
 	
 		= form_for @support, :url => { :action => :create, :enquiry => params[:enquiry], :property_title => params[:property_title] }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 		
-			%p{:style => "display:block;margin: 0 5px;"}== Please complete the form below or if you prefer you can send us an #{mail_to "contact@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
+			%p{:style => "display:block;margin: 0 5px;"}== Please complete the form below or if you prefer you can send us an #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
 			%br
 			= render 'shared/contact_errors'
 
