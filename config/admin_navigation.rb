@@ -53,7 +53,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :properties, 'Properties', admin_properties_path
     primary.item :members, 'Team Members', admin_members_path
     primary.item :testimonials, 'Testimonials', admin_testimonials_path
-    primary.item :logout, 'lLogout', destroy_user_session_path    
+    primary.item :logout, 'Logout', destroy_user_session_path    
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
