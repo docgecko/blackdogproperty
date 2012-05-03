@@ -14,3 +14,6 @@
 				%span.short
 					%h2= property.title
 					%span.bio= markdown(truncate(property.bio, :length => 380, :omission => '... (more)'))
+		.paginate
+			= paginate @properties
+		

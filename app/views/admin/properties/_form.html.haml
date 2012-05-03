@@ -131,4 +131,4 @@
 	= render 'shared/admin/photos/manage', :property_id => @property.id
 
 	.actions
-		= f.submit 'Save'
+		= f.submit 'Save', :onclick => "this.value = 'Saving property...'"

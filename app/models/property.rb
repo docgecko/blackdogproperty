@@ -26,6 +26,8 @@ class Property
   # Indexes
   spacial_index :coordinates
   
+  paginates_per 5
+  
   # Setup accessible (or protected) attributes
   attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :type_ids, 
