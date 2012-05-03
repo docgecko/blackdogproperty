@@ -33,7 +33,11 @@
 			%td= f.text_field :location, :size => 50
 
 		%tr
-			%td.label=f.label :country
+			%td.label
+				= f.label :country do
+					Country
+					-if action_name != 'edit'
+						%span.required *
 			%td= f.collection_select :country_id, Country.all, :id, :name, { :prompt => '-- Please select --' }
 		
 		%tr
