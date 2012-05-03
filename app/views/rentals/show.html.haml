@@ -39,7 +39,7 @@
 	.border
 		#tab-container
 			%ul.etabs
-				-if (@property.latitude.present? && @property.longitude.present?)
+				-if @property.latitude != 0 and @property.longitude != 0 and@property.latitude.present? and @property.longitude.present?
 					%li.tab= link_to "Location", "#tab_location"
 				-if @property.description.present?
 					%li.tab= link_to "Description", "#tab_description"
@@ -49,7 +49,7 @@
 					%li.tab= link_to "Price", "#tab_price"
 				%li.tab= link_to "Contact", "#tab_contact"
 			.panel-container
-				- if @property.latitude.present? && @property.longitude.present?
+				-if @property.latitude != 0 and @property.longitude != 0 and@property.latitude.present? and @property.longitude.present?
 					#tab_location
 						= gmaps({ "map_options" => { "type" => "HYBRID", "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true}, "markers" => { "data" => @json } } )
 						:javascript
