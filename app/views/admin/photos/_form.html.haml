@@ -16,7 +16,11 @@
 			%td= f.text_area :description, :size => "70x10"
 
 		%tr
-			%td.label= f.label :image
+			%td.label
+				= f.label :image do
+					Image
+					-if action_name != 'edit'
+						%span.required *
 			%td
 				- unless resource.new_record? || !resource.image?
 					= image_tag resource.image.url(:list), :alt => 'Photo', :title => 'Current photo'
@@ -40,7 +44,11 @@
 	
 	%table
 		%tr
-			%td.label= f.label :order_no
+			%td.label
+				= f.label :order_no do
+					Order no
+					-if action_name != 'edit'
+						%span.required *
 			%td
 				= f.text_field :order_no, :size => 2
 				-if action_name != "edit"

@@ -37,7 +37,7 @@ module Admin
       def next_order_no
         p = Photo.where(property_id: params[:property_id]).order_by(:order_no, :asc).excludes(order_no: 0).last
         if p.present?
-          @order_no = p.order_no + 1
+          @order_no = p.order_no.to_i + 1
         else
           @order_no = 1
         end
