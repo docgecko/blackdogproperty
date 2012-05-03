@@ -6,8 +6,14 @@
 		== #{resource.title} (#{link_to_unless_current 'show', admin_property_path}|#{link_to_unless_current 'edit', edit_admin_property_path})
 		» Photos
 		== (#{link_to_unless_current "show", admin_property_photos_path(resource.id)}|#{link_to_unless_current "new", new_admin_property_photo_path(resource.id)})
-	-elsif controller_name == 'photos'
+	-elsif (controller_name == 'photos' and (action_name == 'edit' or action_name == 'index'))
 		» 
 		== #{@property.title} (#{link_to_unless_current 'show', admin_property_path(@property.id)}|#{link_to_unless_current 'edit', edit_admin_property_path(@property.id)})
 		» Photos
 		== (#{link_to_unless_current "show", admin_property_photos_path(params[:id])}|#{link_to_unless_current "new", new_admin_property_photo_path(params[:id])})
+	-elsif (controller_name == 'photos' and (action_name == 'show'))
+		» 
+		== #{@property.title} (#{link_to_unless_current 'show', admin_property_path(@property.id)}|#{link_to_unless_current 'edit', edit_admin_property_path(@property.id)})
+		» Photos
+		== (#{link_to_unless_current "show", admin_property_photos_path(@property.id)}|#{link_to_unless_current "new", new_admin_property_photo_path(@property.id)})
+	
