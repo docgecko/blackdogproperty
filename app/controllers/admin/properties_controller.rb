@@ -5,7 +5,8 @@ module Admin
     before_filter :all_countries, :only => [ :new, :edit, :show, :index ]
     before_filter :map_property, :only => :show
     after_filter :featured_property_check, :only => [ :update, :create ]
-    before_filter :next_order_no, :only => [ :new ]
+    before_filter :next_order_no, :only => [ :new, :create ]
+    
     layout 'admin'
 
     actions :all

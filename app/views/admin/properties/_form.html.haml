@@ -1,4 +1,5 @@
 = form_for [:admin, resource], :html => { :multipart => true, :autocomplete => "off", :onsubmit => "$('[placeholder]').placeholder('clear');" } do |f|
+
 	= render 'shared/resource_errors'
 
 	= render 'shared/admin/breadcrumbs/property'
@@ -93,8 +94,10 @@
 						%td{:style => "padding: 0px"}== #{text_field_tag "property[coordinates][]", resource.coordinates[1], :size => 10, :placeholder => "0.0"}:
 						%td{:style => "padding: 0px"}
 							= f.text_field :zoom, :size => 3, :placeholder => "11"
-							%p.note Note: the Zoom number is the suggested value.  You can use this or choose a different number.
-							%p.note Remember to actually type a Zoom number in the box.
+					%tr
+						%td{:colspan => 3}
+							%p.note Note: If you do not yet have values for Latitude & Longitude, you must set them both to 0.
+							%p.note The Zoom number is the suggested value.  You can use this or choose a different number.
 
 	%h4 Publish Details
 	
@@ -102,10 +105,12 @@
 		%tr
 			%td.label= f.label :order_no
 			%td
-				= f.text_field :order_no, :size => 2, :placeholder => "#{action_name == 'new' ? @order_no : resource.order_no}"
+				= f.text_field :order_no, :size => 2
 				-if action_name != "edit"
-					%p.note Note: the number above is the next number in the sequence of property numbers. You can use this or choose a different number.
-					%p.note Remember to actually type an Order No. in the box.
+					%p.note
+						Note: the next number in the sequence of property numbers is
+						%strong{:style => "font-weight:bold;color:white;"}= @order_no
+					%p.note You are advised to use this number; however, you can choose more convenient one.
 
 		%tr
 			%td.label= f.label :featured, "Featured?"

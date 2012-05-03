@@ -2,6 +2,7 @@ module Admin
   class PhotosController < BaseController
     before_filter :authenticate_user!
     after_filter :featured_photo_check, :only => [ :update, :create ]
+    before_filter :next_order_no, :only => [ :new, :create ]
     
     layout 'admin'
     
@@ -31,6 +32,11 @@ module Admin
             end
           end
         end
+      end
+      
+      def next_order_no
+        p = Photo.where(property_id: params[:property_id]).order_by(:order_no, :asc).excludes(order_no: 0).last
+        @order_no = p.order_no + 1
       end
   end
 end

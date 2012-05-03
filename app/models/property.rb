@@ -70,8 +70,7 @@ class Property
               :message => "The Zoom value must be an Integer between 0 and 17"
             }
   validates :order_no, 
-            :presence => { :message => "Please provide an Order No. for the property" }, 
-            :uniqueness => { :message => "Please provide a unique Order No." }
+            :presence => { :message => "Please provide an Order No. for the property" }
 
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
   

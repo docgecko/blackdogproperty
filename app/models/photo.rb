@@ -20,6 +20,14 @@ class Photo
   # References
   belongs_to :property
   
+  # Validations
+  validates :order_no, 
+            :presence => { :message => "Please provide an Order No. for the property" }
+  
   # Carrierwave
   mount_uploader :image, PhotoUploader
+  
+  def order_no_next(order_no)
+    order_no +1
+  end
 end

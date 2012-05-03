@@ -1,10 +1,6 @@
-= form_for [:admin, @property, resource], :html => { :multipart => true } do |f|
-	- if resource.errors.any?
-		#errorExplanation
-			%h2= "#{pluralize(resource.errors.count, "error")} prohibited this photo from being saved:"
-			%ul
-				- resource.errors.full_messages.each do |msg|
-					%li= msg
+= form_for [:admin, @property, resource], :html => { :multipart => true, :autocomplete => "off", :onsubmit => "$('[placeholder]').placeholder('clear');" } do |f|
+
+	= render 'shared/resource_errors'
 
 	= render 'shared/admin/breadcrumbs/property'
 
@@ -45,7 +41,13 @@
 	%table
 		%tr
 			%td.label= f.label :order_no
-			%td= f.text_field :order_no, :size => 2
+			%td
+				= f.text_field :order_no, :size => 2
+				-if action_name != "edit"
+					%p.note
+						Note: the next number in the sequence of photo numbers for this property is
+						%strong{:style => "font-weight:bold;color:white;"}= @order_no
+					%p.note You are advised to use this number; however, you can choose more convenient one.
 
 		%tr
 			%td.label= f.label :featured, "Featured?"
