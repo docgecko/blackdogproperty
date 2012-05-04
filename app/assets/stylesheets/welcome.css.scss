@@ -4,43 +4,122 @@
 
 @import "shared";
 
-.border {
-	position: relative;
-	width: 744px;
-	#gallery {
+.featured {
+	float: left;
+	width: 100%;
+	display: block;
+	@include borderless;
+	.picture {
 		float: left;
-		padding: 6px;
-		margin: 0;
-		&.home {
-			width: 400px;
+		width: 550px;
+	}
+	.services {
+		padding: 0 5px 8px 0;
+		float: right;
+		width: 380px;
+		display: table-cell;
+		&.last {
+			padding-bottom: 0px;
+		}
+		.arrow {
+			float: left;
+			height: 26px;
+			width: 110px;
+			margin: 15px 0 0 0;
+			&:hover {
+				background-color: $blue;
+				.service {
+					float: left;
+					color: white;
+					background-color: $blue;
+					width: 91px;
+					a {
+						padding: 4px 50px 4px 6px;
+						font-size: 15px;
+						height: 26px;
+						line-height: 26px;
+						color: white;
+						text-decoration: none;
+					}				
+				}
+				.triangle {
+					display: block;
+					overflow: hidden;
+					position: relative;
+					&.upper {
+						border-top: 13px solid $black;
+						border-left: 13px solid $blue;
+					}
+					&.lower {
+						border-bottom: 13px solid $black;
+						border-left: 13px solid $blue;
+					}
+				}
+			}
+			.service {
+				float: left;
+				color: black;
+				background-color: white;
+				width: 91px;
+				a {
+					width: 91px;
+					padding: 4px 50px 4px 6px;
+					font-size: 15px;
+					height: 26px;
+					line-height: 26px;				
+					color: $black;
+				}
+			}
+			.triangle {
+				display: block;
+				overflow: hidden;
+				position: relative;
+				&.upper {
+					border-top: 13px solid transparent;
+					border-left: 13px solid white;
+				}
+				&.lower {
+					border-bottom: 13px solid transparent;
+					border-left: 13px solid white;
+				}
+			}
+		}
+		.more {
+			float: right;
+			width: 250px;
+			p {
+				text-align: left;
+				@include borderless;
+				padding-bottom: 10px;
+			}
 		}
 	}
-	#descriptions {
-		position: relative;
-		float: left;
-		width: 247px;
-		height: 402px;
-		margin: 0 0 0 5px;
-		overflow: hidden;
-		.ad-image-description {
-		  position: relative;
-			margin: 5px 0 0 0;
-			padding: 0;
-			.ad-description-title {
-		    display: block;
-				text-align: left;
-				line-height: 19px;
-				font-size: 16px;
-				font-weight: normal;
-			}
-			span {
-		    display: block;
-				margin: 10px 10px 0 0;
-				padding: 0;
+}
+
+.block {
+	.textual {
+		ul {
+			margin: 0;
+			padding: 0 0 0 10px;
+			color: $white;
+			text-decoration: none;
+			text-align: left;
+			li {
+				width: 100%;
+				margin: 0;
+				padding: 0 0 5px 0;
+				list-style: inside;
+				line-height: 12px;
 				font-size: 12px;
-				line-height: 15px;
-				text-align: left;
-		  }
+				a {
+					padding: 0;
+					color: $blue;
+					&:hover {
+						text-decoration: underline;
+						color: $blue;
+					}
+				}
+			}
 		}
 	}
 }

@@ -32,18 +32,22 @@
 	position: relative;
 	float: left;
 	margin: 9px 0px 14px 10px;
-	padding: 0 0 0 64px;
+	padding: 0;
 	min-height: 287px;
-	width: 774px;
+	width: $site;
 	.panel {
 		position: relative;
 		display: inline;
 		float: left;
 		background-image: url(company/panel_decor_line.gif);
 		background-repeat: no-repeat;
-		padding: 15px 0 0 0;
+		background-size: 450px 6px;
+		padding: 15px 0;
 		margin: 10px 0 0 0;
-		width: 385px;
+		width: 450px;
+		&.odd {
+			width: 500px;
+		}
 		.name {
 			position: relative;
 			z-index: 6;
@@ -77,7 +81,7 @@
 			margin: 0 0 0 10px;
 			overflow: auto;
 			height: 217px;
-			width: 208px;
+			width: 303px;
 			z-index: 6;
 			p {
 				margin: 0 0 10px 0;
@@ -92,13 +96,13 @@
 .section {
 	position: relative;
 	margin: 22px 8px 8px 8px;
-	width: 758px;
+	width: $site -16px;
 	top: 0px;
 	left: 0px;
 	float: left;
 	.testimonial {
 		position: relative;
-		width: 366px;
+		width: 48%;
 		padding: 0 0 15px 0;
 		&.odd {
 			float: left;

@@ -4,14 +4,11 @@
 - content_for :link_canonical do
 	services/relocation
 	
-.title
-	%h1 Relocation Services
-	.line
+- content_for :h1 do
+	Relocation Services                                                                            	
 
-.block.site
-	.border
-		.image= image_tag "services/image_world.jpg", :height => "80px", :width => "120px"
-		.details
-			%p Relocating to a new country can be a daunting experience particularly with a new language, different administration and legal requirements, residency and purchasing land or property.   BlackDog have experienced agents who are on hand to support you as you begin to embed yourself into the community. 
+- content_for :image do
+	.image= image_tag "services/image_world.jpg", :height => "80px", :width => "120px"
 
-	.bottom
+
+%p Relocating to a new country can be a daunting experience particularly with a new language, different administration and legal requirements, residency and purchasing land or property.   BlackDog have experienced agents who are on hand to support you as you begin to embed yourself into the community. 

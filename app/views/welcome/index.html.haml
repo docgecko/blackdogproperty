@@ -1,39 +1,60 @@
 - content_for :title do
 	Outstanding Property Renovation, Rental, Sales & Management | BlackDog Property
 
-- content_for :scripts do
-	= render 'shared/script/welcome/gallery'
-
 .block.site
-	-if @photos
-		.border
-			#gallery.home.ad-gallery
-				.ad-image-wrapper
-				.ad-controls
-				.ad-nav
-					.ad-thumbs
-						%ul.ad-thumb-list
-							- @photos.each do |p|
-								%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:gallery)
-			#descriptions
-	-else
-		.textual
-			%h1 Latest project images to be shown here soon.
-	.bottom
-	
+	.border
+		.featured
+			.picture= image_tag "welcome/villa_peter.jpg", :width => "550px"
+			.services
+				.arrow
+					.service= link_to "Finding", location_about_path
+					.triangle.upper
+					.triangle.lower
+				.more
+					%p We find the right property in the right location at a price that reflects true market value
+
+			.services
+				.arrow
+					.service= link_to "Renting", rentals_path
+					.triangle.upper
+					.triangle.lower
+				.more
+					%p We ensure your rental experience is without compromise - all of our properties exhibit luxury and are individually selected 
+
+			.services
+				.arrow
+					.service= link_to "Renovation", renovations_about_path
+					.triangle.upper
+					.triangle.lower
+				.more
+					%p We renovate your property to the highest standard using our team of experienced professionals
+
+			.services
+				.arrow
+					.service= link_to "Services"
+					.triangle.upper
+					.triangle.lower
+				.more
+					%p We deliver maintenance services that ensure both clients' and owners' requirements are met
+
+			.services.last
+				.arrow
+					.service= link_to "Sales", sales_about_path
+					.triangle.upper
+					.triangle.lower
+				.more
+					%p We supply a selection of marketing services to ensure your property receives the right attension
+				
 .block.site
 	.textual
 		%h1 BlackDog Property
-		%p BlackDog locate and renovate outstanding private residences throughout Europe, working with  clients for whom quality is essential.  Our unique consulting service ensures that we fully understand your aspirations and are able to respond quickly to your specific requirements by combining creativity, and imagination, with practical professional skills and good old fashioned hard work.
+		%p BlackDog Property is a specialist property consultancy offering a bespoke service and experience, whether finding a property of your dreams to purchase or renting a luxurious holiday property.
+	
+		%p We only operate in the most sort after locations throughout Europe and all of our properties are individually selected.  In addition to core Finding and Rental services, we offer property renovation and maintenance - all carried out to our exacting standard, ensuring the highest quality of workmanship is delivered.
 
-		%p Our BlackDog team of dedicated professionals will ensure that they find the right properties based on your detailed criteria. They will provide outstanding expert advice on your property portfolio and project onward rental or sales potential. This will be further supported by commercial and marketing strategies to ensure a successful return.
-
-		%p We look forward to exceeding your expectations .
-
-		%p Welcome to BlackDog 
-
-		%p For further information on our services please
 		%p
-			= link_to "Contact BlackDog", new_support_path
-			= ": 07540 706994"
-	.bottom
+			For further information on our services please contact BlackDog through in any of the following ways:
+			%ul
+				%li== #{link_to "enquiry form", new_support_path}
+				%li== #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex}
+				%li direct on +44 (0)7540 706994

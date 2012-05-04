@@ -4,18 +4,17 @@
 - content_for :link_canonical do
 	services/language
 	
-.title
-	%h1 Language Services
-	.line
+- content_for :h1 do
+	Language Services
 
-.block.site
-	.border
-		.image= image_tag "services/image_language_french.jpg", :height => "130px", :width => "87px"
-		.details
-			%p When buying a property abroad it is often the assumption that people in Europe will speak English. However, there is a strong case in favour of learning enough of the local language to be courteous to the neighbouring inhabitants.
+- content_for :image do
+	.image= image_tag "services/image_language_french.jpg", :height => "130px", :width => "87px"
 
-			%p By immersing yourself in the culture, lifestyle and language of the country it becomes a true experience.  Particularly in the Latin derivative countries, there is such passion in the language which we cannot possibly express without learning to use body language integrated with the vernacular.
 
-			%p At BlackDog we have access through our members area to simple tuition of French, Italian, Portuguese and Spanish, but also once established with BlackDog we can arrange personal lessons for you and your family.
+%p When buying a property abroad it is often the assumption that people in Europe will speak English. However, there is a strong case in favour of learning enough of the local language to be courteous to the neighbouring inhabitants.
 
-	.bottom
+%p By immersing yourself in the culture, lifestyle and language of the country it becomes a true experience.  Particularly in the Latin derivative countries, there is such passion in the language which we cannot possibly express without learning to use body language integrated with the vernacular.
+
+%p At BlackDog we have access through our members area to simple tuition of French, Italian, Portuguese and Spanish, but also once established with BlackDog we can arrange personal lessons for you and your family.
+
+			

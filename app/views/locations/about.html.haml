@@ -4,91 +4,24 @@
 - content_for :link_canonical do
 	locations/consultancy
 	
-.head
-	.images
-		.row
-			= link_to (image_tag "location/explore_france.jpg"), location_country_path("france")
-			= link_to (image_tag "location/explore_spain.jpg"), location_country_path("spain")
-		.row
-			= link_to (image_tag "location/explore_portugal.jpg"), location_country_path("portugal")
-			= link_to (image_tag "location/explore_italy.jpg"), location_country_path("italy")
-			
-	.description
-		%h1= ("Location Consultancy Services").upcase
-		
-		%p BlackDog offer a bespoke service for people looking to find a property. We are here to offer additional specialist knowledge, tailored to our clients needs and budget for people who want to realise their dreams of living in a beautiful home or acquiring an investment abroad.
-
-		%p Nothing is let to chance when BlackDog find a property. We spend time understanding our clients, their short and long term requirements and advise them promptly when we uncover any difficulties.  We rely on our extensive local knowledge to understand if there are underlying issues that could impact on your investment or our client's happiness.
-
-		%p Our consultancy service comes in three packages, Silver, Gold and Platinum and each offers a service to enable you to find a property which fulfils your requirements. Please take a look at a detailed breakdown of our Find a Property Services which BlackDog offer.
-		
-.break
-
 .block.site
 	.border
-		%h2= ("Consultancy Packages").upcase
-		
-		.package
-			.name.silver Silver Package
-			.points
-				%ul
-					%li Identification of 5-10 properties
-					%li Property information
-					%ul
-						%li Pictures
-						%li GPS location
-						%li	Detail description
-						%li Key issues
-					%li Access issues
-					%li Planning issues
-					%li Local issues
-					%li Local points of interest
-					%li Sport and leisure activities in area
-					%li Development potential
-					%li Works require
-
-		.package
-			.name.gold Gold Package
-			.points
-				%p All as per Silver Package
-				%p Additional Services
-				%ul
-					%li Personal consultation
-					%li Physical country search
-					%li Additional 5 properties
-					%li Additional 30+ photographs
-					%li Property video
-					%li Detailed area assessment
-					%li Detailed property assessment
-					%li Detailed investment appraisal
-					%li Basic cost of ownership
-					%li Basic survey of property
-					%li Basic costs of renovation
-					%li Escorted visits top three properties
-
-		.package
-			.name.platinum Platinum Package
-			.points
-				%p All as per Gold Package
-				%p Additional Services
-				%ul
-					%li Private consultation and presentation following our search
-					%li Detail cost of ownership assessment
-					%li Detail survey of property
-					%li Full business case
-					%li Detail renovations costs
-					%li Detail program
-					%li Risk assessment
-					%li Mortgage quotations
-					%li Escorted visits top 5 properties
-					%li Management of visit
-
-		.prices
-			.value Package Cost £750
-			.value Package Cost £1,250
-			.value Package Cost £2500
+		.head
+			.images
+				.row
+					= link_to (image_tag "location/explore_france.jpg"), location_country_path("france")
+					= link_to (image_tag "location/explore_spain.jpg"), location_country_path("spain")
+				.row
+					= link_to (image_tag "location/explore_portugal.jpg"), location_country_path("portugal")
+					= link_to (image_tag "location/explore_italy.jpg"), location_country_path("italy")
 			
-		.enquiry
-			%h3= link_to "Make an enquiry about BlackDog Finding", new_support_path(:enquiry => "finding")
-					
-	.bottom
+			.description
+				%h1= ("Location Consultancy Services").upcase
+		
+				%p BlackDog offer a bespoke service for people looking to find a property. We are here to offer additional specialist knowledge, tailored to our clients needs and budget for people who want to realise their dreams of living in a beautiful home or acquiring an investment abroad.
+
+				%p Nothing is let to chance when BlackDog find a property. We spend time understanding our clients, their short and long term requirements and advise them promptly when we uncover any difficulties.  We rely on our extensive local knowledge to understand if there are underlying issues that could impact on your investment or our client's happiness.
+
+				%p Our consultancy service comes in three packages, Silver, Gold and Platinum and each offers a service to enable you to find a property which fulfils your requirements. Please take a look at a detailed breakdown of our Find a Property Services which BlackDog offer.
+		
+				%h3= link_to "Make an enquiry about BlackDog Finding", new_support_path(:enquiry => "finding")

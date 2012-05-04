@@ -7,11 +7,10 @@
 .block.site
 	.textual
 		%p BlackDog are renowned for the personal service we offer our clients. It is always a pleasure to hear that we have achieved our goals.  We'd like to share some of the testimonials from clients.
-	.bottom
 
-	.section
-		- if @testimonials.empty?
-			%h2 No testimonials found.
-		- else
-			- for testimonial in @testimonials
-				= render "shared/company/testimonials", :testimonial => testimonial
+.section
+	- if @testimonials.empty?
+		%h2 No testimonials found.
+	- else
+		- for testimonial in @testimonials
+			= render "shared/company/testimonials", :testimonial => testimonial

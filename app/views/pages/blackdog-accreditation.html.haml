@@ -4,14 +4,11 @@
 - content_for :link_canonical do
 	services/blackdog-accreditation
 	
-.title
-	%h1 BlackDog Accreditation
-	.line
+- content_for :h1 do
+	BlackDog Accreditation
 
-.block.site
-	.border
-		.image= image_tag "services/image_paw_of_approval.jpg", :height => "96px", :width => "97px"
-		.details
-			%p BlackDog Accreditation is one of the highest recommendations available for luxury properties.  We can assure our clients of unrivalled and uncompromised attention to detail in a luxury environment.  Our esteemed internal grading criteria must be met in order for a property to be awarded a BlackDog accreditation.
+- content_for :image do
+	.image= image_tag "services/image_paw_of_approval.jpg", :height => "96px", :width => "97px"
 
-	.bottom
+
+%p BlackDog Accreditation is one of the highest recommendations available for luxury properties.  We can assure our clients of unrivalled and uncompromised attention to detail in a luxury environment.  Our esteemed internal grading criteria must be met in order for a property to be awarded a BlackDog accreditation.

@@ -32,10 +32,10 @@ Blackdogproperty::Application.routes.draw do
 
   resources :contact, :as => :supports, :controller => :supports, :only => [:new, :create]
   
-  match 'location/:id' => 'high_voltage/pages#show', :as => :location_static, :via => :get
-  match 'services/:id' => 'high_voltage/pages#show', :as => :services_static, :via => :get
-  match 'company/:id' => 'high_voltage/pages#show', :as => :company_static, :via => :get
-  match '/:id' => 'high_voltage/pages#show', :as => :static, :via => :get
-
+  match 'location/:id' => 'high_voltage/pages#show', :as => :location_static, :via => :get, :format => false
+  match 'services/:id' => 'pages#show', :as => :services_static, :via => :get, :format => false
+  match 'company/:id' => 'pages#show', :as => :company_static, :via => :get, :format => false
+  match '/:id' => 'pages#show', :as => :static, :via => :get, :format => false
+  
   root :to => 'welcome#index'
 end

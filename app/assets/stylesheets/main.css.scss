@@ -130,7 +130,7 @@ hr {
 	.wrapper {
 		position: relative;
 		margin: 0 auto;
-		width: 920px;
+		width: $site;
 		#admin {
 			position: relative;
 			left: 0px;
@@ -170,23 +170,23 @@ hr {
 	height: 100%;
 	background-image: url(background_general.gif);
   background-color: $black;
-  color: #666;
+  color: gray;
   margin: 0 auto;
 	&.home {
 		background-image: url(background_home.gif);
 	}
 	#header {
-		height: 173px;
+		height: $header;
 		width: 100%;
 		margin: 0;
 		padding: 0;
 		.wrapper {
 			position: relative;
 			margin: 0 auto;
-			width: 920px;
+			width: $site;
 			#information {
 				position: absolute;
-				left: 597px;
+				left: 700px;
 				top: 4px;
 				margin: 0;
 				z-index: 8;
@@ -218,14 +218,14 @@ hr {
 			}
 			#logo {
 				position: absolute;
-				left: 92px;
+				left: 80px;
 				top: 42px;
 				z-index: 3;
 				margin: 0;
 			}
 			#navigation {
 				position: absolute;
-				left: 78px;
+				left: 60px;
 				top: 133px;
 				z-index: 14;
 				margin-left: 0px;
@@ -244,7 +244,7 @@ hr {
 						display: inline;
 						position: relative;
 						float: left;
-						margin: 4px 8px 4px 8px;
+						margin: 4px 15px;
 						span, a {
 							padding: 4px 14px;
 							text-decoration: none;
@@ -301,11 +301,11 @@ hr {
 		float: left;
 		.wrapper {
 			margin: 0 auto;
-		  width: 920px;
+		  width: $site;
 			.title {
-				width: 774px;
+				width: $site -3px;
 				margin: 33px auto 0 auto;
-				padding: 0 10px;
+				padding: 0 0 0 3px;
 				h1 {
 					width: 744px;
 					padding: 0 15px;
@@ -314,57 +314,38 @@ hr {
 			.line {
 				height: 6px;
 				background-image: url(linecopy.gif);
+				backgroud-repeat: repeat-x;
+				background-size: $site -6px;
 				margin: 0 0 10px 0;
-				padding: 0;
+				padding: 0;					
 				&.short {
-					width: 421px;
+					width: 625px;
+					background-size: 625px;
 				}
 				&.search {
 					width: 367px;
+					background-size: 367px;
 				}
 			}
 			.block {
 				background-color: $black;
-				margin: 0 auto;
+				margin: 0 0 30px 0;
 				padding: 0;
-				clear: both;
 				&.site {
-					width: 774px;
-				}
-				.textual {
-					padding: 5px 100px;
-					width: 574px;
-					margin: 0;
-					background-color: $black;
-//					background-image: url(box_background.gif);
-//					background-repeat: repeat-y;
-//					background-attachment: scroll;
-//					background-position: center top;
-					h1 {
-						font-family: $verdana;
-						font-weight: bold;
-						font-size: 16px;
-						color: $white;
+					width: $site;
+					float: left;
+					&.flash {
 						margin: 0;
 					}
-					p {
-						text-align: justify;
-						font-size: 12px;
-						line-height: 18px;
-					}
+				}
+				&.borderless {
+					@include borderless;
 				}
 				.border {
-					float: left;
-					padding: 15px;
-					margin: 0;
-					background-color: $black;
-//					background-image: url(box_background.gif);
-//					background-repeat: repeat-y repeat-x;
-//					background-size: 100%;
-//					background-position: right top;
+					@include block-border;
 					.image {
 						float: left;
-						border: 0pt none;
+						border: 0px none;
 					}
 					.details {
 						p {
@@ -455,11 +436,14 @@ hr {
 					}
 					.box {
 						background-color: white;
-						width: 222px;
+						width: 291px;
 						padding: 10px;
-						margin: 0 6px 0 0;
+						margin: 0 8px 0 0;
 						float: left;
-						height: 240px;
+						height: 200px;
+						&.last {
+							margin: 0;
+						}
 						h2 {
 							color: $black;
 							text-align: left;
@@ -480,58 +464,76 @@ hr {
 						}
 					}
 				}
+				.textual {
+					@include block-textual;
+					h1 {
+						font-family: $verdana;
+						font-weight: bold;
+						font-size: 16px;
+						color: $white;
+						margin: 0;
+					}
+					p {
+						text-align: justify;
+						font-size: 12px;
+						line-height: 18px;
+					}
+				}
 				.bottom {
 					float: left;
-//					background-image: url(box_bottom.gif);
 					height: 4px;
-					width: 100%;
 					position: relative;
-					background-repeat: repeat-y repeat-x;
-					background-size: 100%;
-					background-position: right bottom;
 					margin-bottom: 20px;					
 				}
-			}
-		}
-		.head {
-			position: relative;
-			width: 770px;
-			margin: 0 73px;
-			padding: 0;
-			float: left;
-			.images {
-				float: left;
-				margin: 0 10px 0 0;
-				img {
-					margin: 1px;
-				}
-				.row {
-				}
-			}
-			.description {
-				h1 {
-					font-family: $verdana;
-					text-align: left;
-					padding: 10px 0 0 0;
-					font-size: 16px;
-					line-height: 19px;
-				}
-				p {
-					text-align: justify;
-					padding-bottom: 0px;
-					font-size: 12px;
-					margin-top: 15px;
+				.head {
+					position: relative;
+					width: 100%;
+					margin: 0;
+					padding: 0;
+					float: left;
+					.images {
+						float: left;
+						margin: 0 10px 0 0;
+						a {
+							@include image-opacity(1.0);
+							&:hover {
+								@include image-opacity(0.75);
+							}							
+						}
+						img {
+							margin: 1px;
+						}
+						.row {
+						}
+					}
+					.description {
+						h1 {
+							font-family: $verdana;
+							text-align: left;
+							padding: 10px 0 0 0;
+							font-size: 16px;
+							line-height: 19px;
+						}
+						p {
+							text-align: justify;
+							padding-bottom: 0px;
+							font-size: 12px;
+							margin-top: 15px;
+						}
+					}
 				}
 			}
 		}
 		.break {
+			float: left;				
 			background-image: url(location/line_full_width.gif);
-			background-repeat: no-repeat;
-			width: 774px;
+			background-repeat: repeat-x;
+			background-size: $site 6px;
+			width: $site;
 			height: 6px;
-			margin: 0 73px 6px 73px;
+			padding: 0;					
+			margin: 6px 0;
 			z-index: 3;
-			float: left;
 		}
 	}
 }
@@ -595,6 +597,10 @@ hr {
 	}
 }
 
+.clear {
+	clear: both;
+}
+
 /*---------- FLASHES ----------*/
 #flash {
 	text-align: center;
@@ -602,7 +608,7 @@ hr {
 	font-weight: normal;
 	margin: 0 auto;
 	padding: 0;
-//	width: 774px;
+//	width: $site;
 	.alert {
 		margin-bottom: 10px;
 		padding: 10px;

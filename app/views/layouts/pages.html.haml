@@ -31,7 +31,15 @@
 				.block.site.flash
 					= render 'shared/flashes'
 			
-				= yield
+				.title
+					%h1= yield(:h1)
+					.line
+
+				.block.site
+					.border
+						= yield(:image)
+						.details
+							= yield
 		
 	#footer
 		.wrapper

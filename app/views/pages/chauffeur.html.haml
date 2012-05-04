@@ -3,15 +3,12 @@
 
 - content_for :link_canonical do
 	services/chauffeur
-	
-.title
-	%h1 Chauffeur Services
-	.line
 
-.block.site
-	.border
-		.image= image_tag "services/image_chauffeur.jpg", :height => "135px", :width => "200px"
-		.details
-			%p Your comfort is at the forefront of our minds and as such we provide a bespoke chauffeur service to ensure your BlackDog experience is as trouble free and comfortable as possible.  If you require, we can arrange your transportation from your home to any UK airport in order to begin your experience.  When you arrive at the airport you will be collected by a BlackDog chauffeur who will greet you with a glass of champagne and an air-conditioned vehicle.  Depending on the service you have selected, your chauffeur will can be on hand to you for the duration of your stay.
+- content_for :h1 do
+	Chauffeur Services
 
-	.bottom
+- content_for :image do
+	.image= image_tag "services/image_chauffeur.jpg", :height => "135px", :width => "200px"
+
+
+%p Your comfort is at the forefront of our minds and as such we provide a bespoke chauffeur service to ensure your BlackDog experience is as trouble free and comfortable as possible.  If you require, we can arrange your transportation from your home to any UK airport in order to begin your experience.  When you arrive at the airport you will be collected by a BlackDog chauffeur who will greet you with a glass of champagne and an air-conditioned vehicle.  Depending on the service you have selected, your chauffeur will can be on hand to you for the duration of your stay.
