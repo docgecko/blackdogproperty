@@ -303,11 +303,9 @@ hr {
 			margin: 0 auto;
 		  width: $site;
 			.title {
-				width: $site -3px;
 				margin: 33px auto 0 auto;
 				padding: 0 0 0 3px;
 				h1 {
-					width: 744px;
 					padding: 0 15px;
 				}
 			}
@@ -315,16 +313,16 @@ hr {
 				height: 6px;
 				background-image: url(linecopy.gif);
 				backgroud-repeat: repeat-x;
-				background-size: $site -6px;
+				background-size: 100%;
 				margin: 0 0 10px 0;
 				padding: 0;					
 				&.short {
 					width: 625px;
-					background-size: 625px;
+					background-size: 625px 6px;
 				}
 				&.search {
 					width: 367px;
-					background-size: 367px;
+					background-size: 367px 6px;
 				}
 			}
 			.block {
