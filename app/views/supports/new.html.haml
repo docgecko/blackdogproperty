@@ -15,9 +15,9 @@
 		
 			%p{:style => "display:block;margin: 0 5px;"}== Please complete the form below or if you prefer you can send us an #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
 			%br
-			= render 'shared/contact_errors'
 
 			= render 'shared/mandatory'
+			= render 'shared/contact_errors'
 	
 			%table
 				%tr

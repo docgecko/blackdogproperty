@@ -1,6 +1,6 @@
 - if @support.errors.any?
 	.error_messages
-		%h2{:style => "padding: 5px 10px; font-size: 14px;"} The enquiry form is incomplete, please correct the following errors:
+		%h2{:style => "padding: 5px 10px; font-size: 14px;"} The enquiry form is incomplete:
 		%ul
 			- @support.errors.each do |attribute, message|
 				%li= message
