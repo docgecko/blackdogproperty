@@ -5,7 +5,7 @@
 @import "shared";
 
 #breadcrumbs {
-	margin: 0 0 12px 80px;
+	margin: 0 0 12px 18px;
 	padding: 0;
 	color: $white;
 	a {
@@ -16,17 +16,17 @@
 }
 
 #gallery {
+	margin: 0 auto;
 	&.property {
-		width: 400px;
 	}
 }
 
 #search {
 	position: relative;
 	float: left;
-	margin: 33px auto 9px 10px;
-	padding: 0 0 0 64px;
-	width: 774px;
+	margin: 33px auto 9px;
+	padding: 0;
+	width: $site;
 	display: table-cell;
 	.filter {
 		margin: 12px 0 0 0;
@@ -64,13 +64,13 @@
 	h1 {
 		vertical-align: top;
 		line-height: 56px;
+		padding: 0 15px;
 		&.short {
 			background-image: url(linecopy.gif);
 			background-position: 0px 49px;
 			background-repeat: no-repeat;
 			margin: 0;
-			padding: 0;
-			width: 367px;
+			background-size: 573px 6px;
 		}
 	}
 }
@@ -78,30 +78,24 @@
 #results {
 	position: relative;
 	float: left;
-	margin: 9px 0px 9px 10px;
-	padding: 0 0 0 64px;
+	margin: 0;
+	padding: 0;
 	min-height: 287px;
-	width: 774px;
+	width: site;
 	.paginate {
 		float: left;
 		padding: 10px 0;
 		margin: 0 auto;
 		text-align: center;
 		background-color: $black;
-		width: 100%;
+		width: $site;
 	}
 	.property {
 		position: relative;
-		display: inline;
 		float: left;
 		margin: 0;
 		padding: 10px;
 		background-color: $black;
-//		background-image: url(box_background.gif);
-//		background-repeat: repeat-y repeat-x;
-//		background-size: 100%;
-//		background-position: right top;
-		width: 754px;
 		@include image-opacity(0.95);
 		&:hover {
 			@include image-opacity(1.0);
@@ -118,9 +112,9 @@
 			}
 		}
 		.short {
-			float: left;
-			width: 438px;
-			margin: 0 6px 0 10px;
+			float: right;
+			width: ($site - 346px);
+			margin: 0 10px 0 16px;
 			h2 {
 			}
 			.bio {
@@ -176,7 +170,7 @@
 	}
 	.panel-container {
 		position: relative;
-		width: 734px;
+		width: ($site - 42px);
 		float: left;
 		background: $black; 
 		padding: 0px;

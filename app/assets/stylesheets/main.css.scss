@@ -548,13 +548,13 @@ hr {
 	clear:both;
 	.wrapper {
 		margin: 0 auto 15px auto;
-	  padding: 15px 40px;
-	  width: 920px;
+	  padding: 15px 0;
+	  width: $site;
 		text-align: left;
 		font-size: 0.75em;
 		.column {
 			position: relative;
-			padding: 0 0 0 165px;
+			padding: 0 0 0 200px;
 			margin: 0;
 			float: left;
 			ul {

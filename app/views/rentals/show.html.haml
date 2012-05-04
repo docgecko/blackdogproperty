@@ -12,28 +12,25 @@
 	%h1== #{@property.title} - #{@country.name}
 	.line
 
-.breadcrumbs
-	= render 'shared/rental/breadcrumbs'
+= render 'shared/rental/breadcrumbs'
 
 .block.site
 	.border
 		.details
-		-if @photos.present?
-			#gallery.property.ad-gallery
-				.ad-image-wrapper
-				.ad-controls
-				.ad-nav
-					.ad-thumbs
-						%ul.ad-thumb-list
-							- @photos.each do |p|
-								-if p.image.present?
-									%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:large)
-			#description
-		-else
-			%h2 Photos of this property will be available soon.
-			%p== Please contact us by #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", new_support_path} and we will email you when they appear here.
-
-	.bottom
+			-if @photos.present?
+				#gallery.property.ad-gallery
+					.ad-image-wrapper
+					.ad-controls
+					.ad-nav
+						.ad-thumbs
+							%ul.ad-thumb-list
+								- @photos.each do |p|
+									-if p.image.present?
+										%li= link_to (image_tag p.image.url(:thumb), :title => p.title, :alt => p.description), p.image.url(:large)
+				#description
+			-else
+				%h2 Photos of this property will be available soon.
+				%p== Please contact us by #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", new_support_path} and we will email you when they appear here.
 
 .block.site
 	.border

@@ -1,3 +1,5 @@
+@import "shared";
+
 .map_container {
 	margin: 16px 0;
   padding: 6px;
@@ -10,7 +12,7 @@
 }
 
 .gmaps4rails_map {
-  width: 716px;
+  width: ($site - 56px);
   height: 440px;
 }
 
