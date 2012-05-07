@@ -186,7 +186,7 @@ hr {
 			width: $site;
 			#information {
 				position: absolute;
-				left: 700px;
+				left: 727px;
 				top: 4px;
 				margin: 0;
 				z-index: 8;
@@ -222,6 +222,23 @@ hr {
 				top: 42px;
 				z-index: 3;
 				margin: 0;
+			}
+			#social {
+				position: absolute;
+				top: 70px;
+				right: 10px;
+			}
+			#social {
+				a {
+					@include image-opacity(0.5);
+					&:hover {
+						@include image-opacity(1);
+					}
+					img {
+						vertical-align:middle;
+						margin:-5px 2px 0 2px;
+					}
+				}
 			}
 			#navigation {
 				position: absolute;
