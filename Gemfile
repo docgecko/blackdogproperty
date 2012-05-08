@@ -38,7 +38,6 @@ gem 'rack-rewrite', '1.0.2'
 gem 'gmaps4rails'
 gem 'mongoid_spacial'
 gem "fog", "~> 1.3.1"
-gem 'newrelic_rpm'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'
