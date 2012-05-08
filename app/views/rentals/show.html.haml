@@ -48,6 +48,7 @@
 			.panel-container
 				-if @property.latitude != 0 and @property.longitude != 0 and@property.latitude.present? and @property.longitude.present?
 					#tab_location
+						/ = gmaps4rails(@json)
 						= gmaps({ "map_options" => { "type" => "HYBRID", "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true}, "markers" => { "data" => @json } } )
 						:javascript
 							$(document).ready(function() {
