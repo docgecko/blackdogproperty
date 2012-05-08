@@ -15,6 +15,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'thin'
 
 gem 'inherited_resources', '1.3.0'
 gem 'devise'
@@ -37,6 +38,7 @@ gem 'rack-rewrite', '1.0.2'
 gem 'gmaps4rails'
 gem 'mongoid_spacial'
 gem "fog", "~> 1.3.1"
+gem 'newrelic_rpm'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'
@@ -73,8 +75,4 @@ group :test do
 	gem 'mongoid-rspec', '>= 1.4.4'
 	gem 'factory_girl_rails', '>= 1.1.0'
 	gem 'launchy', '>= 2.0.5'
-end
-
-group :production do
-  gem 'thin'
 end
