@@ -1,12 +1,18 @@
 Blackdogproperty::Application.routes.draw do
   
-  namespace :admin do
-    resources :properties do
-      resources :photos
-    end
-    resources :members
-    resources :testimonials
-  end
+  mount Ckeditor::Engine => '/ckeditor'
+
+  devise_for :admins
+  
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  # namespace :admin do
+  #   resources :properties do
+  #     resources :photos
+  #   end
+  #   resources :members
+  #   resources :testimonials
+  # end
 
   devise_for :users, :path => "/", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'confirmation' }
   

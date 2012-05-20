@@ -6,24 +6,22 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-puts 'SETTING UP USER LOGINS'
+puts 'SETTING UP ADMIN LOGINS'
 [
   {
     :email => 'daren.sdw@gmail.com', 
     :password => 'Cup4te4s',
-    :password_confirmation => 'Cup4te4s',
-    :admin => true
+    :password_confirmation => 'Cup4te4s'
   },
   {
     :email => 'mark@blackdogproperty.com', 
     :password => 'Abergavenny46',
-    :password_confirmation => 'Abergavenny46',
-    :admin => true
+    :password_confirmation => 'Abergavenny46'
   }
 ].each do |u|
-  User.create(u)
+  Admin.create(u)
 end
-puts 'All users created'
+puts 'All admins created'
 
 puts 'SETTING UP TEAM MEMBERS'
 [

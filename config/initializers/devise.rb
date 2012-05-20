@@ -9,9 +9,6 @@ Devise.setup do |config|
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
-  # Automatically apply schema changes in tableless databases
-  config.apply_schema = false
-
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
@@ -85,7 +82,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  config.pepper = "161fec16c6be6b5de7b57520534001179898a4be2e5c8d9bba8779fd4f181027e10432ca87c57baa634a09fee6bfd07a0370b4016dd2a4df5e0e6d068037275e"
+  config.pepper = "b0985ee10841308d3552bf617a45a43dc939c8bea5afe0859caf49675b7b2f6391359153e72d8cb9869f6e77e1541d0c2d477d7c5c81ba92036de554b4ff0c8b"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -95,7 +92,7 @@ Devise.setup do |config|
   # the user cannot access the website without confirming his account.
   # config.allow_unconfirmed_access_for = 2.days
 
-  # If true, requires any email changes to be confirmed (exctly the same way as
+  # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed new email is stored in
   # unconfirmed email column, and copied to email column on successful confirmation.
@@ -106,18 +103,14 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  config.remember_for = 2.days
+  config.remember_for = 2.weeks
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 
-  # If true, uses the password salt as remember token. This should be turned
-  # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
-
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
-  # config.cookie_options = {}
+  # config.rememberable_options = {}
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..128.
@@ -187,7 +180,7 @@ Devise.setup do |config|
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  config.default_scope = :user
+  # config.default_scope = :user
 
   # Configure sign_out behavior.
   # Sign_out action can be scoped (i.e. /users/sign_out affects only :user scope).

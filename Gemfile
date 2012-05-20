@@ -38,6 +38,9 @@ gem 'rack-rewrite', '1.0.2'
 gem "gmaps4rails", "1.5.1"
 gem 'mongoid_spacial'
 gem "fog", "~> 1.3.1"
+gem "rails_admin"
+gem "rails_admin_map_field", :git => "git://github.com/jasonl/rails_admin_map_field.git"
+gem "ckeditor", "3.7.1"
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

@@ -16,4 +16,5 @@
 //= require jquery.easytabs.min
 //= require jquery.hashchange.min
 //= require jquery.placeholder.min
+//= require ckeditor/init
 //= require_tree .

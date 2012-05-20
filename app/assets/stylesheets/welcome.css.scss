@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "shared";
+@import "fonts";
+@import "colors";
+@import "layout";
+@import "mixins";
 
 .featured {
 	float: left;
@@ -10,12 +13,12 @@
 	display: block;
 	@include borderless;
 	.picture {
-		float: left;
+		float: right;
 		width: 550px;
 	}
 	.services {
-		padding: 0 5px 8px 0;
-		float: right;
+		padding: 0 5px 14px 0;
+		float: left;
 		width: 380px;
 		display: table-cell;
 		&.last {

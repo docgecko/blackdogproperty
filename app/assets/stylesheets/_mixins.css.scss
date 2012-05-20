@@ -1,0 +1,28 @@
+@import "colors";
+
+@mixin block-border {
+	width: $site - 30px;
+	padding: 15px;
+	margin: 0;
+	background-color: $black;
+	float: left;
+}
+@mixin block-textual {
+	padding: 5px 100px;
+	margin: 0;
+	background-color: $black;
+}
+
+@mixin borderless {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+@mixin image-opacity($opacity) {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+	filter: alpha(opacity=($opacity * 100));
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+}
