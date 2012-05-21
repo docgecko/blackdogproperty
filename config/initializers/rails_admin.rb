@@ -198,9 +198,12 @@ RailsAdmin.config do |config|
     configure :updated_at, :datetime 
     configure :deleted_at, :datetime 
     list do
-      sort_by :order_no
+      sort_by :property, :order_no
       field :property
       field :title
+      field :image do
+        thumb_method :list
+      end
       field :description
       field :order_no
       field :featured
@@ -210,8 +213,28 @@ RailsAdmin.config do |config|
       field :deleted_at, :datetime
     end
     export do; end
-    show do; end
-    edit do; end
+    show do
+      field :property
+      field :title
+      field :image do
+        thumb_method :large
+      end
+      field :description
+      field :order_no
+      field :featured
+      field :published
+    end
+    edit do
+      field :property
+      field :title
+      field :image do
+        thumb_method :large
+      end
+      field :description
+      field :order_no
+      field :featured
+      field :published
+    end
     create do; end
     update do; end
   end
@@ -301,11 +324,58 @@ RailsAdmin.config do |config|
   config.model Admin do
     navigation_label 'Members & Administrators'
     weight 5
-    list do; end
+    configure :_type, :hidden
+    configure :_id, :hidden
+    configure :username, :string
+    configure :email, :string
+    configure :password, :password
+    configure :password_confirmation, :password
+    configure :reset_password_token, :hidden
+    configure :reset_password_sent_at, :hidden
+    configure :remember_created_at, :hidden
+    configure :sign_in_count, :integer
+    configure :current_sign_in_at, :datetime
+    configure :last_sign_in_at, :datetime
+    configure :current_sign_in_ip, :string
+    configure :last_sign_in_ip, :string
+    list do
+      field :username
+      field :email
+      field :password
+      field :password_confirmation
+      field :sign_in_count
+      field :current_sign_in_at
+      field :last_sign_in_at
+      field :current_sign_in_ip
+      field :last_sign_in_ip
+    end
     export do; end
-    show do; end
-    edit do; end
-    create do; end
+    show do
+      field :username
+      field :email
+      field :sign_in_count
+      field :current_sign_in_at
+      field :last_sign_in_at
+      field :current_sign_in_ip
+      field :last_sign_in_ip
+    end
+    edit do
+      field :username
+      field :email
+      field :password
+      field :password_confirmation
+      field :sign_in_count
+      field :current_sign_in_at
+      field :last_sign_in_at
+      field :current_sign_in_ip
+      field :last_sign_in_ip
+    end
+    create do
+      field :username
+      field :email
+      field :password
+      field :password_confirmation
+    end
     update do; end
   end
   
@@ -340,7 +410,7 @@ RailsAdmin.config do |config|
       field :current_sign_in_at
       field :last_sign_in_at
       field :current_sign_in_ip
-      field :last_sign_in_ip  
+      field :last_sign_in_ip
     end
     edit do; end
     create do

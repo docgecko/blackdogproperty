@@ -175,7 +175,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
     :description => '',
     :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0099.JPG')),
     :order_no => 5,
-    :featured => false,
+    :featured => true,
     :published => true,
     :property_id => 'renovated-modern-villa-in-a-private-domaine'
   },
@@ -238,7 +238,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
     :description => '',
     :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0228.JPG')),
     :order_no => 1,
-    :featured => false,
+    :featured => true,
     :published => true,
     :property_id => 'luxury-3-bed-villa-with-private-pool'
   }, 
@@ -337,7 +337,7 @@ puts 'SETTING UP PROPERTY PHOTOS'
     :description => '',
     :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0199.JPG')),
     :order_no => 3,
-    :featured => false,
+    :featured => true,
     :published => true,
     :property_id => '3-bed-villa-in-a-private-residence'
   },

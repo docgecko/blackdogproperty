@@ -23,6 +23,7 @@
 	#main{:class => controller_name == "welcome" ? "home" : ""}	
 		#header
 			.wrapper
+				= render "shared/header/admin"
 				= render "shared/header/user"
 				= render "shared/header/logo"
 				= render "shared/header/social"

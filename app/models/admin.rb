@@ -37,4 +37,7 @@ class Admin
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  
+  ## Additional field
+  field :username,         :type => String, :null => false, :default => ""
 end

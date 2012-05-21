@@ -3,49 +3,6 @@
 @import "layout";
 @import "mixins";
 
-#auth {
-	height: 30px;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: $silver;
-	.wrapper {
-		position: relative;
-		margin: 0 auto;
-		width: $site;
-		#admin {
-			position: relative;
-			left: 0px;
-			top: 0px;
-			margin: 0;
-			z-index: 8;
-			ul {
-				height: 17px;
-				margin: 0;
-				padding: 6px 0;
-				color: $silver;
-				font-size: 12px;
-				text-align: left;
-				list-style-type: none;
-				li {
-					display: inline;
-					margin: 0 7px;
-					a {
-						line-height: 17px;
-						color: $black;
-						overflow: hidden;
-						padding: 0 7px;
-						text-decoration: none;
-						&:hover {
-							color: $white;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
 #main {
 	min-height: 100%;
 	height: auto !important;
@@ -66,12 +23,17 @@
 			position: relative;
 			margin: 0 auto;
 			width: $site;
+			#admin {
+				left: 0px;
+			}
 			#information {
+				right: 0px;
+			}
+			#information, #admin {
 				position: absolute;
-				right: 80px;
-				top: 4px;
-				margin: 0;
 				z-index: 8;
+				margin: 0;
+				top: 4px;
 				ul {
 					height: 17px;
 					margin: 0px;
@@ -143,7 +105,8 @@
 						display: inline;
 						position: relative;
 						float: left;
-						margin: 4px 8px;
+						margin: 4px 15px;
+//						margin: 4px 9px;
 						span, a {
 							padding: 4px 14px;
 							text-decoration: none;

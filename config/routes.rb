@@ -2,7 +2,7 @@ Blackdogproperty::Application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :admins
+  devise_for :admins, :path => "/admin", :path_names => { :sign_in => 'signin', :sign_out => 'logout', :password => 'secret' }
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -14,7 +14,7 @@ Blackdogproperty::Application.routes.draw do
   #   resources :testimonials
   # end
 
-  devise_for :users, :path => "/", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'confirmation' }
+  devise_for :users, :path => "/member", :path_names => { :sign_in => 'signin', :sign_out => 'logout', :password => 'secret', :confirmation => 'confirmation' }
   
   resources :sales, :only => :index
   match 'sales/about' => 'sales#about'

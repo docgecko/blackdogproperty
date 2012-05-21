@@ -50,10 +50,12 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :properties, 'Properties', admin_properties_path
-    primary.item :members, 'Team Members', admin_members_path
-    primary.item :testimonials, 'Testimonials', admin_testimonials_path
-    primary.item :logout, 'Logout', destroy_user_session_path    
+    if current_admin.present?
+      @admin_username = "Admin: " + (current_admin.username if current_admin.present?)
+      primary.item :username, @admin_username, rails_admin_path, :if => Proc.new { admin_signed_in? }
+    end
+    primary.item :logout, 'Logout', destroy_user_session_path, :if => Proc.new { admin_signed_in? }
+  
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
