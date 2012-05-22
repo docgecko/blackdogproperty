@@ -6,14 +6,6 @@ Blackdogproperty::Application.routes.draw do
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  # namespace :admin do
-  #   resources :properties do
-  #     resources :photos
-  #   end
-  #   resources :members
-  #   resources :testimonials
-  # end
-
   devise_for :users, :path => "/member", :path_names => { :sign_in => 'signin', :sign_out => 'logout', :password => 'secret', :confirmation => 'confirmation' }
   
   resources :sales, :only => :index

@@ -51,7 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     
     if current_admin.present?
-      @admin_username = "Admin: " + (current_admin.username if current_admin.present?)
+      @admin_username = "Admin: " + (current_admin.username.present? ? current_admin.username : current_admin.email)
       primary.item :username, @admin_username, rails_admin_path, :if => Proc.new { admin_signed_in? }
     end
     primary.item :logout, 'Logout', destroy_user_session_path, :if => Proc.new { admin_signed_in? }
