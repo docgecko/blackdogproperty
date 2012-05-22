@@ -20,20 +20,26 @@
 			= f.text_field :email, :maxlength => 255
 
 		%h2
-			= f.label :password
+			= f.label :password, (current_page? new_user_session_path ? "BlackDog Property Password" : "Admin Password")
 			%br
 			= f.password_field :password, :maxlength => 20
 		
-		- if devise_mapping.rememberable?
-			%h2
-				= f.check_box :remember_me, :class => 'auto'
-				= f.label :remember_me, 'Keep me signed in for 2 weeks', :class => 'remember_me'
+		-if current_page? new_user_session_path
+			- if devise_mapping.rememberable?
+				%h2
+					= f.check_box :remember_me, :class => 'auto'
+					= f.label :remember_me, 'Keep me signed in for 2 weeks', :class => 'remember_me'
 				
-		= f.submit "Login", :class => 'buttonBasic'
+		= f.submit "Signin", :class => 'buttonBasic'
 
 - content_for :auth_footer do
-	.footer.cap.body_grey
+	.footer
 		= render 'devise/shared/forgot_password'
 		%br
 		= render 'devise/shared/confirmation_instructions'
-	.cap.bottom_grey
+	
+- content_for :after do
+	-if current_page? new_user_session_path
+		#after
+			Don't yet have an account?
+			= render 'devise/shared/signup'

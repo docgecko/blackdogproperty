@@ -50,15 +50,14 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    # if user_signed_in?
-    #   primary.item :user, 'Welcome' + current_user.name + "!"
-    # end
-    # primary.item :login, 'Member Signin', new_user_session_path, :unless => Proc.new { user_signed_in? }
-    # primary.item :logout, 'Logout', destroy_user_session_path, :if => Proc.new { user_signed_in? }
+    if user_signed_in?
+      primary.item :user, 'Welcome' + current_user.name + "!"
+    end
+    primary.item :login, 'Signin', new_user_session_path, :unless => Proc.new { user_signed_in? }
+    primary.item :login, 'Register Now!', new_user_registration_path, :unless => Proc.new { user_signed_in? }
+    primary.item :logout, 'Logout', destroy_user_session_path, :if => Proc.new { user_signed_in? }
     primary.item :about, 'About Us', company_about_path 
     primary.item :contact, 'Contact Us', new_support_path 
-    primary.item :blog, 'Blog', 'http://blackdogproperty.wordpress.com', :target => '_blank'
-    primary.item :faq, 'FAQs', static_path(:id => "faqs")
     
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

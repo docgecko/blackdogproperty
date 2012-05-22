@@ -37,4 +37,9 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  
+  # Additional fields
+  field :firstname,           :type => String
+  field :lastname,            :type => String
+  field :username,            :type => String
 end

@@ -26,7 +26,7 @@ module Blackdogproperty
       Devise::SessionsController.layout "authentication"
       Devise::PasswordsController.layout "authentication"
       Devise::ConfirmationsController.layout "authentication"
-      # Devise::RegistrationsController.layout "authentication"
+      Devise::RegistrationsController.layout "authentication"
       # Devise::Mailer.layout "mailer"
     }
     

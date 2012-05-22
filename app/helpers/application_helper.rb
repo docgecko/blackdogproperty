@@ -8,4 +8,10 @@ module ApplicationHelper
   def yes_or_no(boolean)
     boolean == true ? "yes" : "no"
   end
+  
+  def is_current(path)
+    if request.request_uri == path
+      return 'current'
+    end
+  end
 end

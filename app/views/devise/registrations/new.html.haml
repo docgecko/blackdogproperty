@@ -1,24 +1,23 @@
 - content_for :title do
-	Sign up to InfraJobs
+	Register Now your BlackDog Properties' Lastminute Membership
 	
 - content_for :link_canonical do
-	signup
+	register
 	
 - content_for :meta_description do
-	Sign up to create your InfraJobs account - manage all of your job adverts from one place
+	Register now to create your BlackDog Properties' Lastminute account - manage all of your property adverts from one place
 
 - content_for :auth_header do
-	.cap.top
-	%h1 Sign up to InfraJobs
+	%h1 Register Now your BlackDog Properties' Lasminute Membership
 	
 - content_for :auth_main do
 	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
 		= render 'shared/email_errors', :resource => resource
 		
 		%h2
-			Create your free account
+			Create your BlackDog Properties' Lasminute account
 		%p
-			You account will be used to manage all of your job adverts.
+			Your account will be used to manage all of your property adverts.
 
 		%h2
 			= f.label :email, 'Email'
@@ -36,13 +35,28 @@
 			%br
 			= f.password_field :password_confirmation, :maxlength => 20
 				
+		%h2
+			= f.label :firstname, 'First name'
+			%br
+			= f.text_field :firstname, :maxlength => 255
+			
+		%h2
+			= f.label :lastname, 'Last name'
+			%br
+			= f.text_field :lastname, :maxlength => 255
+			
+		%h2
+			= f.label :username, 'Your display name'
+			%span{:style => "font-size:11px;"} (a unique user name or display name)
+			%br
+			= f.text_field :username, :maxlength => 255
+
 		= f.submit "Sign up", :class => 'buttonBasic'
 
 - content_for :auth_footer do
-	.cap.bottom_white
-		
+	.footer
+
 - content_for :after do
-	
 	#after
-		Already have an account?
+		Already a BlackDog Property Lastminute member?
 		= render 'devise/shared/signin'

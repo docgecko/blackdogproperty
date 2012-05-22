@@ -20,7 +20,7 @@ body {
 	      &.signin {
 	        padding: 0;
 	        text-align: left;
-	        width: 464px;
+	        width: 780px;
 	        margin: 0 auto;
 	        font-size: 13px;
 				}
@@ -48,22 +48,6 @@ body {
 							background-color: white;
 							color: white; 
 						} 
-					}
-				}
-				&#signinFooter {
-					.cap {
-						&.bottom_white {
-							z-index: 1;
-							width: 100%;
-							padding-top: 10px;
-						}
-					}
-					.cap {
-						&.bottom_grey {
-							z-index: 1;
-							width: 100%;
-							padding-bottom: 10px;
-						}
 					}
 				}
 			}	
@@ -153,20 +137,13 @@ body {
 		 			color: #fff;
 				} 
 			}
-			&.cap {
-				&.body_grey {
-					z-index: 1;
-					width: 414px;
-					padding-top: 10px;
-				}
-			}
 		} 
 	} 
 }
 
 #after {
 	color: gray;
-	width: 460px;
+	width: 780px;
 	font-size: 11px;
 	text-align: right;
   margin: 10px auto;
