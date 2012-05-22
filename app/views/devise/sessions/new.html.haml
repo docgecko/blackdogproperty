@@ -2,13 +2,20 @@
 	Login to your account
 	
 - content_for :link_canonical do
-	login
+	signin
 	
 - content_for :auth_header do
-	%h1 Login
+	%h1 
+		-if current_page? new_user_session_path
+			Member Sign In
+		-else
+			Admin Sign In
 	
 - content_for :meta_description do
-	Login to your account
+	-if current_page? new_user_session_path
+		sign in to your account
+	-else
+		admin sign in
 
 - content_for :auth_main do
 	= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:autocomplete => "off"}) do |f|
@@ -30,7 +37,7 @@
 					= f.check_box :remember_me, :class => 'auto'
 					= f.label :remember_me, 'Keep me signed in for 2 weeks', :class => 'remember_me'
 				
-		= f.submit "Signin", :class => 'buttonBasic'
+		= f.submit "Sign In", :class => 'buttonBasic'
 
 - content_for :auth_footer do
 	.footer
@@ -41,5 +48,5 @@
 - content_for :after do
 	-if current_page? new_user_session_path
 		#after
-			Don't yet have an account?
+			Don't have a BlackDog Property membership?
 			= render 'devise/shared/signup'

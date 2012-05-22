@@ -42,4 +42,9 @@ class User
   field :firstname,           :type => String
   field :lastname,            :type => String
   field :username,            :type => String
+  
+  # Validations
+  validates_presence_of :firstname, :lastname, :username
+  validates_uniqueness_of :username
+  
 end

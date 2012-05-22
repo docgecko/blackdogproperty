@@ -1,3 +1,5 @@
+@import "colors";
+
 body {
   &.signin {
     color: #000;
@@ -38,8 +40,16 @@ body {
 				&#signinBody {
 					margin: 0;
 					padding: 25px;
+					width: 780px	;
+					form {
+						width: 500px;
+						float: left;
+					}
 					h2 {
 						font-weight: normal;
+					}
+					h3 {
+						color: $blue;
 					}
 					a {
 						color: white;
@@ -48,6 +58,16 @@ body {
 							background-color: white;
 							color: white; 
 						} 
+					}
+				}
+				.details {
+					margin: 70px 0 20px 0;
+					padding: 0 0 0 20px;
+					width: 250px;
+					float: right;
+					border-left: thin solid white;
+					h3 {
+						color: $blue;
 					}
 				}
 			}	
@@ -123,6 +143,7 @@ body {
 			} 
 		}
     .footer {
+			float: left;
       padding: 15px 25px 5px 25px;
       margin-top: 0;
       a {
@@ -142,6 +163,7 @@ body {
 }
 
 #after {
+	clear: both;
 	color: gray;
 	width: 780px;
 	font-size: 11px;

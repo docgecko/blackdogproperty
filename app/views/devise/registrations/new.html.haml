@@ -9,15 +9,13 @@
 
 - content_for :auth_header do
 	%h1 Register Now your BlackDog Properties' Lasminute Membership
+	= render 'shared/email_errors', :resource => resource
 	
 - content_for :auth_main do
 	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
-		= render 'shared/email_errors', :resource => resource
 		
-		%h2
-			Create your BlackDog Properties' Lasminute account
-		%p
-			Your account will be used to manage all of your property adverts.
+		%h3	Create your personal "lastminute" account
+		%p Complete the form below to get started immediately
 
 		%h2
 			= f.label :email, 'Email'
@@ -51,12 +49,24 @@
 			%br
 			= f.text_field :username, :maxlength => 255
 
-		= f.submit "Sign up", :class => 'buttonBasic'
+		= f.submit "Sign Up", :class => 'buttonBasic'
+		
+	.details
+		%h3 BlackDog membership
+		%p Sign up to the BlackDog Property Lastminute membership by completing this form.
 
+		%h3 What do you get?
+		%p Once you have signed up, you can begin to post and advertise your luxury properties with us!
+		%p You will gain access to your own personal dashboard where you will be able to update and manage your listed properties, personal profile, notification settings and payment information.
+			
+		%h3 What does it cost?
+		%p BlackDog charges a small administration fee to get started, after which you can post as many properties as you like.
+		%p We then only charge a small commission each time you rent one of your properties through us.
+		
 - content_for :auth_footer do
 	.footer
 
 - content_for :after do
-	#after
-		Already a BlackDog Property Lastminute member?
+	#after{:style => "clear:both"}
+		Already have a BlackDog Property membership?
 		= render 'devise/shared/signin'

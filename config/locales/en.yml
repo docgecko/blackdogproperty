@@ -1,5 +1,25 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:  
-  activerecord:
+en:
+  mongoid:
+    attributes:
+      user:
+        firstname: "First Name"
+        lastname: "Last Name"
+        username: "Display Name"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "is required"
+            password:
+              blank: "is required"
+            firstname:
+              blank: "is required"
+            lastname:
+              blank: "is required"
+            username:
+              blank: "is required"
+              taken: "has already been taken. Please choose another"
