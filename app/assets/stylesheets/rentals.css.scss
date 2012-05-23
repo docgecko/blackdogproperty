@@ -58,7 +58,7 @@
 					text-decoration: none;
 					color: white;
 					&:hover {
-						background: url(location/button_locate.gif) repeat-x;
+//						background: url(location/button_locate.gif) repeat-x;
 					}	  					
 				}
 			}
@@ -119,6 +119,7 @@
 			width: ($site - 346px);
 			margin: 0 10px 0 16px;
 			h2 {
+				color: $blue;
 			}
 			.bio {
 				p {
@@ -160,11 +161,14 @@
 						padding: 0 10px; 
 						outline: none; 
 						text-decoration: none;
-						&.active { 
+						&:active { 
 							font-weight: normal; 
 						}
+						&:hover { 
+							background-color: transparent;
+						}
 					}
-					&:hover, &.active { 
+					&:hover { 
 						background: url(location/button_locate.gif) repeat-x;
 					}
 				}

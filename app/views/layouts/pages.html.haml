@@ -14,11 +14,6 @@
 	= render "shared/script/superfish"
 		
 %body{:class => controller_name == "welcome" ? "home" : ""}
-	- if user_signed_in?
-		#auth	
-			.wrapper
-				= render "shared/admin/navigation"
-			
 	#main{:class => controller_name == "welcome" ? "home" : ""}
 		#header
 			.wrapper

@@ -51,7 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     
     if user_signed_in?
-      primary.item :user, 'Welcome' + current_user.name + "!"
+      primary.item :user, 'Welcome ' + current_user.username + "!", member_dashboard_index_path
     end
     primary.item :login, 'Signin', new_user_session_path, :unless => Proc.new { user_signed_in? }
     primary.item :login, 'Register Now!', new_user_registration_path, :unless => Proc.new { user_signed_in? }

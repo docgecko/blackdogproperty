@@ -1,25 +1,19 @@
 - content_for :title do
-	Login to your account
+	Sign In to your Admin Account
 	
 - content_for :link_canonical do
 	signin
 	
 - content_for :auth_header do
-	%h1 
-		-if current_page? new_user_session_path
-			Member Sign In
-		-else
-			Admin Sign In
+	%h1 Admin Sign In
 	
 - content_for :meta_description do
-	-if current_page? new_user_session_path
-		sign in to your account
-	-else
-		admin sign in
+	admin sign in
 
 - content_for :auth_main do
+	= render 'shared/flashes', :target => resource
+	
 	= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:autocomplete => "off"}) do |f|
-		= render 'shared/flashes', :target => resource
 		
 		%h2
 			= f.label :email
@@ -27,26 +21,12 @@
 			= f.text_field :email, :maxlength => 255
 
 		%h2
-			= f.label :password, (current_page? new_user_session_path ? "BlackDog Property Password" : "Admin Password")
+			= f.label :password, (current_page? new_admin_session_path ? "Admin Password" : "BlackDog Property Password")
 			%br
 			= f.password_field :password, :maxlength => 20
-		
-		-if current_page? new_user_session_path
-			- if devise_mapping.rememberable?
-				%h2
-					= f.check_box :remember_me, :class => 'auto'
-					= f.label :remember_me, 'Keep me signed in for 2 weeks', :class => 'remember_me'
-				
+						
 		= f.submit "Sign In", :class => 'buttonBasic'
 
 - content_for :auth_footer do
 	.footer
 		= render 'devise/shared/forgot_password'
-		%br
-		= render 'devise/shared/confirmation_instructions'
-	
-- content_for :after do
-	-if current_page? new_user_session_path
-		#after
-			Don't have a BlackDog Property membership?
-			= render 'devise/shared/signup'

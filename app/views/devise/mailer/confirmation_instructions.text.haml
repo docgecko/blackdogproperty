@@ -1,0 +1,21 @@
++++++++++++++++++++++++++++++++++++++++++++++++
+Confirm your BlackDog Property account
++++++++++++++++++++++++++++++++++++++++++++++++
+\r\n
+\r\n
+== Hello #{(@resource.first_name.blank? and @resource.last_name.blank?) ? @resource.email : [@resource.first_name, " ", @resource.last_name].join.strip}!
+\r\n
+\r\n
+Please confirm your BlackDog Property account by clicking the link below or by copying and pasting the URL into your browser:
+\r\n
+\r\n
+= link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+\r\n
+\r\n
+Once you confirm, you will have full access to create and administer your properties adverts, and all future notifications will be sent to this email address.
+\r\n
+\r\n
+Welcome to BlackDog Property!
+\r\n
+\r\n
+The BlackDog Property Team

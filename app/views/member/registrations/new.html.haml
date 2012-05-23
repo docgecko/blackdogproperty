@@ -9,12 +9,12 @@
 
 - content_for :auth_header do
 	%h1 Register Now your BlackDog Properties' Lasminute Membership
-	= render 'shared/email_errors', :resource => resource
 	
 - content_for :auth_main do
+	= render 'shared/email_errors', :resource => resource
 	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
 		
-		%h3	Create your personal "lastminute" account
+		%h3	Create your personal "Lastminute" account
 		%p Complete the form below to get started immediately
 
 		%h2
@@ -34,14 +34,14 @@
 			= f.password_field :password_confirmation, :maxlength => 20
 				
 		%h2
-			= f.label :firstname, 'First name'
+			= f.label :first_name, 'First name'
 			%br
-			= f.text_field :firstname, :maxlength => 255
+			= f.text_field :first_name, :maxlength => 255
 			
 		%h2
-			= f.label :lastname, 'Last name'
+			= f.label :last_name, 'Last name'
 			%br
-			= f.text_field :lastname, :maxlength => 255
+			= f.text_field :last_name, :maxlength => 255
 			
 		%h2
 			= f.label :username, 'Your display name'
@@ -67,6 +67,6 @@
 	.footer
 
 - content_for :after do
-	#after{:style => "clear:both"}
+	#after
 		Already have a BlackDog Property membership?
 		= render 'devise/shared/signin'

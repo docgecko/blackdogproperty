@@ -2,11 +2,24 @@ Blackdogproperty::Application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :admins, :path => "/admin", :path_names => { :sign_in => 'signin', :sign_out => 'signout', :password => 'password' }
+  devise_for :admins,
+             :path => "/admin", 
+             :path_names => { :sign_in => 'signin', :sign_out => 'signout', :password => 'password' }
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  devise_for :users, :path => "/member", :path_names => { :sign_in => 'signin', :sign_up => 'registration', :sign_out => 'signout', :password => 'password', :confirmation => 'confirmation' }
+  devise_for :users,
+             :path => "/member",
+             :controllers => { :registrations => 'member/registrations',
+                               :sessions => 'member/sessions',
+                               :confirmations => 'member/confirmations',
+                               :passwords => 'member/passwords' },
+             :path_names => { :sign_in => 'signin', :sign_up => 'registration', :sign_out => 'signout', :password => 'password', :confirmation => 'confirmation' }
+  
+  namespace :member do
+    resources :dashboard, :only => [ :index ]
+    resources :properties
+  end  
   
   resources :sales, :only => :index
   match 'sales/about' => 'sales#about'

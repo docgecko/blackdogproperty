@@ -1,4 +1,6 @@
 class RenovationsController < InheritedResources::Base
+  layout 'application'
+  
   actions :index, :about
   respond_to :html
   

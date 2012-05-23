@@ -57,10 +57,6 @@ group :development, :test do
 	gem 'colored'
 end
 
-group :test do
-	gem 'cucumber-rails'
-end
-
 group :development do
 	gem 'hpricot'
 	gem 'ruby_parser'

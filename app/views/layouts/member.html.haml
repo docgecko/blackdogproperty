@@ -13,14 +13,9 @@
 	= render "shared/script/google_analytics"
 	= render "shared/script/superfish"
 	= render "shared/script/placeholder"
-
+		
 %body{:class => controller_name == "welcome" ? "home" : ""}
-	- if user_signed_in?
-		#auth	
-			.wrapper
-				= render "shared/admin/navigation"
-
-	#main{:class => controller_name == "welcome" ? "home" : ""}	
+	#main{:class => controller_name == "welcome" ? "home" : ""}
 		#header
 			.wrapper
 				= render "shared/header/admin"
@@ -31,12 +26,10 @@
 		
 		#page
 			.wrapper
-				.block.admin
+				.block.site.flash
 					= render 'shared/flashes'
-				
-				.block
-					.border.admin
-						= yield
+			
+				= yield
 		
 	#footer
 		.wrapper

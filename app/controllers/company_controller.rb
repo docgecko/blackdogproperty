@@ -1,4 +1,6 @@
 class CompanyController < InheritedResources::Base
+  layout 'application'
+  
   actions :about, :team, :testimonials
   respond_to :html
   

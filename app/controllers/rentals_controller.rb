@@ -1,4 +1,6 @@
 class RentalsController < InheritedResources::Base
+  layout 'application'
+  
   before_filter :find_country, :only => [ :search, :show ]
   actions :index, :search, :show
   respond_to :html

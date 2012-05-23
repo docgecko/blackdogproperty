@@ -38,9 +38,10 @@ body {
 					}
 				}
 				&#signinBody {
+					float: left;
 					margin: 0;
 					padding: 25px;
-					width: 780px	;
+					width: 780px;
 					form {
 						width: 500px;
 						float: left;
@@ -61,13 +62,33 @@ body {
 					}
 				}
 				.details {
-					margin: 70px 0 20px 0;
+					margin: 70px 0 0 0;
 					padding: 0 0 0 20px;
 					width: 250px;
 					float: right;
 					border-left: thin solid white;
 					h3 {
 						color: $blue;
+					}
+				}
+				&#signinFooter {
+					float: left;
+					.footer {
+						float: left;
+			      padding: 10px 25px 20px 25px;
+			      margin-top: 0;
+			      a {
+			        margin: 0;
+			        padding: 0;
+			        padding-bottom: 3px;
+					    color: white;
+					    text-decoration: none;
+							line-height: 1.35em;
+					    &:hover {
+					      text-decoration: none;
+					 			color: #fff;
+							} 
+						}
 					}
 				}
 			}	
@@ -142,23 +163,6 @@ body {
         margin-bottom: 0; 
 			} 
 		}
-    .footer {
-			float: left;
-      padding: 15px 25px 5px 25px;
-      margin-top: 0;
-      a {
-        margin: 0;
-        padding: 0;
-        padding-bottom: 3px;
-		    color: white;
-		    text-decoration: none;
-				line-height: 1.35em;
-		    &:hover {
-		      text-decoration: none;
-		 			color: #fff;
-				} 
-			}
-		} 
 	} 
 }
 

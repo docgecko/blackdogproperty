@@ -61,7 +61,6 @@ puts 'SETTING UP INTERESTS'
 end
 puts 'All interests created'
 
-
 puts 'SETTING UP TYPES'
 [
   {
@@ -78,6 +77,225 @@ puts 'SETTING UP TYPES'
   }
 ].each do |u|
   Type.create(u)
+end
+puts 'All property types created'
+
+puts 'SETTING UP DIVISIONS'
+[
+  {
+    :name => 'General'
+  },
+  {
+    :name => 'Indoor'
+  },
+  {
+    :name => 'Kitchen'
+  },
+  {
+    :name => 'Outdoor'
+  },
+  {
+    :name => 'Parking'
+  },
+].each do |u|
+  Division.create(u)
+end
+puts 'All property divisions created'
+  
+puts 'SETTING UP AMENITIES'
+[
+  {
+    :name => 'Air Conditioning',
+    :description => '',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'Central Heating',
+    :description => '',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'Safe',
+    :description => '',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Outdoor Dining Area',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Outdoor BBQ',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Outdoor Bar',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Outdoor Fridge',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Private Swimming Pool',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Shared Swimming Pool',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Plunge Pool',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Secure Private Driveway',
+    :description => '',
+    :division_id => 'parking'
+  },
+  {
+    :name => 'Private Garage',
+    :description => '',
+    :division_id => 'parking'
+  },
+  {
+    :name => 'Terrace',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Balcony',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Garden',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Washing Machine',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Dryer',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Dishwasher',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Freezer',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Fridge',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Grill',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Hob',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Oven',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Wine Fridge',
+    :description => '',
+    :division_id => 'kitchen'
+  },
+  {
+    :name => 'Entertainment System',
+    :description => '',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'TV',
+    :description => '',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'International TV Channels',
+    :description => 'Cable or satellite televsion',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'Sun Loungers',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Gym',
+    :description => 'Access to local gym or gym on property',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Sauna',
+    :description => '',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Games Room',
+    :description => '',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Internet',
+    :description => 'Wired internet connection',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Wireless Internet',
+    :description => '',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Fireplace',
+    :description => '',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'Intercom',
+    :description => '',
+    :division_id => 'general'
+  },
+  {
+    :name => 'Elevator',
+    :description => '',
+    :division_id => 'indoor'
+  },
+  {
+    :name => 'Tennis Court',
+    :description => '',
+    :division_id => 'outdoor'
+  },
+  {
+    :name => 'Badminton Court',
+    :description => '',
+    :division_id => 'outdoor'
+  }
+].each do |u|
+  Amenity.create(u)
 end
 puts 'All property types created'
 

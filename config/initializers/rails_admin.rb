@@ -320,10 +320,75 @@ RailsAdmin.config do |config|
     create do; end
     update do; end
   end
+  
+  config.model Amenity do
+    navigation_label 'Settings'
+    weight 5
+    configure :division, :belongs_to_association
+    configure :_type, :hidden
+    configure :_id, :hidden
+    configure :name, :string
+    configure :description, :text
+    configure :order_no, :integer
+    configure :created_at, :datetime 
+    configure :updated_at, :datetime 
+    configure :deleted_at, :datetime 
+    list do
+      sort_by :division, :name
+      field :name
+      field :description
+      field :division
+      field :order_no
+    end
+    export do; end
+    show do
+      field :name
+      field :description
+      field :division
+      field :order_no
+    end
+    edit do; end
+    create do
+      field :name
+      field :description
+      field :division
+      field :order_no
+    end
+    update do; end
+  end
 
+  config.model Division do
+    label 'Amenity Category'
+    label_plural 'Amenity Categories'
+    parent Amenity
+    weight 6
+    configure :amenity, :has_many_association
+    configure :_type, :hidden
+    configure :_id, :hidden
+    configure :name, :string
+    configure :created_at, :datetime 
+    configure :updated_at, :datetime 
+    configure :deleted_at, :datetime 
+    list do
+      field :name
+      field :amenities
+    end
+    export do; end
+    show do
+      field :name
+      field :amenities
+    end
+    edit do
+      field :name
+      field :amenities
+    end
+    create do; end
+    update do; end
+  end
+  
   config.model Admin do
     navigation_label 'Members & Administrators'
-    weight 5
+    weight 7
     configure :_type, :hidden
     configure :_id, :hidden
     configure :username, :string
@@ -381,7 +446,7 @@ RailsAdmin.config do |config|
   
   config.model User do
     navigation_label 'Members & Administrators'
-    weight 6
+    weight 8
     configure :_type, :hidden
     configure :_id, :hidden
     configure :email, :string

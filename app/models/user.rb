@@ -39,12 +39,15 @@ class User
   # field :authentication_token, :type => String
   
   # Additional fields
-  field :firstname,           :type => String
-  field :lastname,            :type => String
+  field :first_name,           :type => String
+  field :last_name,            :type => String
   field :username,            :type => String
   
   # Validations
-  validates_presence_of :firstname, :lastname, :username
+  validates_presence_of :first_name, :last_name, :username
   validates_uniqueness_of :username
+  
+  # References
+  has_many :properties, 
   
 end

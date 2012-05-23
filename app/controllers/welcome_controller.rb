@@ -1,4 +1,6 @@
 class WelcomeController < InheritedResources::Base
+  layout 'application'
+  
   actions :index
   respond_to :html
   
