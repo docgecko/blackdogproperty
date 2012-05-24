@@ -52,9 +52,10 @@ SimpleNavigation::Configuration.run do |navigation|
     
     primary.item :locations, 'Finding', location_about_path
     primary.item :rentals, 'Renting', rentals_path
+    primary.item :rentals, 'Lastminute'
     primary.item :renovations, 'Renovation', renovations_about_path
     primary.item :sales, 'Sales', sales_about_path
-    primary.item :show_case, 'Gallery', company_static_path('gallery')
+    # primary.item :show_case, 'Gallery', company_static_path('gallery')
     
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

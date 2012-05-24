@@ -4,9 +4,7 @@ class Property
   include Mongoid::Spacial::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
-  QUANTITIES = ['bedrooms','bathrooms','living_room','dining_indoor',
-               'dining_outdoor','sun_lounger','balcony','terrace']
-  
+
   # Fields
   field :title
   key :title
@@ -16,10 +14,13 @@ class Property
   field :bio
   field :description
   field :facilities
+  field :purpose_ids
   field :type_ids
+  field :currency_sale
+  field :currency_rental
   field :price_sale
   field :price_rental
-  field :coordinates,                 type: Array, spacial: {lat: :latitude, lng: :longitude, return_array: true }
+  field :coordinates,                 type: Array, spacial: { lat: :latitude, lng: :longitude, return_array: true }
   field :zoom,                        type: Integer
   field :order_no,                    type: Integer
   field :featured,                    type: Boolean, default: false
@@ -28,14 +29,17 @@ class Property
   # Additional fields for Lastminute
   field :user_id
   field :amenitiy_ids               
-  field :quantities,                  type: Array, default: []
-  # field :qty_accomodates,           type: Integer
-  # field :qty_bedrooms,              type: Float
-  # field :qty_bathrooms,             type: Float
-  # field :qty_seat_living_room,      type: Integer
-  # field :qty_seat_dining_room,      type: Integer
-  # field :qty_seat_dining_outdoor,   type: Integer
-  # field :qty_sun_lounger,           type: Integer
+  field :accomodates,                 type: Integer
+  field :bedrooms,                    type: Integer
+  field :bedrooms,                    type: Integer
+  field :living_room,                 type: Integer
+  field :dining_room,                 type: Integer
+  field :dining_outdoor,              type: Integer
+  field :sun_loungers,                type: Integer
+  field :balconies,                   type: Integer
+  field :terraces,                    type: Integer
+  field :sea_views,                   type: Boolean
+  field :conventions,                 type: Boolean
   
   # Indexes
   spacial_index :coordinates
@@ -44,11 +48,15 @@ class Property
   
   # Setup accessible (or protected) attributes
   attr_accessible :title, :location, :country_id, :reference, :bio,
-                  :description, :facilities, :type_ids, 
-                  :price_sale, :price_rental,
+                  :description, :facilities, :purpose_ids, :type_ids, 
+                  :price_sale, :price_rental, :price,
                   :coordinates, :longitude, :latitude, :zoom,
                   :order_no, :featured, :published,
-                  :user_id, :amentity_ids, :quantities
+                  :user_id, :amentity_ids, :quantities,
+                  :accomodates, :bedrooms, :bedrooms,
+                  :living_room, :dining_room, :dining_outdoor,
+                  :sun_loungers, :balconies, :terraces,
+                  :sea_views, :conventions
 
   # References
   has_many :photos, :dependent => :destroy
@@ -98,5 +106,13 @@ class Property
 
   def longitude
     coordinates[1]
+  end
+  
+  def currency
+    currency_rental
+  end
+
+  def price
+    price_rental
   end
 end

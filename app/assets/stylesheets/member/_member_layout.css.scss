@@ -5,7 +5,8 @@
 	position: relative;
 	top: 0px;
 	float: left;
-	height: 36px;
+	width: 950px;	
+	height: 50px;
 	ul {
 	  height: 36px;
 		margin: 0px;
@@ -32,6 +33,36 @@
 				&:hover {
 					background: url(../tab_gradient.gif) repeat-x;
 				}	  					
+			}
+		}
+	}
+}
+
+.panel-container {
+	position: relative;
+	width: ($site - 42px);
+	float: left;
+	background: $black; 
+	padding: 0px;
+	margin-bottom: 0;
+	.no-listing {
+		background-color: $blue;
+		margin: 10px 170px 40px 170px;
+		padding: 20px;
+		text-align: center;
+		h3 {
+			margin: 0;
+			padding: 0;
+			line-height: 1.5em;
+			&.black {
+				color: $black;
+			}
+			a {
+				color: white;
+				text-decoration: underline;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
 	}

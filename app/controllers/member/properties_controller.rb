@@ -4,4 +4,8 @@ class Member::PropertiesController < InheritedResources::Base
   
   actions :all
   respond_to :html
+  
+  def index
+    @properties = Property.where(user_id: current_user.id)
+  end
 end

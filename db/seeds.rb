@@ -61,7 +61,7 @@ puts 'SETTING UP INTERESTS'
 end
 puts 'All interests created'
 
-puts 'SETTING UP TYPES'
+puts 'SETTING UP PURPOSES'
 [
   {
     :name => 'rental',
@@ -76,9 +76,9 @@ puts 'SETTING UP TYPES'
     :description => 'Renovation project'
   }
 ].each do |u|
-  Type.create(u)
+  Purpose.create(u)
 end
-puts 'All property types created'
+puts 'All property purposes created'
 
 puts 'SETTING UP DIVISIONS'
 [
@@ -297,7 +297,34 @@ puts 'SETTING UP AMENITIES'
 ].each do |u|
   Amenity.create(u)
 end
-puts 'All property types created'
+puts 'All property amenities created'
+
+puts 'SETTING UP TYPES'
+[
+  {
+    :name => 'Apartment',
+    :description => ''
+  },
+  {
+    :name => 'Villa',
+    :description => ''
+  },
+  {
+    :name => 'House',
+    :description => ''
+  },
+  {
+    :name => 'Chalet',
+    :description => ''
+  },
+  {
+    :name => 'Other',
+    :description => ''
+  }
+].each do |u|
+  Type.create(u)
+end
+puts 'All property type created'
 
 puts 'SETTING UP COUNTRIES'
 [

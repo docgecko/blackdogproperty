@@ -28,12 +28,11 @@
 			.wrapper
 				.block.site.flash
 					= render 'shared/flashes'
-			
+					
+				= yield(:header)
 				.block.site
 					.border
-						= render 'shared/member/navigation'
-									
-				= yield
+						= yield
 		
 	#footer
 		.wrapper

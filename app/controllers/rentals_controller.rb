@@ -6,11 +6,11 @@ class RentalsController < InheritedResources::Base
   respond_to :html
   
   def index
-    @properties = Property.where(:published => true, :type_ids => "rental").asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => "rental").asc(:order_no).page params[:page]
   end
   
   def search
-    @properties = Property.where(:published => true, :type_ids => "rental", :country_id => params[:country_id]).asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => "rental", :country_id => params[:country_id]).asc(:order_no).page params[:page]
     if params[:country_id].present?
       @country = Country.find(params[:country_id])
     end

@@ -1,0 +1,50 @@
+- content_for :title do
+	Post your Property on BlackDog Property
+	
+- content_for :meta_description do
+	Post your Property on BlackDog Property
+
+- content_for :link_canonical do
+	member/properties/new
+	
+%h1 List your property
+
+= render 'shared/email_errors', :resource => resource
+
+= form_for(@property, :as => :property, :url => member_dashboard_index_path, :html => { :autocomplete => "off" }) do |f|
+	
+	%h2 Begin by providing basic details about your property
+
+	%table
+		%tr
+			%td.width= f.label :type, 'Property Type'
+			%td= f.collection_select :type_ids, Type.all, :id, :name
+			
+		%tr
+			%td= f.label :accomodates
+			%td= f.select :accomodates, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10",10], ["11",11], ["12",12], ["13",13], ["14",14], ["15",15], ["16+",16]]
+			
+		%tr
+			%td= f.label :bedrooms
+			%td= f.select :bedrooms, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10+",10]]
+			
+		%tr
+			%td= f.label :title
+			%td
+				= f.text_field :title, :size => "45", :maxlength => "35"
+				%br
+				.note (maximum 35 letters)
+
+		%tr
+			%td= f.label :description
+			%td
+				= f.text_area :description, :size => "70x10"
+
+		%tr
+			%td= f.label :price, :id => "property_price_label"
+			%td
+				= f.select :currency, [["EUR", "EUR"], ["GBP", "EUR"]], {}, { :style => "margin:9px 10px 0 0;" }
+				= f.text_field :price, :size => "10", :style => "margin-right:10px;"
+				%span per week
+
+	= f.submit "Sign Up", :class => 'buttonBasic'
