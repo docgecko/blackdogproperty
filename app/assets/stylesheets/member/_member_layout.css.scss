@@ -1,70 +1,38 @@
 @import "colors";
 @import "layout";
 
-#tab-member {
-	margin: 0 6px;
-	padding: 0;
+.member {
+	position: relative;
+	top: 0px;
+	float: left;
+	height: 36px;
 	ul {
+	  height: 36px;
+		margin: 0px;
+		padding: 0px;
 		color: $white;
 		line-height: 27px;
 		font-size: 16px;
 		text-align: center;
-		margin: 0; 
-		padding: 0;
 		li {
 			display: inline;
 			position: relative;
 			float: left;
 			padding: 9px 0px 7px 0px;
 			margin: 0 6px 0 0;
-			background: url('../linecopy.gif') no-repeat 50% 100%;
-			&.tab { 
-				display: inline-block;
-				margin: 0 6px 0 0;
-				padding: 9px 0px 0px 0px;
-				zoom: 1;
-				*display: inline; 
-				a { 
-					color: $white;
-					font-size: 16px; 
-					line-height: 2em; 
-					display: block; 
-					padding: 0 10px; 
-					outline: none; 
-					text-decoration: none;
-					&:active { 
-						font-weight: normal; 
-					}
-					&:hover { 
-						background-color: transparent;
-					}
-				}
-				&:hover { 
-					background: url(location/button_locate.gif) repeat-x;
-				}
+			background: url(../linecopy.gif) no-repeat 50% 100%;
+			&.selected {
+				background: url(../tab_gradient.gif) repeat-x;
 			}
-		}
-	}
-	.panel-container {
-		position: relative;
-		width: ($site - 42px);
-		float: left;
-		background: $black; 
-		padding: 0px;
-		margin-bottom: 0;
-		ul {
-			margin: 1em 6px;
-			padding: 0;
-			line-height: 18px;
-			font-size: 12px;
-			text-align: left;
-			list-style-position: inside;
-			li {
+			a {
+				height: 36px;
+				padding: 13px 15px 11px 15px;
+				text-decoration: none;
+				color: white;
+				&:hover {
+					background: url(../tab_gradient.gif) repeat-x;
+				}	  					
 			}
-		}
-		#tab_description, #tab_facilities, #tab_location, #tab_price {
-			float: left;
-			margin-top: 8px;
 		}
 	}
 }

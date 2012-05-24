@@ -50,7 +50,7 @@
 				margin: 0 6px 0 0;
 				background: url(linecopy.gif) no-repeat 50% 100%;
 				&.selected {
-					background: url(location/button_locate.gif) repeat-x;
+					background: url(tab_gradient.gif) repeat-x;
 				}
 				a {
 					height: 36px;
@@ -58,7 +58,7 @@
 					text-decoration: none;
 					color: white;
 					&:hover {
-//						background: url(location/button_locate.gif) repeat-x;
+//						background: url(tab_gradient.gif) repeat-x;
 					}	  					
 				}
 			}
@@ -169,7 +169,7 @@
 						}
 					}
 					&:hover { 
-						background: url(location/button_locate.gif) repeat-x;
+						background: url(tab_gradient.gif) repeat-x;
 					}
 				}
 			}
