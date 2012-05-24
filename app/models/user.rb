@@ -39,13 +39,18 @@ class User
   # field :authentication_token, :type => String
   
   # Additional fields
-  field :first_name,           :type => String
-  field :last_name,            :type => String
+  field :first_name,          :type => String
+  field :last_name,           :type => String
   field :username,            :type => String
+  field :receive_newsletter,  :type => Boolean
   
   # Validations
   validates_presence_of :first_name, :last_name, :username
   validates_uniqueness_of :username
+  validates_format_of :username, :with => /^[A-Za-z0-9_-]+$/
+  validates_length_of :username, minimum: 3, maximum: 16, 
+                                 too_long: "is too long (maximum length 16 characters)",
+                                 too_short: "is too short (minimum length 3 characters)"
   
   # References
   has_many :properties, 

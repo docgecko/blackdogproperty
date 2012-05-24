@@ -1,15 +1,12 @@
-- content_for :head do
-	= javascript_include_tag "validate/user"
-
-- content_for :header_hanger do
-	= render 'shared/hanger/go_to_dashboard'
-
 - content_for :title do
-	My Account
+	Profile
 	
 - content_for :meta_description do
-	Sign up to create your InfraJobs account - manage all of your job adverts from one place
-		
+	Manage my BlackDog Property profile
+
+- content_for :link_canonical do
+	member/edit
+				
 #open
 	= render 'shared/flashes'
 
@@ -78,7 +75,4 @@
 							%p.note
 								%strong
 									Note: Deactivation will permanently delete all of your information.
-								Please be certain that this is what your require.
-
-- content_for :auth_footer do
-	= render 'shared/navigation/footer'
+									Please be certain that this is what your require.
