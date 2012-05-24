@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require jquery.charcounter
 //= require jquery.ad-gallery
 //= require jquery.easytabs.min
 //= require jquery.hashchange.min

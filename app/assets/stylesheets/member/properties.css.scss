@@ -6,6 +6,8 @@
 @import "colors";
 
 td {
+	padding-top: 2px;
+	vertical-align: top;
 	&.width {
 		width: 200px;
 	}
@@ -20,8 +22,26 @@ td {
 	textarea {
 		padding: 7px;
 	}
+	span {
+		font-weight: bold;
+		&.label-info {
+			color: $gray;
+		}
+		&.label-warning {
+			color: $blue;
+		}
+		&.label-important {
+			color: $red;
+		}
+	}
 }
 
 #property_price_label {
 	padding-top: 9px;
+}
+
+.question_mark {
+	margin: 2px 0 0 5px;
+	height: 14px;
+	width: 14px;
 }

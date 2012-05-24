@@ -21,19 +21,22 @@
 			%td= f.collection_select :type_ids, Type.all, :id, :name
 			
 		%tr
-			%td= f.label :accomodates
+			%td
+				= f.label :accomodates
+				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "How many guests can be hosted at the property."
 			%td= f.select :accomodates, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10",10], ["11",11], ["12",12], ["13",13], ["14",14], ["15",15], ["16+",16]]
 			
 		%tr
-			%td= f.label :bedrooms
+			%td
+				= f.label :bedrooms
+				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "How many rooms have beds or are meant for sleeping."
 			%td= f.select :bedrooms, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10+",10]]
 			
 		%tr
-			%td= f.label :title
 			%td
-				= f.text_field :title, :size => "45", :maxlength => "35"
-				%br
-				.note (maximum 35 letters)
+				= f.label :title
+				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide a title containing up to 35 letters."
+			%td= f.text_field :title, :size => "45", "data-countable" => 1, "data-limit" => 35, :style => "font-size: 1.1em"
 
 		%tr
 			%td= f.label :description
@@ -48,3 +51,15 @@
 				%span per week
 
 	= f.submit "Sign Up", :class => 'buttonBasic'
+	
+- content_for :scripts do
+	:javascript
+		$('[data-countable]').charcounter({
+		  limit: 35,
+		  warning: 10,
+		  warningClass: 'label-warning',
+		  exceededClass: 'label-important',
+		  defaultClass: 'label-info',
+		  notAllowOverflow: true,
+		  fontSize: '1.0em',
+		})
