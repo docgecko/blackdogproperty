@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "sales/filter.html.haml" do
+describe Address do
   pending "add some examples to (or delete) #{__FILE__}"
 end

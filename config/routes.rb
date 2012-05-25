@@ -19,7 +19,9 @@ Blackdogproperty::Application.routes.draw do
   namespace :member do
     resources :dashboard, :only => [ :index ]
     resources :properties
-  end  
+  end
+
+  match "/member" => redirect("/member/dashboard")
   
   resources :sales, :only => :index
   match 'sales/about' => 'sales#about'

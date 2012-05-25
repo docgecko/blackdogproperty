@@ -12,9 +12,6 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-
-	gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
-	                               :branch => 'static'
 end
 
 gem 'jquery-rails'
@@ -44,6 +41,8 @@ gem "fog", "~> 1.3.1"
 gem "rails_admin"
 gem "rails_admin_map_field", :git => "git://github.com/jasonl/rails_admin_map_field.git"
 gem "ckeditor", "3.7.1"
+gem "country_select", "~> 0.0.2"
+gem "formtastic", "~> 2.2.0"
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

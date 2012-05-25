@@ -10,3 +10,22 @@
 - content_for :header do
 	= render 'shared/member/header'
 	
+
+%ul.nav.nav-tabs#myTabs
+	%li= link_to "Home", "#home", "data-toggle" => "tab"
+	%li= link_to "Profile", "#profile", "data-toggle" => "tab"
+	%li= link_to "Messages", "#messages", "data-toggle" => "tab"
+	%li= link_to "Settings", "#settings", "data-toggle" => "tab"
+		
+.tab-content
+	.tab-pane#home
+		Home tab
+	.tab-pane#profile
+		Profile tab
+	.tab-pane#messages
+		Message tab
+	.tab-pane#settings
+		Settings tab
+		
+:javascript
+	$('#myTab a:last').tab('show');

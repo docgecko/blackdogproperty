@@ -12,10 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-tab
+//= require bootstrap-tooltip
 //= require bootstrap
+//= require jquery.easytabs.min
 //= require jquery.charcounter
 //= require jquery.ad-gallery
-//= require jquery.easytabs.min
 //= require jquery.hashchange.min
 //= require jquery.placeholder.min
 //= require ckeditor/init

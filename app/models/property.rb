@@ -28,6 +28,8 @@ class Property
   
   # Additional fields for Lastminute
   field :user_id
+  field :phone_country
+  field :phone_number
   field :amenitiy_ids               
   field :accomodates,                 type: Integer
   field :bedrooms,                    type: Integer
@@ -64,6 +66,8 @@ class Property
   has_and_belongs_to_many :types, inverse_of: nil
   belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
+  embeds_one :address
+  accepts_nested_attributes_for :address
   
   # Validations
   validates :title, 
