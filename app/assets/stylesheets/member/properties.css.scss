@@ -28,18 +28,20 @@ table {
 		&.width {
 			width: 200px;
 		}
-		&.right {
-		}
-		&.centered {
-			margin: 7px 0 0 0;
-		}
 		label {
 			color: $white;
 			display: block;
 			float: left;
+			&.right {
+				text-align:right;
+			}
+			&.centered {
+				margin: 7px 0 0 0;
+			}
 		}
-		input {
+		input, select {
 			padding: 7px 5px;
+			margin: 0 4px 8px 2px;
 		}
 		textarea {
 			padding: 7px;
@@ -65,4 +67,11 @@ table {
 		height: 14px;
 		width: 14px;
 	}
+}
+
+.note {
+	margin:2px 0 2px 2px;
+	padding: 0;
+	font-size: 9px;
+	line-height: 12px;
 }

@@ -11,7 +11,7 @@
 
 = render 'shared/email_errors', :resource => resource
 
-= form_for @property, :as => :property, :url => member_dashboard_index_path, :html => { :autocomplete => "off" } do |f|
+= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
 	
 	%h2 Begin by providing some initial details about your property
 
@@ -75,37 +75,43 @@
 			= f.fields_for :address do |b|
 				%table.property		
 					%tr
-						%td.width.right.centered= b.label :street, "Address Line 1"
-						%td= b.text_field :street, :size => "40"
+						%td.width= b.label :street, "Address Line 1", :class => "right centered"
+						%td
+							= b.text_field :street, :size => "40"
+							%br
+							%p.note e.g. street address, P.O. box, company name or c/o.
 
 					%tr
-						%td.right.centered= b.label :apt, "Address Line 2"
-						%td= b.text_field :apt, :size => "40"
+						%td= b.label :apt, "Address Line 2", :class => "right centered"
+						%td	
+							= b.text_field :apt, :size => "40"
+							%br
+							%p.note e.g. apartment, suite, unit, building or floor.
 
 					%tr
-						%td.right.centered= b.label :city
+						%td= b.label :city, :class => "right centered"
 						%td= b.text_field :city, :size => "40"
 
 					%tr
-						%td.right.centered= b.label :state, "Province / Region / State"
+						%td= b.label :state, "Province / Region / State", :class => "right centered"
 						%td= b.text_field :state, :size => "40"
 
 					%tr
-						%td.right.centered= b.label :zipcode, "Postal / ZIP Code"
+						%td= b.label :zipcode, "Postal / ZIP Code", :class => "right centered"
 						%td= b.text_field :zipcode, :size => "40"
 	
 					%tr
-						%td.right= b.label :country
-						%td= b.country_select :country
+						%td= b.label :country, :class => "right"
+						%td= b.country_select :country, ["France", "Italy", "Portugal", "Spain"]
 						
 		.tab-pane#gps
 			%table.property		
 				%tr
-					%td.width.right.centered= f.label :latitude
+					%td.width= f.label :latitude, :class => "right centered"
 					%td= f.text_field :latitude, :size => "40"
 
 				%tr
-					%td.right.centered= f.label :longitude
+					%td.centered= f.label :longitude, :class => "right centered"
 					%td= f.text_field :longitude, :size => "40"
 
 	= f.submit "Sign Up", :class => 'buttonBasic'
