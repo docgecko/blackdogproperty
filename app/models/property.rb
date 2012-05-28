@@ -51,7 +51,7 @@ class Property
   # Setup accessible (or protected) attributes
   attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :purpose_ids, :type_ids, 
-                  :price_sale, :price_rental, :price, :currency,
+                  :price_sale, :price_rental,
                   :coordinates, :longitude, :latitude, :zoom,
                   :order_no, :featured, :published,
                   :user_id, :phone_country, :phone_number,
@@ -61,6 +61,7 @@ class Property
                   :living_room, :dining_room, :dining_outdoor,
                   :sun_loungers, :balconies, :terraces,
                   :sea_views, :conventions
+  attr_accessor   :price, :currency
 
   # References
   has_many :photos, :dependent => :destroy
@@ -114,11 +115,11 @@ class Property
     coordinates[1]
   end
   
-  def currency
-    currency_rental
+  def currency_rental
+    currency
   end
 
-  def price
-    price_rental
+  def price_rental
+    price
   end
 end

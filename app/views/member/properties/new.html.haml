@@ -59,7 +59,7 @@
 		%tr
 			%td.width
 				= f.label :phone_number, "Contact Phone Number"
-				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide the country code, followed by the telephone number, e.g. +44 207012345678."
+				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide the country code, followed by the telephone number, e.g. +44 207 01234567."
 				%td
 					%fieldset#phone
 						= f.text_field :phone_country, :size => "4"
@@ -111,20 +111,21 @@
 							%td= b.country_select :country, ["France", "Italy", "Portugal", "Spain"]
 						
 			.tab-pane.fade.in#gps
-				%table.property		
-					%tr
-						%td.width= f.label :latitude, :class => "right centered"
-						%td
-							= f.text_field :latitude, :size => "40"
-							%br
-							%p.note e.g. 29.199505 or N 29 11 58.22
+				%table.property
+					= f.fields_for :address do |b|
+						%tr
+							%td.width= b.label :latitude, :class => "right centered"
+							%td
+								= b.text_field :latitude, :size => "40"
+								%br
+								%p.note e.g. 29.199505 or N 29 11 58.22
 
-					%tr
-						%td.centered= f.label :longitude, :class => "right centered"
-						%td
-							= f.text_field :longitude, :size => "40"
-							%br
-							%p.note e.g. -90.041242 or W 90 2 28.47
+						%tr
+							%td.centered= b.label :longitude, :class => "right centered"
+							%td
+								= b.text_field :longitude, :size => "40"
+								%br
+								%p.note e.g. -90.041242 or W 90 2 28.47
 
 	= f.submit "Sign Up", :class => 'buttonBasic'
 	

@@ -487,13 +487,14 @@
 
 /*--------- Errors ---------*/
 .required {
-	color: red;
+	color: $red;
 	float: right;
-	margin-left: 3px; }
+	margin-left: 5px;
+}
 
 input, textarea {
 	&.error {
-		border-color: red;
+		border-color: $red;
 	}
 }
 

@@ -26,24 +26,35 @@ $(document).ready ->
 
 			"property[price]": 
 				required: true
+				number: true
 				
 			"property[phone_country]":
 				required: true
+				minlength: 2
+				maxlength: 4
 				
 			"property[phone_number]":
 				required: true
+				minlength: 6
+				maxlength: 14
 				
 			"property[address_attributes][street]":
-				required: true
+				required: "#postal.active"
 
 			"property[address_attributes][city]":
-				required: true
+				required: "#postal.active"
 
 			"property[address_attributes][state]":
-				required: true
+				required: "#postal.active"
 				
 			"property[address_attributes][zipcode]":
-				required: true
+				required: "#postal.active"
+				
+			"property[address_attributes][latitude]":
+				required: "#gps.active"
+
+			"property[address_attributes][longitude]":
+				required: "#gps.active"
 		
 		messages: 
 			"property[title]": 
@@ -55,6 +66,7 @@ $(document).ready ->
 				
 			"property[price]": 
 				required: "Please provide a price per week of the property"
+				number: "The price can be a whole number or a decimal"
 
 			"property[phone_country]":
 				required: "Please provide the country code of the phone number"
@@ -73,3 +85,10 @@ $(document).ready ->
 				
 			"property[address_attributes][zipcode]":
 				required: "Please provide the postal or ZIP code"
+				
+			"property[address_attributes][latitude]":
+				required: "Please provide the latitude gps coordinate"
+
+			"property[address_attributes][longitude]":
+				required: "Please provide the longitude gps coordinate"
+
