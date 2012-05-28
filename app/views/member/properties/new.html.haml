@@ -62,57 +62,66 @@
 				= f.text_field :phone_country, :size => "4"
 				= f.text_field :phone_number, :size => "13"
 	
-	%table.property		
-		%tr
-			%td.width{:style => "color:#FFFFFF;"} Property Location
-			%td
-				%ul#property_location.nav.nav-tabs
-					%li= link_to "Postal Address", "#postal", "data-toggle" => "tab"
-					%li= link_to "GPS Coordinates", "#gps", "data-toggle" => "tab"
+	.tabbable
+		%table.property		
+			%tr
+				%td.width{:style => "color:#FFFFFF;"}><
+					Property Location
+					= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Choose to either enter a Postal Address or GPS Coordinates."
+				%td
+					%ul#property_location.nav.nav-tabs
+						%li= link_to "Postal Address", "#postal", "data-toggle" => "tab"
+						%li= link_to "GPS Coordinates", "#gps", "data-toggle" => "tab"
 
-	.tab-content
-		.tab-pane#postal
-			= f.fields_for :address do |b|
+		.tab-content
+			.tab-pane.fade.in#postal
+				= f.fields_for :address do |b|
+					%table.property		
+						%tr
+							%td.width= b.label :street, "Address Line 1", :class => "right centered"
+							%td
+								= b.text_field :street, :size => "40"
+								%br
+								%p.note e.g. street address, P.O. box, company name or c/o.
+
+						%tr
+							%td= b.label :apt, "Address Line 2", :class => "right centered"
+							%td	
+								= b.text_field :apt, :size => "40"
+								%br
+								%p.note e.g. apartment, suite, unit, building or floor.
+
+						%tr
+							%td= b.label :city, :class => "right centered"
+							%td= b.text_field :city, :size => "40"
+
+						%tr
+							%td= b.label :state, "Province / Region / State", :class => "right centered"
+							%td= b.text_field :state, :size => "40"
+
+						%tr
+							%td= b.label :zipcode, "Postal / ZIP Code", :class => "right centered"
+							%td= b.text_field :zipcode, :size => "40"
+	
+						%tr
+							%td= b.label :country, :class => "right"
+							%td= b.country_select :country, ["France", "Italy", "Portugal", "Spain"]
+						
+			.tab-pane.fade.in#gps
 				%table.property		
 					%tr
-						%td.width= b.label :street, "Address Line 1", :class => "right centered"
+						%td.width= f.label :latitude, :class => "right centered"
 						%td
-							= b.text_field :street, :size => "40"
+							= f.text_field :latitude, :size => "40"
 							%br
-							%p.note e.g. street address, P.O. box, company name or c/o.
+							%p.note e.g. 29.199505 or +29° 11' 58.22"
 
 					%tr
-						%td= b.label :apt, "Address Line 2", :class => "right centered"
-						%td	
-							= b.text_field :apt, :size => "40"
+						%td.centered= f.label :longitude, :class => "right centered"
+						%td
+							= f.text_field :longitude, :size => "40"
 							%br
-							%p.note e.g. apartment, suite, unit, building or floor.
-
-					%tr
-						%td= b.label :city, :class => "right centered"
-						%td= b.text_field :city, :size => "40"
-
-					%tr
-						%td= b.label :state, "Province / Region / State", :class => "right centered"
-						%td= b.text_field :state, :size => "40"
-
-					%tr
-						%td= b.label :zipcode, "Postal / ZIP Code", :class => "right centered"
-						%td= b.text_field :zipcode, :size => "40"
-	
-					%tr
-						%td= b.label :country, :class => "right"
-						%td= b.country_select :country, ["France", "Italy", "Portugal", "Spain"]
-						
-		.tab-pane#gps
-			%table.property		
-				%tr
-					%td.width= f.label :latitude, :class => "right centered"
-					%td= f.text_field :latitude, :size => "40"
-
-				%tr
-					%td.centered= f.label :longitude, :class => "right centered"
-					%td= f.text_field :longitude, :size => "40"
+							%p.note e.g. -90.041242 or -90° 2' 28.47"
 
 	= f.submit "Sign Up", :class => 'buttonBasic'
 	

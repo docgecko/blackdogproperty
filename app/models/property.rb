@@ -70,37 +70,37 @@ class Property
   accepts_nested_attributes_for :address
   
   # Validations
-  validates :title, 
-            :presence => { :message => "Please provide a Title for the property" }, 
+  validates_presence_of :title
+  validates :title,
             :uniqueness => { :message => "Please provide a unique Title of the property" }
   validates :country_id, 
             :presence => { :message => "Please select the Country location" }
-  validates :coordinates, 
-            :presence => { :message => "Please provide GPS Coordinates of the property" }
-  validates :latitude,
-            :numericality => { 
-              :less_than_or_equal_to => 180, 
-              :greater_than_or_equal_to => -180, 
-              :message => "Please provide a valid Latitude of the GPS Coordinates" 
-            }
-  validates :longitude, 
-            :numericality => { 
-              :less_than_or_equal_to => 180, 
-              :greater_than_or_equal_to => -180, 
-              :message => "Please provide a valid Longitude of the GPS Coordinates" 
-            }
-  validates :zoom,
-            :presence => {
-              :message => "Please provide a Zoom value for the GPS Coordinates"
-            },
-            :numericality => { 
-              :less_than_or_equal_to => 17, 
-              :greater_than_or_equal_to => 0,
-              :only_integer => true,
-              :message => "The Zoom value must be an Integer between 0 and 17"
-            }
-  validates :order_no, 
-            :presence => { :message => "Please provide an Order No. for the property" }
+  # validates :coordinates, 
+  #           :presence => { :message => "Please provide GPS Coordinates of the property" }
+  # validates :latitude,
+  #           :numericality => { 
+  #             :less_than_or_equal_to => 180, 
+  #             :greater_than_or_equal_to => -180, 
+  #             :message => "Please provide a valid Latitude of the GPS Coordinates" 
+  #           }
+  # validates :longitude, 
+  #           :numericality => { 
+  #             :less_than_or_equal_to => 180, 
+  #             :greater_than_or_equal_to => -180, 
+  #             :message => "Please provide a valid Longitude of the GPS Coordinates" 
+  #           }
+  # validates :zoom,
+  #           :presence => {
+  #             :message => "Please provide a Zoom value for the GPS Coordinates"
+  #           },
+  #           :numericality => { 
+  #             :less_than_or_equal_to => 17, 
+  #             :greater_than_or_equal_to => 0,
+  #             :only_integer => true,
+  #             :message => "The Zoom value must be an Integer between 0 and 17"
+  #           }
+  # validates :order_no, 
+  #           :presence => { :message => "Please provide an Order No. for the property" }
 
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
   

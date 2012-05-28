@@ -23,3 +23,8 @@ en:
             username:
               blank: "is required"
               taken: "has already been taken. Please choose another"
+        property:
+          attributes:
+            title:
+              blank: "cannot be left blank"
+              taken: "has already been used by another property posting. Modify if and try again"
