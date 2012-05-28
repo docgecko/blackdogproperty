@@ -6,6 +6,7 @@
 
 - content_for :link_canonical do
 	member/properties/new
+
 	
 %h1 List your property
 
@@ -46,9 +47,10 @@
 		%tr
 			%td= f.label :price, :id => "property_price_label"
 			%td
-				= f.select :currency, [["EUR", "EUR"], ["GBP", "EUR"]], {}, { :style => "margin:9px 10px 0 0;" }
-				= f.text_field :price, :size => "10", :style => "margin-right:5px;"
-				%span{:style => "color:white;font-weight:normal;"} per week
+				%fieldset#price
+					= f.select :currency, [["EUR", "EUR"], ["GBP", "EUR"]], {}, { :style => "margin:9px 10px 0 0;" }
+					= f.text_field :price, :size => "10", :style => "margin-right:5px;"
+					%span{:style => "color:white;font-weight:normal;"} per week
 				
 	%h2.section-title Next provide contact and location details about your property
 	%p.sub-title To protect your privacy, the following information will only be given to visiter once a reservation has been confirmed
@@ -58,9 +60,10 @@
 			%td.width
 				= f.label :phone_number, "Contact Phone Number"
 				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide the country code, followed by the telephone number, e.g. +44 207012345678."
-			%td
-				= f.text_field :phone_country, :size => "4"
-				= f.text_field :phone_number, :size => "13"
+				%td
+					%fieldset#phone
+						= f.text_field :phone_country, :size => "4"
+						= f.text_field :phone_number, :size => "13"
 	
 	.tabbable
 		%table.property		
@@ -114,14 +117,14 @@
 						%td
 							= f.text_field :latitude, :size => "40"
 							%br
-							%p.note e.g. 29.199505 or +29° 11' 58.22"
+							%p.note e.g. 29.199505 or N 29 11 58.22
 
 					%tr
 						%td.centered= f.label :longitude, :class => "right centered"
 						%td
 							= f.text_field :longitude, :size => "40"
 							%br
-							%p.note e.g. -90.041242 or -90° 2' 28.47"
+							%p.note e.g. -90.041242 or W 90 2 28.47
 
 	= f.submit "Sign Up", :class => 'buttonBasic'
 	

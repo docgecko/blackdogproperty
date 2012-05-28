@@ -51,10 +51,12 @@ class Property
   # Setup accessible (or protected) attributes
   attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :purpose_ids, :type_ids, 
-                  :price_sale, :price_rental, :price,
+                  :price_sale, :price_rental, :price, :currency,
                   :coordinates, :longitude, :latitude, :zoom,
                   :order_no, :featured, :published,
-                  :user_id, :amentity_ids, :quantities,
+                  :user_id, :phone_country, :phone_number,
+                  :address_attributes,
+                  :amentity_ids, :quantities,
                   :accomodates, :bedrooms, :bedrooms,
                   :living_room, :dining_room, :dining_outdoor,
                   :sun_loungers, :balconies, :terraces,
@@ -67,14 +69,14 @@ class Property
   belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
   embeds_one :address
-  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :address, :reject_if => :all_blank
   
   # Validations
   validates_presence_of :title
   validates :title,
             :uniqueness => { :message => "Please provide a unique Title of the property" }
-  validates :country_id, 
-            :presence => { :message => "Please select the Country location" }
+  # validates :country_id, 
+  #           :presence => { :message => "Please select the Country location" }
   # validates :coordinates, 
   #           :presence => { :message => "Please provide GPS Coordinates of the property" }
   # validates :latitude,

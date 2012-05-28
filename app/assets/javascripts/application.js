@@ -15,6 +15,8 @@
 //= require bootstrap-tab
 //= require bootstrap-tooltip
 //= require bootstrap
+//= require jquery.validate.min
+//= require additional-methods.min
 //= require jquery.easytabs.min
 //= require jquery.charcounter
 //= require jquery.ad-gallery

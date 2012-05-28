@@ -483,3 +483,26 @@
 		color: lighten(green, 1);
 	}
 }
+
+
+/*--------- Errors ---------*/
+.required {
+	color: red;
+	float: right;
+	margin-left: 3px; }
+
+input, textarea {
+	&.error {
+		border-color: red;
+	}
+}
+
+label {
+	&.error {
+		font-size: 12px;
+		font-weight: normal;
+		color: red;
+		margin: 0;
+		padding: 0;
+	}
+}
