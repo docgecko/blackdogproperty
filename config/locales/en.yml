@@ -27,4 +27,4 @@ en:
           attributes:
             title:
               blank: "cannot be left blank"
-              taken: "has already been used by another property posting. Modify if and try again"
+              taken: "has already been used by another property posting. Modify it and try again"

@@ -5,10 +5,10 @@ class Member::PropertiesController < InheritedResources::Base
   actions :all
   respond_to :html
   
-  # def index
-  #   @properties = Property.where(user_id: current_user.id)
-  # end
-  # 
+  def index
+    @properties = Property.where(user_id: current_user.id)
+  end
+  
   # def new
   #   @property = Property.new
   #   # pre-build address for nested form builder

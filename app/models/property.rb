@@ -7,19 +7,14 @@ class Property
   include Geocoder::Model::Mongoid
   
   # Callbacks
-  after_validation :create_currency_rental, 
-                   :create_price_rental,
-                   :create_address
-  geocoded_by :address
-  reverse_geocoded_by :coordinates do |obj,results|
-    if geo = results.first
-      obj.street  = geo.address
-      obj.city    = geo.city
-      obj.zipcode = geo.postal_code
-      obj.country = geo.country
-    end
-  end
-  after_validation :geocode, :reverse_geocode
+  before_validation :create_address
+  geocoded_by :address, :if => :coordinates_changed?
+  reverse_geocoded_by :coordinates, :if => :address_changed?
+  after_validation :geocode, :if => :address_changed?
+  after_validation :reverse_geocode, :if => :coordinates_changed?
+  before_save :create_address,
+              :create_currency_rental, 
+              :create_price_rental
 
   # Fields
   field :title
@@ -36,9 +31,9 @@ class Property
   field :currency_rental
   field :price_sale
   field :price_rental
-  field :coordinates,                 type: Array, spacial: { lat: :latitude, lng: :longitude, return_array: true }
-  field :zoom,                        type: Integer
-  field :order_no,                    type: Integer
+  field :coordinates,                 type: Array,   spacial: { lat: :latitude, lng: :longitude, return_array: true }
+  field :zoom,                        type: Integer, default: 11
+  field :order_no,                    type: Integer, default: 0
   field :featured,                    type: Boolean, default: false
   field :published,                   type: Boolean, default: true
   
@@ -96,13 +91,10 @@ class Property
   has_and_belongs_to_many :types, inverse_of: nil
   belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
-  # embeds_one :address
-  # accepts_nested_attributes_for :address, :reject_if => :all_blank
   
   # Validations
   validates_presence_of :title
-  validates :title,
-            :uniqueness => { :message => "Please provide a unique Title of the property" }
+  validates_uniqueness_of :title
 
   # Gmaps4Rails
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
@@ -115,15 +107,28 @@ class Property
     coordinates[1]
   end
   
-  def create_currency_rental
-    self.currency_rental = currency
+  def currency_rental
+    currency
+  end
+  
+  def price_rental
+    price
+  end
+  
+  def address
+    [self.street, self.city, self.state, self.country].compact.join(', ')
   end
 
+  def create_currency_rental
+   self.currency_rental = currency
+  end
+  
   def create_price_rental
     self.price_rental = price
   end
   
   def create_address
-    self.address = [street, apt, city, state, zipcode, country].compact.join(", ")
+    self.address = [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
   end
+
 end

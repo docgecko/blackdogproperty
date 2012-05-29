@@ -112,22 +112,25 @@
 			.tab-pane.fade.in#gps
 				%table.property
 					%tr
-						%td.width= f.label :latitude, :class => "right centered"
+						%td.width= label_tag "property_latitude", "Latitude", :class => "right centered"
 						%td
-							= f.text_field :latitude, :size => "40"
+							= text_field_tag "property[coordinates][]", @property.coordinates[0], :id => "property_latitude", :size => "40"
 							%br
 							%p.note e.g. 29.199505
 							/ %p.note e.g. 29.199505 or N 29 11 58.22
 
 					%tr
-						%td.centered= f.label :longitude, :class => "right centered"
+						%td.centered= label_tag "property_longitude", "Longitude", :class => "right centered"
 						%td
-							= f.text_field :longitude, :size => "40"
+							= text_field_tag "property[coordinates][]", @property.coordinates[1], :id => "property_longitude", :size => "40"
 							%br
 							%p.note e.g. -90.041242
 							/ %p.note e.g. -90.041242 or W 90 2 28.47
 
-	= f.submit "Sign Up", :class => 'buttonBasic'
+	%table.property
+		%tr
+			%td.width
+			%td= f.submit "Save & Continue", :class => 'buttonBasic', :onclick => "this.value = 'Saving your property...'"
 	
 - content_for :scripts do
 	:javascript
