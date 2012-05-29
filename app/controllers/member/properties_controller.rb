@@ -2,11 +2,15 @@ class Member::PropertiesController < InheritedResources::Base
   before_filter :authenticate_user!
   layout 'member'  
   
-  actions :all
+  actions :all, :full_address
   respond_to :html
   
   def index
     @properties = Property.where(user_id: current_user.id)
+  end
+  
+  def full_address 
+    render :text => Geocoder.search("Rua Almeida e Sousa 33, 1350-008 Lisboa, Portugal").inspect.to_s
   end
   
   # def new

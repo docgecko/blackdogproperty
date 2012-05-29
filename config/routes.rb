@@ -26,6 +26,8 @@ Blackdogproperty::Application.routes.draw do
     resources :dashboard, :only => [ :index ]
     resources :properties
   end
+  
+  match "/member/full_address" => "member/properties#full_address"
 
   match "/member" => redirect("/member/dashboard")
   

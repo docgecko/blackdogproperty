@@ -13,6 +13,8 @@ class Property
   after_validation :geocode, :if => :address_changed?
   after_validation :reverse_geocode, :if => :coordinates_changed?
   before_save :create_address,
+              :create_latitude,
+              :create_longitude,
               :create_currency_rental, 
               :create_price_rental
 
@@ -116,7 +118,8 @@ class Property
   end
   
   def address
-    [self.street, self.city, self.state, self.country].compact.join(', ')
+    [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
+    # [self.street, self.city, self.state, self.country].compact.join(', ')
   end
 
   def create_currency_rental
@@ -127,8 +130,17 @@ class Property
     self.price_rental = price
   end
   
+  def create_latitude
+    self.latitude = coordinates[0]
+  end
+
+  def create_longitude
+    self.longitude = coordinates[1]
+  end
+  
   def create_address
-    self.address = [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
+    # self.address = [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
+    self.address = address
   end
 
 end
