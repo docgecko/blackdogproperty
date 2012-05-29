@@ -49,31 +49,13 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :welcome, 'Home', root_url
-    primary.item :locations, 'Finding', location_about_path
-    primary.item :rentals, 'Renting', rentals_path
-    primary.item :lastminute, 'Lastminute', lastminutes_path
-    primary.item :renovations, 'Renovation', renovations_about_path
-    primary.item :services, 'Services' do |s|
-      s.item :property, 'property management', services_static_path('property-management')
-      s.item :client, 'client management', services_static_path('client-management')
-      s.item :marketing, 'marketing', services_static_path('marketing')
-      s.item :investment, 'investment &amp; development', services_static_path('investment-development')
-      s.item :relocation, 'relocation', services_static_path('relocation')
-      s.item :chauffeur, 'chauffeur services', services_static_path('chauffeur')
-      s.item :jet, 'private jet', services_static_path('private-jet')
-      s.item :security, 'security advice', services_static_path('security')
-      s.item :language, 'language services', services_static_path('language')
-      s.item :maintenance, 'property maintenance', services_static_path('maintenance')
-    end
-    primary.item :sales, 'Sales', sales_about_path
-    primary.item :company, 'Company' do |s|
-      s.item :about, 'about us', company_about_path
-      s.item :team, 'the team', company_team_path
-      s.item :accreditation, 'accreditation', company_static_path('blackdog-accreditation')
-      s.item :testimonials, 'testimonials', company_testimonials_path
-      s.item :show_case, 'gallery', company_static_path('gallery')
-    end
+    
+    primary.item :all, 'All', lastminutes_path
+    primary.item :france, 'France', lastminutes_search_path('france')
+    primary.item :spain, 'Spain', lastminutes_search_path('spain')
+    primary.item :portugal, 'Portugal', lastminutes_search_path('portugal')
+    primary.item :italy, 'Italy', lastminutes_search_path('italy')
+    
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
@@ -85,7 +67,6 @@ SimpleNavigation::Configuration.run do |navigation|
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
     # primary.dom_class = 'menu-class'
-    primary.dom_class = 'sf-menu'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

@@ -38,22 +38,22 @@ $(document).ready ->
 				minlength: 6
 				maxlength: 14
 				
-			"property[address_attributes][street]":
+			"property[street]":
 				required: "#postal.active"
 
-			"property[address_attributes][city]":
+			"property[city]":
 				required: "#postal.active"
 
-			"property[address_attributes][state]":
+			"property[state]":
 				required: "#postal.active"
 				
-			"property[address_attributes][zipcode]":
+			"property[zipcode]":
 				required: "#postal.active"
 				
-			"property[address_attributes][latitude]":
+			"property[latitude]":
 				required: "#gps.active"
 
-			"property[address_attributes][longitude]":
+			"property[longitude]":
 				required: "#gps.active"
 		
 		messages: 
@@ -74,21 +74,21 @@ $(document).ready ->
 			"property[phone_number]":
 				required: "Please provide the phone number"
 
-			"property[address_attributes][street]":
+			"property[street]":
 				required: "Please provide the 1st line of the address"
 
-			"property[address_attributes][city]":
+			"property[city]":
 				required: "Please provide the name of the city"
 
-			"property[address_attributes][state]":
+			"property[state]":
 				required: "Please provide the name of the province, region or state"
 				
-			"property[address_attributes][zipcode]":
+			"property[zipcode]":
 				required: "Please provide the postal or ZIP code"
 				
-			"property[address_attributes][latitude]":
+			"property[latitude]":
 				required: "Please provide the latitude gps coordinate"
 
-			"property[address_attributes][longitude]":
+			"property[longitude]":
 				required: "Please provide the longitude gps coordinate"
 

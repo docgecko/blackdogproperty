@@ -1,0 +1,11 @@
+- content_for :title do
+	== Lastminutes in #{@country.name} | BlackDog Property
+	
+- content_for :link_canonical do
+	== lastminutes/search/#{@country.id}
+
+#search
+	= render 'shared/lastminute/search_navigation'
+	%h1.short== Lastminutes in #{@country.name}
+
+= render 'shared/lastminute/results'

@@ -4,6 +4,22 @@ class Property
   include Mongoid::Spacial::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
+  include Geocoder::Model::Mongoid
+  
+  # Callbacks
+  after_validation :create_currency_rental, 
+                   :create_price_rental,
+                   :create_address
+  geocoded_by :address
+  reverse_geocoded_by :coordinates do |obj,results|
+    if geo = results.first
+      obj.street  = geo.address
+      obj.city    = geo.city
+      obj.zipcode = geo.postal_code
+      obj.country = geo.country
+    end
+  end
+  after_validation :geocode, :reverse_geocode
 
   # Fields
   field :title
@@ -43,6 +59,17 @@ class Property
   field :sea_views,                   type: Boolean
   field :conventions,                 type: Boolean
   
+  field :address
+  field :street
+  field :apt
+  field :city
+  field :state
+  field :zipcode
+  field :country
+  
+  # None-database fields
+  attr_accessor :price, :currency
+  
   # Indexes
   spacial_index :coordinates
   
@@ -51,7 +78,7 @@ class Property
   # Setup accessible (or protected) attributes
   attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :purpose_ids, :type_ids, 
-                  :price_sale, :price_rental,
+                  :price_sale, :price_rental, :price, :currency,
                   :coordinates, :longitude, :latitude, :zoom,
                   :order_no, :featured, :published,
                   :user_id, :phone_country, :phone_number,
@@ -60,8 +87,8 @@ class Property
                   :accomodates, :bedrooms, :bedrooms,
                   :living_room, :dining_room, :dining_outdoor,
                   :sun_loungers, :balconies, :terraces,
-                  :sea_views, :conventions
-  attr_accessor   :price, :currency
+                  :sea_views, :conventions,
+                  :address, :street, :apt, :city, :state, :zipcode, :country
 
   # References
   has_many :photos, :dependent => :destroy
@@ -69,42 +96,15 @@ class Property
   has_and_belongs_to_many :types, inverse_of: nil
   belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
-  embeds_one :address
-  accepts_nested_attributes_for :address, :reject_if => :all_blank
+  # embeds_one :address
+  # accepts_nested_attributes_for :address, :reject_if => :all_blank
   
   # Validations
   validates_presence_of :title
   validates :title,
             :uniqueness => { :message => "Please provide a unique Title of the property" }
-  # validates :country_id, 
-  #           :presence => { :message => "Please select the Country location" }
-  # validates :coordinates, 
-  #           :presence => { :message => "Please provide GPS Coordinates of the property" }
-  # validates :latitude,
-  #           :numericality => { 
-  #             :less_than_or_equal_to => 180, 
-  #             :greater_than_or_equal_to => -180, 
-  #             :message => "Please provide a valid Latitude of the GPS Coordinates" 
-  #           }
-  # validates :longitude, 
-  #           :numericality => { 
-  #             :less_than_or_equal_to => 180, 
-  #             :greater_than_or_equal_to => -180, 
-  #             :message => "Please provide a valid Longitude of the GPS Coordinates" 
-  #           }
-  # validates :zoom,
-  #           :presence => {
-  #             :message => "Please provide a Zoom value for the GPS Coordinates"
-  #           },
-  #           :numericality => { 
-  #             :less_than_or_equal_to => 17, 
-  #             :greater_than_or_equal_to => 0,
-  #             :only_integer => true,
-  #             :message => "The Zoom value must be an Integer between 0 and 17"
-  #           }
-  # validates :order_no, 
-  #           :presence => { :message => "Please provide an Order No. for the property" }
 
+  # Gmaps4Rails
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
   
   def latitude
@@ -115,11 +115,15 @@ class Property
     coordinates[1]
   end
   
-  def currency_rental
-    currency
+  def create_currency_rental
+    self.currency_rental = currency
   end
 
-  def price_rental
-    price
+  def create_price_rental
+    self.price_rental = price
+  end
+  
+  def create_address
+    self.address = [street, apt, city, state, zipcode, country].compact.join(", ")
   end
 end

@@ -1,0 +1,22 @@
+#results
+	- if @properties.empty?
+		.block
+			.border
+				%h2
+					-if @country.present?
+						== Lastminute properties in #{@country.name} coming soon.
+					-else
+						Lastminute properties coming soon.
+				%p== Please contact us by #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", new_support_path} and we will email you when they become available.
+			.bottom
+	- else
+		- for property in @properties
+			= link_to rental_path(property.country_id, property.id), :class => :property do
+				%span.featured
+					- @photo = Photo.first(conditions: { property_id: property.id, featured: true })
+					= @photo.present? ? image_tag(@photo.image.url(:list)) : image_tag("services/logo_blackdog.jpg", :width => "185px", :height => "200px", :border => "0")
+				%span.short
+					%h2= property.title
+					%span.bio= markdown(truncate(property.bio, :length => 380, :omission => '... (more)'))
+		.paginate
+			= paginate @properties

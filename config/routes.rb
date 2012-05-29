@@ -4,7 +4,9 @@ Blackdogproperty::Application.routes.draw do
 
   devise_for :admins,
              :path => "/admin", 
-             :path_names => { :sign_in => 'signin', :sign_out => 'signout', :password => 'password' }
+             :path_names => {  :sign_in => 'signin', 
+                               :sign_out => 'signout', 
+                               :password => 'password' }
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -14,7 +16,11 @@ Blackdogproperty::Application.routes.draw do
                                :sessions => 'member/sessions',
                                :confirmations => 'member/confirmations',
                                :passwords => 'member/passwords' },
-             :path_names => { :sign_in => 'signin', :sign_up => 'registration', :sign_out => 'signout', :password => 'password', :confirmation => 'confirmation' }
+             :path_names => {  :sign_in => 'signin', 
+                               :sign_up => 'registration', 
+                               :sign_out => 'signout', 
+                               :password => 'password', 
+                               :confirmation => 'confirmation' }
   
   namespace :member do
     resources :dashboard, :only => [ :index ]
@@ -32,6 +38,10 @@ Blackdogproperty::Application.routes.draw do
   resources :rentals, :only => [ :index ]
   match 'rentals/in/:country_id' => 'rentals#search', :as => :rentals_search, :via => :get
   match 'rentals/in/:country_id/:id' => 'rentals#show', :as => :rental, :via => :get
+
+  resources :lastminutes, :only => [ :index ]
+  match 'lastminutes/in/:country_id' => 'lastminutes#search', :as => :lastminutes_search, :via => :get
+  match 'lastminutes/in/:country_id/:id' => 'lastminutes#show', :as => :lastminute, :via => :get
 
   resources :renovations, :only => :index
   match 'renovation/about' => 'renovations#about', :as => :renovations_about, :via => :get

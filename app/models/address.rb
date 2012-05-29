@@ -4,17 +4,8 @@ class Address
   include Mongoid::Spacial::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
-  include Geocoder::Model::Mongoid
   
   # Callbacks
-  # Address to GPS Coordinates
-  geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
-  # GPS Coordinates to Address
-  reverse_geocoded_by :coordinates
-  after_validation :reverse_geocode, :if => :coordinates_changed?
-  # Others
-  after_validation :create_address
   
   # Fields
   field :address
@@ -38,11 +29,6 @@ class Address
   
   # Spacial
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
-  
-  
-  def address
-    [street, apt, city, state, zipcode, country].join(", ")
-  end
     
   def latitude
     coordinates[0]

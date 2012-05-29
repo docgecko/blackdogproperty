@@ -1,4 +1,4 @@
-class RentalsController < InheritedResources::Base
+class LastminutesController < InheritedResources::Base
   layout 'application'
   
   before_filter :find_country, :only => [ :search, :show ]
@@ -6,11 +6,11 @@ class RentalsController < InheritedResources::Base
   respond_to :html
   
   def index
-    @properties = Property.where(:published => true, :purpose_ids => "rental").asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => "lastminute").asc(:order_no).page params[:page]
   end
   
   def search
-    @properties = Property.where(:published => true, :purpose_ids => "rental", :country_id => params[:country_id]).asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => "lastminute", :country_id => params[:country_id]).asc(:order_no).page params[:page]
     if params[:country_id].present?
       @country = Country.find(params[:country_id])
     end

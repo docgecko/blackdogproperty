@@ -50,15 +50,15 @@ table {
 			margin: -5px 0 9px 2px;
 		}
 		span {
-			font-weight: bold;
+			font-weight: normal;
 			&.label-info {
-				color: $gray;
+				color: $red;
 			}
 			&.label-warning {
-				color: $blue;
+				color: $light-green;
 			}
 			&.label-important {
-				color: $red;
+				color: $light-green;
 			}
 		}
 	}

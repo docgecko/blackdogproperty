@@ -48,7 +48,7 @@
 			%td= f.label :price, :id => "property_price_label"
 			%td
 				%fieldset#price
-					= f.select :currency, [["EUR", "EUR"], ["GBP", "EUR"]], {}, { :style => "margin:9px 10px 0 0;" }
+					= f.select :currency, [["EUR", "EUR"], ["GBP", "GBP"]], {}, { :style => "margin:9px 10px 0 0;" }
 					= f.text_field :price, :size => "10", :style => "margin-right:5px;"
 					%span{:style => "color:white;font-weight:normal;"} per week
 				
@@ -78,54 +78,54 @@
 
 		.tab-content
 			.tab-pane.fade.in#postal
-				= f.fields_for :address do |b|
-					%table.property		
-						%tr
-							%td.width= b.label :street, "Address Line 1", :class => "right centered"
-							%td
-								= b.text_field :street, :size => "40"
-								%br
-								%p.note e.g. street address, P.O. box, company name or c/o.
+				%table.property		
+					%tr
+						%td.width= f.label :street, "Address Line 1", :class => "right centered"
+						%td
+							= f.text_field :street, :size => "40"
+							%br
+							%p.note e.g. street address, P.O. box, company name or c/o.
 
-						%tr
-							%td= b.label :apt, "Address Line 2", :class => "right centered"
-							%td	
-								= b.text_field :apt, :size => "40"
-								%br
-								%p.note e.g. apartment, suite, unit, building or floor.
+					%tr
+						%td= f.label :apt, "Address Line 2", :class => "right centered"
+						%td	
+							= f.text_field :apt, :size => "40"
+							%br
+							%p.note e.g. apartment, suite, unit, building or floor.
 
-						%tr
-							%td= b.label :city, :class => "right centered"
-							%td= b.text_field :city, :size => "40"
+					%tr
+						%td= f.label :city, :class => "right centered"
+						%td= f.text_field :city, :size => "40"
 
-						%tr
-							%td= b.label :state, "Province / Region / State", :class => "right centered"
-							%td= b.text_field :state, :size => "40"
+					%tr
+						%td= f.label :state, "Province / Region / State", :class => "right centered"
+						%td= f.text_field :state, :size => "40"
 
-						%tr
-							%td= b.label :zipcode, "Postal / ZIP Code", :class => "right centered"
-							%td= b.text_field :zipcode, :size => "40"
-	
-						%tr
-							%td= b.label :country, :class => "right"
-							%td= b.country_select :country, ["France", "Italy", "Portugal", "Spain"]
+					%tr
+						%td= f.label :zipcode, "Postal / ZIP Code", :class => "right centered"
+						%td= f.text_field :zipcode, :size => "40"
+
+					%tr
+						%td= f.label :country, :class => "right"
+						%td= f.country_select :country, ["France", "Italy", "Portugal", "Spain"]
 						
 			.tab-pane.fade.in#gps
 				%table.property
-					= f.fields_for :address do |b|
-						%tr
-							%td.width= b.label :latitude, :class => "right centered"
-							%td
-								= b.text_field :latitude, :size => "40"
-								%br
-								%p.note e.g. 29.199505 or N 29 11 58.22
+					%tr
+						%td.width= f.label :latitude, :class => "right centered"
+						%td
+							= f.text_field :latitude, :size => "40"
+							%br
+							%p.note e.g. 29.199505
+							/ %p.note e.g. 29.199505 or N 29 11 58.22
 
-						%tr
-							%td.centered= b.label :longitude, :class => "right centered"
-							%td
-								= b.text_field :longitude, :size => "40"
-								%br
-								%p.note e.g. -90.041242 or W 90 2 28.47
+					%tr
+						%td.centered= f.label :longitude, :class => "right centered"
+						%td
+							= f.text_field :longitude, :size => "40"
+							%br
+							%p.note e.g. -90.041242
+							/ %p.note e.g. -90.041242 or W 90 2 28.47
 
 	= f.submit "Sign Up", :class => 'buttonBasic'
 	
@@ -133,7 +133,7 @@
 	:javascript
 		$('[data-countable]').charcounter({
 		  limit: 35,
-		  warning: 10,
+		  warning: 5,
 		  warningClass: 'label-warning',
 		  exceededClass: 'label-important',
 		  defaultClass: 'label-info',
