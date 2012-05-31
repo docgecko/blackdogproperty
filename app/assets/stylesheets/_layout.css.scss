@@ -4,13 +4,22 @@
 $site: 980px;
 $header: 173px;
 
+
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	margin: 0;
+	font-size: 1.0em;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 html, body {
 	height: 100%;
 }
 
 body { 
-	margin: 0;
-	padding: 0;
 	background-color: $bg;
 	&.home {
 		background-color: $bg_home;
@@ -89,6 +98,11 @@ img {
 }
 
 a {
+	margin: 0 0 3px 0;
+	padding: 0;
+	text-decoration: none;
+	&:hover {
+	}
 	img {
 		border: none;
 	}
@@ -98,14 +112,6 @@ pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
-}
-
-a {
-	margin: 0 0 3px 0;
-	padding: 0;
-	text-decoration: none;
-	&:hover {
-	}
 }
 
 hr { 
@@ -123,6 +129,13 @@ hr {
   display: inline;
 }
 
+.row {
+	display: block;
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+
 fieldset {
 	border: none;
 //	float: left;
@@ -133,4 +146,15 @@ fieldset {
 
 .error_message {
 	clear:both;
+}
+
+.clearfix {
+	zoom: 1;
+	&::after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+		}
 }

@@ -1,0 +1,7 @@
+%tr
+	%td= f.label :price, :id => "property_price_label"
+	%td
+		%fieldset#price
+			= f.select :currency, [["EUR", "EUR"], ["GBP", "GBP"]], {}, { :style => "margin:9px 10px 0 0;" }
+			= f.text_field :price, :size => "10", :style => "margin-right:5px;"
+			%span{:style => "color:white;font-weight:normal;"} per week

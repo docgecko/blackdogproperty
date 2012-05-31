@@ -17,40 +17,12 @@
 	%h2 Begin by providing some initial details about your property
 
 	%table.property
-		%tr
-			%td.width= f.label :type, 'Property Type'
-			%td= f.collection_select :type_ids, Type.all, :id, :name
-			
-		%tr
-			%td
-				= f.label :accomodates
-				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "How many guests can be hosted at the property."
-			%td= f.select :accomodates, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10",10], ["11",11], ["12",12], ["13",13], ["14",14], ["15",15], ["16+",16]]
-			
-		%tr
-			%td
-				= f.label :bedrooms
-				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "How many rooms have beds or are meant for sleeping."
-			%td= f.select :bedrooms, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10+",10]]
-			
-		%tr
-			%td
-				= f.label :title
-				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide a title containing up to 35 letters."
-			%td= f.text_field :title, :size => "45", "data-countable" => 1, "data-limit" => 35, :style => "font-size: 1.1em"
-
-		%tr
-			%td= f.label :description
-			%td
-				= f.text_area :description, :size => "70x10"
-
-		%tr
-			%td= f.label :price, :id => "property_price_label"
-			%td
-				%fieldset#price
-					= f.select :currency, [["EUR", "EUR"], ["GBP", "GBP"]], {}, { :style => "margin:9px 10px 0 0;" }
-					= f.text_field :price, :size => "10", :style => "margin-right:5px;"
-					%span{:style => "color:white;font-weight:normal;"} per week
+		= render 'shared/member/property/type', :f => f
+		= render 'shared/member/property/accommodates', :f => f
+		= render 'shared/member/property/bedrooms', :f => f
+		= render 'shared/member/property/title', :f => f
+		= render 'shared/member/property/description', :f => f
+		= render 'shared/member/property/pricing', :f => f
 				
 	%h2.section-title Next provide contact and location details about your property
 	%p.sub-title To protect your privacy, the following information will only be given to visiter once a reservation has been confirmed
@@ -128,6 +100,8 @@
 							%br
 							%p.note e.g. -90.041242
 							/ %p.note e.g. -90.041242 or W 90 2 28.47
+	
+	= f.hidden_field :user_id, :value => current_user.id
 
 	%table.property
 		%tr

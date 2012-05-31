@@ -1,0 +1,3 @@
+%tr
+	%td.width= f.label :type, 'Property Type'
+	%td= f.collection_select :type_ids, Type.all, :id, :name

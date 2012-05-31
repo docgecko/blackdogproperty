@@ -37,7 +37,7 @@ class Property
   field :zoom,                        type: Integer, default: 11
   field :order_no,                    type: Integer, default: 0
   field :featured,                    type: Boolean, default: false
-  field :published,                   type: Boolean, default: true
+  field :published,                   type: Boolean, default: false
   
   # Additional fields for Lastminute
   field :user_id

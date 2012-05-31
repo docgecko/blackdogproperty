@@ -1,0 +1,79 @@
+- content_for :title do
+	== Edit "#{@property.title}" on BlackDog Property
+	
+- content_for :meta_description do
+	== Edit "#{@property.title}" on BlackDog Property
+
+- content_for :link_canonical do
+	== member/properties/#{@property.id}/details
+
+- content_for :edit_property_nav do
+	= render_navigation(:context => :property)
+
+
+= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
+	%section#type
+		.box
+			.top
+				%h2.step Listing Type
+			.middle
+				%table.property.edit
+					= render 'shared/member/property/type', :f => f
+					
+			.bottom
+		
+	%section#description
+		.box
+			.top
+				%h2.step Description
+			.middle
+				%table.property.edit
+					= render 'shared/member/property/title', :f => f
+					= render 'shared/member/property/description', :f => f
+
+			.bottom
+		
+	%section#amenities
+		.box
+			.top
+				%h2.step Amenities
+			.middle
+
+			.bottom
+		
+	%section#details
+		.box
+			.top
+				%h2.step Details
+			.middle
+				%table.property.edit
+					= render 'shared/member/property/accommodates', :f => f
+					= render 'shared/member/property/bedrooms', :f => f
+
+			.bottom
+
+	%section#location
+		.box
+			.top
+				%h2.step Location Information
+			.middle
+
+			.bottom
+		
+	%section#location
+		.box
+			.top
+				%h2.step Pricing
+			.middle
+				%table.property.edit
+					= render 'shared/member/property/pricing', :f => f
+
+			.bottom
+		
+	%section#settings
+		.box
+			.top
+				%h2.step Settings
+			.middle
+
+			.bottom

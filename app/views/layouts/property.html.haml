@@ -1,0 +1,67 @@
+!!!
+%html{:lang => "en"}
+%head
+	%title= yield(:title) || "Black Dog Property"
+	%meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+	%meta{:name => "description", :content => yield(:meta_description)}
+	%meta{:name => "copyright", :content => "Copyright 2011-12 Black Dog Property"}
+	%link{:rel => "canonical", :href => "http://blackdogproperty.com/#{yield(:link_canonical)}"}
+	= yield(:head)
+	= stylesheet_link_tag "application"
+	= javascript_include_tag "application"
+	= csrf_meta_tag
+	= render "shared/script/google_analytics"
+	= render "shared/script/superfish"
+	= render "shared/script/placeholder"
+		
+%body
+	#main
+		#header
+			.wrapper
+				= render "shared/header/admin"
+				= render "shared/header/user"
+				= render "shared/header/logo"
+				= render "shared/header/social"
+				= render "shared/header/navigation"
+		
+		#page
+			.wrapper.clearfix
+				#dashboard.clearfix
+					.row
+						#back
+							= link_to "← View My Properties", member_properties_path, :class => "return_to_list"
+					.row
+						#heading
+							#heading_content
+								#property_photo
+									= link_to image_tag("member/thumb_blackdog.jpg", :alt => "", :width => "", :height => "", :border => 0), member_property_path(:id => params[:id])
+								#property_info
+									%h3= link_to @property.title, member_property_path(:id => params[:id])
+								#property_status
+									%span.actions
+										%span.action_button= link_to "Preview Listing", preview_member_property_path(:id => params[:id]), :class => "icon view", :target => "_new"
+									
+									.current_status
+										-if @property.published == true
+											.green This property is currently published
+										-else
+											.red This property is currently invisible
+				
+					.row
+						#edit_property_outer
+							#edit_property_inner
+								#side_nav
+									%nav.side_nav_container
+										= render_navigation(:context => :property)
+					
+								#content
+									#notification_area
+										= render 'shared/flashes'
+									#dashboard_content
+										= yield
+		
+	#footer
+		.wrapper
+			= render "shared/footer/navigation"
+			
+= yield(:scripts)

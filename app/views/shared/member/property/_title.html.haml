@@ -1,0 +1,6 @@
+%tr
+	%td.width
+		= f.label :title
+		-if action_name == 'new'
+			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide a title containing up to 35 letters."
+	%td= f.text_field :title, :size => "45", "data-countable" => 1, "data-limit" => 35

@@ -14,8 +14,8 @@
 	= render "shared/script/superfish"
 	= render "shared/script/placeholder"
 		
-%body{:class => controller_name == "welcome" ? "home" : ""}
-	#main{:class => controller_name == "welcome" ? "home" : ""}
+%body
+	#main
 		#header
 			.wrapper
 				= render "shared/header/admin"

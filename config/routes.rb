@@ -24,10 +24,15 @@ Blackdogproperty::Application.routes.draw do
   
   namespace :member do
     resources :dashboard, :only => [ :index ]
-    resources :properties
+    resources :properties do
+      member do
+        get :overview
+        get :preview
+      end
+    end
   end
   
-  match "/member/full_address" => "member/properties#full_address"
+  # match "/member/full_address" => "member/properties#full_address"
 
   match "/member" => redirect("/member/dashboard")
   

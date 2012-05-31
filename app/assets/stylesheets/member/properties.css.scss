@@ -10,6 +10,7 @@ h2 {
 		margin-bottom: 2px;
 	}	
 }
+
 p {
 	&.sub-title {
 		font-size: 13px;
@@ -17,10 +18,12 @@ p {
 	}
 }
 
-
 table {
 	&.property {
 		margin-bottom: 25px;
+		&.edit {
+			margin-bottom: 0;
+		}
 	}
 	td {
 		padding: 2px 10px 0 0;
@@ -77,4 +80,201 @@ table {
 	padding: 0;
 	font-size: 9px;
 	line-height: 12px;
+}
+
+#dashboard {
+	margin: 10px 0 0 0;
+	padding: 0;
+	#back {
+		margin: 0 0 10px 15px;
+		padding: 0;
+		a {
+			font-size: 13px;
+			color: $blue;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;					
+			}
+		}
+	}
+	#heading {
+		background: $black;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		float: left;
+		border-bottom: thin solid $gray;
+		#heading_content {
+			padding: 15px;
+			float: left;
+			width: 950px;
+			#property_photo {
+				padding: 3px;
+				background: lighten($gray, 40%);
+				float: left;
+				border: 1px solid $gray;
+				line-height: 0;
+				margin-right: 15px;
+				&:hover {
+					background: lighten($gray, 45%);
+				}
+				img {
+					height: 65px;
+					width: 98px;
+					border: 1px solid $gray;
+				}
+			}
+			#property_info {
+				display: block;
+				float: left;
+				h3 {
+					font-family: Times New Roman,serif;
+					font-size: 30px;
+					a {
+						&:link, &:visited {
+							color: white;
+						}
+					}
+				}
+			}
+			#property_status {
+				float: right;
+				width: 200px;
+				.actions {
+					display: block;
+					margin-top: 0px;
+					.action_button {
+						display: block;
+						float: right;
+						cursor: pointer;
+						border: 1px solid $gray;
+						background: lighten($gray, 40%);
+						a {
+							color: $gray;
+							&.icon {
+								display: block;
+								padding: 4px 6px 0;
+								font-weight: bold;
+								font-size: 9px;
+								text-shadow: 0 1px 0 white;
+								text-transform: uppercase;
+							}
+						}
+						&:hover {
+							background: lighten($gray, 45%);
+						}
+					}
+				}
+				.current_status {
+					margin: 30px 0 0 0;
+					float: right;
+					text-align: right;
+					color: $blue;
+					font-size: 10px;
+					.green {
+						color: $green;
+					}
+					.red {
+						color: $bright-red;
+					}
+				}
+			}
+		}
+	}
+	#edit_property_outer {
+		clear: left;
+		float: left;
+		width: 100%;
+		overflow: hidden;
+		background-color: $black;
+		#edit_property_inner {
+			float: left;
+			width: 100%;
+			position: relative;
+			right: 735px;
+			background: $black;
+			#side_nav {
+				float: left;
+				width: 245px;
+				position: relative;
+				left: 735px;
+				overflow: hidden;
+				.side_nav_container {
+					ul {
+						list-style: none;
+						&:first-child {
+							border-top: 0;
+							padding-top: 0;
+						}
+						li {
+							display: list-item;
+							height: 32px;
+							&.selected {
+								margin: 0;
+								a {
+									color: white;
+									font-weight: bold;
+									text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+//									border-top: 1px solid lighten($blue, 10%);
+//									border-bottom: 1px solid lighten($blue, 10%);
+									background: $blue;
+									&:hover {
+										color: white;
+										background: $blue;
+										text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+									}
+								}
+							}
+							a {
+								display: block;
+								font-size: 1em;
+								text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+								color: white;
+								padding: 6px 15px 6px;
+								&:hover {
+									background: black;
+									color: white;
+									text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+								}
+							}
+						}
+					}
+				}
+			}
+			#content {
+				float: left;
+				width: 734px;
+				position: relative;
+				left: 735px;
+				overflow: hidden;
+				border-left: thin solid $gray;
+				.box {
+					.top {
+						width: 734px;
+						color: $blue;
+						h2 {
+							margin: -1px 0 0 0;
+							padding: 10px 16px 10px 15px;
+							border-bottom: 1px solid $gray;
+							border-top: 1px solid $gray;
+							color: #393C3D;
+							font-size: 12px;
+							font-weight: bold;
+							text-shadow: 0 1px 0 white;
+							background: lighten($gray, 40%);
+							&.step {
+								text-transform: uppercase;
+							}
+						}
+					}
+					.middle {
+						padding: 15px 15px 25px 40px;
+					}
+					.bottom {
+						
+					}
+				}
+			}
+		}
+	}
 }

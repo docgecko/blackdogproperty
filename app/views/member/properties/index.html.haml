@@ -8,7 +8,7 @@
 	member/properties
 
 - content_for :header do
-	= render 'shared/member/header'
+	= render 'shared/member/dashboard/header'
 
 .panel-container	
 	-if @properties.empty?
@@ -19,4 +19,4 @@
 				==When you are ready, #{link_to "add your first property now", new_member_property_path}!
 	-else
 		.listing
-			= render 'shared/member/properties'
+			= render 'shared/member/dashboard/properties'
