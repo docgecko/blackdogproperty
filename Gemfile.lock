@@ -265,6 +265,8 @@ GEM
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
     rubyzip (0.9.8)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
     sass (3.1.19)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -355,6 +357,7 @@ DEPENDENCIES
   relish (= 0.5.1)
   rspec-rails (>= 2.6.1)
   ruby_parser
+  sanitize (~> 2.0.3)
   sass-rails (~> 3.2.3)
   simple-navigation
   thin

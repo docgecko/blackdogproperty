@@ -42,10 +42,13 @@
 										%span.action_button= link_to "Preview Listing", preview_member_property_path(:id => params[:id]), :class => "icon view", :target => "_new"
 									
 									.current_status
+										Property status:
 										-if @property.published == true
-											.green This property is currently published
+											%span.green
+												= link_to "Published", "#", :id => "published", :rel => "tooltip", "data-original-title" => "Click to Unpublish this property."
 										-else
-											.red This property is currently invisible
+											%span.red
+												= link_to "Unpublished", "#", :id => "unpublished", :rel => "tooltip", "data-original-title" => "Click to Publish this property."
 				
 					.row
 						#edit_property_outer

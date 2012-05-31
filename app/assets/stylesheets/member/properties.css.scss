@@ -171,11 +171,24 @@ table {
 					text-align: right;
 					color: $blue;
 					font-size: 10px;
+					color: $blue;
 					.green {
-						color: $green;
+						a {
+							font-weight: bold;
+							color: $green;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
 					}
 					.red {
-						color: $bright-red;
+						a {
+							font-weight: bold;
+							color: $bright-red;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
 					}
 				}
 			}
@@ -215,8 +228,6 @@ table {
 									color: white;
 									font-weight: bold;
 									text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
-//									border-top: 1px solid lighten($blue, 10%);
-//									border-bottom: 1px solid lighten($blue, 10%);
 									background: $blue;
 									&:hover {
 										color: white;
@@ -269,6 +280,22 @@ table {
 					}
 					.middle {
 						padding: 15px 15px 25px 40px;
+						p {
+							margin: 0 0 8px 3px;
+							padding: 0;
+							font-size: 11px;
+							line-height: 15px;
+						}
+						ul {
+							list-style: disc inside;
+							li {
+								margin: 0 0 3px 10px;
+								padding: 0;
+								font-size: 11px;
+								line-height: 15px;
+								color: white;
+							}
+						}
 					}
 					.bottom {
 						

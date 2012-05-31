@@ -1,3 +1,5 @@
 %tr
-	%td.width= f.label :type, 'Property Type'
-	%td= f.collection_select :type_ids, Type.all, :id, :name
+	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
+		= f.label :type, 'Property Type'
+	%td
+		= f.collection_select :type_ids, Type.all, :id, :name

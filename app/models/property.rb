@@ -7,7 +7,8 @@ class Property
   include Geocoder::Model::Mongoid
   
   # Callbacks
-  before_validation :create_address
+  before_validation :create_address, 
+                    :text_cleanse
   geocoded_by :address, :if => :coordinates_changed?
   reverse_geocoded_by :coordinates, :if => :address_changed?
   after_validation :geocode, :if => :address_changed?
@@ -141,6 +142,11 @@ class Property
   def create_address
     # self.address = [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
     self.address = address
+  end
+  
+  def text_cleanse
+    self.description = Sanitize.clean(description)
+    self.title = Sanitize.clean(title)
   end
 
 end

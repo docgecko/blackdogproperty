@@ -43,6 +43,7 @@ gem "rails_admin_map_field", :git => "git://github.com/jasonl/rails_admin_map_fi
 gem "ckeditor", "3.7.1"
 gem "country_select", "~> 0.0.2"
 gem "geocoder", "~> 1.1.2"
+gem "sanitize", "~> 2.0.3"
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

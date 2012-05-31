@@ -1,5 +1,5 @@
 %tr
-	%td.width
+	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
 		= f.label :accomodates
 		-if action_name == 'new'
 			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "How many guests can be hosted at the property."

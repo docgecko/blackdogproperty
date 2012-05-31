@@ -52,9 +52,11 @@ $(document).ready ->
 				
 			"property[latitude]":
 				required: "#gps.active"
+				range: [-180, 180]
 
 			"property[longitude]":
 				required: "#gps.active"
+				range: [-180, 180]
 		
 		messages: 
 			"property[title]": 
@@ -88,7 +90,9 @@ $(document).ready ->
 				
 			"property[latitude]":
 				required: "Please provide the latitude gps coordinate"
+				range: "Latitude must be in the range of -180 and 180"
 
 			"property[longitude]":
 				required: "Please provide the longitude gps coordinate"
+				range: "Longitude must be in the range of -180 and 180"
 

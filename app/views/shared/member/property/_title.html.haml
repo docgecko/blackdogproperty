@@ -1,5 +1,5 @@
 %tr
-	%td.width
+	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
 		= f.label :title
 		-if action_name == 'new'
 			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide a title containing up to 35 letters."
