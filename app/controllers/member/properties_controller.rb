@@ -9,11 +9,7 @@ class Member::PropertiesController < InheritedResources::Base
   def index
     @properties = Property.where(user_id: current_user.id)
   end
-  
-  def full_address 
-    render :text => Geocoder.search("Rua Almeida e Sousa 33, 1350-008 Lisboa, Portugal").inspect.to_s
-  end
-  
+    
   # def new
   #   @property = Property.new
   #   # pre-build address for nested form builder
@@ -26,12 +22,28 @@ class Member::PropertiesController < InheritedResources::Base
     @property = Property.new params[:property]
     @property.save ? redirect_to(edit_member_property_path(@property)) : render(:action => :new)
   end
-
-  # def update
-  #   @property = Property.find(params[:id])
-  #   @property.update_attributes(params[:property]) ?
-  #   redirect_to(member_property_path(@property)) : render(:action => :edit)
+  
+  # def show
   # end
+  
+  # def edit
+  # end
+
+  def update
+    @property = Property.find(params[:id])
+    @section = params[:section]
+    # title = params[:title].
+    
+    @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => @section), :warning => "There was a problem saving your property, please try again.")
+  end
+  
+  # def destroy
+  # end
+  
+  # Extra for testing only
+  def full_address 
+    render :text => Geocoder.search("Rua Almeida e Sousa 33, 1350-008 Lisboa, Portugal").inspect.to_s
+  end
   
   
   private

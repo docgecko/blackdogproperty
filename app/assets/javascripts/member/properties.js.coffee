@@ -2,6 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+$.validator.addMethod "titleRegex", (value, element, param) ->
+  value.match new RegExp("^" + param + "$")
+
+ALPHA_REGEX = "[A-Za-z ]+"
+
+
 $(document).ready ->
 	$(".new_property").validate 
 		errorElement: "label"
@@ -20,6 +26,7 @@ $(document).ready ->
 			"property[title]": 
 				required: true
 				minlength: 6
+				titleRegex: ALPHA_REGEX
 
 			"property[description]": 
 				required: true
@@ -62,6 +69,7 @@ $(document).ready ->
 			"property[title]": 
 				required: "Please provide a title of the property"
 				minlength: "The property title must be at least 6 characters long"
+				titleRegex: "The property title can only letters and spaces allowed"
 			
 			"property[description]": 
 				required: "Please provide a description of the property"

@@ -35,6 +35,8 @@ Blackdogproperty::Application.routes.draw do
   # match "/member/full_address" => "member/properties#full_address"
 
   match "/member" => redirect("/member/dashboard")
+
+  # match "/member/properties/:id/edit" => redirect("/member/properties/:id/edit?section=:section")
   
   resources :sales, :only => :index
   match 'sales/about' => 'sales#about'

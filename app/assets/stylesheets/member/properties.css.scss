@@ -253,12 +253,20 @@ table {
 				}
 			}
 			#content {
+				#notification_area {
+					#flash {
+						.notice {
+							margin-bottom: 0;
+						}
+					}
+				}
 				float: left;
 				width: 734px;
 				position: relative;
 				left: 735px;
 				overflow: hidden;
 				border-left: thin solid $gray;
+				min-height: 160px;
 				.box {
 					.top {
 						width: 734px;

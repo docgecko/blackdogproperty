@@ -15,9 +15,7 @@ class Property
   after_validation :reverse_geocode, :if => :coordinates_changed?
   before_save :create_address,
               :create_latitude,
-              :create_longitude,
-              :create_currency_rental, 
-              :create_price_rental
+              :create_longitude
 
   # Fields
   field :title
@@ -110,27 +108,11 @@ class Property
     coordinates[1]
   end
   
-  def currency_rental
-    currency
-  end
-  
-  def price_rental
-    price
-  end
-  
   def address
     [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
     # [self.street, self.city, self.state, self.country].compact.join(', ')
   end
 
-  def create_currency_rental
-   self.currency_rental = currency
-  end
-  
-  def create_price_rental
-    self.price_rental = price
-  end
-  
   def create_latitude
     self.latitude = coordinates[0]
   end

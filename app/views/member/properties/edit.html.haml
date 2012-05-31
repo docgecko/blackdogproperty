@@ -12,68 +12,82 @@
 
 
 = form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
-	%section#type
-		.box
-			.top
-				%h2.step Listing Type
-			.middle
-				%table.property.edit
-					= render 'shared/member/property/type', :f => f
+
+	-if action_name == 'edit'
+		= hidden_field_tag "section", params[:section]
+
+
+	-if params[:section] == 'details'
+		%section#type
+			.box
+				.top
+					%h2.step Listing Type
+				.middle
+					%table.property.edit
+						= render 'shared/member/property/type', :f => f
 					
-			.bottom
+				.bottom
 		
-	%section#description
-		.box
-			.top
-				%h2.step Description
-			.middle
-				%table.property.edit
-					= render 'shared/member/property/title', :f => f
-					= render 'shared/member/property/description', :f => f
+		%section#description
+			.box
+				.top
+					%h2.step Description
+				.middle
+					%table.property.edit
+						= render 'shared/member/property/title', :f => f
+						= render 'shared/member/property/description', :f => f
 
-			.bottom
+				.bottom
 		
-	%section#amenities
-		.box
-			.top
-				%h2.step Amenities
-			.middle
+		%section#amenities
+			.box
+				.top
+					%h2.step Amenities
+				.middle
 
-			.bottom
+				.bottom
 		
-	%section#details
-		.box
-			.top
-				%h2.step Details
-			.middle
-				%table.property.edit
-					= render 'shared/member/property/accommodates', :f => f
-					= render 'shared/member/property/bedrooms', :f => f
+		%section#details
+			.box
+				.top
+					%h2.step Details
+				.middle
+					%table.property.edit
+						= render 'shared/member/property/accommodates', :f => f
+						= render 'shared/member/property/bedrooms', :f => f
 
-			.bottom
+				.bottom
+	
+	-elsif params[:section] == 'address'
+		%section#location
+			.box
+				.top
+					%h2.step Location Information
+				.middle
 
-	%section#location
-		.box
-			.top
-				%h2.step Location Information
-			.middle
+				.bottom
 
-			.bottom
-		
-	%section#location
-		.box
-			.top
-				%h2.step Pricing
-			.middle
-				%table.property.edit
-					= render 'shared/member/property/pricing', :f => f
+	-elsif params[:section] == 'pricing'
+		%section#location
+			.box
+				.top
+					%h2.step Pricing
+				.middle
+					%table.property.edit
+						= render 'shared/member/property/pricing', :f => f
 
-			.bottom
-		
-	%section#settings
-		.box
-			.top
-				%h2.step Settings
-			.middle
+				.bottom
 
-			.bottom
+	-elsif params[:section] == 'settings'
+		%section#settings
+			.box
+				.top
+					%h2.step Settings
+				.middle
+
+				.bottom
+				
+	%table
+		%tr
+			%td
+			%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your property...'"
