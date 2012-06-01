@@ -43,7 +43,7 @@ class Property
   field :phone_country
   field :phone_number
   field :amenity_ids               
-  field :accomodates,                 type: Integer
+  field :accommodates,                 type: Integer
   field :bedrooms,                    type: Integer
   field :bedrooms,                    type: Integer
   field :living_room,                 type: Integer
@@ -80,7 +80,7 @@ class Property
                   :user_id, :phone_country, :phone_number,
                   :address_attributes,
                   :amenity_ids, :quantities,
-                  :accomodates, :bedrooms, :bedrooms,
+                  :accommodates, :bedrooms, :bedrooms,
                   :living_room, :dining_room, :dining_outdoor,
                   :sun_loungers, :balconies, :terraces,
                   :sea_views, :conventions,

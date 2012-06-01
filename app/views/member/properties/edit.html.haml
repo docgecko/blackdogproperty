@@ -52,8 +52,8 @@
 								- d.amenities.each do |a|
 									%ul.groups
 										%li
-											= check_box_tag "property[amenity_ids][]", a.id, @property.amenity_ids.include?(a.id)
-											= f.label a.id, a.name, :id => :check_box
+											= check_box_tag "property[amenity_ids][]", a.id, @property.amenity_ids.include?(a.id), :id => ('property_amenity_ids_' + a.id)
+											= f.label a.id, a.name, :for => ('property_amenity_ids_' + a.id)
 											- @count += 1
 				.bottom
 		
