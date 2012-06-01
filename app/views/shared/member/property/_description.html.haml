@@ -4,7 +4,10 @@
 		-if action_name == 'edit'
 			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Be aware that we filter out any contact information or links you may provide in your description."
 	%td
-		= f.text_area :description, :size => ( action_name == 'new' ? "70x10" : "60x10")
+		- if action_name == 'edit'
+			= f.text_area :description, :class => "word_count", :size => ( action_name == 'new' ? "70x10" : "60x10")
+		- else
+			= f.text_area :description, :size => ( action_name == 'new' ? "70x10" : "60x10")
 		
 		-if action_name == 'edit'
 			%p Provide a description of at least 15 words long. Successful listings are more than 150 words long.

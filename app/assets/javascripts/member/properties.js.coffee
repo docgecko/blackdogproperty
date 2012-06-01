@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+# New Member Property Validation
 $.validator.addMethod "titleRegex", (value, element, param) ->
   value.match new RegExp("^" + param + "$")
 
@@ -104,13 +105,13 @@ $(document).ready ->
 				range: "Longitude must be in the range of -180 and 180"
 
 
+# Edit Member Property Details
 $(document).ready ->
 	if $('input[id=property_sea_views]').attr("checked")
 		$('input[id=property_sea_views]').after('<span id="property_sea_views_yes" class="yes">(yes)</span>')
 	if $('input[id=property_conventions]').attr("checked")
 		$('input[id=property_conventions]').after('<span id="property_conventions_yes" class="yes">(yes)</span>')
 			
-
 $(document).ready ->
 	$('input[id=property_sea_views]').change ->
 		if $(this).attr("checked")
@@ -124,4 +125,9 @@ $(document).ready ->
 			$(this).after('<span id="property_conventions_yes" class="yes">(yes)</span>')
 		else
 			$('span[id=property_conventions_yes]').remove();
-		
+
+
+# Edit Member Property Description Word Count
+$(document).ready ->
+  options = originalStyle: "originalDisplayInfo"
+  $(".word_count").textareaCount options

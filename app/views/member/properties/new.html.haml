@@ -7,7 +7,10 @@
 - content_for :link_canonical do
 	member/properties/new
 
-	
+- content_for :scripts do
+	= render 'shared/member/property/charcount'
+
+
 %h1 List your property
 
 = render 'shared/email_errors', :resource => resource
@@ -107,16 +110,3 @@
 		%tr
 			%td.width
 			%td= f.submit "Save & Continue", :class => 'buttonBasic', :onclick => "this.value = 'Saving your property...'"
-	
-- content_for :scripts do
-	:javascript
-		$('[data-countable]').charcounter({
-		  limit: 35,
-		  warning: 5,
-		  warningClass: 'label-warning',
-		  exceededClass: 'label-important',
-		  defaultClass: 'label-info',
-		  notAllowOverflow: true,
-		  fontSize: '1.0em',
-		})
-		$('#property_location a:first').tab('show');

@@ -5,3 +5,8 @@
 			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide a title containing up to 35 letters."
 	%td
 		= f.text_field :title, :size => "45", "data-countable" => 1, "data-limit" => 35
+
+		-if action_name == 'edit'
+			%p Note: changing the title of your property will automatically update the web address URL of your property listing.
+			
+			%p If you plan to share the URL with friends and colleagues, we advise you to change the title before sharing the link.

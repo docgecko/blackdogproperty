@@ -9,6 +9,9 @@
 
 - content_for :edit_property_nav do
 	= render_navigation(:context => :property)
+	
+- content_for :scripts do
+	= render 'shared/member/property/charcount'
 
 
 = form_for [:member, @property], :html => { :autocomplete => "off" } do |f|

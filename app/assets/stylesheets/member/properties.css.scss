@@ -322,6 +322,14 @@ table {
 										}
 									}
 								}
+								.charleft.originalDisplayInfo {
+									font-size: 11px;
+									color: white;
+									margin: 0 0 8px 3px;
+									padding: 0;
+									font-size: 11px;
+									line-height: 15px;
+								}
 								span {
 									&.yes {
 										color: $green;
