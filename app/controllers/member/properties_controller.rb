@@ -34,8 +34,11 @@ class Member::PropertiesController < InheritedResources::Base
     @property = Property.find(params[:id])
     @section = params[:section]
     # title = params[:title].
-    
-    @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => @section), :alert => "There was a problem saving your property, please try again.")
+    if params[:property][:published].present?
+      @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section)) : redirect_to(edit_member_property_path(@property, :section => @section))
+    else
+      @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => @section), :alert => "There was a problem saving your property, please try again.")
+    end
   end
   
   # def destroy

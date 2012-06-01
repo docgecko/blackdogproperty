@@ -42,13 +42,14 @@
 										%span.action_button= link_to "Preview Listing", preview_member_property_path(:id => params[:id]), :class => "icon view", :target => "_new"
 									
 									.current_status
-										Property status:
-										-if @property.published == true
-											%span.green
-												= link_to "Published", "#", :id => "published", :rel => "tooltip", "data-original-title" => "Click to Unpublish this property."
-										-else
-											%span.red
-												= link_to "Unpublished", "#", :id => "unpublished", :rel => "tooltip", "data-original-title" => "Click to Publish this property."
+										= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
+											Property status:
+											-if @property.published == true
+												%span.green
+													= link_to "Published", member_property_path(:id => params[:id], :section => params[:section], :property => { :published => false }), :id => "published", :method => :put, :rel => "tooltip", "data-original-title" => "Click to Un-publish this property."
+											-else
+												%span.red
+													= link_to "Unpublished", member_property_path(:id => params[:id], :section => params[:section], :property => { :published => true }), :id => "unpublished", :method => :put, :rel => "tooltip", "data-original-title" => "Click to Publish this property."
 				
 					.row
 						#edit_property_outer
