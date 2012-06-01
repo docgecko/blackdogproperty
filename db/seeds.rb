@@ -119,11 +119,11 @@ puts 'SETTING UP AMENITIES'
     :description => '',
     :division_id => 'general'
   },
-  {
-    :name => 'Outdoor Dining Area',
-    :description => '',
-    :division_id => 'outdoor'
-  },
+  # {
+  #   :name => 'Outdoor Dining Area',
+  #   :description => '',
+  #   :division_id => 'outdoor'
+  # },
   {
     :name => 'Outdoor BBQ',
     :description => '',
@@ -164,16 +164,16 @@ puts 'SETTING UP AMENITIES'
     :description => '',
     :division_id => 'parking'
   },
-  {
-    :name => 'Terrace',
-    :description => '',
-    :division_id => 'outdoor'
-  },
-  {
-    :name => 'Balcony',
-    :description => '',
-    :division_id => 'outdoor'
-  },
+  # {
+  #   :name => 'Terrace',
+  #   :description => '',
+  #   :division_id => 'outdoor'
+  # },
+  # {
+  #   :name => 'Balcony',
+  #   :description => '',
+  #   :division_id => 'outdoor'
+  # },
   {
     :name => 'Garden',
     :description => '',
@@ -239,11 +239,11 @@ puts 'SETTING UP AMENITIES'
     :description => 'Cable or satellite televsion',
     :division_id => 'indoor'
   },
-  {
-    :name => 'Sun Loungers',
-    :description => '',
-    :division_id => 'outdoor'
-  },
+  # {
+  #   :name => 'Sun Loungers',
+  #   :description => '',
+  #   :division_id => 'outdoor'
+  # },
   {
     :name => 'Gym',
     :description => 'Access to local gym or gym on property',

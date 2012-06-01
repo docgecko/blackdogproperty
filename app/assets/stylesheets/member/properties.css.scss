@@ -322,6 +322,12 @@ table {
 										}
 									}
 								}
+								span {
+									&.yes {
+										color: $green;
+										font-size: 10px;
+									}
+								}
 							}
 						}
 						p {
