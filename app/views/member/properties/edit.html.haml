@@ -54,6 +54,8 @@
 										%li
 											= check_box_tag "property[amenity_ids][]", a.id, @property.amenity_ids.include?(a.id), :id => ('property_amenity_ids_' + a.id)
 											= f.label a.id, a.name, :for => ('property_amenity_ids_' + a.id)
+											- if a.description.present?
+												= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => a.description
 											- @count += 1
 				.bottom
 		
@@ -65,6 +67,11 @@
 					%table.property.edit
 						= render 'shared/member/property/accommodates', :f => f
 						= render 'shared/member/property/bedrooms', :f => f
+						= render 'shared/member/property/bathrooms', :f => f
+						= render 'shared/member/property/living_room', :f => f
+						= render 'shared/member/property/dining_room', :f => f
+						= render 'shared/member/property/dining_outdoor', :f => f
+						= render 'shared/member/property/sun_loungers', :f => f
 				.bottom
 	
 	-elsif params[:section] == 'address'

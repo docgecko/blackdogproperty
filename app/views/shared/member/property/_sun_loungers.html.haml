@@ -1,0 +1,6 @@
+%tr
+	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
+		= f.label :sun_loungers, "Sun loungers"
+		-if action_name == 'edit'
+			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "How many sun loungers are there for the pool or garden areas?"
+	%td= f.select :sun_loungers, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8], ["9",9], ["10",10], ["11",11], ["12",12], ["13",13], ["14",14], ["15",15], ["16+",16]], { :include_blank => true }
