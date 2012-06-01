@@ -1,6 +1,7 @@
 class Member::PropertiesController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :property_photo, :only => :edit
+  before_filter :find_amenities, :only => :edit
   layout :resolve_layout
   
   actions :all, :full_address
@@ -34,7 +35,7 @@ class Member::PropertiesController < InheritedResources::Base
     @section = params[:section]
     # title = params[:title].
     
-    @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => @section), :warning => "There was a problem saving your property, please try again.")
+    @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => @section), :alert => "There was a problem saving your property, please try again.")
   end
   
   # def destroy
@@ -59,5 +60,10 @@ class Member::PropertiesController < InheritedResources::Base
       else
         "property"
       end
+    end
+    
+    def find_amenities
+      @amenities = Amenity.order_by([[:division_id, :asc], [:name, :asc]])
+      @divisions = Division.order_by([:name, :asc])
     end
 end

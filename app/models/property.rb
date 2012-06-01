@@ -42,7 +42,7 @@ class Property
   field :user_id
   field :phone_country
   field :phone_number
-  field :amenitiy_ids               
+  field :amenity_ids               
   field :accomodates,                 type: Integer
   field :bedrooms,                    type: Integer
   field :bedrooms,                    type: Integer
@@ -74,12 +74,12 @@ class Property
   # Setup accessible (or protected) attributes
   attr_accessible :title, :location, :country_id, :reference, :bio,
                   :description, :facilities, :purpose_ids, :type_ids, 
-                  :price_sale, :price_rental, :price, :currency,
+                  :price_sale, :price_rental, :price_rental, :currency_rental,
                   :coordinates, :longitude, :latitude, :zoom,
                   :order_no, :featured, :published,
                   :user_id, :phone_country, :phone_number,
                   :address_attributes,
-                  :amentity_ids, :quantities,
+                  :amenity_ids, :quantities,
                   :accomodates, :bedrooms, :bedrooms,
                   :living_room, :dining_room, :dining_outdoor,
                   :sun_loungers, :balconies, :terraces,

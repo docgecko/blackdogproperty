@@ -255,7 +255,7 @@ table {
 			#content {
 				#notification_area {
 					#flash {
-						.notice {
+						.notice, .error, .warning {
 							margin-bottom: 0;
 						}
 					}
@@ -288,6 +288,42 @@ table {
 					}
 					.middle {
 						padding: 15px 15px 25px 40px;
+						table {
+							tr {
+								td {
+									&.col_third {
+										float: left;
+										width: 215px;
+										clear: right;
+										h2 {
+											margin: 0 0 6px 0;
+											padding: 0;
+											font-size: 13px;
+											font-weight: bold;
+											text-transform: uppercase;
+										}
+										ul {
+											list-style: none;
+											&.groups {
+												float: left;
+											}
+											li {
+												margin: 0 0 3px 0;
+												padding: 0;
+												font-size: 11px;
+												line-height: 15px;
+												color: white;
+												width: 215px;
+												input {
+													float: left;
+													margin: 3px 8px 8px 2px;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 						p {
 							margin: 0 0 8px 3px;
 							padding: 0;
@@ -296,6 +332,9 @@ table {
 						}
 						ul {
 							list-style: disc inside;
+							&.groups {
+								float: left;
+							}
 							li {
 								margin: 0 0 3px 10px;
 								padding: 0;

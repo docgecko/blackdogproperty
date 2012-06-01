@@ -1,8 +1,8 @@
 %tr
 	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
-		= f.label :price, :id => "property_price_label"
+		= f.label :price, :for => "property_price_rental"
 	%td
 		%fieldset#price
-			= f.select :currency_rental, [["EUR", "EUR"], ["GBP", "GBP"]], {}, { :style => "margin:9px 10px 0 0;" }
+			= f.collection_select :currency_rental, Currency.asc(:name), :id, :name, { :style => "margin:9px 10px 0 0;" }
 			= f.text_field :price_rental, :size => "10", :style => "margin-right:5px;"
 			%span{:style => "color:white;font-weight:normal;"} per week

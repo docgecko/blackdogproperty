@@ -1,17 +1,20 @@
 %tr
 	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
 		= f.label :description
+		-if action_name == 'edit'
+			= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Be aware that we filter out any contact information or links you may provide in your description."
 	%td
 		= f.text_area :description, :size => ( action_name == 'new' ? "70x10" : "60x10")
 		
-		%p Provide a description of at least 15 words long. Successful listings are more than 150 words long.
+		-if action_name == 'edit'
+			%p Provide a description of at least 15 words long. Successful listings are more than 150 words long.
 
-		%p Describe you property to potential guests by telling them about:
+			%p Describe you property to potential guests by telling them about:
 
-		%ul
-			%li your property
-			%li the location and neighborhood of your property
-			%li nearby places to visit, restaurants, cafés and bars, etc.
-			%li amenities and facilities not listed in the amenities section
-			%li nearby events & attractions
-			%li what makes your property and location special
+			%ul
+				%li your property
+				%li the location and neighborhood of your property
+				%li nearby places to visit, restaurants, cafés and bars, etc.
+				%li amenities and facilities not listed in the amenities section
+				%li nearby events & attractions
+				%li what makes your property and location special

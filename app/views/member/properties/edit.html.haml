@@ -13,8 +13,7 @@
 
 = form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
 
-	-if action_name == 'edit'
-		= hidden_field_tag "section", params[:section]
+	= hidden_field_tag "section", params[:section] if action_name == 'edit'
 
 
 	-if params[:section] == 'details'
@@ -25,7 +24,6 @@
 				.middle
 					%table.property.edit
 						= render 'shared/member/property/type', :f => f
-					
 				.bottom
 		
 		%section#description
@@ -36,15 +34,27 @@
 					%table.property.edit
 						= render 'shared/member/property/title', :f => f
 						= render 'shared/member/property/description', :f => f
-
 				.bottom
 		
 		%section#amenities
 			.box
 				.top
-					%h2.step Amenities
+					%h2.step Amenities & Facilities
 				.middle
-
+					%table
+						- @count = 1
+						- @divisions.each do |d|
+							- if @count == 3
+								%tr
+								-@count = 0
+							%td.col_third
+								%h2= d.name
+								- d.amenities.each do |a|
+									%ul.groups
+										%li
+											= check_box_tag "property[amenity_ids][]", a.id, @property.amenity_ids.include?(a.id)
+											= f.label a.id, a.name, :id => :check_box
+											- @count += 1
 				.bottom
 		
 		%section#details
@@ -55,7 +65,6 @@
 					%table.property.edit
 						= render 'shared/member/property/accommodates', :f => f
 						= render 'shared/member/property/bedrooms', :f => f
-
 				.bottom
 	
 	-elsif params[:section] == 'address'
@@ -64,7 +73,6 @@
 				.top
 					%h2.step Location Information
 				.middle
-
 				.bottom
 
 	-elsif params[:section] == 'pricing'
@@ -75,7 +83,6 @@
 				.middle
 					%table.property.edit
 						= render 'shared/member/property/pricing', :f => f
-
 				.bottom
 
 	-elsif params[:section] == 'settings'
@@ -84,7 +91,6 @@
 				.top
 					%h2.step Settings
 				.middle
-
 				.bottom
 				
 	%table
