@@ -31,9 +31,16 @@ class Member::PropertiesController < InheritedResources::Base
   # end
 
   def update
-    @property = Property.find(params[:id])
     @section = params[:section]
-    # title = params[:title].
+    if params[:title] == params[:stored][:title]
+      @property = Property.find(params[:id])
+    else
+      original = Property.find(params[:stored][:id])
+      @property = original.clone
+      @property.title = params[:property][:title]
+      @property._id = @property.title.downcase.gsub(' ', '-')
+      original.destroy
+    end
     if params[:property][:published].present?
       @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section)) : redirect_to(edit_member_property_path(@property, :section => @section))
     else

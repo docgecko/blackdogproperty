@@ -3,7 +3,6 @@ class Property
   include Mongoid::Document
   include Mongoid::Spacial::Document
   include Mongoid::Timestamps
-  include Mongoid::Paranoia
   include Geocoder::Model::Mongoid
   
   # Callbacks
@@ -87,7 +86,7 @@ class Property
                   :address, :street, :apt, :city, :state, :zipcode, :country
 
   # References
-  has_many :photos, :dependent => :destroy
+  has_many :photos
   accepts_nested_attributes_for :photos
   has_and_belongs_to_many :types, inverse_of: nil
   belongs_to :country
