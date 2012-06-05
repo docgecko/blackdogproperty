@@ -11,7 +11,7 @@
 .clearfix:after{clear:both;}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
 .input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
-.nav{margin:2px 0 2px -40px;list-style:none;}
+.nav{margin:2px 0 2px 2px;list-style:none;}
 /*.nav>li{display:inline-block;padding: 0 .25em 0 0;}*/
 .nav>ul{margin:0;padding:0;list-style-type:none;}
 .nav>li{display:inline-block;float:left;margin-right:.5em;}

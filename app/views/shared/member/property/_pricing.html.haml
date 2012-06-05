@@ -1,6 +1,6 @@
 %tr
-	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
-		= f.label :price, :for => "property_price_rental"
+	%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};padding-top: #{action_name == 'new' ? '0' : '8px'}"}
+		= f.label :price, "Rental price", :for => "property_price_rental"
 	%td
 		%fieldset#price
 			= f.collection_select :currency_rental, Currency.asc(:name), :id, :name, { :style => "margin:9px 10px 0 0;" }

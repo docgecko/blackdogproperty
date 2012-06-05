@@ -54,40 +54,12 @@
 		.tab-content
 			.tab-pane.fade.in#postal
 				%table.property		
-					%tr
-						%td.width= f.label :street, "Address Line 1", :class => "right centered"
-						%td
-							= f.text_field :street, :size => "40"
-							%br
-							%p.note e.g. street address, P.O. box, company name or c/o.
-
-					%tr
-						%td= f.label :apt, "Address Line 2", :class => "right centered"
-						%td	
-							= f.text_field :apt, :size => "40"
-							%br
-							%p.note e.g. apartment, suite, unit, building or floor.
-
-					%tr
-						%td= f.label :city, :class => "right centered"
-						%td= f.text_field :city, :size => "40"
-
-					%tr
-						%td= f.label :state, "Province / Region / State", :class => "right centered"
-						%td= f.text_field :state, :size => "40"
-
-					%tr
-						%td= f.label :zipcode, "Postal / ZIP Code", :class => "right centered"
-						%td= f.text_field :zipcode, :size => "40"
-
-					%tr
-						%td= f.label :country, :class => "right"
-						%td= f.country_select :country, ["France", "Italy", "Portugal", "Spain"]
+					= render 'shared/member/property/address', :f => f
 						
 			.tab-pane.fade.in#gps
 				%table.property
 					%tr
-						%td.width= label_tag "property_latitude", "Latitude", :class => "right centered"
+						%td.width= f.label :latitude, :class => "right centered"
 						%td
 							= f.text_field :latitude, :size => "40"
 							/ = text_field_tag "property[coordinates][]", @property.coordinates[0], :id => "property_latitude", :size => "40"
@@ -96,7 +68,7 @@
 							/ %p.note e.g. 29.199505 or N 29 11 58.22
 
 					%tr
-						%td.centered= label_tag "property_longitude", "Longitude", :class => "right centered"
+						%td.centered= f.label :longitude, :class => "right centered"
 						%td
 							= f.text_field :longitude, :size => "40"
 							/ = text_field_tag "property[coordinates][]", @property.coordinates[1], :id => "property_longitude", :size => "40"

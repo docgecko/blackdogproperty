@@ -13,14 +13,13 @@ class Property
   after_validation :geocode, :if => :address_changed?
   after_validation :reverse_geocode, :if => :coordinates_changed?
   before_save :create_address,
-              :create_latitude,
-              :create_longitude
+              :create_location_coordinates
 
   # Fields
   field :title
   key :title
   field :location
-  field :country_id
+  # field :country_id
   field :reference
   field :bio
   field :description
@@ -31,7 +30,10 @@ class Property
   field :currency_rental
   field :price_sale
   field :price_rental
-  field :coordinates,                 type: Array,   spacial: { lat: :latitude, lng: :longitude, return_array: true }
+  field :coordinates,                 type: Array,   spacial: {lat: :latitude, lng: :longitude, return_array: true }
+  field :latitude,                    type: Float
+  field :longitude,                   type: Float
+  field :gmaps,                       type: Boolean
   field :zoom,                        type: Integer, default: 11
   field :order_no,                    type: Integer, default: 0
   field :featured,                    type: Boolean, default: false
@@ -68,13 +70,16 @@ class Property
   # Indexes
   spacial_index :coordinates
   
+  # Pagination
   paginates_per 5
   
   # Setup accessible (or protected) attributes
-  attr_accessible :title, :location, :country_id, :reference, :bio,
+  attr_accessible :title, :location, 
+                  # :country_id, 
+                  :reference, :bio,
                   :description, :facilities, :purpose_ids, :type_ids, 
                   :price_sale, :price_rental, :price_rental, :currency_rental,
-                  :coordinates, :longitude, :latitude, :zoom,
+                  :coordinates, :latitude, :longitude, :zoom,
                   :order_no, :featured, :published,
                   :user_id, :phone_country, :phone_number,
                   :address_attributes,
@@ -89,7 +94,7 @@ class Property
   has_many :photos
   accepts_nested_attributes_for :photos
   has_and_belongs_to_many :types, inverse_of: nil
-  belongs_to :country
+  # belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
   
   # Validations
@@ -97,26 +102,18 @@ class Property
   validates_uniqueness_of :title
 
   # Gmaps4Rails
-  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
-  
-  def latitude
-    coordinates[0]
-  end
-
-  def longitude
-    coordinates[1]
-  end
+  acts_as_gmappable :lat => 'latitude', :lng => 'longitude',
+                    :validation => true, 
+                    :process_geocoding => false,
+                    :msg => "The address you entered is incorrect. Try adding a street or house number or simplify it."
   
   def address
-    [self.street, self.apt, self.city, self.state, self.zipcode, self.country].compact.join(', ')
+    [self.street.strip, self.apt.strip, self.city.strip, self.state.strip, self.zipcode.strip, self.country].join(', ').gsub(', , ', ', ')
     # [self.street, self.city, self.state, self.country].compact.join(', ')
   end
 
-  def create_latitude
+  def create_location_coordinates
     self.latitude = coordinates[0]
-  end
-
-  def create_longitude
     self.longitude = coordinates[1]
   end
   

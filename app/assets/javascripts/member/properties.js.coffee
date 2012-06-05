@@ -131,3 +131,26 @@ $(document).ready ->
 $(document).ready ->
   options = originalStyle: "originalDisplayInfo"
   $(".word_count").textareaCount options
+
+
+# Edit Member Property Private & Public Address & Map
+# Prepare document when ready()
+$(document).ready ->
+	$('a[id=cancel_edit_property_address]').hide()
+	$('div[id=edit_property_location]').hide()
+	$('a[id=edit_property_address]').show()
+	$('div.map_view#private_map').show()
+
+	# React to edit link clicks
+	$('a[id=edit_property_address]').click ->
+		$('a[id=edit_property_address]').hide()
+		$('a[id=cancel_edit_property_address]').show()
+		$('div[id=edit_property_location]').show()
+		$('div.gmaps4rails_map#private_map').hide()
+
+	# React to cancel link click
+	$('a[id=cancel_edit_property_address]').click ->
+		$('a[id=cancel_edit_property_address]').hide()
+		$('a[id=edit_property_address]').show()
+		$('div[id=edit_property_location]').hide()
+		$('div.gmaps4rails_map#private_map').show()

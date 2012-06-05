@@ -421,7 +421,7 @@ puts 'SETTING UP PROPERTIES'
   {
     :title => 'Villa Peter',
     :location => 'Villefrance sur mer',
-    :country_id => 'france',
+    :country => 'France',
     :reference => '',
     :bio => '',
     :description => '',
@@ -438,7 +438,7 @@ puts 'SETTING UP PROPERTIES'
   {
     :title => 'Renovated Modern Villa in a Private Domaine',
     :location => 'Villefranche sur mer',
-    :country_id => 'france',
+    :country => 'France',
     :reference => 'VSMG',
     :bio => '4 bedroom luxury villa situated in the hills of Villefranche sur Mer. This villa has been fully renovated to the highest standard and it\'s location is second to none.  With outstanding views of Villefranche and Cap Ferrat this property is the perfect place to relax and enjoy the beauty of the French Riviera. 
 
@@ -482,7 +482,7 @@ Villa Azur is in a prime location and has everything you could want for the perf
   {
     :title => 'Luxury 3 Bed Villa with Private Pool',
     :location => 'Villefranche sur mer',
-    :country_id => 'france',
+    :country => 'France',
     :reference => 'VSMS',
     :bio => 'Luxurious 3 Bedroom Modern Villa With Private Pool And 180 degree Panoramic Sea Views Located On A Quiet, Private Road In The Hills Above The Village of Villefranche-Sur-Mer. This property is located within walking distance of the town but keeps itself private and peacefully out of reach. The renovation on this property has been completed to the highest standard and everything about the property says high end.',
     :description => 'This 3 bedroom villa is situated just up off the Baisse Corniche of Villefranche sur Mer. This property and its surrounds have been renovated to the highest standard and have all mod cons. The outstanding views look over Mont Boron and on a sunny day you can see far past Nice and even the airport. The modern décor, top quality finish and amenities will provide you with a luxuriously comfortable place to call home.
@@ -522,7 +522,7 @@ The terraces that wrap all around the property offer stunning views. From outsid
   {
     :title => 'Luxury Villa with Exceptional Sea Views and Private Access to the Sea',
     :location => 'St Jean Cap Ferrat',
-    :country_id => 'france',
+    :country => 'France',
     :reference => 'CFV',
     :bio => 'This large rustic French property is located in the highly sought after area of Cap Ferrat. With its stunning views all around the Bay of Cap Ferrat and Villefranche this property is a piece of heaven. It has a lovely homely feel while still taking your breath away. 
 
@@ -564,7 +564,7 @@ August – offer dependant',
   {
     :title => 'Recently Renovated Sea View Villa',
     :location => 'Beaulieu sur mer',
-    :country_id => 'france',
+    :country => 'France',
     :reference => 'BSMR',
     :bio => '8 bedroom villa recently renovated in the hills of Beaulieu sur Mer with private pool, gardens and outstanding views. Located just above the town of Beaulieu this large property offers everything you require for a luxury stay in the beautiful South of France.',
     :description => 'Beaulieu sur Mer is a beautiful coastal town situated between Nice and Monaco and this property is less than 5 minutes outside the town. Having just been recently renovated while keeping in with the feel of the house, this is a much sought after villa in Beaulieu. 
@@ -604,7 +604,7 @@ This property is ideal for large groups with families, corporate groups or even 
   {
     :title => '3 Bed Villa in a Private Residence',
     :location => 'Villefranche sur mer',
-    :country_id => 'france',
+    :country => 'France',
     :reference => 'VSMT',
     :bio => 'This 3 bedroom property is located in a prime location overlooking the beach of Villefranche sur Mer on the Baisse Corniche. It is in a private residence with shared pool and a large terrace overlooking the sea and coastline just a 2 minute walk to the beach.',
     :description => 'This 3 bedroom property is in one of the prime private residences in Villefranche. With 2 secure entrances, private parking, shared pool and astounding views it is in high demand. Access to the beach as well as the bars and restaurants of the old town of Villefranche is by a set of steps direct from the road to the beach. 

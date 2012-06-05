@@ -2,6 +2,7 @@ class Member::PropertiesController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :property_photo, :only => :edit
   before_filter :find_amenities, :only => :edit
+  before_filter :prepare_google_maps, :only => :edit
   layout :resolve_layout
   
   actions :all, :full_address
@@ -32,13 +33,18 @@ class Member::PropertiesController < InheritedResources::Base
 
   def update
     @section = params[:section]
-    if params[:title] == params[:stored][:title]
+    if (params[:property][:title].blank?) or (params[:property][:title] == params[:stored][:title])
+      # logger.debug "Title: #{params[:title]}"
+      # logger.debug "Propery title: #{params[:property][:title]}"
+      # logger.debug "Stored propery title: #{params[:stored][:title]}"
+      # logger.debug "Blank or same - id: #{params[:id]}"
       @property = Property.find(params[:id])
     else
       original = Property.find(params[:stored][:id])
       @property = original.clone
       @property.title = params[:property][:title]
       @property._id = @property.title.downcase.gsub(' ', '-')
+      # logger.debug "Changed - id: #{@property.id}"
       original.destroy
     end
     if params[:property][:published].present?
@@ -75,5 +81,15 @@ class Member::PropertiesController < InheritedResources::Base
     def find_amenities
       @amenities = Amenity.order_by([[:division_id, :asc], [:name, :asc]])
       @divisions = Division.order_by([:name, :asc])
+    end
+    
+    def prepare_google_maps
+      @property = Property.find(params[:id])
+      @json = @property.to_gmaps4rails do |property, marker|
+        marker.json :lat => property.longitude, :lng => property.latitude
+      end
+      @circles = @property.to_gmaps4rails do |property, circle|
+        circle.json :lat => property.longitude, :lng => property.latitude, :radius => 600
+      end
     end
 end

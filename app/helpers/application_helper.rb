@@ -14,4 +14,12 @@ module ApplicationHelper
       return 'current'
     end
   end
+  
+  def private_address(property)
+    [property.street.strip, property.apt.strip, property.city.strip, property.state.strip, property.zipcode.strip, property.country].join(', ').gsub(', , ', ', ')
+  end
+  
+  def public_address(property)
+    [property.street.gsub(/[^A-Za-z, ]/i, '').strip, property.apt.strip, property.city.strip, property.state.strip, property.zipcode.strip, property.country].join(', ').gsub(', , ', ', ')
+  end
 end

@@ -83,14 +83,6 @@
 						= render 'shared/member/property/conventions', :f => f
 				.bottom
 	
-	-elsif params[:section] == 'address'
-		%section#location
-			.box
-				.top
-					%h2.step Location Information
-				.middle
-				.bottom
-
 	-elsif params[:section] == 'pricing'
 		%section#location
 			.box
@@ -109,7 +101,68 @@
 				.middle
 				.bottom
 				
-	%table
-		%tr
-			%td
-			%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your property...'"
+	-if params[:section] != 'address'
+		%table
+			%tr
+				%td
+				%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your property...'"
+
+
+	-if params[:section] == 'address'
+		%section#location
+			.box
+				.top
+					%h2.step Location Information
+				.middle.map_view
+					.map_box
+						%h3.map_description.actual
+							%span.change_address
+								= link_to "Edit address", "#", :id => :edit_property_address
+								= link_to "Cancel", "#", :id => :cancel_edit_property_address
+							Actual Address:
+							%span.address= private_address(@property)
+							%p.note Note: the actual address of the property will only be given to confirmed guests.
+						.map_view
+							= gmaps(:markers => { :data => @json, |
+																		:options => { :picture => "/assets/gmaps/blue-dot.png", |
+																									:width => 32, |
+																									:length => 32 |
+																								} |
+																	}, |
+											:map_options => { :id => "private_map", |
+																				:type => "ROADMAP", |
+																				:center_longitude => 180, |
+																				:auto_zoom => false, |
+																				:zoom => 15, |
+																				:auto_adjust => true |
+																			}, |
+											:last_map => false )
+											
+					#edit_property_location
+						%table
+							= render 'shared/member/property/address', :f => f
+							%tr
+								%td
+								%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your property...'"
+							
+					.map_box
+						%h3.map_description.public
+							Public View:
+							%span.address= public_address(@property)
+							%p.note This is how the address of the property appears on the public listing.
+						.map_view
+							= gmaps(:circles => { :data => @circles, |
+																		:options => { :fillColor => "#0066FF", |
+																									:strokeWeight => 0 |
+																								} |
+																	}, |
+											:map_options => { :id => "public_map", |
+																				:type => "ROADMAP", |
+																				:center_longitude => 180, |
+																				:auto_zoom => false, |
+																				:zoom => 14, |
+																				:auto_adjust => true |
+																			}, |
+											:scripts => :none )
+						
+				.bottom

@@ -195,6 +195,20 @@
 		#tab_description, #tab_facilities, #tab_location, #tab_price {
 			float: left;
 			margin-top: 8px;
+			.map_container {
+				margin: 16px 0;
+			  padding: 6px;
+			  border-width: 1px;
+			  border-style: solid;
+			  border-color: #ccc #ccc #999 #ccc;
+			  -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+			  -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+			  box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+			}
+			.gmaps4rails_map {
+			  width: ($site - 56px);
+			  height: 440px;
+			}
 		}
 	}
 }

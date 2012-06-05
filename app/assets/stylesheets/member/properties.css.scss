@@ -357,6 +357,71 @@ table {
 								color: white;
 							}
 						}
+						&.map_view {
+							padding: 0;
+							margin: 0;
+							color: #393C3D;
+							h3 {
+								font-size: 0.9em;
+								margin: 0;
+								padding: 0;
+								&.map_description {
+									border: 1px solid #272929;
+									padding: 10px 12px;
+									background: #404343;
+									color: white;
+	//								text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
+									font-weight: bold;
+									position: relative;
+									z-index: 1;
+									vertical-align: top;
+								}
+								span {
+									&.change_address {
+										font-style: italic;
+										font-weight: normal;
+										font-size: 0.9em;
+										line-height: 15px;
+										display: block;
+										float: right;
+										a {
+											color: white;
+											text-decoration: underline;
+											&:hover {
+												text-decoration: none;
+											}
+										}
+									}
+									&.address {
+										font-weight: normal;
+										margin-left: 15px;
+//										padding: 1px 0;
+										display: inline-block;
+										width: 500px;
+									}
+								}
+								p {
+									&.note {
+										font-weight: normal;
+										margin: 3px 0 0 0;
+										padding: 0;
+										font-style: italic;
+									}
+								}
+							}
+							.map_view {
+								.map_container {
+									margin: 0;
+									padding: 0;
+									#private_map, #public_map {
+										&.gmaps4rails_map {
+											height: 280px;
+											width: 734px;
+										}
+									}
+								}
+							}
+						}
 					}
 					.bottom {
 						
