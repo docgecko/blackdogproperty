@@ -97,11 +97,20 @@
 		%section#settings
 			.box
 				.top
-					%h2.step Settings
-				.middle
+					%h2.step Property Visibility
+				.padded_text
+					%h3 Publish Status
+					%p 
+						You can choose a status of
+						%span.green "Published" 
+						or 
+						%span.red "Unpublished" 
+						for your property.
+					%p Unpublished properties can not be found on the public listings, nor can they be found in search results and, thus, will not be associated with your profile. Choose this option while you are preparing your property listing or you currently do not wish to rent out your property.
+					
 				.bottom
 				
-	-if params[:section] != 'address'
+	-if (params[:section] != 'address') or (params[:section] != 'settings')
 		%table
 			%tr
 				%td
@@ -136,13 +145,14 @@
 																				:zoom => 15, |
 																				:auto_adjust => true, |
 																				:raw => '{ streetViewControl: false, |
-																									 scaleControl: true |
-																				 				 }' |
+																									 scaleControl: true, |
+																									 mapTypeControl: false |
+																				 				  }' |
 																			}, |
 											:last_map => false )
 											
 					#edit_property_location
-						%table
+						%table{:style => "padding-top:10px;"}
 							= render 'shared/member/property/address', :f => f
 							%tr
 								%td
@@ -166,7 +176,8 @@
 																				:zoom => 14, |
 																				:auto_adjust => true, |
 																				:raw => '{ streetViewControl: false, |
-																									 scaleControl: true |
+																									 scaleControl: true, |
+																									 mapTypeControl: false |
 																				 				 }' |
 																			}, |
 											:scripts => :none )
