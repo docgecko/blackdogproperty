@@ -68,7 +68,7 @@ class Property
   attr_accessor :price, :currency
   
   # Indexes
-  spacial_index :coordinates
+  # spacial_index :coordinates
   
   # Pagination
   paginates_per 5
@@ -102,11 +102,16 @@ class Property
   validates_uniqueness_of :title
 
   # Gmaps4Rails
-  acts_as_gmappable :lat => 'latitude', :lng => 'longitude',
-                    :validation => true, 
-                    :process_geocoding => false,
-                    :msg => "The address you entered is incorrect. Try adding a street or house number or simplify it."
+  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => false
   
+  def latitude
+    coordinates[0]
+  end
+  
+  def longitude
+    coordinates[1]
+  end
+
   def address
     [self.street.strip, self.apt.strip, self.city.strip, self.state.strip, self.zipcode.strip, self.country].join(', ').gsub(', , ', ', ')
     # [self.street, self.city, self.state, self.country].compact.join(', ')
