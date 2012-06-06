@@ -1,0 +1,40 @@
+!!!
+%html{:lang => "en"}
+%head
+	%title= yield(:title) || "Black Dog Property"
+	%meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+	%meta{:name => "description", :content => yield(:meta_description)}
+	%meta{:name => "copyright", :content => "Copyright 2011-12 Black Dog Property"}
+	%link{:rel => "canonical", :href => "http://blackdogproperty.com/#{yield(:link_canonical)}"}
+	= yield(:head)
+	= stylesheet_link_tag "application"
+	= javascript_include_tag "application"
+	= csrf_meta_tag
+	= render "shared/script/google_analytics"
+	= render "shared/script/superfish"
+	= render "shared/script/placeholder"
+		
+%body
+	#main
+		#header
+			.wrapper.clearfix
+				= render "shared/header/admin"
+				= render "shared/header/user"
+				= render "shared/header/logo"
+				= render "shared/header/social"
+				= render "shared/header/navigation"
+		
+		#page
+			.wrapper.clearfix
+				.block.site.flash
+					= render 'shared/flashes'
+				
+				= yield(:header)
+				
+				= yield
+		
+	#footer
+		.wrapper
+			= render "shared/footer/navigation"
+			
+= yield(:scripts)

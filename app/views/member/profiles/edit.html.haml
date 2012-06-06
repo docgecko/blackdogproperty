@@ -1,0 +1,28 @@
+- content_for :title do
+	Edit Member Profile
+	
+- content_for :meta_description do
+	Edit Member Profile
+
+- content_for :link_canonical do
+	== member/profiles/#{current_user.username}/edit
+
+
+= form_for([:member, @user], :url => member_profile_path(current_user.username), :html => { :autocomplete => "off" }) do |f|
+	= render 'shared/email_errors', :resource => @user
+
+	= hidden_field_tag "section", params[:section] if action_name == 'edit'
+
+	%section#type
+		.box
+			.top
+				%h2.step Profile Details
+			.middle
+				%table.profile.edit
+					= render 'shared/member/profile/edit', :f => f
+			.bottom
+
+			%table
+				%tr
+					%td
+					%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your profile...'"

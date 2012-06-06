@@ -20,6 +20,6 @@ module ApplicationHelper
   end
   
   def public_address(property)
-    [property.street.gsub(/[^A-Za-z, ]/i, '').strip, property.apt.strip, property.city.strip, property.state.strip, property.zipcode.strip, property.country].join(', ').gsub(', , ', ', ')
+    [property.street.gsub(/[^A-Za-z, ]/i, '').strip, property.city.strip, property.state.strip, property.zipcode.strip, property.country].join(', ').gsub(', , ', ', ')
   end
 end

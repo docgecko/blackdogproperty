@@ -11,48 +11,54 @@
 	= render 'shared/member/property/charcount'
 
 
-%h1 List your property
+#dashboard.clearfix
+	.row
+		#back
+			= link_to "← Return to Dashboard", member_dashboard_index_path, :class => "return_to_list"
+		
+.block
+	.border		
+		%h1 List your property
 
-= render 'shared/email_errors', :resource => resource
+		= render 'shared/email_errors', :resource => resource
 
-= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
+		= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
 	
-	%h2 Begin by providing some initial details about your property
+			%h2 Begin by providing some initial details about your property
 
-	%table.property
-		= render 'shared/member/property/type', :f => f
-		= render 'shared/member/property/accommodates', :f => f
-		= render 'shared/member/property/bedrooms', :f => f
-		= render 'shared/member/property/title', :f => f
-		= render 'shared/member/property/description', :f => f
-		= render 'shared/member/property/pricing', :f => f
+			%table.property
+				= render 'shared/member/property/type', :f => f
+				= render 'shared/member/property/accommodates', :f => f
+				= render 'shared/member/property/bedrooms', :f => f
+				= render 'shared/member/property/title', :f => f
+				= render 'shared/member/property/description', :f => f
+				= render 'shared/member/property/pricing', :f => f
 				
-	%h2.section-title Next provide contact and location details about your property
-	%p.sub-title To protect your privacy, the following information will only be given to visiter once a reservation has been confirmed
+			%h2.section-title Next provide contact and location details about your property
+			%p.sub-title To protect your privacy, the following information will only be given to visiter once a reservation has been confirmed
 	
-	%table.property
-		%tr
-			%td.width
-				= f.label :phone_number, "Contact Phone Number"
-				= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide the country code, followed by the telephone number, e.g. +44 207 01234567."
-				%td
-					%fieldset#phone
-						= f.text_field :phone_country, :size => "4"
-						= f.text_field :phone_number, :size => "13"
+			%table.property
+				%tr
+					%td.width
+						= f.label :phone_number, "Contact Phone Number"
+						= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => "Provide the country code, followed by the telephone number, e.g. +44 207 01234567."
+						%td
+							%fieldset#phone
+								= f.text_field :phone_country, :size => "4"
+								= f.text_field :phone_number, :size => "13"
 	
-	/ .tabbable
-	%table.property		
-		%tr
-			%td.width{:style => "color:#FFFFFF;"}><
-				Property Location
-			%td{:style => "color:white"} Postal Address
+			%table.property		
+				%tr
+					%td.width{:style => "color:#FFFFFF;"}><
+						Property Location
+					%td{:style => "color:white"} Postal Address
 
-	%table.property		
-		= render 'shared/member/property/address', :f => f
+			%table.property		
+				= render 'shared/member/property/address', :f => f
 							
-	= hidden_field :property, :user_id, :value => current_user.id
+			= hidden_field :property, :user_id, :value => current_user.id
 
-	%table.property
-		%tr
-			%td.width
-			%td= f.submit "Save & Continue", :class => 'buttonBasic', :onclick => "this.value = 'Saving your property...'"
+			%table.property
+				%tr
+					%td.width
+					%td= f.submit "Save & Continue", :class => 'buttonBasic', :onclick => "this.value = 'Saving your property...'"

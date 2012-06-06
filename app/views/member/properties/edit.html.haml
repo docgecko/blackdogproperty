@@ -5,7 +5,7 @@
 	== Edit "#{@property.title}" on BlackDog Property
 
 - content_for :link_canonical do
-	== member/properties/#{@property.id}/details
+	== member/properties/#{@property.id}/edit?section=#{params[:section]}
 
 - content_for :edit_property_nav do
 	= render_navigation(:context => :property)

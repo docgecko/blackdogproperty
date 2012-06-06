@@ -9,11 +9,11 @@ $.validator.addMethod "titleRegex", (value, element, param) ->
 ALPHA_REGEX = "[A-Za-z ]+"
 
 $(document).ready ->
-	$(".new_property").validate 
+	$(".new_property, .edit_property").validate 
 		errorElement: "label"
 		wrapper: "div class=\"error_message\" style=\"display: block;\""
 		errorPlacement: (error, element) ->
-			if element.attr("name") == "property[price]"
+			if element.attr("name") == "property[price_rental]"
 				error.insertBefore "fieldset#price"
 			else if element.attr("name") == "property[phone_country]"
 				error.insertBefore "fieldset#phone"
@@ -31,7 +31,7 @@ $(document).ready ->
 			"property[description]": 
 				required: true
 
-			"property[price]": 
+			"property[price_rental]": 
 				required: true
 				number: true
 				
@@ -46,25 +46,17 @@ $(document).ready ->
 				maxlength: 14
 				
 			"property[street]":
-				required: "#postal.active"
+				required: true
 
 			"property[city]":
-				required: "#postal.active"
+				required: true
 
 			"property[state]":
-				required: "#postal.active"
+				required: true
 				
 			"property[zipcode]":
-				required: "#postal.active"
+				required: true
 				
-			"property[latitude]":
-				required: "#gps.active"
-				range: [-180, 180]
-
-			"property[longitude]":
-				required: "#gps.active"
-				range: [-180, 180]
-		
 		messages: 
 			"property[title]": 
 				required: "Please provide a title of the property"
@@ -74,7 +66,7 @@ $(document).ready ->
 			"property[description]": 
 				required: "Please provide a description of the property"
 				
-			"property[price]": 
+			"property[price_rental]": 
 				required: "Please provide a price per week of the property"
 				number: "The price can be a whole number or a decimal"
 
@@ -96,14 +88,6 @@ $(document).ready ->
 			"property[zipcode]":
 				required: "Please provide the postal or ZIP code"
 				
-			"property[latitude]":
-				required: "Please provide the latitude gps coordinate"
-				range: "Latitude must be in the range of -180 and 180"
-
-			"property[longitude]":
-				required: "Please provide the longitude gps coordinate"
-				range: "Longitude must be in the range of -180 and 180"
-
 
 # Edit Member Property Details
 $(document).ready ->

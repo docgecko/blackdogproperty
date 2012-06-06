@@ -82,6 +82,12 @@ table {
 	line-height: 12px;
 }
 
+.block {
+	.listing {
+		padding: 0 15px 15px 15px;
+	}
+}
+
 #dashboard {
 	margin: 10px 0 0 0;
 	padding: 0;
@@ -94,6 +100,75 @@ table {
 			text-decoration: underline;
 			&:hover {
 				text-decoration: none;					
+			}
+		}
+	}
+	.listing {
+		background: $black;
+		margin: 0;
+		padding: 0;
+		width: 948px;
+		float: left;
+		border: thin solid $gray;
+		&.first {
+			padding-top: 15px;
+		}
+		.listing_content {
+			padding: 15px;
+			float: left;
+			width: 918px;
+			.listing_thumbnail {
+				padding: 3px;
+				background: lighten($gray, 40%);
+				float: left;
+				border: 1px solid $gray;
+				line-height: 0;
+				margin-right: 15px;
+				&:hover {
+					background: lighten($gray, 45%);
+				}
+				img {
+					height: 65px;
+					width: 98px;
+					border: 1px solid $gray;
+				}
+			}
+			.listing_info {
+				display: block;
+				float: left;
+				h3 {
+					font-family: Times New Roman,serif;
+					font-size: 30px;
+					a {
+						&:link, &:visited {
+							color: $blue;
+						}
+					}
+				}
+				.actions {
+					.action_button {
+						margin-right: 10px;
+						float: left;
+					}
+				}
+			}
+			.listing_status {
+				.current_status {
+					margin: 7px 0 0 0;
+					float: right;
+					text-align: right;
+					color: $blue;
+					font-size: 10px;
+					color: $blue;
+					.green {
+						font-weight: bold;
+						color: $green;
+					}
+					.red {
+						font-weight: bold;
+						color: $bright-red;
+					}
+				}
 			}
 		}
 	}
@@ -140,31 +215,6 @@ table {
 			#property_status {
 				float: right;
 				width: 200px;
-				.actions {
-					display: block;
-					margin-top: 0px;
-					.action_button {
-						display: block;
-						float: right;
-						cursor: pointer;
-						border: 1px solid $gray;
-						background: lighten($gray, 40%);
-						a {
-							color: $gray;
-							&.icon {
-								display: block;
-								padding: 4px 6px 0;
-								font-weight: bold;
-								font-size: 9px;
-								text-shadow: 0 1px 0 white;
-								text-transform: uppercase;
-							}
-						}
-						&:hover {
-							background: lighten($gray, 45%);
-						}
-					}
-				}
 				.current_status {
 					margin: 30px 0 0 0;
 					float: right;
@@ -173,6 +223,8 @@ table {
 					font-size: 10px;
 					color: $blue;
 					.green {
+						font-weight: bold;
+						color: $green;
 						a {
 							font-weight: bold;
 							color: $green;
@@ -182,6 +234,8 @@ table {
 						}
 					}
 					.red {
+						font-weight: bold;
+						color: $bright-red;
 						a {
 							font-weight: bold;
 							color: $bright-red;
@@ -194,13 +248,13 @@ table {
 			}
 		}
 	}
-	#edit_property_outer {
+	#edit_outer {
 		clear: left;
 		float: left;
 		width: 100%;
 		overflow: hidden;
 		background-color: $black;
-		#edit_property_inner {
+		#edit_inner {
 			float: left;
 			width: 100%;
 			position: relative;
@@ -479,3 +533,30 @@ table {
 		}
 	}
 }
+
+.actions {
+	display: block;
+	margin-top: 0px;
+	.action_button {
+		display: block;
+		float: right;
+		cursor: pointer;
+		border: 1px solid $gray;
+		background: lighten($gray, 40%);
+		a {
+			color: $gray;
+			&.icon {
+				display: block;
+				padding: 4px 6px 0;
+				font-weight: bold;
+				font-size: 9px;
+				text-shadow: 0 1px 0 white;
+				text-transform: uppercase;
+			}
+		}
+		&:hover {
+			background: lighten($gray, 45%);
+		}
+	}
+}
+

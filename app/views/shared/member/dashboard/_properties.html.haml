@@ -1,0 +1,22 @@
+#dashboard.clearfix
+	.row
+		- @properties.each do |property|
+			.listing
+				.listing_content
+					.listing_thumbnail
+						= link_to image_tag("member/thumb_blackdog.jpg", :alt => "", :width => "", :height => "", :border => 0), preview_member_property_path(:id => property.id)
+					.listing_info
+						%h3= link_to property.title, preview_member_property_path(:id => property.id)
+						%span.actions
+							%span.action_button
+								= link_to "Manage Property", edit_member_property_path(:id => property.id, :section => 'details'), :class => "icon view"
+							%span.action_button
+								= link_to "Preview Property", preview_member_property_path(:id => property.id), :class => "icon view", :target => "_new"
+					.listing_status
+					
+						.current_status
+							Property status:
+							-if property.published == true
+								%span.green	Published
+							-else
+								%span.red Unpublished

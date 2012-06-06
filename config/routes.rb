@@ -22,6 +22,8 @@ Blackdogproperty::Application.routes.draw do
                                :password => 'password', 
                                :confirmation => 'confirmation' }
   
+  match "member/profiles/:username/edit" => "member/profiles#edit", :as => :edit_member_profile, :via => :get
+  
   namespace :member do
     resources :dashboard, :only => [ :index ]
     resources :properties do
@@ -30,13 +32,12 @@ Blackdogproperty::Application.routes.draw do
         get :preview
       end
     end
+    resource :profile, :only => [ :update ]
   end
   
   # match "/member/full_address" => "member/properties#full_address"
 
   match "/member" => redirect("/member/dashboard")
-
-  # match "/member/properties/:id/edit" => redirect("/member/properties/:id/edit?section=:section")
   
   resources :sales, :only => :index
   match 'sales/about' => 'sales#about'

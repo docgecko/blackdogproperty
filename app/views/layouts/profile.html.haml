@@ -25,14 +25,24 @@
 				= render "shared/header/navigation"
 		
 		#page
-			.wrapper
-				.block.site.flash
-					= render 'shared/flashes'
+			.wrapper.clearfix
+				#dashboard.clearfix
+					.row
+						#back
+							= link_to "← Return to Dashboard", member_dashboard_index_path, :class => "return_to_list"
+				
+					.row
+						#edit_outer
+							#edit_inner
+								#side_nav
+									%nav.side_nav_container
+										= render_navigation(:context => :profile)
 					
-				= yield(:header)
-				.block.site
-					.border
-						= yield
+								#content
+									#notification_area
+										= render 'shared/flashes'
+									#dashboard_content
+										= yield		
 		
 	#footer
 		.wrapper

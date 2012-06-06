@@ -1,0 +1,17 @@
+// Place all the styles related to the member/profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#edit_outer {
+	#edit_inner {
+		#content {
+			#notification_area {
+				#flash {
+					.notice, .error, .warning {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

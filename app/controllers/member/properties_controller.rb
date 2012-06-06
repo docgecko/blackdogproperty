@@ -72,7 +72,7 @@ class Member::PropertiesController < InheritedResources::Base
     def resolve_layout
       case action_name
       when "index", "new", "create"
-        "member"
+        "dashboard"
       else
         "property"
       end
