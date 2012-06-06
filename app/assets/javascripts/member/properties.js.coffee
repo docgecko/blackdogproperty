@@ -87,7 +87,39 @@ $(document).ready ->
 				
 			"property[zipcode]":
 				required: "Please provide the postal or ZIP code"
+
+
+$(document).ready ->
+	$(".edit_user").validate 
+		errorElement: "label"
+		wrapper: "div class=\"error_message\" style=\"display: block;\""
+		errorPlacement: (error, element) ->
+			error.insertBefore element
+
+		rules: 
+			"user[first_name]": 
+				required: true
+
+			"user[last_name]": 
+				required: true
+
+			"user[email]": 
+				required: true
+				email: true
+				remote: "/account/check_email"
 				
+		messages: 
+			"user[email]": 
+				required: "Please provide your email address"
+				email: "Please enter a valid email address"
+				remote: "This email address is already in use"
+			
+			"user[first_name]":
+				required: "Please provide your first name"
+
+			"user[last_name]":
+				required: "Please provide your last name"
+												
 
 # Edit Member Property Details
 $(document).ready ->

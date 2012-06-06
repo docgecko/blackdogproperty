@@ -24,6 +24,8 @@ Blackdogproperty::Application.routes.draw do
   
   match "member/profiles/:username/edit" => "member/profiles#edit", :as => :edit_member_profile, :via => :get
   
+  match '/account/check_email' => "member/profiles#check_email"
+  
   namespace :member do
     resources :dashboard, :only => [ :index ]
     resources :properties do
