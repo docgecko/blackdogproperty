@@ -50,7 +50,7 @@
 	%table.property		
 		= render 'shared/member/property/address', :f => f
 							
-	= f.hidden_field :user_id, :value => current_user.id
+	= hidden_field :property, :user_id, :value => current_user.id
 
 	%table.property
 		%tr

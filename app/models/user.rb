@@ -53,6 +53,6 @@ class User
                                  too_short: "is too short (minimum length 3 characters)"
   
   # References
-  has_many :properties, 
+  has_many :properties
   
 end

@@ -96,6 +96,7 @@ class Property
   belongs_to :type
   # belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
+  belongs_to :user
   
   # Validations
   validates_presence_of :title

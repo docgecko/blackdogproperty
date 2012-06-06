@@ -10,7 +10,17 @@
 - content_for :header do
 	= render 'shared/member/dashboard/header'
 
-.panel-container	
+.panel-container
+	/ == Current User ID:#{current_user.id}
+	/ %br
+	/ Found properties with same Current User ID
+	/ %br
+	/ - @properties = Property.all
+	/ - @properties.each do |p|
+	/ 	= p.user_id
+	/ 	-if p.user_id == current_user.id
+	/ 		Same
+	/ 	%br
 	-if @properties.empty?
 		.no-listing
 			%h3.black

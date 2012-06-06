@@ -50,10 +50,10 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :dashboard, 'Dashboard', member_dashboard_index_path
-    primary.item :dashboard, 'My Properties ', member_properties_path
-    primary.item :dashboard, 'Profile', edit_user_registration_path
-    primary.item :dashboard, 'Account', edit_user_registration_path
+    primary.item :overview, 'Dashboard', member_dashboard_index_path
+    primary.item :properties, 'My Properties ', member_properties_path
+    primary.item :profile, 'Profile', edit_user_registration_path
+    primary.item :account, 'Account', edit_user_registration_path
     
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

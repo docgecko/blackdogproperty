@@ -21,7 +21,7 @@ class Member::PropertiesController < InheritedResources::Base
   def create
     # this will also build the embedded address object 
     # with the nested address parameters
-    @property = Property.new params[:property]
+    @property = Property.new(params[:property], :user_id => current_user.id)
     @property.save ? redirect_to(edit_member_property_path(:id => @property.id, :section => 'details')) : render(:action => :new)
   end
   
