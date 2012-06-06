@@ -50,7 +50,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :manage, 'Manage Property', overview_member_property_path(:id => params[:id])
+    # primary.item :manage, 'Manage Property', overview_member_property_path(:id => params[:id])
     primary.item :details, 'Details', edit_member_property_path(:id => params[:id], :section => 'details')
     primary.item :address, 'Address', edit_member_property_path(:id => params[:id], :section => 'address')
     primary.item :pricing, 'Pricing', edit_member_property_path(:id => params[:id], :section => 'pricing')

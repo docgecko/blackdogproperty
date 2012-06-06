@@ -22,7 +22,7 @@ class Member::PropertiesController < InheritedResources::Base
     # this will also build the embedded address object 
     # with the nested address parameters
     @property = Property.new params[:property]
-    @property.save ? redirect_to(edit_member_property_path(@property)) : render(:action => :new)
+    @property.save ? redirect_to(edit_member_property_path(:id => @property.id, :section => 'details')) : render(:action => :new)
   end
   
   # def show

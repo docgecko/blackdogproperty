@@ -154,3 +154,24 @@ $(document).ready ->
 		$('a[id=edit_property_address]').show()
 		$('div[id=edit_property_location]').hide()
 		$('div.gmaps4rails_map#private_map').show()
+
+
+# Delete Member Property
+# Prepare document when ready()
+$(document).ready ->
+	$('div[id=delete_possible]').show()
+	$('div[id=delete_full]').hide()
+	$('input[id=delete_property_button]').prop('disabled', true)
+	
+	# React to delete possible click
+	$('a[id=delete_property_step1]').click ->
+		$('div[id=delete_possible]').hide()
+		$('div[id=delete_full]').show()
+
+	# Agree to understand delete
+	$('input[id=delete_agree]').change ->
+		if $('input[id=delete_agree]').is(':checked')
+			$('input[id=delete_property_button]').prop('disabled', false)
+		else
+			$('input[id=delete_property_button]').prop('disabled', true)
+	

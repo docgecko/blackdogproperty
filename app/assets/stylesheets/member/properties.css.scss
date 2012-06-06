@@ -288,6 +288,7 @@ table {
 					}
 					.padded_text {
 						padding: 15px;
+						color: white;
 						h3 {
 							color: $blue;
 							font-size: 15px;
@@ -302,6 +303,34 @@ table {
 							.red {
 								font-weight: bold;
 								color: $bright-red;
+							}
+						}
+						ul {
+							list-style: disc inside;
+							&:first-child {
+								border-top: 0;
+								padding-top: 0;
+							}
+							li {
+								font-size: 12px;
+								margin:0;
+								padding:0 0 7px 0;
+							}
+						}
+						#delete_possible {
+							p {
+								a {
+									font-weight: bold;
+								}
+							}
+						}
+						.delete_agreemment {
+							padding: 10px 0;
+							margin: 0;
+							clear: both;
+							.agreement_text {
+								font-weight: bold;
+								font-size: 12px;
 							}
 						}
 					}

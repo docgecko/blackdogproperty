@@ -99,7 +99,7 @@
 				.top
 					%h2.step Property Visibility
 				.padded_text
-					%h3 Publish Status
+					%h3 Property Publish Status
 					%p 
 						You can choose a status of
 						%span.green "Published" 
@@ -108,9 +108,35 @@
 						for your property.
 					%p Unpublished properties can not be found on the public listings, nor can they be found in search results and, thus, will not be associated with your profile. Choose this option while you are preparing your property listing or you currently do not wish to rent out your property.
 					
+					%p
+						To change the publish status of this property, click the
+						%span{:style => "color:#97C3D6;"} Property status
+						link in the header of this property (above to the right).
+				%hr
+				.padded_text
+					#delete_possible
+						%p== If you no longer wish to keep this property listing, you can #{link_to "delete it permanently", "#", :id => :delete_property_step1}.
+					#delete_full
+						%h3 Delete Property Listing
+						%p
+							%span{:style => "font-weight:bold;"} IMPORTANT!
+							Deleting a listing is permanent and cannot be reversed. You may wish to hide it by unpublishing your listing instead.
+
+							%p If you delete this property listing:
+
+							%ul
+								%li It will be deleted from the site forever. You will not be able to retrieve it.
+								%li Your other account details will remain unchanged. Your profile and any other properties will continue to be associated with your account.
+							
+							.delete_agreemment
+								= check_box_tag :agree, :yes, false, :id => :delete_agree
+								%span.agreement_text I understand that by clicking the button below will completely delete my listing from the site and it cannot be recovered.
+								
+							.delete_property_button
+								= button_to "Delete Property Listing", [:member, @property], :method => :delete, :id => "delete_property_button", :class => 'buttonBasic', :onclick => "this.value = 'Deleting this property'"
 				.bottom
 				
-	-if (params[:section] != 'address') or (params[:section] != 'settings')
+	-if params[:section] == 'details' || params[:section] == 'pricing'
 		%table
 			%tr
 				%td

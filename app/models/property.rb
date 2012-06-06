@@ -25,7 +25,7 @@ class Property
   field :description
   field :facilities
   field :purpose_ids
-  field :type_ids
+  field :type_id
   field :currency_sale
   field :currency_rental
   field :price_sale
@@ -77,7 +77,7 @@ class Property
   attr_accessible :title, :location, 
                   # :country_id, 
                   :reference, :bio,
-                  :description, :facilities, :purpose_ids, :type_ids, 
+                  :description, :facilities, :purpose_ids, :type_id, 
                   :price_sale, :price_rental, :price_rental, :currency_rental,
                   :coordinates, :latitude, :longitude, :zoom,
                   :order_no, :featured, :published,
@@ -93,7 +93,7 @@ class Property
   # References
   has_many :photos
   accepts_nested_attributes_for :photos
-  has_and_belongs_to_many :types, inverse_of: nil
+  belongs_to :type
   # belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil
   
