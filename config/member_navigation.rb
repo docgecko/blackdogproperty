@@ -52,8 +52,7 @@ SimpleNavigation::Configuration.run do |navigation|
     
     primary.item :overview, 'Dashboard', member_dashboard_index_path
     primary.item :properties, 'My Properties ', member_properties_path
-    primary.item :profile, 'Profile', edit_member_profile_path(:username => current_user.username)
-    primary.item :account, 'Account', edit_user_registration_path
+    primary.item :account, 'Account', edit_member_account_path(current_user, :section => 'profile')
     
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

@@ -309,7 +309,7 @@ table {
 			#content {
 				#notification_area {
 					#flash {
-						.notice, .error, .warning {
+						.notice, .error, .warning, .alert {
 							margin-bottom: 0;
 						}
 					}
@@ -371,24 +371,25 @@ table {
 								padding:0 0 7px 0;
 							}
 						}
-						#delete_possible {
-							p {
-								a {
-									font-weight: bold;
-								}
-							}
-						}
-						.delete_agreemment {
-							padding: 10px 0;
-							margin: 0;
-							clear: both;
-							.agreement_text {
+					}
+					#delete_possible, #cancel_possible {
+						p {
+							a {
 								font-weight: bold;
-								font-size: 12px;
 							}
 						}
 					}
-					.middle {
+					.delete_agreemment, .cancel_agreement {
+						padding: 10px 0;
+						margin: 0;
+						clear: both;
+						.agreement_text {
+							color: white;
+							font-weight: bold;
+							font-size: 12px;
+						}
+					}
+					.middle, .bottom {
 						padding: 15px 15px 25px 40px;
 						table {
 							tr {

@@ -103,22 +103,36 @@ $(document).ready ->
 			"user[last_name]": 
 				required: true
 
+			"user[username]": 
+				required: true
+				remote: "/account/check_username"
+
 			"user[email]": 
 				required: true
 				email: true
 				remote: "/account/check_email"
+			
+			"user[telephone]":
+				required: true
 				
 		messages: 
-			"user[email]": 
-				required: "Please provide your email address"
-				email: "Please enter a valid email address"
-				remote: "This email address is already in use"
-			
 			"user[first_name]":
 				required: "Please provide your first name"
 
 			"user[last_name]":
 				required: "Please provide your last name"
+
+			"user[username]": 
+				required: "Please provide a unique display name"
+				remote: "This display name is already in use"
+
+			"user[email]": 
+				required: "Please provide your email address"
+				email: "Please enter a valid email address"
+				remote: "This email address is already in use"
+
+			"user[telephone]":
+				required: "Please provide your telephone number"
 												
 
 # Edit Member Property Details
@@ -191,3 +205,30 @@ $(document).ready ->
 		else
 			$('input[id=delete_property_button]').prop('disabled', true)
 	
+
+# Cancel Member Account
+# Prepare document when ready()
+$(document).ready ->
+	$('div[id=cancel_possible]').show()
+	$('div[id=cancel_full]').hide()
+	$('input[id=cancel_account_button]').prop('disabled', true)
+
+	# React to delete possible click
+	$('a[id=cancel_account_step1]').click ->
+		$('div[id=cancel_possible]').hide()
+		$('div[id=cancel_full]').show()
+
+	# React to don't cancel account click
+	$('a[id=dont_cancel_account]').click ->
+		$('div[id=cancel_possible]').show()
+		$('div[id=cancel_full]').hide()
+		$('input[id=cancel_agree]').prop('checked', false)
+		$('input[id=cancel_account_button]').prop('disabled', true)
+
+	# Agree to understand delete
+	$('input[id=cancel_agree]').change ->
+		if $('input[id=cancel_agree]').is(':checked')
+			$('input[id=cancel_account_button]').prop('disabled', false)
+		else
+			$('input[id=cancel_account_button]').prop('disabled', true)
+			

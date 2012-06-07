@@ -21,10 +21,9 @@ Blackdogproperty::Application.routes.draw do
                                :sign_out => 'signout', 
                                :password => 'password', 
                                :confirmation => 'confirmation' }
-  
-  match "member/profiles/:username/edit" => "member/profiles#edit", :as => :edit_member_profile, :via => :get
-  
-  match '/account/check_email' => "member/profiles#check_email"
+    
+  match '/account/check_email' => "member/accounts#check_email"
+  match '/account/check_username' => "member/accounts#check_username"
   
   namespace :member do
     resources :dashboard, :only => [ :index ]
@@ -34,7 +33,8 @@ Blackdogproperty::Application.routes.draw do
         get :preview
       end
     end
-    resource :profile, :only => [ :update ]
+    resources :profiles, :only => [ :edit, :update ]
+    resources :accounts, :only => [ :edit, :update ]
   end
   
   # match "/member/full_address" => "member/properties#full_address"

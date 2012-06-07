@@ -36,11 +36,12 @@
 							#edit_inner
 								#side_nav
 									%nav.side_nav_container
-										= render_navigation(:context => :profile)
+										= render_navigation(:context => :account)
 					
 								#content
 									#notification_area
 										= render 'shared/flashes'
+										
 									#dashboard_content
 										= yield		
 		

@@ -32,7 +32,7 @@ class Member::PropertiesController < InheritedResources::Base
   # end
 
   def update
-    @section = params[:section]
+    section = params[:section]
     if (params[:property][:title].blank?) or (params[:property][:title] == params[:stored][:title])
       # logger.debug "Title: #{params[:title]}"
       # logger.debug "Propery title: #{params[:property][:title]}"
@@ -48,9 +48,9 @@ class Member::PropertiesController < InheritedResources::Base
       original.destroy
     end
     if params[:property][:published].present?
-      @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section)) : redirect_to(edit_member_property_path(@property, :section => @section))
+      @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => section)) : redirect_to(edit_member_property_path(@property, :section => section))
     else
-      @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => @section), :alert => "There was a problem saving your property, please try again.")
+      @property.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(@property, :section => section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(@property, :section => section), :alert => "There was a problem saving your property, please try again.")
     end
   end
   

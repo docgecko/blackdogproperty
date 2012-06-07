@@ -1,0 +1,18 @@
+%tr
+	%td.label= f.label :current_password, "Current password"
+	%td
+		= f.password_field :current_password, :size => 30, :maxlength => 128
+		%p.note
+			We need your current password to confirm your changes.
+
+%tr
+	%td.label= f.label :password, "New password"
+	%td
+		= f.password_field :password, :size => 30, :maxlength => 20
+			
+%tr
+	%td.label{:style => "width:170px;"}= f.label :password_confirmation, "Confirm new password"
+	%td
+		= f.password_field :password_confirmation, :size => 30, :maxlength => 128
+		%p.note
+			6 characters or longer.

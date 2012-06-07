@@ -49,8 +49,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    
-    primary.item :profile, 'Edit Profile', edit_member_profile_path(:username => current_user.username)
+
+    primary.item :profile, 'Profile', edit_member_account_path(current_user, :section => 'profile')
+    primary.item :settings, 'Settings', edit_member_account_path(current_user, :section => 'settings')
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

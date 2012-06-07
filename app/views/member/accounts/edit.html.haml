@@ -1,0 +1,49 @@
+- content_for :title do
+	Edit Member Account Settings
+	
+- content_for :meta_description do
+	Edit Member Account Settings
+
+- content_for :link_canonical do
+	== member/accounts/#{current_user.username}/edit
+
+
+= form_for([:member, @user], :url => member_account_path(current_user), :html => { :autocomplete => "off", :method => :put, :id => "edit_user_#{current_user.username}" }) do |f|
+
+	= hidden_field_tag "section", params[:section] if action_name == 'edit'
+
+	-if params[:section] == 'profile'
+		%section#profile
+			.box
+				.top
+					%h2.step Profile Details
+				.middle
+					%table.account.edit
+						= render 'shared/member/account/profile', :f => f
+				.bottom
+					%table.account.edit
+						%tr
+							%td{:style => "width: 170px;"}
+							%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your account...'"
+
+	-if params[:section] == 'settings'
+		%section#settings
+			.box
+				.top
+					%h2.step Account Password
+				.middle
+					%table.account.edit
+						= render 'shared/member/account/settings', :f => f
+				.bottom
+					%table
+						%tr
+							%td{:style => "width: 170px;"}
+							%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your account...'"
+
+			.box
+				.top
+					%h2.step Account Cancellation
+				.middle
+					%table.profile.edit
+						= render 'shared/member/account/cancel', :f => f
+			

@@ -1,0 +1,29 @@
+// Place all the styles related to the member/accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+.cancel_account_button {
+	margin: 10px 0 0 0;
+	overflow: hidden;
+	padding: 0;
+	input.button_cancel {
+		float: left;
+	  margin: 1px 2px 0 0;
+	  cursor: pointer;
+	}
+	.dont_cancel_account {
+		color: white;
+  	font-size: 11px;
+		float: left;
+		margin: 0 0 0 2px;
+		a {
+			color: $blue;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

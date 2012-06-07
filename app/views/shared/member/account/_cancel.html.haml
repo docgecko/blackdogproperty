@@ -1,0 +1,19 @@
+#cancel_possible
+	%p== If you no longer wish to keep your account, you can #{link_to "cancel it permanently", "#", :id => :cancel_account_step1}.
+#cancel_full
+	%p
+		If you choose to cancel your account:
+
+		%ul
+			%li It will be cancelled forever. You will not be able to retrieve it.  To begin again, you would have to create a completely new account.
+			%li All your properties will be deleted from the site forever.
+	
+		.cancel_agreement
+			= check_box_tag :agree, :yes, false, :id => :cancel_agree, :class => :cancel_checbox
+			%span.agreement_text.cancel_checkbox I understand that by clicking the button below will completely delete my account and my properties from the site, which will be non-recoverable.
+		
+		.cancel_account_button
+			= button_to "Cancel my account", [:member, @account], :method => :delete, :id => "cancel_account_button", :class => 'button_cancel', :onclick => "this.value = 'Cancelling your account...'"
+			.dont_cancel_account
+				or
+				= link_to "Don't cancel account", "#", :id => "dont_cancel_account"
