@@ -45,9 +45,6 @@ class User
   field :receive_newsletter,  :type => Boolean
   field :telephone,           :type => String
   
-  # Accessors
-  attr_accessor   :password, :old_password, :current_password
-  
   # Validations
   validates_presence_of :first_name, :last_name, :username
   validates_uniqueness_of :username
@@ -63,5 +60,5 @@ class User
   def to_param
     username
   end
-  
+
 end

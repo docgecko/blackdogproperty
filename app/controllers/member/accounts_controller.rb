@@ -1,6 +1,6 @@
 class Member::AccountsController < InheritedResources::Base
   before_filter :authenticate_user!
-  before_filter :find_user, :only => [ :edit, :update, :update_password ]
+  before_filter :find_user, :only => [ :edit, :update ]
   layout 'account'
   
   actions :edit, :update
@@ -14,9 +14,9 @@ class Member::AccountsController < InheritedResources::Base
     if @user.update_attributes(params[:user])
       # Sign in the user by passing validation in case his password changed
       sign_in @user, :bypass => true
-      redirect_to(edit_member_account_path(current_user, :section => section), :notice =>"Your account information was successfully updated.")
+      redirect_to edit_member_account_path(current_user, :section => section), :notice =>"Your account information was successfully updated."
     else
-      redirect_to(edit_member_account_path(current_user, :section => section), :alert => "There was a problem saving your account information, please try again.")
+      redirect_to edit_member_account_path(current_user, :section => section), :alert => "There was a problem saving your account information, please try again."
     end
   end
   
