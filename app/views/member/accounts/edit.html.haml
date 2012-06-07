@@ -21,10 +21,7 @@
 					%table.account.edit
 						= render 'shared/member/account/profile', :f => f
 				.bottom
-					%table.account.edit
-						%tr
-							%td{:style => "width: 170px;"}
-							%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your account...'"
+					= render 'shared/member/account/save_button'
 
 	-if params[:section] == 'settings'
 		%section#settings
@@ -35,10 +32,7 @@
 					%table.account.edit
 						= render 'shared/member/account/settings', :f => f
 				.bottom
-					%table
-						%tr
-							%td{:style => "width: 170px;"}
-							%td= button_to "Save to Update", :class => 'buttonBasic', :onclick => "this.value = 'Updating your account...'"
+					= render 'shared/member/account/save_button'
 
 			.box
 				.top

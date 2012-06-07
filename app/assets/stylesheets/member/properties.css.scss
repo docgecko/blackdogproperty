@@ -389,8 +389,13 @@ table {
 							font-size: 12px;
 						}
 					}
-					.middle, .bottom {
+					.middle {
 						padding: 15px 15px 25px 40px;
+					}
+					.bottom {
+						padding: 5px 15px 15px 40px;
+					}
+					.middle, .bottom {
 						table {
 							tr {
 								td {
