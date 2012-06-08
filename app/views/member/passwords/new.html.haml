@@ -18,8 +18,8 @@
 		%p Enter your email address below and we will send you password reset instructions.
 
 		%h2
-			= f.label :email, 'Enter your email address'
-			= f.text_field :email, :maxlength => 255
+			= f.label :login, 'Enter your Display name or Email address'
+			= f.text_field :login, :maxlength => 255
 
 		= f.submit "Send me password reset instructions", :class => 'buttonBasic'
 

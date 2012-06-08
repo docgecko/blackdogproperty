@@ -1,8 +1,10 @@
 class Member::PropertiesController < InheritedResources::Base
   before_filter :authenticate_user!
-  before_filter :property_photo, :only => :edit
+  before_filter :find_property_photos, :only => :edit
+  before_filter :featured_property_photo, :only => :edit
   before_filter :find_amenities, :only => :edit
   before_filter :prepare_google_maps, :only => :edit
+  before_filter :build_one_photo, :only => [ :edit ]
   layout :resolve_layout
   
   actions :all, :full_address
@@ -65,10 +67,6 @@ class Member::PropertiesController < InheritedResources::Base
   
   private
   
-    def property_photo
-      # TBD
-    end
-  
     def resolve_layout
       case action_name
       when "index", "new", "create"
@@ -78,6 +76,18 @@ class Member::PropertiesController < InheritedResources::Base
       end
     end
     
+    def find_property_photos
+      @photos = Photo.where(:property_id => resource.id)
+    end
+    
+    def featured_property_photo
+      # TBD
+    end
+    
+    def build_one_photo
+      @property.photos.build(:property_id => params[:id])
+    end
+
     def find_amenities
       @amenities = Amenity.order_by([[:division_id, :asc], [:name, :asc]])
       @divisions = Division.order_by([:name, :asc])
@@ -92,4 +102,5 @@ class Member::PropertiesController < InheritedResources::Base
         circle.json :lat => property.longitude, :lng => property.latitude, :radius => 600
       end
     end
+    
 end

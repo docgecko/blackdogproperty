@@ -53,6 +53,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.item :manage, 'Manage Property', overview_member_property_path(:id => params[:id])
     primary.item :details, 'Details', edit_member_property_path(:id => params[:id], :section => 'details')
     primary.item :address, 'Address', edit_member_property_path(:id => params[:id], :section => 'address')
+    primary.item :photos, 'Photos', edit_member_property_path(:id => params[:id], :section => 'photos')
     primary.item :pricing, 'Pricing', edit_member_property_path(:id => params[:id], :section => 'pricing')
     primary.item :settings, 'Settings', edit_member_property_path(:id => params[:id], :section => 'settings')
 

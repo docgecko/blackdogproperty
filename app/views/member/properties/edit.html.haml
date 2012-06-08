@@ -79,9 +79,25 @@
 						= render 'shared/member/property/sea_views', :f => f
 						= render 'shared/member/property/conventions', :f => f
 	
-	
+
+	-elsif params[:section] == 'photos'
+		%section#uploads
+			.box
+				.top
+					%h2.step Add Photos
+				.middle
+					= render 'shared/member/property/photos/add'
+								
+		%section#photos
+			.box
+				.top
+					%h2.step Current Photos
+				.padded_text
+					= render 'shared/member/property/photos/show'
+					
+					
 	-elsif params[:section] == 'pricing'
-		%section#location
+		%section#pricing
 			.box
 				.top
 					%h2.step Pricing

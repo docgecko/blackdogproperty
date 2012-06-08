@@ -88,10 +88,11 @@ class Property
                   :living_room, :dining_room, :dining_outdoor,
                   :sun_loungers, :balconies, :terraces,
                   :sea_views, :conventions,
-                  :address, :street, :apt, :city, :state, :zipcode, :country
+                  :address, :street, :apt, :city, :state, :zipcode, :country,
+                  :photos_attributes, :photo
 
   # References
-  has_many :photos
+  has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :photos
   belongs_to :type
   # belongs_to :country

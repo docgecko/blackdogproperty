@@ -4,7 +4,8 @@ class User
   # :token_authenticatable, :encryptable, :lockable,
   # :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :authentication_keys => [:login]
 
   ## Database authenticatable
   field :email,              :type => String, :null => false, :default => ""
@@ -45,6 +46,9 @@ class User
   field :receive_newsletter,  :type => Boolean
   field :telephone,           :type => String
   
+  # Setup accessible (or protected) attributes
+  attr_accessor :login
+  
   # Validations
   validates_presence_of :first_name, :last_name, :username
   validates_uniqueness_of :username
@@ -59,6 +63,16 @@ class User
   # Use username instead of id
   def to_param
     username
+  end
+  
+  # Allow username and email to be used as login
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      self.any_of({ :username =>  /^#{Regexp.escape(login)}$/i }, { :email =>  /^#{Regexp.escape(login)}$/i }).first
+    else
+      super
+    end
   end
 
 end

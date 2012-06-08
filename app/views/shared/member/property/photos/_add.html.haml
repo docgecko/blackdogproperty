@@ -1,0 +1,13 @@
+= form_for [:member, @property], :html => {:multipart => true} do |f|
+
+	= f.fields_for :photos do |builder|
+		%tr
+			%td.label= builder.label :title
+			%td
+				= image_tag builder.photo.image.url(:thumb), :alt => 'Image', :title => 'Property image'
+				%br
+				= builder.file_field :image
+				/ = builder.hidden_field :photo_cache
+
+				
+	= button_to "Save to Update", :class => 'button', :onclick => "this.value = 'Updating your account...'"
