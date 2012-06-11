@@ -89,11 +89,11 @@ class Property
                   :sun_loungers, :balconies, :terraces,
                   :sea_views, :conventions,
                   :address, :street, :apt, :city, :state, :zipcode, :country,
-                  :photos_attributes, :photo
+                  :photos_attributes
 
   # References
   has_many :photos, :dependent => :destroy
-  accepts_nested_attributes_for :photos
+  accepts_nested_attributes_for :photos, :allow_destroy => true, :reject_if => lambda { |a| a[:image].blank? }
   belongs_to :type
   # belongs_to :country
   has_and_belongs_to_many :amenities, inverse_of: nil

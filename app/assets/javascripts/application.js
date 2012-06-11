@@ -24,4 +24,5 @@
 //= require jquery.hashchange.min
 //= require jquery.placeholder.min
 //= require ckeditor/init
+//= require jquery_nested_form
 //= require_tree .

@@ -1,5 +1,7 @@
 require 'carrierwave/mongoid'
 
+Mongoid::Document::ClassMethods.send(:include, ::CarrierWave::Backgrounder::ORM::Base)
+
 CarrierWave.configure do |config|
   config.fog_credentials = {
       :provider => 'AWS'

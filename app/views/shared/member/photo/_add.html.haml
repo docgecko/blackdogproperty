@@ -1,0 +1,13 @@
+= nested_form_for([:member, @property, resource], :html => { :multipart => true }) do |f|
+
+	%tr
+		%td{:style => "width:170px;"}
+			= f.label :image
+		%td
+			= f.file_field :image
+			= f.hidden_field :image_cache
+			
+	%tr
+		%td{:style => "width:170px;"}
+		%td= button_to "Save to Update", :class => 'button', :onclick => "this.value = 'Updating your property...'"
+	

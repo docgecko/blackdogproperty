@@ -1,13 +1,25 @@
-= form_for [:member, @property], :html => {:multipart => true} do |f|
+= nested_form_for [:member, @property], :html => {:multipart => true} do |f|
 
-	= f.fields_for :photos do |builder|
-		%tr
-			%td.label= builder.label :title
+	= f.fields_for :photos do |photo_form|
+		%table
+			%tr
+				%td= photo_form.label :title
+				%td= photo_form.text_field :title
+			%tr
+				%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
+					= photo_form.label :image
+				%td
+					= photo_form.file_field :image
+					= photo_form.hidden_field :image_cache
+					= image_tag(photo_form.object.image.url(:thumb)) if photo_form.object.image?
+					= photo_form.link_to_remove "Remove photo"
+	%table
+		%tr{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
 			%td
-				= image_tag builder.photo.image.url(:thumb), :alt => 'Image', :title => 'Property image'
-				%br
-				= builder.file_field :image
-				/ = builder.hidden_field :photo_cache
-
-				
-	= button_to "Save to Update", :class => 'button', :onclick => "this.value = 'Updating your account...'"
+			%td= f.link_to_add "Add a photo", :photos
+		
+	/ = render 'shared/member/property/photos/images', :f => photo
+	%table
+		%tr
+			%td{:style => "width: #{action_name == 'new' ? '200px' : '170px'};"}
+			%td= button_to "Save to Update", :class => 'button', :onclick => "this.value = 'Updating your account...'"

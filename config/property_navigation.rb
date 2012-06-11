@@ -51,11 +51,19 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     
     # primary.item :manage, 'Manage Property', overview_member_property_path(:id => params[:id])
-    primary.item :details, 'Details', edit_member_property_path(:id => params[:id], :section => 'details')
-    primary.item :address, 'Address', edit_member_property_path(:id => params[:id], :section => 'address')
-    primary.item :photos, 'Photos', edit_member_property_path(:id => params[:id], :section => 'photos')
-    primary.item :pricing, 'Pricing', edit_member_property_path(:id => params[:id], :section => 'pricing')
-    primary.item :settings, 'Settings', edit_member_property_path(:id => params[:id], :section => 'settings')
+    if controller_name == "properties"
+      primary.item :details, 'Details', edit_member_property_path(:id => params[:id], :section => 'details')
+      primary.item :address, 'Address', edit_member_property_path(:id => params[:id], :section => 'address')
+      primary.item :photos, 'Photos', new_member_property_photo_path(:property_id => params[:id])
+      primary.item :pricing, 'Pricing', edit_member_property_path(:id => params[:id], :section => 'pricing')
+      primary.item :settings, 'Settings', edit_member_property_path(:id => params[:id], :section => 'settings')
+    else
+      primary.item :details, 'Details', edit_member_property_path(:id => params[:property_id], :section => 'details')
+      primary.item :address, 'Address', edit_member_property_path(:id => params[:property_id], :section => 'address')
+      primary.item :photos, 'Photos', new_member_property_photo_path(:property_id => params[:property_id])
+      primary.item :pricing, 'Pricing', edit_member_property_path(:id => params[:property_id], :section => 'pricing')
+      primary.item :settings, 'Settings', edit_member_property_path(:id => params[:property_id], :section => 'settings')
+    end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

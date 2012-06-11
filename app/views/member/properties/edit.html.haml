@@ -1,11 +1,11 @@
 - content_for :title do
-	== Edit "#{@property.title}" on BlackDog Property
+	== Edit "#{resource.title}" on BlackDog Property
 	
 - content_for :meta_description do
-	== Edit "#{@property.title}" on BlackDog Property
+	== Edit "#{resource.title}" on BlackDog Property
 
 - content_for :link_canonical do
-	== member/properties/#{@property.id}/edit?section=#{params[:section]}
+	== member/properties/#{resource.id}/edit?section=#{params[:section]}
 
 - content_for :edit_property_nav do
 	= render_navigation(:context => :property)
@@ -14,11 +14,11 @@
 	= render 'shared/member/property/charcount'
 
 
-= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
+= form_for [:member, resource], :html => { :autocomplete => "off" } do |f|
 
 	= hidden_field_tag "section", params[:section] if action_name == 'edit'
-	= f.hidden_field(:id, :value => @property.id, :id => "stored_id", :name => "stored[id]") if action_name == 'edit'
-	= f.hidden_field(:title, :value => @property.title, :id => "stored_title", :name => "stored[title]") if action_name == 'edit'
+	= f.hidden_field(:id, :value => resource.id, :id => "stored_id", :name => "stored[id]") if action_name == 'edit'
+	= f.hidden_field(:title, :value => resource.title, :id => "stored_title", :name => "stored[title]") if action_name == 'edit'
 
 
 	-if params[:section] == 'details'
@@ -55,7 +55,7 @@
 								- d.amenities.each do |a|
 									%ul.groups
 										%li
-											= check_box_tag "property[amenity_ids][]", a.id, @property.amenity_ids.include?(a.id), :id => ('property_amenity_ids_' + a.id)
+											= check_box_tag "property[amenity_ids][]", a.id, resource.amenity_ids.include?(a.id), :id => ('property_amenity_ids_' + a.id)
 											= f.label a.id, a.name, :for => ('property_amenity_ids_' + a.id)
 											- if a.description.present?
 												= image_tag "question_mark.png", :class => "question_mark", :rel => "tooltip", "data-original-title" => a.description
@@ -146,7 +146,7 @@
 								%span.agreement_text I understand that by clicking the button below will completely delete my listing from the site and it cannot be recovered.
 								
 							.delete_property_button
-								= button_to "Delete Property Listing", [:member, @property], :method => :delete, :id => "delete_property_button", :class => 'buttonBasic', :onclick => "this.value = 'Deleting this property'"
+								= button_to "Delete Property Listing", [:member, resource], :method => :delete, :id => "delete_property_button", :class => 'buttonBasic', :onclick => "this.value = 'Deleting this property'"
 				
 	-if params[:section] == 'details' || params[:section] == 'pricing'
 		/ = render 'member/property/save_button'
@@ -168,7 +168,7 @@
 								= link_to "Edit address", "#", :id => :edit_property_address
 								= link_to "Cancel", "#", :id => :cancel_edit_property_address
 							Actual Address:
-							%span.address= private_address(@property)
+							%span.address= private_address(resource)
 							%p.note Note: the actual address of the property will only be given to confirmed guests.
 						.map_view
 							= gmaps(:markers => { :data => @json, |
@@ -200,7 +200,7 @@
 					.map_box
 						%h3.map_description.public
 							Public View:
-							%span.address= public_address(@property)
+							%span.address= public_address(resource)
 							%p.note This is how the address of the property appears on the public listing.
 						.map_view
 							= gmaps(:circles => { :data => @circles, |

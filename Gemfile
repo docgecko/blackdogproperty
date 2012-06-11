@@ -32,6 +32,9 @@ gem 'high_voltage', '1.0.1'
 gem 'simple-navigation'
 gem 'carrierwave', '0.5.7'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'delayed_job_mongoid', '~> 1.0.8'
+gem 'carrierwave_backgrounder', '~> 0.0.7'
+gem 'daemons', '~> 1.1.8'
 gem 'mini_magick', '3.3'
 gem 'kaminari', '0.13.0'
 gem 'rack-rewrite', '1.0.2'
@@ -44,8 +47,8 @@ gem "rails_admin_map_field", :git => "git://github.com/jasonl/rails_admin_map_fi
 gem "ckeditor", "3.7.1"
 gem "country_select", "~> 0.0.2"
 gem "sanitize", "~> 2.0.3"
+gem "nested_form", "~> 0.2.1"
 # gem "jquery-fileupload-rails", "~> 0.3.0"
-gem "flash_cookie_session"
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

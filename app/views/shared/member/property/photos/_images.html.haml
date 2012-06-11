@@ -1,0 +1,9 @@
+%table
+	%tr
+		%td.label= f.label :title
+		%td
+			- if !f.object.new_record?
+				= image_tag f.image.url(:thumb), :alt => 'Image', :title => 'Property image'
+			- else
+				= f.file_field :image
+			= f.hidden_field :image_cache

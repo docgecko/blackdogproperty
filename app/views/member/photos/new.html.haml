@@ -1,0 +1,33 @@
+- content_for :title do
+	== Edit "#{@property.title}" on BlackDog Property
+	
+- content_for :meta_description do
+	== Edit "#{@property.title}" on BlackDog Property
+
+- content_for :link_canonical do
+	== member/properties/#{@property.id}/photos/new
+
+- content_for :edit_property_nav do
+	= render_navigation(:context => :property)
+	
+
+%section#new
+	.box
+		.top
+			%h2.step Add Photos
+		.middle
+			%table.property.edit
+				= render 'shared/member/photo/add'
+			
+				/ %table
+				/ 	%tr{:style => "width:170px;"}
+				/ 		%td
+				/ 		%td= f.link_to_add "Add a photo", :photos
+
+%section#show
+	.box
+		.top
+			%h2.step Current Photos
+		.middle
+			%table.property.edit
+				= render 'shared/member/photo/show'

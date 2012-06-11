@@ -34,22 +34,25 @@
 						#heading
 							#heading_content
 								#property_photo
-									= link_to image_tag("member/thumb_blackdog.jpg", :alt => "", :width => "", :height => "", :border => 0), member_property_path(:id => params[:id])
+									- if @featured_photo.present?
+										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "", :width => "", :height => "", :border => 0), member_property_path(@property)
+									- else
+										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "", :width => "", :height => "", :border => 0), member_property_path(@property)
 								#property_info
-									%h3= link_to @property.title, member_property_path(:id => params[:id])
+									%h3= link_to @property.title, member_property_path(@property)
 								#property_status
 									%span.actions
-										%span.action_button= link_to "Preview Listing", preview_member_property_path(:id => params[:id]), :class => "icon view", :target => "_new"
+										%span.action_button= link_to "Preview Listing", preview_member_property_path(@property), :class => "icon view", :target => "_new"
 									
 									.current_status
 										= form_for [:member, @property], :html => { :autocomplete => "off", :class => "edit_property_publish_status" } do |f|
 											Property status:
 											-if @property.published == true
 												%span.green
-													= link_to "Published", member_property_path(:id => params[:id], :section => params[:section], :property => { :published => false }), :id => "published", :method => :put, :rel => "tooltip", "data-original-title" => "Click to Un-publish this property."
+													= link_to "Published", member_property_path(@property, :section => params[:section], :property => { :published => false }), :id => "published", :method => :put, :rel => "tooltip", "data-original-title" => "Click to Un-publish this property."
 											-else
 												%span.red
-													= link_to "Unpublished", member_property_path(:id => params[:id], :section => params[:section], :property => { :published => true }), :id => "unpublished", :method => :put, :rel => "tooltip", "data-original-title" => "Click to Publish this property."
+													= link_to "Unpublished", member_property_path(@property, :section => params[:section], :property => { :published => true }), :id => "unpublished", :method => :put, :rel => "tooltip", "data-original-title" => "Click to Publish this property."
 				
 					.row
 						#edit_outer

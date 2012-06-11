@@ -1,0 +1,2 @@
+module Member::PhotosHelper
+end
