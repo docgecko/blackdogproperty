@@ -63,7 +63,6 @@ class Member::PropertiesController < InheritedResources::Base
   #   render :text => Geocoder.search("Rua Almeida e Sousa 33, 1350-008 Lisboa, Portugal").inspect.to_s
   # end
   
-  
   private
   
     def resolve_layout

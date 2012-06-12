@@ -36,6 +36,9 @@ GEM
     activesupport (3.2.3)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_list_mongoid (0.2.5.1)
+      mongoid (>= 2.0.1)
+      mongoid_embedded_helper (>= 0.2.5)
     addressable (2.2.8)
     ansi (1.4.2)
     archive-tar-minitar (0.5.2)
@@ -194,6 +197,16 @@ GEM
       mongoid (>= 2.4.6)
       rake
       rspec (>= 2.9)
+    mongoid_adjust (0.1.2)
+      bson (>= 1.2)
+      mongoid (>= 2.0.1)
+    mongoid_embedded_helper (0.3.2)
+      bson (>= 1.2)
+      bson (>= 1.2)
+      mongoid (>= 2.0.1)
+      mongoid (>= 2.0.1)
+      mongoid_adjust (>= 0.1.1)
+      mongoid_adjust (>= 0.1.1)
     mongoid_spacial (0.2.16)
       activesupport (~> 3.0)
       mongoid (>= 2.3.0)
@@ -318,6 +331,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list_mongoid (~> 0.2.5.1)
   autotest-growl (= 0.2.11)
   autotest-rails (= 4.1.1)
   bcrypt-ruby (~> 3.0.0)

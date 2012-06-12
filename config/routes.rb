@@ -28,7 +28,7 @@ Blackdogproperty::Application.routes.draw do
   namespace :member do
     resources :dashboard, :only => [ :index ]
     resources :properties do
-      resources :photos#, :except => [ :index ]
+      resources :photos, :except => [ :index ]#, :collection => { :sort => :post }
       member do
         get :overview
         get :preview

@@ -453,11 +453,11 @@ table {
 							line-height: 15px;
 						}
 						ul {
-							list-style: disc inside;
 							&.groups {
+								list-style: disc inside;
 								float: left;
 							}
-							li {
+							li.group {
 								margin: 0 0 3px 10px;
 								padding: 0;
 								font-size: 11px;

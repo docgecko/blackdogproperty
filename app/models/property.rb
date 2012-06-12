@@ -17,7 +17,7 @@ class Property
 
   # Fields
   field :title
-  key :title
+  key   :title
   field :location
   # field :country_id
   field :reference
@@ -30,31 +30,31 @@ class Property
   field :currency_rental
   field :price_sale
   field :price_rental
-  field :coordinates,                 type: Array,   spacial: {lat: :latitude, lng: :longitude, return_array: true }
-  field :latitude,                    type: Float
-  field :longitude,                   type: Float
-  field :gmaps,                       type: Boolean
-  field :zoom,                        type: Integer, default: 11
-  field :order_no,                    type: Integer, default: 0
-  field :featured,                    type: Boolean, default: false
-  field :published,                   type: Boolean, default: false
+  field :coordinates,        type: Array,     spacial: {lat: :latitude, lng: :longitude, return_array: true }
+  field :latitude,           type: Float
+  field :longitude,          type: Float
+  field :gmaps,              type: Boolean
+  field :zoom,               type: Integer,   default: 11
+  field :order_no,           type: Integer,   default: 0
+  field :featured,           type: Boolean,   default: false
+  field :published,          type: Boolean,   default: false
   
   # Additional fields for Lastminute
   field :user_id
   field :phone_country
   field :phone_number
   field :amenity_ids               
-  field :accommodates,                type: Integer
-  field :bedrooms,                    type: Integer
-  field :bathrooms,                   type: Integer
-  field :living_room,                 type: Integer
-  field :dining_room,                 type: Integer
-  field :dining_outdoor,              type: Integer
-  field :sun_loungers,                type: Integer
-  field :balconies,                   type: Integer
-  field :terraces,                    type: Integer
-  field :sea_views,                   type: Boolean
-  field :conventions,                 type: Boolean
+  field :accommodates,       type: Integer
+  field :bedrooms,           type: Integer
+  field :bathrooms,          type: Integer
+  field :living_room,        type: Integer
+  field :dining_room,        type: Integer
+  field :dining_outdoor,     type: Integer
+  field :sun_loungers,       type: Integer
+  field :balconies,          type: Integer
+  field :terraces,           type: Integer
+  field :sea_views,          type: Boolean
+  field :conventions,        type: Boolean
   
   field :address
   field :street
@@ -92,7 +92,7 @@ class Property
                   :photos_attributes
 
   # References
-  has_many :photos, :dependent => :destroy
+  has_many :photos, :dependent => :destroy, :order => "position"
   accepts_nested_attributes_for :photos, :allow_destroy => true, :reject_if => lambda { |a| a[:image].blank? }
   belongs_to :type
   # belongs_to :country

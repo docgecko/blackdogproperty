@@ -1,7 +1,6 @@
 class Member::PhotosController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :first_property_image, :only => :new
-  # before_filter :find_property, :only => :create
   
   layout 'property'
   
@@ -17,15 +16,10 @@ class Member::PhotosController < InheritedResources::Base
   protected
   
     def collection
-      @photos ||= end_of_association_chain.where(property_id: @property.id)
+      @photos ||= end_of_association_chain.where(property_id: @property.id).asc(:position)
     end
     
     def first_property_image
       @featured_photo = Photo.where(property_id: params[:property_id]).first
     end
-    
-    def find_property
-      @property = Property.find(params[:property_id])
-    end
-  
 end

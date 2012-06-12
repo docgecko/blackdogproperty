@@ -1,12 +1,20 @@
-%span.action_button#reorder-button= button_to "Reorder", "#"
+- if collection.count == 0
+	%p You haven't added any photos to your listing yet! You'll need at least one before your listing goes live.
+- else
+	%ul#sortable
+		- collection.each do |p|
+			%li{:id => "photo_#{p.position}"}
+				- if p.image_processing == true
+					%span.image
+						= image_tag "member/processing.gif", :width => "", :height => ""
+				- else
+					%span.image
+						= image_tag p.image.url(:thumb), :width => "98px", :height => "65px"
+					
 
-%h3 Current Photos
-
-/ - if @photos.empty?
-/ 	%p You haven't added any photos to your listing yet! You'll need at least one before your listing goes live.
-/ - else
-- collection.each do |p|
-	- if p.image_processing == true
-		.blank{:style => "width:98px;height:50px;background-color:#CCCCCC;text-align:center;padding-top:15px;border: thin white solid;float:left;margin:0 10px 10px 0;"}= image_tag "member/processing.gif"
-	- else
-		.blank{:style => "width:98px;height:65px;background-color:#CCCCCC;text-align:center;border: thin white solid;float:left;margin:0 10px 10px 0;"}= image_tag p.image.url(:thumb)
+- content_for :scripts do
+	:javascript
+		$(function() {
+			$( "#sortable" ).sortable();
+			$( "#sortable" ).disableSelection();
+		});		

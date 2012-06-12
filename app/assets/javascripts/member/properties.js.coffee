@@ -231,4 +231,3 @@ $(document).ready ->
 			$('input[id=cancel_account_button]').prop('disabled', false)
 		else
 			$('input[id=cancel_account_button]').prop('disabled', true)
-			

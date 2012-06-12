@@ -35,9 +35,9 @@
 							#heading_content
 								#property_photo
 									- if @featured_photo.present?
-										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "", :width => "", :height => "", :border => 0), member_property_path(@property)
+										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), member_property_path(@property)
 									- else
-										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "", :width => "", :height => "", :border => 0), member_property_path(@property)
+										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), member_property_path(@property)
 								#property_info
 									%h3= link_to @property.title, member_property_path(@property)
 								#property_status
