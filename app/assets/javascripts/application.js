@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require jquery.validate.min
 //= require additional-methods.min
+//= require jquery.facebox
 //= require jquery.textareaCounter.plugin
 //= require jquery.easytabs.min
 //= require jquery.charcounter

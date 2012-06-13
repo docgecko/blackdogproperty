@@ -49,7 +49,8 @@ gem "country_select", "~> 0.0.2"
 gem "sanitize", "~> 2.0.3"
 gem "nested_form", "~> 0.2.1"
 # gem "jquery-fileupload-rails", "~> 0.3.0"
-gem "acts_as_list_mongoid", "~> 0.2.5.1"
+# gem "acts_as_list_mongoid", "~> 0.2.5.1"
+gem 'facebox-rails','~> 0.1.2'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

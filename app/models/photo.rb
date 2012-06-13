@@ -2,7 +2,7 @@ class Photo
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
-  include ActsAsList::Mongoid 
+  # include ActsAsList::Mongoid 
   # include Rails.application.routes.url_helpers
   
   # Fields
@@ -23,16 +23,13 @@ class Photo
 
   # References
   belongs_to :property
-  acts_as_list :scope => :property
-  
-  # Validations
-  validates :image, 
-            :presence => { :message => "Please select a photo to upload" }
-  # validates :order_no, 
-  #           :presence => { :message => "Please provide an Order No. for the property" }
+  # acts_as_list :scope => :property
   
   # Carrierwave
-  mount_uploader :image, PhotoUploader
+  mount_uploader :image, PhotoUploader, :on => :file_name
   process_in_background :image  
-  
+
+  # Validations
+  validates_presence_of :image
+  validates_integrity_of :image
 end

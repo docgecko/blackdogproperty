@@ -34,7 +34,8 @@
 						#heading
 							#heading_content
 								#property_photo
-									- if @featured_photo.present?
+									- @property = Property.find(@property.nil? ? resource.property_id : @property.id)
+									- if featured_property_photo(@property.id)
 										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), member_property_path(@property)
 									- else
 										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), member_property_path(@property)

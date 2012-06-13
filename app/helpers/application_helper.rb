@@ -22,4 +22,12 @@ module ApplicationHelper
   def public_address(property)
     [property.street.gsub(/[^A-Za-z, ]/i, '').strip, property.city.strip, property.state.strip, property.zipcode.strip, property.country].join(', ').gsub(', , ', ', ')
   end
+  
+  def featured_property_photo(property_id)
+    @featured_photo = Photo.where(property_id: property_id).asc(:position).first
+  end
+  
+  def link_to_submit(text)
+    link_to_function text, "$(this).closest('form').submit()"
+  end
 end

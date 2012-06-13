@@ -1,2 +1,2 @@
-module Member::PropertiesHelper
+module Member::PropertiesHelper  
 end

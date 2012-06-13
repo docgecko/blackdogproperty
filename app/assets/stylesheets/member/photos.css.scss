@@ -2,23 +2,86 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "colors";
+
 #dashboard_content {
 	#show {
 		.box {
 			.middle {
 				ul {	
-					&#sortable {
+					&#photos_list {
 						clear: both;
 						float: left;
-						list-style-type: none; margin: 0; padding: 0;
+						list-style-type: none;
+						margin: 0;
+						padding: 0;
 						li {
+							position: relative;
 							padding: 0;
 							color: white;
 							width: 98px;
 							height: 65px;
-							border: thin white solid;
+							border: 3px white solid;
+							border-radius: 3px;
 							float: left;
-							margin: 0 11px 11px 0;
+							margin: 0 20px 20px 0;
+							cursor: move;
+							.handle {
+							}
+							.featured_image {
+								position: absolute;
+								top: 50px;
+								right: 0px;
+								background: $blue;
+								font-size: 11px;
+								line-height: 11px;
+								padding: 2px;
+							}
+							.hover_image {
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								top: 0;
+								left: 0;
+								text-align: center;
+								span {
+									a {
+										color: transparent;									
+									}
+								}
+								&:hover {
+									span {
+										display: inline-block;
+										cursor: pointer;
+										-moz-border-radius: 4px;
+										-webkit-border-radius: 4px;
+										border-radius: 4px;
+										margin: 20px auto 0 auto;
+										padding: 5px 15px;
+										background: rgba(255, 255, 255, 0.8);
+										a {
+											font-weight: bold;
+											font-size: 12px;
+											color: #333;
+										}
+									}
+								}
+							}
+							.processing_image {
+								height: 65px;
+								width: 98px;
+								background-color: #CCCCCC;
+								img {
+									padding: 16px 30px;
+								}
+							}
+						}
+					}
+				}
+				p {
+					span {
+						&.blue {
+							color: $blue;
 						}
 					}
 				}
@@ -26,3 +89,64 @@
 		}
 	}
 }
+
+#facebox {
+	.popup {
+		border: none;
+		border-radius: none;
+		box-shadow: none;
+		.content {
+			background-color: transparent;
+			#photo_container {
+				width: 794px;
+				height: 558px;
+				position: relative;
+				padding: 0;
+				margin: 0;
+				border: 3px white solid;
+				#photo_large {
+					float: left;
+					width: 780px;
+					height: 500px;
+					text-align: center;
+					background: black;
+					border: 7px black solid;
+				}
+				#photo_form {
+					float: left;
+					background: black;
+					form {
+						table {
+							width: 794px;
+							tr {
+								margin: 4px;
+								height: 40px;
+								td {
+									label {
+										padding: 8px 0 0 7px;
+									}
+									input {
+										margin: 1px 4px 0 0;
+									}
+									.actions {
+										margin-top: 3px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.close {
+			position: absolute;
+			top: 7px;
+			right: 14px;
+			padding: 2px;
+			background: transparent;
+			img {
+			}
+		}
+	}
+}
+

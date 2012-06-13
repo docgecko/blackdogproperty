@@ -7,8 +7,7 @@
 			= f.file_field :image
 			= f.hidden_field :image_cache
 			= hidden_field_tag :photo_position, (collection.empty? ? 1 : position_next(collection.count)), :name => "photo[position]"
-			
+						
 	%tr
 		%td{:style => "width:170px;"}
-		%td{:style => "padding-left:4px;"}= button_to "Save to Update", :class => 'button', :onclick => "this.value = 'Updating your property...'"
-	
+		%td{:style => "padding-left:4px;"}= button_to "Save to Update", :class => 'button', :onclick => "this.value = 'Updating your property...'"	

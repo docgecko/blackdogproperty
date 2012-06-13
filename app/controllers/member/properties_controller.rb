@@ -5,7 +5,6 @@ class Member::PropertiesController < InheritedResources::Base
   before_filter :find_amenities, :only => :edit
   before_filter :prepare_google_maps, :only => :edit
   before_filter :find_edit_section, :only => [ :create, :update ]
-  before_filter :first_property_image, :only => :edit
   layout :resolve_layout
   
   actions :all#, :full_address
@@ -106,9 +105,5 @@ class Member::PropertiesController < InheritedResources::Base
   
     def collection
       @properties ||= end_of_association_chain.where(user_id: current_user.id)
-    end
-    
-    def first_property_image
-      @featured_photo = Photo.where(property_id: params[:id]).first
     end
 end
