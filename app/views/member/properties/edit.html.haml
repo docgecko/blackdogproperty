@@ -149,7 +149,6 @@
 								= button_to "Delete Property Listing", [:member, resource], :method => :delete, :id => "delete_property_button", :class => 'buttonBasic', :onclick => "this.value = 'Deleting this property'"
 				
 	-if params[:section] == 'details' || params[:section] == 'pricing'
-		/ = render 'member/property/save_button'
 		%table
 			%tr
 				%td{:style => "width: 210px;"}
@@ -209,7 +208,7 @@
 																								} |
 																	}, |
 											:map_options => { :id => "public_map", |
-																				:type => "ROADMAP", |
+																				:type => "SATELLITE", |
 																				:center_longitude => 180, |
 																				:auto_zoom => false, |
 																				:zoom => 14, |

@@ -446,6 +446,20 @@ table {
 								}
 							}
 						}
+						table {
+							tr {
+								td {
+									ul {
+										&.notes {
+											list-style: disc inside;
+											margin: 0 0 0 8px;
+											color: white;
+											font-size: 11px;
+										}
+									}
+								}
+							}
+						}
 						p {
 							margin: 0 0 8px 3px;
 							padding: 0;

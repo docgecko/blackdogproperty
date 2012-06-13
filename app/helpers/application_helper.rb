@@ -24,7 +24,7 @@ module ApplicationHelper
   end
   
   def featured_property_photo(property_id)
-    @featured_photo = Photo.where(property_id: property_id).asc(:position).first
+    @featured_photo = Photo.where(:property_id => property_id, :image_processing.ne => true).asc(:position).first
   end
   
   def link_to_submit(text)

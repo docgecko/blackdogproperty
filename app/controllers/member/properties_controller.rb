@@ -5,56 +5,51 @@ class Member::PropertiesController < InheritedResources::Base
   before_filter :find_amenities, :only => :edit
   before_filter :prepare_google_maps, :only => :edit
   before_filter :find_edit_section, :only => [ :create, :update ]
+  after_filter  :repair_photo_links, :only => :update
   layout :resolve_layout
   
   actions :all#, :full_address
   respond_to :html
       
-  def new
-    resource = resource_class.new
-    # resource.photos.build
-  end
-  
   def create
+    @section = 'details'
     resource = resource_class.new(params[:property], user_id: current_user.id)
     resource.save ? redirect_to(edit_member_property_path(:id => resource.id, :section => @section)) : render(:action => :new)
   end
   
-  def show
-    resource = resource_class.find(params[:id])
-  end
-  
-  def edit
-    resource = resource_class.find(params[:id])
-    # resource.photos.build(:property_id => params[:id])
-  end
-
   def update
     if (params[:property][:title].blank?) or (params[:property][:title] == params[:stored][:title])
-      # logger.debug "Title: #{params[:title]}"
-      # logger.debug "Propery title: #{params[:property][:title]}"
-      # logger.debug "Stored propery title: #{params[:stored][:title]}"
-      # logger.debug "Blank or same - id: #{params[:id]}"
       resource = Property.find(params[:id])
     else
       original = Property.find(params[:stored][:id])
       resource = original.clone
       resource.title = params[:property][:title]
       resource._id = resource.title.downcase.gsub(' ', '-')
-      # logger.debug "Changed - id: #{resource.id}"
       original.destroy
+      @property_id_old = params[:stored][:id]
+      logger.debug "Old id: #{@property_id_old}"
+      @property_id_new = (params[:property][:title]).downcase.gsub(' ', '-')
+      logger.debug "New id: #{@property_id_new}"
     end
-    if params[:property][:published].present?
-      resource.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(resource, :section => @section)) : redirect_to(edit_member_property_path(resource, :section => @section))
+    if params[:property][:published].present? and 
+      if resource.update_attributes(params[:property])
+        redirect_to edit_member_property_path(resource, :section => @section)
+      else
+        redirect_to edit_member_property_path(resource, :section => @section)
+      end
     else
-      resource.update_attributes(params[:property]) ? redirect_to(edit_member_property_path(resource, :section => @section), :notice =>"Your property was successfully updated.") : redirect_to(edit_member_property_path(resource, :section => @section), :alert => "There was a problem saving your property, please try again.")
+      if resource.update_attributes(params[:property])
+        redirect_to edit_member_property_path(resource, :section => @section), :notice =>"Your property was successfully updated."
+      else
+        redirect_to edit_member_property_path(resource, :section => @section), :alert => "There was a problem saving your property, please try again."
+      end
     end
   end
   
   def destroy
     resource = Property.find(params[:id])
     resource.destroy
-    redirect_to edit_member_property_path(resource, :section => section), :notice => "Successfully destroyed photo."
+    redirect_to member_properties_path, :notice => "You successfully deleted your property listing."
   end
   
   # Extra for testing only
@@ -97,6 +92,20 @@ class Member::PropertiesController < InheritedResources::Base
       end
       @circles = resource.to_gmaps4rails do |property, circle|
         circle.json :lat => property.longitude, :lng => property.latitude, :radius => 600
+      end
+    end
+    
+    def repair_photo_links
+      logger.debug "Hello from here"
+      @photos = Photo.where(property_id: @property_id_old)
+      logger.debug "@property_id_old: #{@property_id_old}"
+      logger.debug "@photos.count: #{@photos.count}"
+      logger.debug "Hello from here again"
+      @photos.each do |photo|
+        photo.property_id = @property_id_new
+        logger.debug "Photo id: #{photo.id}"
+        logger.debug "New Photo property id: #{photo.property_id}"
+        photo.save
       end
     end
     

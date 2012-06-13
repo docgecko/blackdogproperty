@@ -22,7 +22,7 @@
 
 		= render 'shared/email_errors', :resource => resource
 
-		= form_for [:member, @property], :html => { :autocomplete => "off" } do |f|
+		= form_for [:member, resource], :html => { :autocomplete => "off" } do |f|
 	
 			%h2 Begin by providing some initial details about your property
 

@@ -20,6 +20,8 @@
 				= render 'shared/member/photo/add'
 		.bottom
 			%p We support JPG, PNG, and GIF images, and recommend file sizes of 45k or more and no greater than 5MB.
+			- @photos = Photo.where(:property_id => @property.id)
+			= @photos.count
 
 %section#show
 	.box
