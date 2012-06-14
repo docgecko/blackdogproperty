@@ -1,7 +1,7 @@
 - content_for :photo do
 	= image_tag resource.image.url(:large)
 
-= form_for([:member, @property, resource], :url => member_property_photo_path(@property), :html => { :autocomplete => "off" }) do |f|
+= form_for([:member, @property, @photo], :url => member_property_photo_path(@property.slug, @photo), :html => { :autocomplete => "off" }) do |f|
 
 	%table
 		%tr
@@ -12,6 +12,7 @@
 					%span.action_button= link_to_function 'Save', "$(this).closest('form').submit()", :class => "icon view"
 			%td
 				%span.actions
-					%span.action_button= link_to "Delete", member_property_photo_path(params[:property_id], params[:id]), :method => :delete, :confirm => 'Are you sure you want to delete this photo?', :class => "icon view"
+					%span.action_button
+						= link_to "Delete", member_property_photo_path(@property.slug, @photo), :method => :delete, :confirm => 'Are you sure you want to delete this photo?', :class => "icon view"
 		
 		

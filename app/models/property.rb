@@ -4,6 +4,7 @@ class Property
   include Mongoid::Spacial::Document
   include Mongoid::Timestamps
   include Geocoder::Model::Mongoid
+  include Mongoid::Slug
   
   # Callbacks
   before_validation :create_address, 
@@ -17,7 +18,7 @@ class Property
 
   # Fields
   field :title
-  key   :title
+  slug  :title
   field :location
   # field :country_id
   field :reference
@@ -115,8 +116,10 @@ class Property
   end
 
   def address
-    [self.street.strip, self.apt.strip, self.city.strip, self.state.strip, self.zipcode.strip, self.country].join(', ').gsub(', , ', ', ')
-    # [self.street, self.city, self.state, self.country].compact.join(', ')
+    if self.street
+      [self.street.strip, self.apt.strip, self.city.strip, self.state.strip, self.zipcode.strip, self.country].join(', ').gsub(', , ', ', ')
+      # [self.street, self.city, self.state, self.country].compact.join(', ')
+    end
   end
 
   def create_location_coordinates
@@ -133,5 +136,8 @@ class Property
     self.description = Sanitize.clean(description)
     self.title = Sanitize.clean(title)
   end
-
+  
+  def to_param
+    slug
+  end
 end

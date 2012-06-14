@@ -1,4 +1,4 @@
-= form_for([:member, @property, resource], :html => { :multipart => true }) do |f|
+= form_for([:member, @property, @photo], :html => { :multipart => true }) do |f|
 
 	%tr
 		%td{:style => "width:170px;padding-top:7px;"}
@@ -6,6 +6,7 @@
 		%td
 			= f.file_field :image
 			= f.hidden_field :image_cache
+			= hidden_field_tag :photo_property_id, params[:property_id], :name => "photo[property_id]"
 			= hidden_field_tag :photo_position, (collection.empty? ? 1 : position_next(collection.count)), :name => "photo[position]"
 						
 	%tr

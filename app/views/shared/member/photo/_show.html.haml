@@ -1,4 +1,4 @@
-- if collection.count == 0
+- if @photos.count == 0
 	%p You haven't added any photos to your listing yet! You can add photos now.
 - else
 	%p
@@ -18,7 +18,7 @@
 	%br
 	
 	%ul#photos_list{'data-update-url' => "#{sort_member_property_photos_url(@property)}"}
-		- collection.each do |photo|
+		- @photos.each do |photo|
 			= content_tag_for :li, photo do
 				- if photo.image_processing == true
 					.processing_image
@@ -26,4 +26,4 @@
 				- else
 					= image_tag photo.image.url(:thumb), :width => "98px", :height => "65px"
 					.hover_image
-						%span= link_to "Edit", edit_member_property_photo_path(property_id: @property.id, id: photo.id), :rel => 'facebox'
+						%span= link_to "Edit", edit_member_property_photo_path(:property_id => @property.slug, :id => photo.id), :rel => 'facebox'

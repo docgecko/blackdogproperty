@@ -1,7 +1,6 @@
 class Member::PhotosController < InheritedResources::Base
   before_filter :authenticate_user!
-  before_filter :find_property, :only => [ :edit, :update ]
-  
+  before_filter :find_property, :only => [ :new, :create, :edit, :update ]
   layout :resolve_layout
   
   belongs_to :property, :polymorphic => true
@@ -10,7 +9,8 @@ class Member::PhotosController < InheritedResources::Base
   respond_to :html
   
   def edit
-    resource = resource_class.find(params[:id])
+    @property = Property.find_by_slug(params[:property_id])
+    @photo = Photo.find(params[:id])
     respond_to do |format|
       format.html
       format.js { render_to_facebox }
@@ -18,22 +18,36 @@ class Member::PhotosController < InheritedResources::Base
   end
   
   def update
-    resource = resource_class.find(params[:id])
-    if resource.update_attributes(params[:photo])
+    @photo = Photo.find(params[:id])
+    if @photo.update_attributes(params[:photo])
       redirect_to new_member_property_photo_path(@property), :notice =>"Your photo was successfully updated."
     else
       redirect_to new_member_property_photo_path(@property), :alert => "There was a problem updating your photo, please try again."
     end
   end
   
+  def new
+    @property = Property.find_by_slug(params[:property_id])
+    @photos = Photo.where(property_id: @property.slug).asc(:position)
+    @photo = Photo.new
+  end
+  
   def create
-    create!(:notice => "You have successfully uploaded a property photo.") { new_member_property_photo_url(params[:property_id]) }
+    @photo = Photo.new(params[:photo])
+    if @photo.save
+      redirect_to new_member_property_photo_path(:property_id => params[:property_id]), :notice => "You have successfully uploaded a property photo."
+    else
+      render(:action => :new)
+    end
   end
   
   def destroy
-    resource = resource_class.find(params[:id])
-    resource.destroy
-    redirect_to new_member_property_photo_path(@property), :notice => "Your photo was successfully deleted."
+    @property = Property.find_by_slug(params[:property_id])
+    logger.debug "@property.slug: #{@property.slug}"
+    @photo = Photo.find(params[:id])
+    logger.debug "@photo.id: #{@photo.id}"
+    @photo.destroy
+    redirect_to new_member_property_photo_path(:property_id => @property.slug), :notice => "Your photo was successfully deleted."
   end
   
   def sort
@@ -56,12 +70,13 @@ class Member::PhotosController < InheritedResources::Base
     end
     
     def find_property
-      @property = Property.where(id: params[:property_id]).first
+      @property ||= Property.find_by_slug(params[:property_id])
     end
+    
   
-  protected
-  
-    def collection
-      @photos ||= end_of_association_chain.where(property_id: @property.id).asc(:position)
-    end
+  # protected
+  # 
+  #   def collection
+  #     @photos ||= end_of_association_chain.where(property_id: @property.slug).asc(:position)
+  #   end
 end

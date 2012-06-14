@@ -96,12 +96,27 @@ puts 'SETTING UP DIVISIONS'
   },
   {
     :name => 'Parking'
-  },
+  }
 ].each do |u|
   Division.create(u)
 end
 puts 'All property divisions created'
-  
+
+puts 'SETTING UP CURRENCIES'
+[
+  {
+    :name => 'EUR',
+    :description => 'Euro'
+  },
+  {
+    :name => 'GBP',
+    :description => 'British Pounds'
+  }
+].each do |u|
+  Currency.create(u)
+end
+puts 'All property divisions created'
+
 puts 'SETTING UP AMENITIES'
 [
   {

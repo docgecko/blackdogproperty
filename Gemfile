@@ -38,19 +38,20 @@ gem 'daemons', '~> 1.1.8'
 gem 'mini_magick', '3.3'
 gem 'kaminari', '0.13.0'
 gem 'rack-rewrite', '1.0.2'
-gem "gmaps4rails", "1.5.1"
+gem 'gmaps4rails', '1.5.1'
 gem 'mongoid_spacial'
-gem "geocoder", "~> 1.1.2"
-gem "fog", "~> 1.3.1"
-gem "rails_admin"
-gem "rails_admin_map_field", :git => "git://github.com/jasonl/rails_admin_map_field.git"
-gem "ckeditor", "3.7.1"
-gem "country_select", "~> 0.0.2"
-gem "sanitize", "~> 2.0.3"
-gem "nested_form", "~> 0.2.1"
-# gem "jquery-fileupload-rails", "~> 0.3.0"
-# gem "acts_as_list_mongoid", "~> 0.2.5.1"
+gem 'geocoder', '~> 1.1.2'
+gem 'fog', '~> 1.3.1'
+gem 'rails_admin'
+gem 'rails_admin_map_field', :git => 'git://github.com/jasonl/rails_admin_map_field.git'
+gem 'ckeditor', '3.7.1'
+gem 'country_select', '~> 0.0.2'
+gem 'sanitize', '~> 2.0.3'
+gem 'nested_form', '~> 0.2.1'
+# gem 'jquery-fileupload-rails', '~> 0.3.0'
+# gem 'acts_as_list_mongoid', '~> 0.2.5.1'
 gem 'facebox-rails','~> 0.1.2'
+gem 'mongoid_slug', '~> 0.10.0'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

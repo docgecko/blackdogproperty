@@ -1,20 +1,20 @@
 #dashboard.clearfix
 	.row
-		- collection.each do |property|
+		- @properties.each do |property|
 			.listing
 				.listing_content
 					.listing_thumbnail
-						- if featured_property_photo(property.id).present?
-							= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), preview_member_property_path(:id => property.id)
+						- if featured_property_photo(property.slug).present?
+							= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), preview_member_property_path(:id => property.slug)
 						- else
-							= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), preview_member_property_path(:id => property.id)
+							= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), preview_member_property_path(:id => property.slug)
 					.listing_info
-						%h3= link_to property.title, preview_member_property_path(:id => property.id)
+						%h3= link_to property.title, preview_member_property_path(:id => property.slug)
 						%span.actions
 							%span.action_button
-								= link_to "Manage Property", edit_member_property_path(:id => property.id, :section => 'details'), :class => "icon view"
+								= link_to "Manage Property", edit_member_property_path(:id => property.slug, :section => 'details'), :class => "icon view"
 							%span.action_button
-								= link_to "Preview Property", preview_member_property_path(:id => property.id), :class => "icon view", :target => "_new"
+								= link_to "Preview Property", preview_member_property_path(:id => property.slug), :class => "icon view", :target => "_new"
 					.listing_status
 					
 						.current_status

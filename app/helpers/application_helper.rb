@@ -23,8 +23,8 @@ module ApplicationHelper
     [property.street.gsub(/[^A-Za-z, ]/i, '').strip, property.city.strip, property.state.strip, property.zipcode.strip, property.country].join(', ').gsub(', , ', ', ')
   end
   
-  def featured_property_photo(property_id)
-    @featured_photo = Photo.where(:property_id => property_id, :image_processing.ne => true).asc(:position).first
+  def featured_property_photo(property_slug)
+    @featured_photo = Photo.where(:property_id => property_slug, :image_processing.ne => true).asc(:position).first
   end
   
   def link_to_submit(text)
