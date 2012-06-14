@@ -6,5 +6,7 @@ class Member::DashboardController < InheritedResources::Base
   respond_to :html, :xml
 
   def index
+    @user = User.find(current_user.id)
+    @section = 'profile'
   end
 end

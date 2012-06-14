@@ -11,21 +11,34 @@
 	= render 'shared/member/dashboard/header'
 	
 
-%ul.nav.nav-tabs#myTabs
-	%li= link_to "Home", "#home", "data-toggle" => "tab"
-	%li= link_to "Profile", "#profile", "data-toggle" => "tab"
-	%li= link_to "Messages", "#messages", "data-toggle" => "tab"
-	%li= link_to "Settings", "#settings", "data-toggle" => "tab"
-		
-.tab-content
-	.tab-pane#home
-		Home tab
-	.tab-pane#profile
-		Profile tab
-	.tab-pane#messages
-		Message tab
-	.tab-pane#settings
-		Settings tab
-		
-:javascript
-	$('#myTab a:last').tab('show');
+.block
+	.border
+		#dashboard
+			#side
+				#member
+					#picture
+			
+					#details
+						%table
+							%tr
+								%td Name: 
+								%td
+									= link_to ((@user.first_name.present? ? @user.first_name : "(add first name)") + " " + (@user.last_name.present? ? @user.last_name : "(add last name)")), edit_member_account_path(current_user.username, :section => @section)
+							%tr
+								%td Display Name:
+								%td= link_to (@user.username), edit_member_account_path(current_user.username, :section => @section)
+							%tr
+								%td Contact Email:
+								%td= link_to (@user.email), edit_member_account_path(current_user.username, :section => @section)
+							%tr
+								%td Contact Tel. No.
+								%td= link_to (@user.telephone.present? ? @user.telephone : "(add telephone)"), edit_member_account_path(current_user.username, :section => @section)
+						
+						%br	
+						%p
+							Update your 
+							= link_to "Profile", edit_member_account_path(current_user.username, :section => @section)
+							or
+							= link_to "Account Settings", edit_member_account_path(current_user.username, :section => 'settings')
+			
+			#main

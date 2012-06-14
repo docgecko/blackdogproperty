@@ -72,11 +72,4 @@ class Member::PhotosController < InheritedResources::Base
     def find_property
       @property ||= Property.find_by_slug(params[:property_id])
     end
-    
-  
-  # protected
-  # 
-  #   def collection
-  #     @photos ||= end_of_association_chain.where(property_id: @property.slug).asc(:position)
-  #   end
 end
