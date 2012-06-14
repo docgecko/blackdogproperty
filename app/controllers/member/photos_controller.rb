@@ -1,6 +1,7 @@
 class Member::PhotosController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :find_property, :only => [ :new, :create, :edit, :update ]
+  before_filter :find_edit_section, :only => :new
   layout :resolve_layout
   
   belongs_to :property, :polymorphic => true
@@ -28,12 +29,13 @@ class Member::PhotosController < InheritedResources::Base
   
   def new
     @property = Property.find_by_slug(params[:property_id])
-    @photos = Photo.where(property_id: @property.slug).asc(:position)
+    @photos = Photo.where(property_id: @property.id).asc(:position)
     @photo = Photo.new
   end
   
   def create
-    @photo = Photo.new(params[:photo])
+    @property = Property.find_by_slug(params[:property_id])
+    @photo = Photo.new(params[:photo], property_id: @property.id)
     if @photo.save
       redirect_to new_member_property_photo_path(:property_id => params[:property_id]), :notice => "You have successfully uploaded a property photo."
     else
@@ -42,11 +44,10 @@ class Member::PhotosController < InheritedResources::Base
   end
   
   def destroy
-    @property = Property.find_by_slug(params[:property_id])
-    logger.debug "@property.slug: #{@property.slug}"
     @photo = Photo.find(params[:id])
-    logger.debug "@photo.id: #{@photo.id}"
     @photo.destroy
+
+    @property = Property.find_by_slug(params[:property_id])
     redirect_to new_member_property_photo_path(:property_id => @property.slug), :notice => "Your photo was successfully deleted."
   end
   
@@ -71,5 +72,9 @@ class Member::PhotosController < InheritedResources::Base
     
     def find_property
       @property ||= Property.find_by_slug(params[:property_id])
+    end
+    
+    def find_edit_section
+      @section = params[:section]
     end
 end

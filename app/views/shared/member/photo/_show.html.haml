@@ -24,6 +24,6 @@
 					.processing_image
 						= image_tag "member/processing.gif", :width => "", :height => ""
 				- else
-					= image_tag photo.image.url(:thumb), :width => "98px", :height => "65px"
+					= image_tag photo.image.url(:thumb)
 					.hover_image
 						%span= link_to "Edit", edit_member_property_photo_path(:property_id => @property.slug, :id => photo.id), :rel => 'facebox'

@@ -8,10 +8,10 @@
 	#show {
 		.box {
 			.middle {
+				float:left;
+				clear: both;
 				ul {	
 					&#photos_list {
-						clear: both;
-						float: left;
 						list-style-type: none;
 						margin: 0;
 						padding: 0;
@@ -26,6 +26,7 @@
 							float: left;
 							margin: 0 20px 20px 0;
 							cursor: move;
+							text-align: center;
 							.handle {
 							}
 							.featured_image {

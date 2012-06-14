@@ -34,12 +34,12 @@
 						#heading
 							#heading_content
 								#property_photo
-									- if featured_property_photo(params[:id]) || featured_property_photo(params[:property_id])
-										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), member_property_path(@property)
+									- if featured_property_photo(@property.id)
+										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
 									- else
-										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), member_property_path(@property)
+										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
 								#property_info
-									%h3= link_to @property.title, member_property_path(@property)
+									%h3= link_to @property.title, (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
 								#property_status
 									%span.actions
 										%span.action_button= link_to "Preview Listing", preview_member_property_path(@property), :class => "icon view", :target => "_new"

@@ -3,7 +3,7 @@ class Member::PropertiesController < InheritedResources::Base
   before_filter :find_property_photos, :only => :edit
   before_filter :find_amenities, :only => :edit
   before_filter :prepare_google_maps, :only => :edit
-  before_filter :find_edit_section, :only => [ :create, :update ]
+  before_filter :find_edit_section, :only => [ :edit, :update, :update ]
   layout :resolve_layout
   
   actions :all
@@ -18,7 +18,6 @@ class Member::PropertiesController < InheritedResources::Base
   end
       
   def create
-    @section = 'details'
     @property = Property.new(params[:property], user_id: current_user.id)
     if @property.save
       redirect_to(edit_member_property_path(:id => @property.slug, :section => @section))
@@ -33,11 +32,14 @@ class Member::PropertiesController < InheritedResources::Base
   
   def update
     @property = Property.find_by_slug(params[:id])
-    if params[:property][:published].present? and 
+    if params[:property][:published].present?
       if @property.update_attributes(params[:property])
-        redirect_to edit_member_property_path(:id => @property.slug, :section => @section)
-      else
-        redirect_to edit_member_property_path(:id => @property.slug, :section => @section)
+        logger.debug "params[.section]: #{params[:section]}"
+        if params[:section].blank?
+          redirect_to new_member_property_photo_path(:property_id => @property.slug)
+        else
+          redirect_to edit_member_property_path(:id => @property.slug, :section => @section)
+        end
       end
     else
       if @property.update_attributes(params[:property])
