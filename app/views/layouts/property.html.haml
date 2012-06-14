@@ -35,9 +35,9 @@
 							#heading_content
 								#property_photo
 									- if featured_property_photo(@property.id)
-										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
+										= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :border => 0), (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
 									- else
-										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
+										= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "98px", :height => "65px", :border => 0), (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
 								#property_info
 									%h3= link_to @property.title, (controller_name == 'properties' ? edit_member_property_path(@property.slug, :section => @section) : new_member_property_photo_path(@property.slug, :section => @section))
 								#property_status

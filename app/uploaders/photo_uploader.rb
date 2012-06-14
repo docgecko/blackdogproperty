@@ -46,24 +46,25 @@ class PhotoUploader < CarrierWave::Uploader::Base
     process :resize_to_limit => [750, 500]
   end
 
-  version :gallery do
+  version :gallery, :from_version => :large do
     process :auto_orient
     process :resize_to_limit => [543, 362]
   end
   
-  version :slide do
+  version :slide, :from_version => :gallery do
     process :auto_orient
     process :resize_to_limit => [378, 252]
   end
   
-  version :list do
+  version :list, :from_version => :slide do
     process :auto_orient
     process :resize_to_limit => [300, 200]
   end
 
-  version :thumb do
+  version :thumb, :from_version => :list do
     process :auto_orient
-    process :resize_to_fit => [98, 65]
+    process :resize_to_fill => [98, 65, 'Center']
+    # process :get_version_dimensions
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -84,4 +85,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
       image 
     end 
   end
+  
+  # def get_version_dimensions
+  #   width, height = 'identify -format "%wx%h" #{file.path}'.split(/x/) 
+  # end
 end

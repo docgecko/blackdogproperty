@@ -37,7 +37,7 @@ class Member::PhotosController < InheritedResources::Base
     @property = Property.find_by_slug(params[:property_id])
     @photo = Photo.new(params[:photo], property_id: @property.id)
     if @photo.save
-      redirect_to new_member_property_photo_path(:property_id => params[:property_id]), :notice => "You have successfully uploaded a property photo."
+      redirect_to new_member_property_photo_path(:property_id => params[:property_id]), :notice => "You have successfully uploaded a property photo. Once processing is finished, a thumbnail image will appear below."
     else
       render(:action => :new)
     end
