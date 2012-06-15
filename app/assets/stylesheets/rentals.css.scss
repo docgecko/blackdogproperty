@@ -29,9 +29,10 @@
 	float: left;
 	margin: 33px auto 9px;
 	padding: 0;
-	width: $site;
+	width: 100%;
 	display: table-cell;
-	.filter {
+	#filter {
+		display: block;
 		margin: 12px 0 0 0;
 		float: right;
 		ul {
@@ -58,22 +59,26 @@
 					text-decoration: none;
 					color: white;
 					&:hover {
-//						background: url(tab_gradient.gif) repeat-x;
+						background: url(tab_gradient.gif) repeat-x;
 					}	  					
 				}
 			}
 		}
 	}
-	h1 {
-		vertical-align: top;
-		line-height: 56px;
-		padding: 0 15px;
-		&.short {
-			background-image: url(linecopy.gif);
-			background-position: 0px 49px;
-			background-repeat: no-repeat;
-			margin: 0;
-			background-size: 573px 6px;
+	#description {
+		display: block;
+		float: left;
+		h1 {
+			vertical-align: top;
+			line-height: 56px;
+			padding: 0 8px 0 15px;
+			&.underline {
+				background-image: url(linecopy.gif);
+				background-position: 0px 49px;
+				background-repeat: no-repeat;
+				margin: 0;
+				background-size: 100%;
+			}
 		}
 	}
 }
@@ -147,6 +152,9 @@
 				padding: 9px 0px 7px 0px;
 				margin: 0 6px 0 0;
 				background: url(linecopy.gif) no-repeat 50% 100%;
+				&.active {
+					background: url(tab_gradient.gif) repeat-x;
+				}
 				&.tab { 
 					display: inline-block;
 					margin: 0 6px 0 0;
@@ -162,7 +170,7 @@
 						outline: none; 
 						text-decoration: none;
 						&:active { 
-							font-weight: normal; 
+							font-weight: normal;
 						}
 						&:hover { 
 							background-color: transparent;

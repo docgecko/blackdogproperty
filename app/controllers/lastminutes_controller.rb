@@ -10,14 +10,11 @@ class LastminutesController < InheritedResources::Base
   end
   
   def search
-    @properties = Property.where(:published => true, :purpose_ids => "lastminute", :country_id => params[:country_id]).asc(:order_no).page params[:page]
-    if params[:country_id].present?
-      @country = Country.find(params[:country_id])
-    end
+    @properties = Property.where(:published => true, :purpose_ids => "lastminute", :country => @country).asc(:order_no).page params[:page]
   end
   
   def show
-    @property = Property.find(params[:id])
+    @property = Property.find_by_slug(params[:id])
     @photos = Photo.where(property_id: @property.id, published: true).order_by([:order_no, :asc])
     @json = @property.to_gmaps4rails do |property, marker|
       marker.json :lat => property.latitude, :lng => property.longitude
@@ -28,7 +25,15 @@ class LastminutesController < InheritedResources::Base
   private
   
     def find_country
-      @country = Country.find(params[:country_id])
+      if params[:country_id].present?
+        if params[:id].present?
+          @property = Property.find_by_slug(params[:id])
+          logger.debug "Property id: #{@property.id}"
+          @country = @property.country
+        else
+          @country = (params[:country_id].humanize).titleize
+        end
+      end
     end
     
 end

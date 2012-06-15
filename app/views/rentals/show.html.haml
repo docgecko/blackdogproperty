@@ -2,14 +2,14 @@
 	== #{@property.title} | BlackDog Property
 
 - content_for :link_canonical do
-	== rentals/in/#{@country.id}/#{@property.id}
+	== rentals/in/#{@property.country.parameterize}/#{@property.id}
 
 - content_for :scripts do
 	= render 'shared/script/rentals/gallery'
 	= render 'shared/script/rentals/tabs'
 
 .title
-	%h1== #{@property.title} - #{@country.name}
+	%h1== #{@property.title} - #{@property.country}
 	.line
 
 = render 'shared/rental/breadcrumbs'

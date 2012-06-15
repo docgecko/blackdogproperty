@@ -2,10 +2,12 @@
 	== Rentals in #{@country.name} | BlackDog Property
 	
 - content_for :link_canonical do
-	== rentals/search/#{@country.id}
+	== rentals/in/#{@country.name.parameterize}
 
-#search
-	= render 'shared/rental/search_navigation'
-	%h1.short== Rentals in #{@country.name}
+#search.rentals
+	#filter
+		= render 'shared/rental/search_navigation'
+	#description
+		%h1.underline== Rentals in #{@country.name}
 
 = render 'shared/rental/results'

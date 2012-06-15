@@ -4,8 +4,10 @@
 - content_for :link_canonical do
 	rentals
 	
-#search
-	= render 'shared/rental/search_navigation'
-	%h1.short== All Rental Properties
+#search.rentals
+	#filter
+		= render 'shared/rental/search_navigation'
+	#description
+		%h1.underline== All Rental Properties
 
 = render 'shared/rental/results'

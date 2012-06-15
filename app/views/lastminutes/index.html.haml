@@ -4,8 +4,10 @@
 - content_for :link_canonical do
 	lastminutes
 	
-#search
-	= render 'shared/lastminute/search_navigation'
-	%h1.short== All Lastminute Properties
+#search.lastmimutes
+	#filter
+		= render 'shared/lastminute/search_navigation'
+	#description
+		%h1.underline== All Lastminute Properties
 
 = render 'shared/lastminute/results'

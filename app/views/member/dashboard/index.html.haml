@@ -18,11 +18,12 @@
 				#member
 					#picture
 			
-					#details
+					.details
+						%h2.title Personal Details
 						%table
 							%tr
-								%td Name: 
-								%td
+								%td.label Name: 
+								%td.link
 									= link_to ((@user.first_name.present? ? @user.first_name : "(add first name)") + " " + (@user.last_name.present? ? @user.last_name : "(add last name)")), edit_member_account_path(current_user.username, :section => @section)
 							%tr
 								%td Display Name:
@@ -31,14 +32,23 @@
 								%td Contact Email:
 								%td= link_to (@user.email), edit_member_account_path(current_user.username, :section => @section)
 							%tr
-								%td Contact Tel. No.
+								%td Contact Tel. No.:
 								%td= link_to (@user.telephone.present? ? @user.telephone : "(add telephone)"), edit_member_account_path(current_user.username, :section => @section)
 						
-						%br	
+							
+				#quick_links
+					.details
+						%h2.title Quick Links
+						
 						%p
-							Update your 
-							= link_to "Profile", edit_member_account_path(current_user.username, :section => @section)
-							or
-							= link_to "Account Settings", edit_member_account_path(current_user.username, :section => 'settings')
+							= link_to member_properties_path do
+								== View / Manage Property Listings (#{@properties.count})
+						%p= link_to "Your Member Profile", edit_member_account_path(current_user.username, :section => @section)
+						%p= link_to "Account Settings", edit_member_account_path(current_user.username, :section => 'settings')
 			
-			#main
+			#body
+				#notifications
+					%h2.title Notifications
+					
+					%p This is a new feature being introduced by BlackDog Property.
+					%p Soon you will be able to view notifications here from people interested in your property listings.

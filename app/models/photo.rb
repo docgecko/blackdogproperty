@@ -2,8 +2,6 @@ class Photo
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
-  # include ActsAsList::Mongoid 
-  # include Rails.application.routes.url_helpers
   
   # Fields
   field :title
@@ -23,7 +21,6 @@ class Photo
 
   # References
   belongs_to :property
-  # acts_as_list :scope => :property
   
   # Carrierwave
   mount_uploader :image, PhotoUploader, :on => :file_name

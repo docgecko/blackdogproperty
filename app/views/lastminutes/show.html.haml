@@ -2,17 +2,17 @@
 	== #{@property.title} | BlackDog Property
 
 - content_for :link_canonical do
-	== rentals/in/#{@country.id}/#{@property.id}
+	== rentals/in/#{@property.country.parameterize}/#{@property.id}
 
 - content_for :scripts do
 	= render 'shared/script/rentals/gallery'
 	= render 'shared/script/rentals/tabs'
 
 .title
-	%h1== #{@property.title} - #{@country.name}
+	%h1== #{@property.title} - #{@property.country}
 	.line
 
-= render 'shared/rental/breadcrumbs'
+= render 'shared/lastminute/breadcrumbs'
 
 .block.site
 	.border
@@ -36,7 +36,7 @@
 	.border
 		#tab-container
 			%ul.etabs
-				-if @property.latitude != 0 and @property.longitude != 0 and@property.latitude.present? and @property.longitude.present?
+				-if @property.latitude != 0 and @property.longitude != 0 and @property.latitude.present? and @property.longitude.present?
 					%li.tab= link_to "Location", "#tab_location"
 				-if @property.description.present?
 					%li.tab= link_to "Description", "#tab_description"
@@ -46,7 +46,7 @@
 					%li.tab= link_to "Price", "#tab_price"
 				%li.tab= link_to "Contact", "#tab_contact"
 			.panel-container
-				-if @property.latitude != 0 and @property.longitude != 0 and@property.latitude.present? and @property.longitude.present?
+				-if @property.latitude != 0 and @property.longitude != 0 and @property.latitude.present? and @property.longitude.present?
 					#tab_location
 						/ = gmaps4rails(@json)
 						= gmaps({ "map_options" => { "type" => "HYBRID", "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true}, "markers" => { "data" => @json } } )

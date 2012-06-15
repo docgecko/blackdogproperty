@@ -1,2 +1,6 @@
-.filter
-	= render_navigation(:context => :lastminute_country)
+%ul
+	%li#all{:class => (action_name == 'index' ? 'selected simple-navigation-active-leaf' : '')}
+		= link_to "All", lastminutes_path, :class => (action_name == 'index' ? 'selected' : '')
+	- if params[:country_id].present?
+		%li{:id => "#{@country.parameterize}", :class => 'selected simple-navigation-active-leaf'}
+			= link_to @country, lastminutes_search_path(params[:country_id]), :class => 'selected'

@@ -2,6 +2,6 @@
 	Quick Navigation » 
 	= link_to_unless_current "All Rentals", rentals_path
 	»
-	= link_to_unless_current @country.name, rentals_search_path
+	= link_to_unless_current @property.country, rentals_search_path
 	»
 	= link_to_unless_current @property.title, rental_path

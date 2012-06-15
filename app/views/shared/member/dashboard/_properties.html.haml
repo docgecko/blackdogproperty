@@ -4,7 +4,7 @@
 			.listing
 				.listing_content
 					.listing_thumbnail
-						- if featured_property_photo(property.slug).present?
+						- if featured_property_photo(property.id).present?
 							= link_to image_tag(@featured_photo.image.url(:thumb), :alt => "#{@featured_photo.title || "BlackDog Property thumb"}", :width => "100px", :height => "67px", :border => 0), preview_member_property_path(:id => property.slug)
 						- else
 							= link_to image_tag("member/thumb_blackdog.jpg", :alt => "BlackDog Property thumb", :width => "100px", :height => "67px", :border => 0), preview_member_property_path(:id => property.slug)

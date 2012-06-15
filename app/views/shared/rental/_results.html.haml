@@ -2,12 +2,12 @@
 	- if @properties.empty?
 		.block
 			.border
-				%h2== Rental properties in #{@country.name} coming soon.
+				%h2== Rental properties #{@country.present? ? "in #{@country.name}" : ""} coming soon.
 				%p== Please contact us by #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex} or by using our #{link_to "enquiry form", new_support_path} and we will email you when they become available.
 			.bottom
 	- else
 		- for property in @properties
-			= link_to rental_path(property.country_id, property.id), :class => :property do
+			= link_to rental_path(property.country.parameterize, property.slug), :class => :property do
 				%span.featured
 					- @photo = Photo.first(conditions: { property_id: property.id, featured: true })
 					= @photo.present? ? image_tag(@photo.image.url(:list)) : image_tag("services/logo_blackdog.jpg", :width => "185px", :height => "200px", :border => "0")

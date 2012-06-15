@@ -93,20 +93,41 @@ table {
 	padding: 0;
 	#side {
 		float: left;
-		width: 300px;
-		#member {
+		width: 310px;
+		margin: 0 20px 0 0;
+		#member, #quick_links {
 			border: thin grey solid;
 			padding: 10px;
+			margin: 0 0 20px 0;
 			#avatar {
 			}
-			#details {
+			h2 {
+				&.title {
+					padding: 0;
+					margin: 0 0 10px 0;
+				}
+			}
+			.details {
 				margin: 0;
 				padding: 0;
+				p {
+					margin: 0 0 5px 0;
+				}
 				table {
 					tr {
 						td {
 							color: white;
 							font-size: 12px;
+							&.label {
+								width: 40%;
+								margin: 0;
+								padding: 0;
+							}
+							&.link {
+								width: 60%;
+								margin: 0;
+								padding: 0;
+							}
 							a {
 								color: $blue;
 								text-decoration: none;
@@ -120,8 +141,25 @@ table {
 			}
 		}
 	}
-	#main {
-		
+	#body {
+		float: right;
+		width: 620px;
+		margin: 0;
+		#notifications {
+			text-align: left;
+			border: thin grey solid;
+			padding: 10px;
+			margin: 0 0 20px 0;
+			h2 {
+				&.title {
+					padding: 0;
+					margin: 0 0 10px 0;
+				}
+			}
+			p {
+				margin: 0 0 10px 0;
+			}
+		}
 	}
 	#back {
 		margin: 0 0 10px 15px;

@@ -8,5 +8,6 @@ class Member::DashboardController < InheritedResources::Base
   def index
     @user = User.find(current_user.id)
     @section = 'profile'
+    @properties = Property.where(user_id: current_user.id)
   end
 end

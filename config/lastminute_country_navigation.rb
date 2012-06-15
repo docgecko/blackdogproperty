@@ -51,11 +51,6 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     
     primary.item :all, 'All', lastminutes_path
-    primary.item :france, 'France', lastminutes_search_path('france')
-    primary.item :spain, 'Spain', lastminutes_search_path('spain')
-    primary.item :portugal, 'Portugal', lastminutes_search_path('portugal')
-    primary.item :italy, 'Italy', lastminutes_search_path('italy')
-    
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

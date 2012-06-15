@@ -20,9 +20,9 @@ class Member::PropertiesController < InheritedResources::Base
   def create
     @property = Property.new(params[:property], user_id: current_user.id)
     if @property.save
-      redirect_to(edit_member_property_path(:id => @property.slug, :section => @section))
+      redirect_to edit_member_property_path(:id => @property.slug, :section => (@section.present? ? @section : 'details'))
     else
-      render(:action => :new)
+      render :action => :new
     end
   end
   
