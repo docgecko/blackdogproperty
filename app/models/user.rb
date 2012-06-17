@@ -52,7 +52,7 @@ class User
   # Validations
   validates_presence_of :first_name, :last_name, :username
   validates_uniqueness_of :username
-  validates_format_of :username, :with => /^[A-Za-z0-9_-]+$/
+  validates_format_of :username, :with => /\A[A-Za-z0-9_-]+\z/
   validates_length_of :username, minimum: 3, maximum: 16, 
                                  too_long: "is too long (maximum length 16 characters)",
                                  too_short: "is too short (minimum length 3 characters)"

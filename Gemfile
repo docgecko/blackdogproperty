@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -62,6 +62,7 @@ group :development, :test do
 	gem 'guard-rspec'
 	gem 'guard-cucumber'
 	gem 'guard-livereload'
+	gem 'guard-brakeman'
 	gem 'em-websocket'
 	gem 'growl'
 	gem 'relish', '0.5.1'
@@ -71,6 +72,7 @@ end
 group :development do
 	gem 'hpricot'
 	gem 'ruby_parser'
+	gem 'brakeman'
 end
 
 # To use debugger
