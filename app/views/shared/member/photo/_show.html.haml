@@ -16,7 +16,7 @@
 		%span.blue>< featured image
 		) appears in the property listings.
 	%br
-	
+
 	%ul#photos_list{'data-update-url' => "#{sort_member_property_photos_url(@property)}"}
 		- @photos.each do |photo|
 			= content_tag_for :li, photo do

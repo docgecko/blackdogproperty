@@ -200,21 +200,40 @@
 			li {
 			}
 		}
-		#tab_description, #tab_facilities, #tab_location, #tab_price {
+		#tab_description, #tab_facilities, #tab_location, #tab_price, #tab_contact {
 			float: left;
-			margin-top: 8px;
+			margin: 18px 0 0 0;
+			padding: 0;
+			.property_address {
+			  border: thin solid $light-gray;
+			  border-bottom: none;
+				padding: 10px 12px;
+				font-size: 0.9em;
+				color: white;
+				background: #404343;
+				font-weight: bold;
+				position: relative;
+				z-index: 1;
+				vertical-align: top;
+				.address {
+					font-weight: normal;
+					margin-left: 15px;
+					display: inline-block;
+					width: 500px;
+					font-style: italic;
+				}
+			}
 			.map_container {
-				margin: 16px 0;
-			  padding: 6px;
-			  border-width: 1px;
-			  border-style: solid;
-			  border-color: #ccc #ccc #999 #ccc;
+				margin: 0 0 6px 0;
+				padding: 0;
+			  border: thin solid $light-gray;
+			  border-top: none;
 			  -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
 			  -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
 			  box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
 			}
 			.gmaps4rails_map {
-			  width: ($site - 56px);
+			  width: ($site - 44px);
 			  height: 440px;
 			}
 		}

@@ -1,0 +1,46 @@
+#description_text
+	#description_text_wrapper
+		= markdown(@property.description)
+%ul#description_details
+	- if @property.accommodates.present?
+		%li.details
+			%span.name Accommodates:
+			%span.value= @property.accommodates
+	- if @property.bedrooms.present?
+		%li.details
+			%span.name Bedrooms:
+			%span.value= @property.bedrooms
+	- if @property.bathrooms.present?
+		%li.details
+			%span.name Bathrooms:
+			%span.value= @property.bathrooms
+	- if @property.living_room.present?
+		%li.details
+			%span.name Living room seating:
+			%span.value= @property.living_room
+	- if @property.dining_room.present?
+		%li.details
+			%span.name Dining room seating:
+			%span.value= @property.dining_room
+	- if @property.dining_outdoor.present?
+		%li.details
+			%span.name Outdoor dining seating:
+			%span.value= @property.dining_outdoor
+	- if @property.sun_loungers.present?
+		%li.details
+			%span.name Sun loungers:
+			%span.value= @property.sun_loungers
+	- if @property.balconies.present?
+		%li.details
+			%span.name Balconies:
+			%span.value= @property.balconies
+	- if @property.terraces.present?
+		%li.details
+			%span.name Terraces:
+			%span.value= @property.terraces
+	%li.details
+		%span.name Sea views:
+		%span.value= @property.sea_views == true ? "yes" : "no"
+	%li.details
+		%span.name Convention ready:
+		%span.value= @property.conventions == true ? "yes" : "no"

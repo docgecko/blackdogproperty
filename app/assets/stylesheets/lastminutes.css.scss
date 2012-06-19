@@ -1,3 +1,108 @@
 // Place all the styles related to the lastminutes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+#tab_description {
+	#description_text {
+		width: 697px;
+		float: left;
+		#description_text_wrapper {
+			padding: 0 20px 0 0;
+		}
+	}
+	ul {
+		list-style: none;
+		&#description_details {
+			width: 240px;
+			margin: 0;
+			padding: 0;
+			border-left: 1px solid #D9D9D6;
+			float: right;
+			li {
+				padding: 12px;
+				margin: 0;
+				float: left;
+				&:nth-child(odd) {
+					background: $light-gray;
+				}
+				&:nth-child(even) {
+					background: $white;
+				}
+				&.details {
+					color: $black;
+					.name {
+						width: 148px;
+						float: left;
+					}
+					.value {
+						width: 68px;
+						float: right;
+						text-align: right;
+						word-wrap: break-word;
+						font-weight: bold;
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+
+#tab_facilities {
+	#facilities_list {
+		width: 100%;
+		table {
+			tr {
+				td {
+					&.columns {
+						float: left;
+						width: 223px;
+						clear: right;
+						h3 {
+							color: $blue;
+							margin: 0 0 6px 0;
+							padding: 0;
+							font-size: 13px;
+							font-weight: bold;
+							text-transform: uppercase;
+						}
+						ul {
+							list-style: none;
+							margin: 0;
+							&.groups {
+								float: left;
+							}
+							li {
+								float: left;
+								margin: 0 0 3px 0;
+								padding: 0;
+								font-size: 1.0em;
+								line-height: 15px;
+								color: white;
+								width: 215px;
+								input {
+									float: left;
+									margin: 3px 8px 8px 2px;
+								}
+								.yes_no {
+									float: left;
+									margin: 0 5px 0 0;
+									height: 16px;
+									width: 16px;
+								}
+								.question_mark {
+									margin: 1px 0 0 5px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#accommodates_list {
+		
+	}
+}

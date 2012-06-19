@@ -36,16 +36,14 @@
 							#signinHeader
 								= yield(:auth_header)
 
-							#signinBody
+							#signinBody								
 								= yield(:auth_main)
 
 							#signinFooter
 								= yield(:auth_footer)
 
 						= yield(:after)
-					
-					.bottom
-				
+									
 	#footer
 		.wrapper
 			= render "shared/footer/navigation"

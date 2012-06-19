@@ -32,7 +32,6 @@ Blackdogproperty::Application.routes.draw do
         collection { post :sort }
       end
       member do
-        get :overview
         get :preview
       end
     end

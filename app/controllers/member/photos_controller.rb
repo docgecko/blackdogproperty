@@ -8,7 +8,7 @@ class Member::PhotosController < InheritedResources::Base
   
   actions :all
   respond_to :html
-  
+    
   def edit
     @property = Property.find_by_slug(params[:property_id])
     @photo = Photo.find(params[:id])

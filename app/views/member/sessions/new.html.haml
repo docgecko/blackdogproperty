@@ -11,7 +11,8 @@
 	sign in to your account
 
 - content_for :auth_main do
-	= render 'shared/flashes', :target => resource
+	#flash_area
+		= render 'shared/flashes', :resource => resource
 	
 	= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:autocomplete => "off"}) do |f|
 		

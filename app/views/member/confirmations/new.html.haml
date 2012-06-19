@@ -12,15 +12,17 @@
 	Resend confirmation - provide your email address to receive new confirmation instructions
 
 - content_for :auth_main do
-	= render 'shared/email_errors', :target => resource
+	#flash_area
+		= render 'shared/flashes', :target => resource
+		
 	= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:autocomplete => "off"}) do |f|
 		
 		%h3 Didn't receive confirmation instructions?
-		%p Enter your email address below and we will send you new instructions.
+		%p Enter your display name or email address below and we will send you new instructions.
 
 		%h2
-			= f.label :email, 'Enter your email address'
-			= f.text_field :email, :maxlength => 255
+			= f.label :login, 'Display name or Email address'
+			= f.text_field :login, :maxlength => 255
 
 		= f.submit "Resend confirmation instructions", :class => 'buttonBasic'
 			

@@ -41,9 +41,12 @@ body {
 					float: left;
 					margin: 0;
 					padding: 25px;
-					width: 780px;
+					width: 750px;
+					#flash_area {
+						width: 750px;
+					}
 					form {
-						width: 500px;
+						width: 450px;
 						float: left;
 					}
 					h2 {
@@ -62,10 +65,10 @@ body {
 					}
 				}
 				.details {
-					margin: 70px 0 0 0;
+					margin: 70px 0 0 15px;
 					padding: 0 0 0 20px;
-					width: 250px;
-					float: right;
+					width: 264px;
+					float: left;
 					border-left: thin solid white;
 					h3 {
 						color: $blue;
@@ -172,10 +175,10 @@ body {
 	width: 780px;
 	font-size: 11px;
 	text-align: right;
-  margin: 10px auto;
+	margin: 0 auto;
 	a {
 		padding: 0.1em;
-		margin: 0 20px 0 0;
+		margin: 0;
 		color: white;
 		text-decoration: underline;
 		&:hover {

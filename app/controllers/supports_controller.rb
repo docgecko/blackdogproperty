@@ -15,7 +15,7 @@ class SupportsController < InheritedResources::Base
       Notifier.support_notification(@support).deliver
       redirect_to(root_url, :notice => "Thank you for your enquiry! We will respond shortly.")
     else
-      render :new
+      render :new, :property_title => params[:property_title]
     end
   end
 end

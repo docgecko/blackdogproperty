@@ -189,13 +189,13 @@ table {
 			width: 918px;
 			.listing_thumbnail {
 				padding: 3px;
-				background: lighten($gray, 40%);
+				background: $light-gray;
 				float: left;
 				border: 1px solid $gray;
 				line-height: 0;
 				margin-right: 15px;
 				&:hover {
-					background: lighten($gray, 45%);
+					background: $lighter-gray;
 				}
 				img {
 					height: 65px;
@@ -255,13 +255,13 @@ table {
 			width: 950px;
 			#property_photo {
 				padding: 3px;
-				background: lighten($gray, 40%);
+				background: $light-gray;
 				float: left;
 				border: 1px solid $gray;
 				line-height: 0;
 				margin-right: 15px;
 				&:hover {
-					background: lighten($gray, 45%);
+					background: $lighter-gray;
 				}
 				img {
 					height: 65px;
@@ -404,7 +404,7 @@ table {
 							font-size: 12px;
 							font-weight: bold;
 							text-shadow: 0 1px 0 white;
-							background: lighten($gray, 40%);
+							background: $light-gray;
 							&.step {
 								text-transform: uppercase;
 							}
@@ -486,7 +486,8 @@ table {
 												float: left;
 											}
 											li {
-												margin: 0 0 3px 0;
+												float: left;
+												margin: 0;
 												padding: 0;
 												font-size: 1.0em;
 												line-height: 15px;
@@ -632,7 +633,7 @@ table {
 		float: right;
 		cursor: pointer;
 		border: 1px solid $gray;
-		background: lighten($gray, 40%);
+		background: $light-gray;
 		a {
 			color: $gray;
 			&.icon {
@@ -645,7 +646,7 @@ table {
 			}
 		}
 		&:hover {
-			background: lighten($gray, 45%);
+			background: $lighter-gray;
 		}
 	}
 }

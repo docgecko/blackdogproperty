@@ -48,23 +48,19 @@
 			.panel-container
 				-if @property.latitude != 0 and @property.longitude != 0 and@property.latitude.present? and @property.longitude.present?
 					#tab_location
-						/ = gmaps4rails(@json)
-						= gmaps({ "map_options" => { "type" => "HYBRID", "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true}, "markers" => { "data" => @json } } )
-						:javascript
-							$(document).ready(function() {
-								google.maps.event.trigger(map, "resize");
-							});
+						= render 'shared/rental/tab_location'
+						
 				-if @property.description.present?
 					#tab_description
-						= markdown(@property.description)
+						= render 'shared/rental/tab_description'
 
 				-if @property.facilities.present?
 					#tab_facilities
-						= markdown(@property.facilities)
+						= render 'shared/rental/tab_facilities'
 
 				-if @property.price_rental.present?
 					#tab_price
-						= markdown(@property.price_rental)
+						= render 'shared/rental/tab_price'
 
 				#tab_contact
-					%p== For further information about this property, please contact us by #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Rental Enquiry - " + @property.title} or by using our #{link_to "enquiry form", new_support_path(:enquiry => "renting", :property_title => @property.title)}.
+					= render 'shared/rental/tab_contact'

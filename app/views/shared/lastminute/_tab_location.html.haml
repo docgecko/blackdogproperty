@@ -1,0 +1,4 @@
+.property_address
+	Address:
+	%span.address= public_address(@property)
+= gmaps(:circles => { :data => @circles, :options => { :fillColor => "#0066FF", :strokeWeight => 0 } }, :map_options => { :id => "public_map", :type => "SATELLITE", :center_longitude => 180, :auto_zoom => false, :zoom => 14, :auto_adjust => true, :raw => '{ streetViewControl: false, scaleControl: true, mapTypeControl: false }' } )

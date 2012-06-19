@@ -24,6 +24,7 @@ puts 'All sources created'
 puts 'SETTING UP INTERESTS'
 Interest.create( :name => 'Finding' )
 Interest.create( :name => 'Renting' )
+Interest.create( :name => 'Lastminute' )
 Interest.create( :name => 'Renovation' )
 Interest.create( :name => 'Services' )
 Interest.create( :name => 'Sales' )

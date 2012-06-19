@@ -1,2 +1,4 @@
-#information
+#information{:style => "float:right"}
 	= render_navigation(:context => :user)
+#list_your_property
+	= link_to "List your property", new_member_property_path, :class => "btn btn-info"

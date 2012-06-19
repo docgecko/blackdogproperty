@@ -11,7 +11,7 @@
 .block.site
 	.border
 	
-		= form_for @support, :url => { :action => :create, :enquiry => params[:enquiry], :property_title => params[:property_title] }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
+		= form_for @support, :url => { :action => :create, :enquiry => params[:enquiry], :property_title => params[:property_title], :country => params[:country], :url => params[:url] }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 		
 			%p{:style => "display:block;margin: 0 5px;"}== Please complete the form below or if you prefer you can send us an #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
 			%br
@@ -24,7 +24,7 @@
 					%td.label
 						= f.label :name do
 							Your Name
-							.required *
+							.mandatory *
 					%td= f.text_field :name, :size => 50, :maxlength => 100
 
 				%tr
@@ -35,7 +35,7 @@
 					%td.label
 						= f.label :email do
 							Email
-							.required *
+							.mandatory *
 					%td= f.text_field :email, :size => 50, :maxlength => 250
 
 				%tr
@@ -55,7 +55,7 @@
 					%td.label
 						= f.label :source do
 							I am interested in?
-							.required *
+							.mandatory *
 					%td
 						- Interest.all.asc(:name).each do |interest|
 							%span{:style => "display:block"}
@@ -67,13 +67,13 @@
 					%td.label{:style => "vertical-align: middle;"}
 						= f.label :content do
 							Other information
-							.required *
+							.mandatory *
 					%td
 						-if params[:property_title].present? &&
-							%textarea#support_content{:cols => "38", :name => "support[content]", :rows => "12"}== Enquiry about the following property: #{params[:property_title]}
+							%textarea#support_content{:cols => "38", :name => "support[content]", :rows => "12"}= "Enquiry about the following property:\n\nTitle: #{params[:property_title]}\n\nCountry: #{params[:country]}\n\nUrl: #{params[:url]}"
 						-else
 							= f.text_area :content, :cols => 38, :rows => 12
-
+							
 			#update
 				.actions
 					= f.submit "Send your request", :class => 'button'

@@ -40,31 +40,25 @@
 					%li.tab= link_to "Location", "#tab_location"
 				-if @property.description.present?
 					%li.tab= link_to "Description", "#tab_description"
-				-if @property.facilities.present?
-					%li.tab= link_to "Facilities", "#tab_facilities"
+				%li.tab= link_to "Amenities", "#tab_facilities"
 				-if @property.price_rental.present?
 					%li.tab= link_to "Price", "#tab_price"
 				%li.tab= link_to "Contact", "#tab_contact"
 			.panel-container
 				-if @property.latitude != 0 and @property.longitude != 0 and @property.latitude.present? and @property.longitude.present?
 					#tab_location
-						/ = gmaps4rails(@json)
-						= gmaps({ "map_options" => { "type" => "HYBRID", "center_longitude" => 180, "auto_zoom" => false, "zoom" => @property.zoom, "auto_adjust" => true}, "markers" => { "data" => @json } } )
-						:javascript
-							$(document).ready(function() {
-								google.maps.event.trigger(map, "resize");
-							});
+						= render 'shared/lastminute/tab_location'
+						
 				-if @property.description.present?
 					#tab_description
-						= markdown(@property.description)
+						= render 'shared/lastminute/tab_description'
 
-				-if @property.facilities.present?
-					#tab_facilities
-						= markdown(@property.facilities)
+				#tab_facilities
+					= render 'shared/lastminute/tab_facilities'
 
 				-if @property.price_rental.present?
 					#tab_price
-						= markdown(@property.price_rental)
+						= render 'shared/lastminute/tab_price'
 
 				#tab_contact
-					%p== For further information about this property, please contact us by #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Rental Enquiry - " + @property.title} or by using our #{link_to "enquiry form", new_support_path(:enquiry => "renting", :property_title => @property.title)}.
+					= render 'shared/lastminute/tab_contact'

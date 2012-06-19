@@ -11,7 +11,9 @@
 	%h1 Register Now your BlackDog Properties' Lasminute Membership
 	
 - content_for :auth_main do
-	= render 'shared/email_errors', :resource => resource
+	#flash_area
+		= render 'shared/email_errors', :resource => resource
+	
 	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
 		
 		%h3	Create your personal "Lastminute" account

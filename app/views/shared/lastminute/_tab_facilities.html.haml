@@ -1,0 +1,17 @@
+#facilities_list
+	%table
+		- @count = 1
+		- @divisions.each do |d|
+			- if @count == 5
+				%tr
+				-@count = 0
+			%td.columns
+				%h3= d.name
+				%ul.groups
+					- d.amenities.each do |a|
+						%li
+							= image_tag((@property.amenity_ids.include?(a.id) ? "lastminutes/icon_yes.png" : "lastminutes/icon_no.png"), :class => "yes_no")
+							= label_tag a.id, a.name, :for => ('property_amenity_ids_' + a.id)
+							- if a.description.present?
+								= image_tag "question_mark.png", :class => "question_mark", :width => "14px", :height => "14px", :rel => "tooltip", "data-original-title" => a.description
+							- @count += 1
