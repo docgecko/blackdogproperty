@@ -11,7 +11,8 @@
 puts 'EMPTY THE MONGODB DATABASE'
 Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 
-puts 'SETTING UP SOURCE'
+
+puts 'SETTING UP SOURCES'
 Source.create( :name => 'Search engine' )
 Source.create( :name => 'Word of mouth' )
 Source.create( :name => 'Advertising' )
@@ -20,6 +21,7 @@ Source.create( :name => 'Link from another site' )
 Source.create( :name => 'Existing client' )
 Source.create( :name => 'Referred by existing client' )
 puts 'All sources created'
+
 
 puts 'SETTING UP INTERESTS'
 Interest.create( :name => 'Finding' )
@@ -30,11 +32,14 @@ Interest.create( :name => 'Services' )
 Interest.create( :name => 'Sales' )
 puts 'All interests created'
 
+
 puts 'SETTING UP PURPOSES'
 Purpose.create( :name => 'rental', :description => 'For rental' )
 Purpose.create( :name => 'sale', :description => 'For sale' )
 Purpose.create( :name => 'renovation', :description => 'Renovation project' )
+Purpose.create( :name => 'lastminute', :description => 'Lastminute rental' )
 puts 'All property purposes created'
+
 
 puts 'SETTING UP DIVISIONS & AMENITIES'
 d = Division.create( :name => 'General' )
@@ -79,10 +84,12 @@ d.amenities.create( :name => 'Secure Private Driveway', :description => '' )
 d.amenities.create( :name => 'Private Garage', :description => '' )
 puts 'All property divisions & amenities created'
 
+
 puts 'SETTING UP CURRENCIES'
 Currency.create( :name => 'EUR', :description => 'Euro' )
 Currency.create( :name => 'GBP', :description => 'British Pounds' )
 puts 'All currencies created'
+
 
 puts 'SETTING UP TYPES'
 Type.create( :name => 'Apartment', :description => '' )
@@ -91,6 +98,7 @@ Type.create( :name => 'House', :description => '' )
 Type.create( :name => 'Chalet', :description => '' )
 Type.create( :name => 'Other', :description => '' )
 puts 'All property type created'
+
 
 puts 'SETTING UP COUNTRIES'
 Country.create( :name => 'France', :description => 'France is one of the prominent countries of the European Union and still attracts so much interest from foreign residents looking to relocate overseas. The country is truly unique this has an amazing variety of climates, sun, sea and snow. It is steeped in history and its architecture is both classical and chic.
@@ -122,6 +130,43 @@ Nature has a special place in every trip to Italy; the amazing panoramic natural
 
 A trip to Italy is not only about culture, art, history, paintings and museums but about the exclusive restaurants, pizzerias, cafes and a vibrant and passionate nightlife - whatever your age.' )
 puts 'All countries created'
+
+
+puts 'SETTING UP TEAM MEMBERS'
+Member.create(
+  :name => 'Mark Tovey 07540 706994',
+  :avatar => File.open(File.join(Rails.root, 'app/assets/images/company/profile_mark.jpg')),
+  :profile => 'With property being a stable investment in times of uncertainty, Mark\'s ability to find the right property at the right price, whilst always being mindful of a return on your investment is unrivalled.
+
+Mark is the founder of BlackDog Property and has realised a personal dream of finding and renovating outstanding properties in the most beautiful and prestigious area\'s of Europe.
+
+Mark is driven for success, entrepreneurial and an accomplished businessman with a strong commercial acumen. Mark demonstrates impeccable style which is apparent throughout the projects he influences.
+
+BlackDog Property enables others to follow their dreams in confidence, drawing on the expertise of our professional team to achieve results.
+
+Mark is a keen golfer, skier devoted dad to Hannah, Callum and of course Ted.',
+  :order_no => '1',
+  :published => true)
+Member.create(
+  :name => 'Ted "Tiberius" Tovey',
+  :avatar => File.open(File.join(Rails.root, 'app/assets/images/company/profile_ted.jpg')),
+  :profile => 'Ted is a lifelong companion to Mark. He is actively involved in all aspects of Mark\'s life, acting as a constant sounding board and confidant in all aspects of the business.',
+  :order_no => '2',
+  :published => true)
+Member.create(
+  :name => 'Mairead McGinley',
+  :avatar => File.open(File.join(Rails.root, 'app/assets/images/company/profile_mairead.jpg')),
+  :profile => 'Mairead joins the BlackDog team as Associate Director based out of the VilleFranche office.
+
+Mairead demonstrates attention to detail and meticulous planning capability when locating and negotiating properties for our clients. With a strong background in business, Mairead has perfect judgement in balancing the needs of our clients and those of the property owners - a skill which cannot be underestimated.
+
+Mairead has extensive experience in managing luxury property s within the French Riviera and having graduated with an honours degree in International Business and Languages, she is a valued asset and support to BlackDog.
+
+Mairead has an enthusiasm for skiing and swimming and, due to her interest in French Culture, she is well equipped to advise on exhilarating and educational activities throughout the French Riviera.',
+  :order_no => '3',
+  :published => true)
+puts 'All Team Members created'
+
 
 puts 'SETTING UP TESTIMONIALS'
 Testimonial.create(

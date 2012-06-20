@@ -7,16 +7,16 @@ class RentalsController < InheritedResources::Base
   respond_to :html
   
   def index
-    @properties = Property.where(:published => true, :purpose_ids => @purpose).asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => @purpose).asc(:position).page params[:page]
   end
   
   def search
-    @properties = Property.where(:published => true, :purpose_ids => @purpose, :country => (params[:country_id]).capitalize).asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => @purpose, :country => (params[:country_id]).capitalize).asc(:position).page params[:page]
   end
   
   def show
     @property = Property.find_by_slug(params[:id])
-    @photos = Photo.where(property_id: @property.id, published: true).order_by([:order_no, :asc])
+    @photos = Photo.where(property_id: @property.id, published: true).order_by([:position, :asc])
     @circles = @property.to_gmaps4rails do |property, circle|
       circle.json :lat => property.latitude, :lng => property.longitude, :radius => 600
     end

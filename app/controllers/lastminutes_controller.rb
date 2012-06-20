@@ -7,11 +7,11 @@ class LastminutesController < InheritedResources::Base
   respond_to :html
   
   def index
-    @properties = Property.where(:published => true, :purpose_ids => "lastminute").asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => "lastminute").asc(:position).page params[:page]
   end
   
   def search
-    @properties = Property.where(:published => true, :purpose_ids => "lastminute", :country => @country).asc(:order_no).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => "lastminute", :country => @country).asc(:position).page params[:page]
   end
   
   def show

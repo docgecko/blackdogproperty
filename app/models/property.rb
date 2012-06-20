@@ -36,7 +36,7 @@ class Property
   field :longitude,          type: Float
   field :gmaps,              type: Boolean
   field :zoom,               type: Integer,   default: 11
-  field :order_no,           type: Integer,   default: 0
+  field :position,           type: Integer,   default: 0
   field :featured,           type: Boolean,   default: false
   field :published,          type: Boolean,   default: false
   
@@ -81,7 +81,7 @@ class Property
                   :description, :facilities, :purpose_ids, :type_id, 
                   :price_sale, :price_rental, :price_rental, :currency_rental,
                   :coordinates, :latitude, :longitude, :zoom,
-                  :order_no, :featured, :published,
+                  :position, :featured, :published,
                   :user_id, :phone_country, :phone_number,
                   :address_attributes,
                   :amenity_ids, :quantities,
