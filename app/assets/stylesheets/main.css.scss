@@ -33,7 +33,8 @@
 					display: inline-block;*display:inline;*zoom:1;
 					padding: 4px 10px 4px;
 					margin-bottom: 0;
-					font-size: 13px;
+					font-size: 12px;
+					font-family: $verdana;
 					line-height: 18px;*line-height:20px;
 					color: $white;
 					text-align: center;
@@ -130,13 +131,13 @@
 				}
 			}
 			#information {
-				right: 150px;
+				right: 140px;
 			}
 			#information, #admin {
 				position: absolute;
 				z-index: 8;
 				margin: 0;
-				top: 10px;
+				top: 9px;
 				ul {
 					height: 17px;
 					margin: 0px;
