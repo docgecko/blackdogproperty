@@ -1064,63 +1064,63 @@ p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Balconies.jpg')),
-  :position => ,
+  :position => 1,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Bed-3.jpg')),
-  :position => ,
+  :position => 2,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Kitchen-1.JPG')),
-  :position => ,
+  :position => 3,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Lounge.JPG')),
-  :position => ,
+  :position => 4,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Main bath-shower.jpg')),
-  :position => ,
+  :position => 5,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Main bath.jpg')),
-  :position => ,
+  :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Quayside windows.jpg')),
-  :position => ,
+  :position => 7,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Restaurants.jpg')),
-  :position => ,
+  :position => 8,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
   :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Seagulls balcony.jpg')),
-  :position => ,
+  :position => 9,
   :featured => false,
   :published => true)
 
