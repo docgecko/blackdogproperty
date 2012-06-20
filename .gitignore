@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore local property images
-# /app/assets/images/properties
+/app/assets/images/properties
