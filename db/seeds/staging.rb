@@ -576,6 +576,69 @@ This property is ideal for large groups with families, corporate groups or even 
   :position => 5,
   :featured => false,
   :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/DSCF3849.JPG')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/DSCF5997.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/DSCF6004.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/DSCF6021.JPG')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/hpim0001.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/s5000624.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/SANY0005.JPG')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/SANY0180.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_savina/SANY0225.JPG')),
+  :position => 9,
+  :featured => false,
+  :published => true)
 
 p = Property.create(
   :title => 'Luxury Villa with Exceptional Sea Views and Private Access to the Sea',
@@ -621,9 +684,66 @@ August – offer dependant',
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0197.JPG')),
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_ferrat/photo.JPG')),
   :position => 1,
   :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_ferrat/photo_02.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_ferrat/photo_03.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+
+p = Property.create(
+  :title => '3 Bed Villa in a Private Residence',
+  :location => 'Villefranche sur mer',
+  :country => 'France',
+  :reference => 'VSMT',
+  :bio => 'This 3 bedroom property is located in a prime location overlooking the beach of Villefranche sur Mer on the Baisse Corniche. It is in a private residence with shared pool and a large terrace overlooking the sea and coastline just a 2 minute walk to the beach.',
+  :description => 'This 3 bedroom property is in one of the prime private residences in Villefranche. With 2 secure entrances, private parking, shared pool and astounding views it is in high demand. Access to the beach as well as the bars and restaurants of the old town of Villefranche is by a set of steps direct from the road to the beach. 
+
+There are shared gardens as well as a pool with the property but it is not a large residence so it is rarely too busy. The entrance to the villa itself is very pretty and as you walk into the property it is all open plan and you can see straight out the terrace window. 
+
+The kitchen is very modern with all mod cons, followed by an open plan living space with dining table, large sofa, tv, sound system, wifi etc. The terrace doors open out to a hug terrace with beautiful views down over the beach and coast of Villefranche and Cap Ferrat. 
+
+The 3 ensuite bedrooms are located up stairs. The two front rooms have access to another terrace with a smaller balcony in the 3rd bedroom. The large master has also got a walk in wardrobe. 
+
+The town of Villefranche is only a few minutes’ walk and public transport links are right outside the property. This property is in a prime location for discovering the French Riviera.',
+  :facilities => '- Air-conditioning
+- Central heating
+- 3 bedrooms - sleeps 6
+- 4 bathrooms - 3 ensuite
+- Secure gated parking
+- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven 
+- Living room living area seating for 8.
+- Dining room seating for 8
+- Full entertainment system 
+- Plasma TV
+- Outdoor dining area for 8
+- Large shared pool',
+  :purpose_ids => [ 'rental' ],
+  :price_sale => '',
+  :price_rental => 'Rental prices start from €3500 per week',
+  :coordinates => [ 43.702974, 7.307848 ],
+  :zoom => 11,
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0199.JPG')),
+  :position => 1,
+  :featured => true,
   :published => true)
 p.photos.create(
   :title => '',
@@ -635,9 +755,9 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0199.JPG')),
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0197.JPG')),
   :position => 3,
-  :featured => true,
+  :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
@@ -793,42 +913,6 @@ p.photos.create(
   :position => 25,
   :featured => false,
   :published => true)
-
-p = Property.create(
-  :title => '3 Bed Villa in a Private Residence',
-  :location => 'Villefranche sur mer',
-  :country => 'France',
-  :reference => 'VSMT',
-  :bio => 'This 3 bedroom property is located in a prime location overlooking the beach of Villefranche sur Mer on the Baisse Corniche. It is in a private residence with shared pool and a large terrace overlooking the sea and coastline just a 2 minute walk to the beach.',
-  :description => 'This 3 bedroom property is in one of the prime private residences in Villefranche. With 2 secure entrances, private parking, shared pool and astounding views it is in high demand. Access to the beach as well as the bars and restaurants of the old town of Villefranche is by a set of steps direct from the road to the beach. 
-
-There are shared gardens as well as a pool with the property but it is not a large residence so it is rarely too busy. The entrance to the villa itself is very pretty and as you walk into the property it is all open plan and you can see straight out the terrace window. 
-
-The kitchen is very modern with all mod cons, followed by an open plan living space with dining table, large sofa, tv, sound system, wifi etc. The terrace doors open out to a hug terrace with beautiful views down over the beach and coast of Villefranche and Cap Ferrat. 
-
-The 3 ensuite bedrooms are located up stairs. The two front rooms have access to another terrace with a smaller balcony in the 3rd bedroom. The large master has also got a walk in wardrobe. 
-
-The town of Villefranche is only a few minutes’ walk and public transport links are right outside the property. This property is in a prime location for discovering the French Riviera.',
-  :facilities => '- Air-conditioning
-- Central heating
-- 3 bedrooms - sleeps 6
-- 4 bathrooms - 3 ensuite
-- Secure gated parking
-- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven 
-- Living room living area seating for 8.
-- Dining room seating for 8
-- Full entertainment system 
-- Plasma TV
-- Outdoor dining area for 8
-- Large shared pool',
-  :purpose_ids => [ 'rental' ],
-  :price_sale => '',
-  :price_rental => 'Rental prices start from €3500 per week',
-  :coordinates => [ 43.702974, 7.307848 ],
-  :zoom => 11,
-  :position => 7,
-  :featured => false,
-  :published => true)
           
 p = Property.create(
   :title => 'Luxury 5 Bedroom Villa overlooking the Bay of Villefranche',
@@ -861,6 +945,83 @@ There is ample space, with three walk-out balconies. The property is over three 
   :coordinates => [ 43.707332, 7.314218 ],
   :zoom => 11,
   :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Front-4.jpg')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Kitchen-2.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Ours-bath-1.jpg')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Ours-bed-1.jpg')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Ours-bed-2.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Oursinade-lounge-1.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/patio.jpg')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Pool-2.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Terrace-1.jpg')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Terrace-5.jpg')),
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_oursinade/Villa.jpg')),
+  :position => 11,
   :featured => false,
   :published => true)
 
@@ -897,6 +1058,69 @@ Although the apartment is on the second floor from the port side, the entrance i
   :coordinates => [ 43.704144, 7.312571 ],
   :zoom => 11,
   :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Balconies.jpg')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Bed-3.jpg')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Kitchen-1.JPG')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Lounge.JPG')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Main bath-shower.jpg')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Main bath.jpg')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Quayside windows.jpg')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Restaurants.jpg')),
+  :position => ,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/apartment_seagulls/Seagulls balcony.jpg')),
+  :position => ,
   :featured => false,
   :published => true)
 
@@ -937,6 +1161,153 @@ The property has 2 separate buildings both with their own access. One is a studi
   :coordinates => [ 43.706907, 7.323557 ],
   :zoom => 11,
   :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/A typical summer view.JPG')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Bedroom 3 v.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Bedroom 3.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/chambre de maitre 1.JPG')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/chambre de maitre 2.JPG')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Chambre de maitre terrasse.JPG')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Dining 1.JPG')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Ensuite 1.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Ensuite 2.JPG')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/garden 2.JPG')),
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Garden to right.JPG')),
+  :position => 11,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Lounge 1.JPG')),
+  :position => 12,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Lounge 3.JPG')),
+  :position => 13,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Lounge 4.JPG')),
+  :position => 14,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Lounge 5.JPG')),
+  :position => 15,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Lounge 6.JPG')),
+  :position => 16,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Pool from summer kitchen.JPG')),
+  :position => 17,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Roof garden 1.JPG')),
+  :position => 18,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Sejour dining.jpg')),
+  :position => 19,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/Summer kitchen.JPG')),
+  :position => 20,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_cap_d_antibes/View to East.jpg')),
+  :position => 21,
   :featured => false,
   :published => true)
 puts 'All Properties & Photos created'
