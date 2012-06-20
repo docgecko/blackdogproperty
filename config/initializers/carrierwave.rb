@@ -15,6 +15,10 @@ if Rails.env.development? or Rails.env.test?
   CarrierWave.configure do |config|
     config.fog_directory  = 'bdp-assets-development'                     # required
   end
+elsif Rails.env.staging?
+  CarrierWave.configure do |config|
+    config.fog_directory  = 'bdp-assets-staging'                     # required
+  end
 else
   CarrierWave.configure do |config|
     config.fog_directory  = 'bdp-assets'                     # required
