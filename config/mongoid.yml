@@ -12,6 +12,9 @@ test:
   host: localhost
   database: blackdogproperty_test
 
-# set these environment variables on your prod server
+# set these environment variables on your staging and prod servers
+staging:
+  uri: mongodb://heroku:53ec9d7a4d1a3a06e417f8b2e0dee929@staff.mongohq.com:10046/app5401340
+
 production:
   uri: mongodb://heroku:dd90ddd95207fb164720e1a3e0ea9918@flame.mongohq.com:27028/app4264979
