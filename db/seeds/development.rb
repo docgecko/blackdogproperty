@@ -69,83 +69,83 @@ Villa Azur is in a prime location and has everything you could want for the perf
   :price_rental => 'Rental prices start from €5000 per week',
   :coordinates => [ 43.707318, 7.314133 ],
   :zoom => 11,
-  :order_no => 1,
-  :featured => false,
-  :published => true)
-p.photos.create(
-  :title => '',
-  :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0075.JPG')),
   :position => 1,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0080.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0075.JPG')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0080.JPG')),
   :position => 2,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0087.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0087.JPG')),
   :position => 3,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0094.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0094.JPG')),
   :position => 4,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0099.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0099.JPG')),
   :position => 5,
   :featured => true,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0116.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0116.JPG')),
   :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0139.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0139.JPG')),
   :position => 7,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0150.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0150.JPG')),
   :position => 8,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0154.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0154.JPG')),
   :position => 9,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0170.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0170.JPG')),
   :position => 10,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_graham/DSC_0178.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0178.JPG')),
   :position => 11,
   :featured => false,
   :published => true)
@@ -185,69 +185,69 @@ The terraces that wrap all around the property offer stunning views. From outsid
   :price_rental => 'Rental prices start from €5000 per week',
   :coordinates => [ 43.708458, 7.303069 ],
   :zoom => 11,
-  :order_no => 2,
-  :featured => false,
-  :published => true)
-p.photos.create(
-  :title => '',
-  :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0228.JPG')),
-  :position => 1,
-  :featured => true,
-  :published => true)
-p.photos.create(
-  :title => '',
-  :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0229.JPG')),
   :position => 2,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0230.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0228.JPG')),
+  :position => 1,
+  :featured => true,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0229.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0230.JPG')),
   :position => 3,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0231.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0231.JPG')),
   :position => 4,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0233.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0233.JPG')),
   :position => 5,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0234.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0234.JPG')),
   :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0235.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0235.JPG')),
   :position => 7,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0236.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0236.JPG')),
   :position => 8,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_stuart/DSC_0237.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_stuart/DSC_0237.JPG')),
   :position => 9,
   :featured => false,
   :published => true)
@@ -289,181 +289,181 @@ July €108 000 p/mth
 August – offer dependant',
   :coordinates => [ 43.69087, 7.32316 ],
   :zoom => 11,
-  :order_no => 3,
+  :position => 3,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0197.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0197.JPG')),
   :position => 1,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0198.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0198.JPG')),
   :position => 2,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0199.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0199.JPG')),
   :position => 3,
   :featured => true,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0200.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0200.JPG')),
   :position => 4,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0201.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0201.JPG')),
   :position => 5,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0202.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0202.JPG')),
   :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0203.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0203.JPG')),
   :position => 7,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0204.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0204.JPG')),
   :position => 8,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0205.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0205.JPG')),
   :position => 9,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0206.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0206.JPG')),
   :position => 10,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0207.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0207.JPG')),
   :position => 11,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0208.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0208.JPG')),
   :position => 12,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0209.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0209.JPG')),
   :position => 13,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0210.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0210.JPG')),
   :position => 14,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0211.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0211.JPG')),
   :position => 15,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0212.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0212.JPG')),
   :position => 16,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0213.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0213.JPG')),
   :position => 17,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0214.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0214.JPG')),
   :position => 18,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0215.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0215.JPG')),
   :position => 19,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0216.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0216.JPG')),
   :position => 20,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0217.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0217.JPG')),
   :position => 21,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0219.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0219.JPG')),
   :position => 22,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0220.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0220.JPG')),
   :position => 23,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0221.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0221.JPG')),
   :position => 24,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => File.open(File.join(Rails.root, 'app/assets/images/properties/villa_tony/DSC_0222.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0222.JPG')),
   :position => 25,
   :featured => false,
   :published => true)
@@ -503,7 +503,7 @@ This property is ideal for large groups with families, corporate groups or even 
   :price_rental => 'Rental prices start from €18000 per week',
   :coordinates => [ 43.706907, 7.323557 ],
   :zoom => 11,
-  :order_no => 4,
+  :position => 4,
   :featured => false,
   :published => true)
 p = Property.create(
@@ -538,7 +538,7 @@ The town of Villefranche is only a few minutes’ walk and public transport link
   :price_rental => 'Rental prices start from €3500 per week',
   :coordinates => [ 43.702974, 7.307848 ],
   :zoom => 11,
-  :order_no => 5,
+  :position => 5,
   :featured => false,
   :published => true)
 puts 'All Properties & Photos created'

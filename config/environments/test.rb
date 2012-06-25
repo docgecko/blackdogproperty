@@ -33,5 +33,5 @@ Blackdogproperty::Application.configure do
   config.active_support.deprecation = :stderr
   
   ### ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'blackdogproperty.dev' }
 end

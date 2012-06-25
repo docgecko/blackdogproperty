@@ -7,6 +7,7 @@
 			.bottom
 	- else
 		- for property in @properties
+			/ = link_to rental_path(property.country.parameterize, property.slug), :class => :property do
 			= link_to rental_path(property.country.parameterize, property.slug), :class => :property do
 				%span.featured
 					- @photo = Photo.first(conditions: { property_id: property.id, featured: true })

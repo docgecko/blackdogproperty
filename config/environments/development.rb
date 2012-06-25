@@ -29,7 +29,7 @@ Blackdogproperty::Application.configure do
   config.assets.debug = true
 
   ### ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'blackdogproperty.dev' }
   # # A dummy setup for development - deliveries, and errors logged
   # config.action_mailer.delivery_method = :sendmail
   # config.action_mailer.perform_deliveries = true

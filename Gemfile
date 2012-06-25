@@ -51,6 +51,7 @@ gem 'nested_form', '~> 0.2.1'
 gem 'facebox-rails','~> 0.1.2'
 gem 'mongoid_slug', '~> 0.10.0'
 gem "css3buttons", "~> 1.0.1"
+gem "foreman", "~> 0.47.0"
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'
