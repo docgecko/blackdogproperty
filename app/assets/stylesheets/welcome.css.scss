@@ -99,7 +99,29 @@
 	}
 }
 
+
 .block {
+	&.column {
+		width: 320px;
+		margin: 0;
+		float: left;
+		.frame {
+			margin: 15px;
+			width: 320px;
+			h1 {
+				font-family: $verdana;
+				font-weight: bold;
+				font-size: 16px;
+				color: $white;
+				margin: 0;
+			}
+			p {
+				text-align: justify;
+				font-size: 12px;
+				line-height: 18px;
+			}
+		}
+	}
 	.textual {
 		ul {
 			margin: 0;
