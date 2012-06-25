@@ -99,20 +99,56 @@
 	}
 }
 
+#container3 {
+    float: left;
+    width: $site;
+    background: $black;
+    overflow: hidden;
+    position: relative;
+}
+#container2 {
+    float: left;
+    width: 983px;
+    position: relative;
+    right: 326px;
+		border-right: thin solid $blue;
+}
+#container1 {
+    float: left;
+    width: 981px;
+		position: relative;
+    right: 326px;
+		border-right: thin solid $blue;
+}
 
-.block {
-	&.column {
-		width: 320px;
+.column {
+	margin: 0 15px 0 0;
+	&#first {
+    left: 651px;
+		margin: 0 20px 0 0;
+    width: 309px;
+	}
+	&#second {
+    left: 651px;
+		margin: 0 20px 0 0;
+    width: 309px;
+	}
+	&#third {
+    left: 648px;
 		margin: 0;
+    width: 309px;
+	}
+	&#first, &#second, &#third {
+    position: relative;
 		float: left;
+    overflow: hidden;
 		.frame {
-			margin: 15px;
-			width: 320px;
+			margin: 15px 0 20px 20px;
 			h1 {
 				font-family: $verdana;
 				font-weight: bold;
 				font-size: 16px;
-				color: $white;
+				color: $blue;
 				margin: 0;
 			}
 			p {
@@ -120,30 +156,36 @@
 				font-size: 12px;
 				line-height: 18px;
 			}
-		}
-	}
-	.textual {
-		ul {
-			margin: 0;
-			padding: 0 0 0 10px;
-			color: $white;
-			text-decoration: none;
-			text-align: left;
-			li {
-				width: 100%;
+			ul {
 				margin: 0;
-				padding: 0 0 5px 0;
-				list-style: inside;
-				line-height: 12px;
-				font-size: 12px;
-				a {
-					padding: 0;
-					color: $blue;
-					&:hover {
-						text-decoration: underline;
+				padding: 0 0 0 10px;
+				color: $white;
+				text-decoration: none;
+				text-align: left;
+				li {
+					margin: 0;
+					padding: 0 0 6px 6px;
+					list-style: inside;
+					line-height: 18px;
+					font-size: 12px;
+					text-indent: -1em;
+					a {
+						padding: 0;
 						color: $blue;
+						&:hover {
+							text-decoration: underline;
+							color: $blue;
+						}
 					}
 				}
+			}
+		}
+		.action {
+			padding: 0 0 15px 0;
+			margin: 0;
+			text-align: center;
+			.register {
+				font-size: 16px;
 			}
 		}
 	}

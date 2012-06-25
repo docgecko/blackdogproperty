@@ -45,16 +45,42 @@
 				.more
 					%p We supply a selection of marketing services to ensure your property receives the right attention
 				
-.block.column
-	.frame
-		%h1 BlackDog Property
-		%p BlackDog Property is a specialist property company offering a bespoke service and experience whether you are searching for the property of your dreams to own or a luxurious holiday rental.
-	
-		%p We only operate in the most sought after locations in Europe and all our properties are individually selected. In addition to our core Finding and Rental services, we offer property renovation and maintenance all carried out to our exacting standard ensuring the highest quality of workmanship is delivered.
+#container3
+	#container2
+		#container1
+			.column#first
+				.frame
+					%h1 About BlackDog Property
+					%p BlackDog Property is a specialist property company offering a bespoke service and experience whether you are searching for the property of your dreams to own or a luxurious holiday rental.
 
-		%p
-			For further information on our services please contact BlackDog through in any of the following ways:
-			%ul
-				%li== #{link_to "enquiry form", new_support_path}
-				%li== #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex}
-				%li direct on +44 (0)7540 706994
+					%p We only operate in the most sought after locations in Europe and all our properties are individually selected. In addition to our core Finding and Rental services, we offer property renovation and maintenance all carried out to our exacting standard ensuring the highest quality of workmanship is delivered.
+
+					%p
+						For further information on our services please contact BlackDog through in any of the following ways:
+						%ul
+							%li== #{link_to "enquiry form", new_support_path}
+							%li== #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex}
+							%li direct on +44 (0)7540 706994
+
+			.column#second
+				.frame
+					%h1 Advertise Your Property
+					%p BlackDog Property provides an exclusive advertising portal for your properties.
+					%p Join us now and you can showcase your property:
+					%ul
+						%li Quick and easy to list your properties
+						%li== Full page advert on the #{link_to "Lastminute", lastminutes_path} area
+						%li Promote your property to a large domestic and international audience
+						%li Regular campaigns to drive people to your property listing pages
+						%li Exclusive press coverage
+						%li Transparent listing fees
+					%br
+					%p To begin adverting your property immediately, complete our registration form:
+				.action
+					= link_to new_user_registration_path, :class => "btn btn-info register" do
+						Register now!
+
+			.column#third
+				.frame
+					%h1 Advertise Your Property
+					%p BlackDog Property provides an exclusive advertising portal for your properties.
