@@ -128,7 +128,7 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0132.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/132.JPG')),
   :position => 8,
   :featured => false,
   :published => true)
