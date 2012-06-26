@@ -57,6 +57,7 @@
 				= render 'shared/member/property/address', :f => f
 							
 			= hidden_field :property, :user_id, :value => current_user.id
+			= hidden_field :property, :purpose_ids, :value => 'lastminute'
 
 			%table.property
 				%tr

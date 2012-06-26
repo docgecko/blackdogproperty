@@ -1,8 +1,9 @@
 #facilities_list
 	%table
-		- @count = 1
+		- @count = 0
 		- @divisions.each do |d|
-			- if @count == 5
+			- @count += 1
+			- if @count == 4
 				%tr
 				-@count = 0
 			%td.columns
@@ -14,4 +15,3 @@
 							= label_tag a.id, a.name, :for => ('property_amenity_ids_' + a.id)
 							- if a.description.present?
 								= image_tag "question_mark.png", :class => "question_mark", :width => "14px", :height => "14px", :rel => "tooltip", "data-original-title" => a.description
-							- @count += 1
