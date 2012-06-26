@@ -1162,7 +1162,7 @@ The property has 2 separate buildings both with their own access. One is a studi
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/A typical summer view.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/A-typical-summer-view.JPG')),
   :position => 1,
   :featured => false,
   :published => true)
