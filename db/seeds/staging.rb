@@ -259,7 +259,7 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Front gate open.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Front-gate-open.jpg')),
   :position => 7,
   :featured => false,
   :published => true)
@@ -425,7 +425,7 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Veranda off lounge.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Veranda-off-lounge.JPG')),
   :position => 11,
   :featured => false,
   :published => true)
@@ -1087,21 +1087,21 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Main bath-shower.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Main-bath-shower.jpg')),
   :position => 5,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Main bath.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Main-bath.jpg')),
   :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Quayside windows.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Quayside-windows.jpg')),
   :position => 7,
   :featured => false,
   :published => true)
@@ -1115,7 +1115,7 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Seagulls balcony.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Seagulls-balcony.jpg')),
   :position => 9,
   :featured => false,
   :published => true)
@@ -1169,140 +1169,140 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Bedroom 3 v.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Bedroom-3-v.JPG')),
   :position => 2,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Bedroom 3.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Bedroom-3.JPG')),
   :position => 3,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/chambre de maitre 1.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/chambre-de-maitre-1.JPG')),
   :position => 4,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/chambre de maitre 2.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/chambre-de-maitre-2.JPG')),
   :position => 5,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Chambre de maitre terrasse.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Chambre-de-maitre-terrasse.JPG')),
   :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Dining 1.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Dining-1.JPG')),
   :position => 7,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Ensuite 1.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Ensuite-1.JPG')),
   :position => 8,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Ensuite 2.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Ensuite-2.JPG')),
   :position => 9,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/garden 2.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/garden-2.JPG')),
   :position => 10,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Garden to right.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Garden-to-right.JPG')),
   :position => 11,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge 1.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-1.JPG')),
   :position => 12,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge 3.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-3.JPG')),
   :position => 13,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge 4.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-4.JPG')),
   :position => 14,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge 5.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-5.JPG')),
   :position => 15,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge 6.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-6.JPG')),
   :position => 16,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Pool from summer kitchen.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Pool-from-summer-kitchen.JPG')),
   :position => 17,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Roof garden 1.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Roof-garden-1.JPG')),
   :position => 18,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Sejour dining.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Sejour-dining.jpg')),
   :position => 19,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Summer kitchen.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Summer-kitchen.JPG')),
   :position => 20,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/View to East.jpg')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/View-to-East.jpg')),
   :position => 21,
   :featured => false,
   :published => true)
