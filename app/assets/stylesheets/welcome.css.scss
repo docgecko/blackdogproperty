@@ -99,57 +99,28 @@
 	}
 }
 
-#container3 {
-    float: left;
-    width: $site;
-    background: $black;
-    overflow: hidden;
-    position: relative;
-}
-#container2 {
-    float: left;
-    width: 983px;
-    position: relative;
-    right: 326px;
-		border-right: thin solid $blue;
-}
-#container1 {
-    float: left;
-    width: 981px;
-		position: relative;
-    right: 326px;
-		border-right: thin solid $blue;
-}
-
 .column {
-	margin: 0 15px 0 0;
-	&#first {
-    left: 651px;
+	background-color: $black;
+	&#first, &#second {
 		margin: 0 20px 0 0;
-    width: 309px;
-	}
-	&#second {
-    left: 651px;
-		margin: 0 20px 0 0;
-    width: 309px;
 	}
 	&#third {
-    left: 648px;
-		margin: 0;
-    width: 309px;
+		margin: 0 0 0 1px;
 	}
 	&#first, &#second, &#third {
     position: relative;
 		float: left;
     overflow: hidden;
+    width: 313px;
 		.frame {
-			margin: 15px 0 20px 20px;
+			margin: 15px;
 			h1 {
 				font-family: $verdana;
 				font-weight: bold;
 				font-size: 16px;
 				color: $blue;
-				margin: 0;
+				margin: 0 0 15px 0;
+				line-height: 21px;
 			}
 			p {
 				text-align: justify;
@@ -184,9 +155,41 @@
 			padding: 0 0 15px 0;
 			margin: 0;
 			text-align: center;
-			.register {
+			.register, .subscribe {
 				font-size: 16px;
 			}
 		}
 	}
 }
+
+#mc_embed_signup {
+	clear: left; 
+	font: 14px Helvetica, Arial, sans-serif;
+	width: 283px;
+	.indicates-required {
+		float: left;
+		margin: 0 0 20px 0;
+		color: $white;
+		font-weight: normal;
+		font-size: 12px;
+	}
+	.mc-field-group {
+		width: 100%;
+		float: left;
+		padding: 0;
+		margin: 0 0 10px 0;
+		label {
+			width: 100px;
+			float: left;
+			font-size: 13px;
+			color: $white;
+		}
+		input {
+			float: right;
+			padding: 7px 5px;
+			margin: 0 4px 8px 2px;
+		}
+	}
+}
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
