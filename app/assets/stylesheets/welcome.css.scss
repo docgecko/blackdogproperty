@@ -157,6 +157,7 @@
 			text-align: center;
 			.register, .subscribe {
 				font-size: 16px;
+				margin: 10px 0;
 			}
 		}
 	}
@@ -183,11 +184,17 @@
 			float: left;
 			font-size: 13px;
 			color: $white;
+			margin: 8px 0 0 0;
 		}
 		input {
 			float: right;
 			padding: 7px 5px;
 			margin: 0 4px 8px 2px;
+			color: $black;
+			font-size: 12px;
+		}
+		select {
+			margin: 8px 0 0 0;
 		}
 	}
 }
