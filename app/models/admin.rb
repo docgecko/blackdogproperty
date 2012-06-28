@@ -4,7 +4,8 @@ class Admin
   # :token_authenticatable, :confirmable, :registerable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :authentication_keys => [:login]
 
   ## Database authenticatable
   field :email,              :type => String, :null => false, :default => ""
@@ -37,7 +38,25 @@ class Admin
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+  # Setup accessible (or protected) attributes
+  attr_accessor :login
   
   ## Additional field
   field :username,         :type => String, :null => false, :default => ""
+  
+  # Use username instead of id
+  def to_param
+    username
+  end
+  
+  # Allow username and email to be used as login
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      self.any_of({ :username =>  /^#{Regexp.escape(login)}$/i }, { :email =>  /^#{Regexp.escape(login)}$/i }).first
+    else
+      super
+    end
+  end
 end

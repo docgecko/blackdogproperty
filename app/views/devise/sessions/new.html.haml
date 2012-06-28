@@ -11,17 +11,18 @@
 	admin sign in
 
 - content_for :auth_main do
-	= render 'shared/flashes', :target => resource
+	#flash_area
+		= render 'shared/flashes', :resource => resource
 	
 	= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:autocomplete => "off"}) do |f|
 		
 		%h2
-			= f.label :email
+			= f.label :login, "Username or Email address"
 			%br
-			= f.text_field :email, :maxlength => 255
+			= f.text_field :login, :maxlength => 255
 
 		%h2
-			= f.label :password, (current_page? new_admin_session_path ? "Admin Password" : "BlackDog Property Password")
+			= f.label :password, (current_page?(new_admin_session_path) ? "Admin Password" : "BlackDog Property Password")
 			%br
 			= f.password_field :password, :maxlength => 20
 						

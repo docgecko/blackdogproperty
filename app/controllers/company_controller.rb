@@ -8,10 +8,10 @@ class CompanyController < InheritedResources::Base
   end
   
   def team
-    @members = Member.where(published: true).asc(:order_no)
+    @members = Member.where(published: true).asc(:position)
   end
 
   def testimonials
-    @testimonials = Testimonial.where(published: true).asc(:order_no)
+    @testimonials = Testimonial.where(published: true).asc(:position)
   end
 end

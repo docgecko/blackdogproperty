@@ -109,14 +109,14 @@ RailsAdmin.config do |config|
     configure :price_rental, :text
     configure :coordinates, :serialized 
     configure :zoom, :integer 
-    configure :order_no, :integer 
+    configure :position, :integer 
     configure :featured, :boolean 
     configure :published, :boolean
     configure :created_at, :datetime 
     configure :updated_at, :datetime 
     configure :deleted_at, :datetime 
     list do
-      sort_by :order_no
+      sort_by :position
       field :title
       field :location
       field :reference
@@ -128,7 +128,7 @@ RailsAdmin.config do |config|
       field :latitude
       field :longitude
       field :zoom
-      field :order_no
+      field :position
       field :featured
       field :published
       field :created_at
@@ -150,7 +150,7 @@ RailsAdmin.config do |config|
       end
       field :longitude
       field :zoom
-      field :order_no
+      field :position
       field :featured
       field :published
       field :created_at
@@ -171,7 +171,7 @@ RailsAdmin.config do |config|
         longitude_field :longitude
       end
       field :zoom
-      field :order_no
+      field :position
       field :featured
       field :published
       field :created_at
@@ -191,21 +191,21 @@ RailsAdmin.config do |config|
     configure :title, :string 
     configure :description, :text 
     configure :image, :carrierwave 
-    configure :order_no, :integer 
+    configure :position, :integer 
     configure :featured, :boolean 
     configure :published, :boolean 
     configure :created_at, :datetime 
     configure :updated_at, :datetime 
     configure :deleted_at, :datetime 
     list do
-      sort_by :property, :order_no
+      sort_by :property, :position
       field :property
       field :title
       field :image do
         thumb_method :list
       end
       field :description
-      field :order_no
+      field :position
       field :featured
       field :published
       field :created_at, :datetime 
@@ -220,7 +220,7 @@ RailsAdmin.config do |config|
         thumb_method :large
       end
       field :description
-      field :order_no
+      field :position
       field :featured
       field :published
     end
@@ -231,7 +231,7 @@ RailsAdmin.config do |config|
         thumb_method :large
       end
       field :description
-      field :order_no
+      field :position
       field :featured
       field :published
     end
@@ -248,17 +248,17 @@ RailsAdmin.config do |config|
     configure :name, :string 
     configure :avatar, :carrierwave 
     configure :profile, :text 
-    configure :order_no, :integer 
+    configure :position, :integer 
     configure :published, :boolean
     configure :created_at, :datetime 
     configure :updated_at, :datetime 
     configure :deleted_at, :datetime 
     list do
-      sort_by :order_no
+      sort_by :position
       field :name
       field :avatar
       field :profile
-      field :order_no
+      field :position
       field :published
       field :created_at, :datetime 
       field :updated_at, :datetime 
@@ -269,14 +269,14 @@ RailsAdmin.config do |config|
       field :name
       field :avatar
       field :profile
-      field :order_no
+      field :position
       field :published
     end
     edit do
       field :name
       field :avatar
       field :profile
-      field :order_no
+      field :position
       field :published
     end
     create do; end
@@ -290,7 +290,7 @@ RailsAdmin.config do |config|
     configure :name, :string 
     configure :location, :string 
     configure :details, :text 
-    configure :order_no, :integer 
+    configure :position, :integer 
     configure :published, :boolean
     configure :created_at, :datetime 
     configure :updated_at, :datetime 
@@ -299,7 +299,7 @@ RailsAdmin.config do |config|
       field :name
       field :location
       field :details
-      field :order_no
+      field :position
       field :published  
     end
     export do; end
@@ -307,14 +307,14 @@ RailsAdmin.config do |config|
       field :name
       field :location
       field :details
-      field :order_no
+      field :position
       field :published  
     end
     edit do
       field :name
       field :location
       field :details
-      field :order_no
+      field :position
       field :published  
     end
     create do; end
@@ -329,7 +329,7 @@ RailsAdmin.config do |config|
     configure :_id, :hidden
     configure :name, :string
     configure :description, :text
-    configure :order_no, :integer
+    configure :position, :integer
     configure :created_at, :datetime 
     configure :updated_at, :datetime 
     configure :deleted_at, :datetime 
@@ -338,21 +338,21 @@ RailsAdmin.config do |config|
       field :name
       field :description
       field :division
-      field :order_no
+      field :position
     end
     export do; end
     show do
       field :name
       field :description
       field :division
-      field :order_no
+      field :position
     end
     edit do; end
     create do
       field :name
       field :description
       field :division
-      field :order_no
+      field :position
     end
     update do; end
   end
@@ -449,6 +449,9 @@ RailsAdmin.config do |config|
     weight 8
     configure :_type, :hidden
     configure :_id, :hidden
+    configure :first_name, :string
+    configure :last_name, :string
+    configure :username, :string
     configure :email, :string
     configure :password, :password
     configure :password_confirmation, :password
@@ -461,6 +464,9 @@ RailsAdmin.config do |config|
     configure :current_sign_in_ip, :string
     configure :last_sign_in_ip, :string
     list do
+      field :first_name
+      field :last_name
+      field :username
       field :email
       field :sign_in_count
       field :current_sign_in_at
@@ -470,6 +476,9 @@ RailsAdmin.config do |config|
     end
     export do; end
     show do
+      field :first_name
+      field :last_name
+      field :username
       field :email
       field :sign_in_count
       field :current_sign_in_at
@@ -479,6 +488,9 @@ RailsAdmin.config do |config|
     end
     edit do; end
     create do
+      field :first_name
+      field :last_name
+      field :username
       field :email
       field :password
       field :password
