@@ -570,7 +570,7 @@ label {
 .btn:focus {
 	outline: thin dotted #333;
 	outline: 5px auto -webkit-focus-ring-color;
-	outline-offset: -2px;
+//	outline-offset: -2px;
 }
 .btn.active,.btn:active {
 	background-color: #e6e6e6;
