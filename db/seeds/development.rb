@@ -23,8 +23,12 @@ puts 'All users created'
 puts 'SETTING UP ADMIN LOGINS'
 Admin.create(
   :email => 'daren.sdw@gmail.com', 
-  :password => 'secret',
-  :password_confirmation => 'secret')
+  :password => 'Cup4te4s',
+  :password_confirmation => 'Cup4te4s')
+Admin.create(
+  :email => 'admin@blackdogproperty.com', 
+  :password => 'Abergavenny46',
+  :password_confirmation => 'Abergavenny46')
 puts 'All admins created'
 
 
@@ -75,7 +79,7 @@ Villa Azur is in a prime location and has everything you could want for the perf
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0075.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/153.jpg')),
   :position => 1,
   :featured => false,
   :published => true)
@@ -103,7 +107,7 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0099.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/079.jpg')),
   :position => 5,
   :featured => true,
   :published => true)
@@ -117,38 +121,315 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0139.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0150.JPG')),
   :position => 7,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0150.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/132.jpg')),
   :position => 8,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0154.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0170.JPG')),
   :position => 9,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0170.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0178.JPG')),
   :position => 10,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/DSC_0178.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/146.jpg')),
   :position => 11,
   :featured => false,
   :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/073.jpg')),
+  :position => 12,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/172.jpg')),
+  :position => 13,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_graham/134.jpg')),
+  :position => 14,
+  :featured => false,
+  :published => true)
+  
+p = Property.create(
+  :title => 'Large Belle Epoque Villa in Beautiful Villefranche',
+  :location => 'Villefranche sur mer',
+  :country => 'France',
+  :reference => 'VSMJSG',
+  :bio => 'Imposing five bedroom villa in heart of Villefranche town. This large (3000sq ft/300m2) former royal residence features a garden, large heated swimming pool, roof terrace and wonderful views across the village to the sea. The villa has just been renovated to the very highest standard.',
+  :description => 'The 3 bedroom apartment is very large and has is a U shaped layout. Built in 1820 (and traversing Rue Obscure, dating from the 13th century) the entrance has bedroom 1 to the left (2 single beds), then a fully fitted Kitchen with a basement off, housing the air-conditioning, ironing, washer and dryer. Beyond the lower hall is the main room. Bedroom 2 and 3 each have huge sleigh beds with ensuite bathrooms. The main bedroom has 2 windows overlooking the port.
+
+Everything in the apartment is new, with a very high standard of furniture, bedding, curtains, fabrics, flooring etc. The 3 bathrooms are clad in Pink Portugese Marble and the main bathroom has a high back bath at the window overlooking the port! All bathrooms have walk-in showers. Floors are Oak and the furniture is French Provencale style. The kitchen is Cream Provencale with a tiled floor. The total area is c. 2400 sq. feet making this the largest apartment in the Old Town.
+
+The location is unbeatable as it has 5 windows to the front (+ 6 at the back) and there are no stairs to climb. There are 2 balconies to the front. One is fitted with table and chairs. All ceilings are high as it was constructed from 3 old apartments made into one! The basement has a separate entrance for bicycles etc if required. 
+
+Although the apartment is on the second floor from the port side, the entrance is on ground level from Rue du Poiliu, meaning that there are no steps and that this apartment is suitable for the infirm. A car is not necessary in Villefranche and the property is within walking distance to all shops restaurants as well as public transport links.',
+  :facilities => '- Air-conditioning
+- Central heating
+- Safe
+- 5 bedrooms – sleeps 10
+- 5 bathrooms
+- Lounge seating 10 –with fireplace
+- Dining seating 10
+- Large gated pool	
+- Outdoor dining 
+- Sun Loungers
+- Badminton court 
+- BBQ
+- Private garage
+- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven * Washing machine * Dryer *Icemaker 
+- TV with full satellite
+- Wifi
+- Large terrace and garden
+- Driveway parking and separate garage',
+  :purpose_ids => [ 'rental', 'sale' ],
+  :price_sale => '€5m',
+  :price_rental => 'Rental prices start from  €6600 per week',
+  :coordinates => [ 43.702974, 7.307848 ],
+  :zoom => 11,
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Badminton-court-1.jpg')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Bathroom-upstairs.jpg')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Bedroom-4.jpg')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Bedroom-1.jpg')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Bedroom-2.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Drawing-room.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Front-gate-open.jpg')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Front.jpg')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Kitchen-table.jpg')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/kitchen.jpg')),
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Pool.jpg')),
+  :position => 11,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Rear-side.jpg')),
+  :position => 12,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Stairs.jpg')),
+  :position => 13,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_seriamis/Villa-rear.jpg')),
+  :position => 14,
+  :featured => false,
+  :published => true)
+
+p = Property.create(
+  :title => 'Spectacular Belle Epoque Villa',
+  :location => 'Villefranche sur mer',
+  :country => 'France',
+  :reference => 'VSMJSo',
+  :bio => 'Beautiful old villa in top class condition with a southerly panoramic view over the bay of Villefranche and 1 mile from Cap Ferrat. It has been completely renovated to the absolute highest standard. Built in 1880, it has all the beautiful Belle Epoque features of that period, and is only 100m from the beach. There is a guest quarters at the side and a guardian\'s house at the other side. This villa is perfect for entertaining as it can cater for up to 50 guests. The views over the bay are astonishing and it gets sun all day.',
+  :description => 'As soon as you see this astounding villa you appreciate how beautiful it really is. Set over 3 floors as well as having a roof top terrace this property has been renovated with excellence and luxury in mind. 
+
+The ground floor of the villa offers the open plan lounge as well as the beautifully designed Clive Christian kitchen, which has all mod cons. As you venture upstairs in this beautiful property you are greeted by 6 perfectly decorated bedrooms with balconies off some of the bedrooms The villa is light and airy throughout. On the top floor a door leads you outside to the rooftop terrace with unbelievable views out over Villefranche and Cap Ferrat.  Each bedroom in the main house is equal with the same views and has a walk in dressing area with en-suite bathroom. One of the bedrooms also has an office area.
+
+Outside there is a garden as well as pool area with sun loungers and beautiful views out over the port of Villefranche. The garden has been used in the past to host wedding breakfasts as well as catered evening soirées. 
+
+Around the back of the property there are two separate buildings, one a 1 bedroom apartment with kitchenette and the 2nd a mezzanine studio flat, perfect for staff. 
+
+The villa is located just a 2 minute walk to the beach as well as straight down into the old town of Villefranche with all its beautiful restaurants, shops as well as the famous Citadelle.',
+  :facilities => '- 6 bedrooms – sleeps 12
+- 6 bathrooms
+- Separate 1 bed apmt
+- Separate studio/ nanny flat
+- Modern renovated kitchen * Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven
+- Sun loungers
+- Dining area for 10
+- Living area for 10
+- Roof terrace 
+- Garden
+- Pool (heated if required)
+- Satellite TV
+- Air-conditioning
+- Central heating
+- Safe
+- Private garage',
+  :purpose_ids => [ 'rental' ],
+  :price_sale => '',
+  :price_rental => '',
+  :coordinates => [ 43.707332, 7.314218 ],
+  :zoom => 11,
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Aerial-view.jpg')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Bed-1.jpg')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Bed-3.jpg')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Bed-4.jpg')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Dining.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Front.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Kitchen.jpg')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Lounge.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Pool-1.jpg')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Pool-2.jpg')),
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_soleia/Veranda-off-lounge.JPG')),
+  :position => 11,
+  :featured => false,
+  :published => true)
+    
 p = Property.create(
   :title => 'Luxury 3 Bed Villa with Private Pool',
   :location => 'Villefranche sur mer',
@@ -185,7 +466,7 @@ The terraces that wrap all around the property offer stunning views. From outsid
   :price_rental => 'Rental prices start from €5000 per week',
   :coordinates => [ 43.708458, 7.303069 ],
   :zoom => 11,
-  :position => 2,
+  :position => 4,
   :featured => false,
   :published => true)
 p.photos.create(
@@ -251,6 +532,110 @@ p.photos.create(
   :position => 9,
   :featured => false,
   :published => true)
+      
+p = Property.create(
+  :title => 'Recently Renovated Sea View Villa',
+  :location => 'Beaulieu sur mer',
+  :country => 'France',
+  :reference => 'BSMR',
+  :bio => '8 bedroom villa recently renovated in the hills of Beaulieu sur Mer with private pool, gardens and outstanding views. Located just above the town of Beaulieu this large property offers everything you require for a luxury stay in the beautiful South of France.',
+  :description => 'Beaulieu sur Mer is a beautiful coastal town situated between Nice and Monaco and this property is less than 5 minutes outside the town. Having just been recently renovated while keeping in with the feel of the house, this is a much sought after villa in Beaulieu. 
+
+The villa consists of a beautiful number of rooms over 3 floors and it is surrounded by gardens. As you pull up the drive you are greeted with a beautiful view of the house as well as the lawns with a small pond. The main entrance greets you and leads you into the huge living space with dining area, small office space and comfy lounge space. The kitchen which has been renovated also and is fit for use by a top chef is just off the lounge. There is access to the pool and gardens from both of these rooms and the kitchen also has a seating area. 
+
+Downstairs there are 3 double bedrooms, one en suite and a separate bathroom. They all have terrace doors which open out to the front gardens. On the top floor of the property there are 4 double bedrooms and one twin. There are 3 bathrooms upstairs, en suite in the master and two other shared bathrooms. Terraces off the master as well as two other double rooms offer both sea and pool and garden views over the property. There is also gym equipment on the master terrace. 
+
+The back garden of the property has a large covered teak terrace with seating for dining al fresco as well as sun loungers, large fenced off pool with alarm, BBQ, bar area as well as childrens toys. 
+
+This property is ideal for large groups with families, corporate groups or even just large group of friends.',
+  :facilities => '- 8 bedrooms - sleeps 16
+- Air-conditioning
+- Central heating
+- Safe
+- 6 bathrooms
+- Private gated driveway
+- Private garage
+- Modern renovated kitchen * Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Nespresso * Oven
+- Living room living area seating for 16.
+- Dining room seating for 10 
+- Plasma TV with full Sky Package
+- Wifi
+- Sun loungers
+- Outdoor dining area for 16 with extra seating  
+- BBQ, outdoor fridge, bar
+- Large pool (heated if required)',
+  :purpose_ids => [ 'rental' ],
+  :price_sale => '',
+  :price_rental => 'Rental prices start from €18000 per week',
+  :coordinates => [ 43.706907, 7.323557 ],
+  :zoom => 11,
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/DSCF3849.JPG')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/DSCF5997.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/DSCF6004.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/DSCF6021.JPG')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/hpim0001.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/s5000624.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/SANY0005.JPG')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/SANY0180.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_savina/SANY0225.JPG')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+
 p = Property.create(
   :title => 'Luxury Villa with Exceptional Sea Views and Private Access to the Sea',
   :location => 'St Jean Cap Ferrat',
@@ -289,15 +674,72 @@ July €108 000 p/mth
 August – offer dependant',
   :coordinates => [ 43.69087, 7.32316 ],
   :zoom => 11,
-  :position => 3,
+  :position => 6,
   :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0197.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_ferrat/photo.JPG')),
   :position => 1,
   :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_ferrat/photo_02.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_ferrat/photo_03.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+
+p = Property.create(
+  :title => '3 Bed Villa in a Private Residence',
+  :location => 'Villefranche sur mer',
+  :country => 'France',
+  :reference => 'VSMT',
+  :bio => 'This 3 bedroom property is located in a prime location overlooking the beach of Villefranche sur Mer on the Baisse Corniche. It is in a private residence with shared pool and a large terrace overlooking the sea and coastline just a 2 minute walk to the beach.',
+  :description => 'This 3 bedroom property is in one of the prime private residences in Villefranche. With 2 secure entrances, private parking, shared pool and astounding views it is in high demand. Access to the beach as well as the bars and restaurants of the old town of Villefranche is by a set of steps direct from the road to the beach. 
+
+There are shared gardens as well as a pool with the property but it is not a large residence so it is rarely too busy. The entrance to the villa itself is very pretty and as you walk into the property it is all open plan and you can see straight out the terrace window. 
+
+The kitchen is very modern with all mod cons, followed by an open plan living space with dining table, large sofa, tv, sound system, wifi etc. The terrace doors open out to a hug terrace with beautiful views down over the beach and coast of Villefranche and Cap Ferrat. 
+
+The 3 ensuite bedrooms are located up stairs. The two front rooms have access to another terrace with a smaller balcony in the 3rd bedroom. The large master has also got a walk in wardrobe. 
+
+The town of Villefranche is only a few minutes’ walk and public transport links are right outside the property. This property is in a prime location for discovering the French Riviera.',
+  :facilities => '- Air-conditioning
+- Central heating
+- 3 bedrooms - sleeps 6
+- 4 bathrooms - 3 ensuite
+- Secure gated parking
+- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven 
+- Living room living area seating for 8.
+- Dining room seating for 8
+- Full entertainment system 
+- Plasma TV
+- Outdoor dining area for 8
+- Large shared pool',
+  :purpose_ids => [ 'rental' ],
+  :price_sale => '',
+  :price_rental => 'Rental prices start from €3500 per week',
+  :coordinates => [ 43.702974, 7.307848 ],
+  :zoom => 11,
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0199.JPG')),
+  :position => 1,
+  :featured => true,
   :published => true)
 p.photos.create(
   :title => '',
@@ -309,9 +751,9 @@ p.photos.create(
 p.photos.create(
   :title => '',
   :description => '',
-  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0199.JPG')),
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_tony/DSC_0197.JPG')),
   :position => 3,
-  :featured => true,
+  :featured => false,
   :published => true)
 p.photos.create(
   :title => '',
@@ -467,78 +909,401 @@ p.photos.create(
   :position => 25,
   :featured => false,
   :published => true)
+          
 p = Property.create(
-  :title => 'Recently Renovated Sea View Villa',
-  :location => 'Beaulieu sur mer',
+  :title => 'Luxury 5 Bedroom Villa overlooking the Bay of Villefranche',
+  :location => 'Villefranche sur mer',
   :country => 'France',
-  :reference => 'BSMR',
-  :bio => '8 bedroom villa recently renovated in the hills of Beaulieu sur Mer with private pool, gardens and outstanding views. Located just above the town of Beaulieu this large property offers everything you require for a luxury stay in the beautiful South of France.',
-  :description => 'Beaulieu sur Mer is a beautiful coastal town situated between Nice and Monaco and this property is less than 5 minutes outside the town. Having just been recently renovated while keeping in with the feel of the house, this is a much sought after villa in Beaulieu. 
+  :reference => 'VSMJO',
+  :bio => 'This villa overlooks the bay of Villefranche to Cap Ferrat and has been modernised to the highest standard. Its South facing direction ensures it gets the sun all day, and the location is perfect - only a 4 minute walk to the port of Villefranche 130 metres from the beach and the train is nearby which is 2 stops from Nice and 4 stops to Monte Carlo.',
+  :description => 'This villa has just been restored to its former glory, having been divided into three apartments for many years. It has marble flooring throughout and is fitted out with top of the range furniture. This is one of the most outstanding villas in a quiet area and is about 2500sq feet with 3 large balconies. The views from this part of Villefranche are regarded as unrivalled anywhere in the world! 
 
-The villa consists of a beautiful number of rooms over 3 floors and it is surrounded by gardens. As you pull up the drive you are greeted with a beautiful view of the house as well as the lawns with a small pond. The main entrance greets you and leads you into the huge living space with dining area, small office space and comfy lounge space. The kitchen which has been renovated also and is fit for use by a top chef is just off the lounge. There is access to the pool and gardens from both of these rooms and the kitchen also has a seating area. 
-
-Downstairs there are 3 double bedrooms, one en suite and a separate bathroom. They all have terrace doors which open out to the front gardens. On the top floor of the property there are 4 double bedrooms and one twin. There are 3 bathrooms upstairs, en suite in the master and two other shared bathrooms. Terraces off the master as well as two other double rooms offer both sea and pool and garden views over the property. There is also gym equipment on the master terrace. 
-
-The back garden of the property has a large covered teak terrace with seating for dining al fresco as well as sun loungers, large fenced off pool with alarm, BBQ, bar area as well as childrens toys. 
-
-This property is ideal for large groups with families, corporate groups or even just large group of friends.',
-  :facilities => '- 8 bedrooms - sleeps 16
-- Air-conditioning
+There is ample space, with three walk-out balconies. The property is over three levels with all the double bedrooms on the upper two floors. There is a single room off the lounge. The kitchen is light and beautifully renovated with all modcons and has a dining area. The lounge is open plan with lounge seating with Tv Dvd etc.  There is a garage with room for one car, and there is ample free parking outside the villa. This property is located just beside another one of our properties Soleia so if you would be looking for corporate or large bookings these two properties are perfect.',
+  :facilities => '- Air-conditioning
 - Central heating
 - Safe
-- 6 bathrooms
-- Private gated driveway
+- 5 bedrooms – sleeps 9
+- 4 bathrooms
 - Private garage
-- Modern renovated kitchen * Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Nespresso * Oven
-- Living room living area seating for 16.
-- Dining room seating for 10 
-- Plasma TV with full Sky Package
+- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven * Washing machine
+- Living room living area seating for 10
+- Fireplace 
+- TV with full satellite
 - Wifi
 - Sun loungers
-- Outdoor dining area for 16 with extra seating  
-- BBQ, outdoor fridge, bar
-- Large pool (heated if required)',
+- Outdoor dining area  
+- BBQ
+- Plunge pool (heated if required)
+- 3 Terraces',
+  :purpose_ids => [ 'rental', 'sale' ],
+  :price_sale => '€5m',
+  :price_rental => 'Rental prices start from  €5500 per week',
+  :coordinates => [ 43.707332, 7.314218 ],
+  :zoom => 11,
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Front-4.jpg')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Kitchen-2.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Ours-bath-1.jpg')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Ours-bed-1.jpg')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Ours-bed-2.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Oursinade-lounge-1.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/patio.jpg')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Pool-2.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Terrace-1.jpg')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Terrace-5.jpg')),
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_oursinade/Villa.jpg')),
+  :position => 11,
+  :featured => false,
+  :published => true)
+
+p = Property.create(
+  :title => 'Large Deluxe 3 Bedroom Apartment overlooking the port of Villefranche',
+  :location => 'Villefranche sur mer',
+  :country => 'France',
+  :reference => '',
+  :bio => 'Very large (2400sq ft/230m2) three bedroomed apartment overlooking Villefranche port. This apartment has been renovated with no expense spared, and is possibly the finest apartment available to rent in Villefranche. The location is unbeatable, with two balconies overlooking the port and onto Cap Ferrat.',
+  :description => 'The 3 bedroom apartment is very large and has is a U shaped layout. Built in 1820 (and traversing Rue Obscure, dating from the 13th century) the entrance has bedroom 1 to the left (2 single beds), then a fully fitted Kitchen with a basement off, housing the air-conditioning, ironing, washer and dryer. Beyond the lower hall is the main room. Bedroom 2 and 3 each have huge sleigh beds with ensuite bathrooms. The main bedroom has 2 windows overlooking the port.
+
+Everything in the apartment is new, with a very high standard of furniture, bedding, curtains, fabrics, flooring etc. The 3 bathrooms are clad in Pink Portugese Marble and the main bathroom has a high back bath at the window overlooking the port! All bathrooms have walk-in showers. Floors are Oak and the furniture is French Provencale style. The kitchen is Cream Provencale with a tiled floor. The total area is c. 2400 sq. feet making this the largest apartment in the Old Town.
+
+The location is unbeatable as it has 5 windows to the front (+ 6 at the back) and there are no stairs to climb. There are 2 balconies to the front. One is fitted with table and chairs. All ceilings are high as it was constructed from 3 old apartments made into one! The basement has a separate entrance for bicycles etc if required. 
+
+Although the apartment is on the second floor from the port side, the entrance is on ground level from Rue du Poiliu, meaning that there are no steps and that this apartment is suitable for the infirm. A car is not necessary in Villefranche and the property is within walking distance to all shops restaurants as well as public transport links.',
+  :facilities => '- Air-conditioning
+- Central heating
+- Safe
+- 3 bedrooms – sleeps 8
+- 4 bathrooms
+- Lounge seating 8
+- Dining seating 6 
+- Private garage
+- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven * Washing machine * Dryer
+- Living room living area seating for 10
+- Fireplace 
+- TV with full satellite
+- Wifi
+- 2 balconies',
+  :purpose_ids => [ 'rental', 'sale' ],
+  :price_sale => '€3m',
+  :price_rental => 'Rental prices start from  €3200 per week',
+  :coordinates => [ 43.704144, 7.312571 ],
+  :zoom => 11,
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Balconies.jpg')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Bed-3.jpg')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Kitchen-1.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Lounge.JPG')),
+  :position => 4,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Main-bath-shower.jpg')),
+  :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Main-bath.jpg')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Quayside-windows.jpg')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Restaurants.jpg')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/apartment_seagulls/Seagulls-balcony.jpg')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+
+p = Property.create(
+  :title => 'Renovated Art Deco Villa',
+  :location => 'Cap d’Antibes',
+  :country => 'France',
+  :reference => 'CAC',
+  :bio => 'Originally a 1960’s build, this beautiful Art Deco property has just been renovated to the highest standard with beautiful Italian kitchen and marble floors throughout. Surrounded by beautiful gardens and terraces with gorgeous sea views this is a spectacular property in a prime location on the Cap d’Antibes one of the most prestigious places on the Riviera.',
+  :description => 'This 4 bedroom villa has been renovated to the highest standard with the most quality finishes throughout.  It has a large entrance hall followed by an open plan lounge and dining area of approx. 60m2. This leads into the beautiful Italian kitchen which has its own separate entrance to the garden. 
+
+The bedroom/ office on the ground floor has an access out to a terrace over-looking the pool. Two further bedrooms open out onto the 1st floor terrace with a family bathroom and separate toilet. The master bedroom is 40m2 with an ensuite of 20m2 and it has a large terrace which looks out over the sea. 	 
+
+The exterior or the property has a rooftop terrace, as well as lower balconies and a large manicured garden. The pool can be heated and is surrounded by patio areas with a pool heater for any cool evenings. There is also a Summer kitchen and BBQ for dining al fresco. 
+
+The property has 2 separate buildings both with their own access. One is a studio apartment and the 2nd a 2 bedroom apartment with kitchenette and shower. Both have been fitted with reversible AC.',
+  :facilities => '- 4 bedrooms – sleeps 8
+  - 4 bathrooms
+  - Separate 2 bed apartment
+  - Separate studio 
+  - Modern renovated -kitchen -Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven
+  - Sun loungers
+  - Roof terrace of 120m2 
+  - Garden of 900m2 
+  - Summer kitchen 
+  - 14 * 6m pool (heated if required)
+  - SatelliteTV
+  - Air-conditioning
+  - Electric shutters
+  - Central heating
+  - Safe
+  - Internal phone system
+  - New alarm system 
+  - Private garage as well as parking on driveway',
   :purpose_ids => [ 'rental' ],
   :price_sale => '',
   :price_rental => 'Rental prices start from €18000 per week',
   :coordinates => [ 43.706907, 7.323557 ],
   :zoom => 11,
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/A-typical-summer-view.JPG')),
+  :position => 1,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Bedroom-3-v.JPG')),
+  :position => 2,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Bedroom-3.JPG')),
+  :position => 3,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/chambre-de-maitre-1.JPG')),
   :position => 4,
   :featured => false,
   :published => true)
-p = Property.create(
-  :title => '3 Bed Villa in a Private Residence',
-  :location => 'Villefranche sur mer',
-  :country => 'France',
-  :reference => 'VSMT',
-  :bio => 'This 3 bedroom property is located in a prime location overlooking the beach of Villefranche sur Mer on the Baisse Corniche. It is in a private residence with shared pool and a large terrace overlooking the sea and coastline just a 2 minute walk to the beach.',
-  :description => 'This 3 bedroom property is in one of the prime private residences in Villefranche. With 2 secure entrances, private parking, shared pool and astounding views it is in high demand. Access to the beach as well as the bars and restaurants of the old town of Villefranche is by a set of steps direct from the road to the beach. 
-
-There are shared gardens as well as a pool with the property but it is not a large residence so it is rarely too busy. The entrance to the villa itself is very pretty and as you walk into the property it is all open plan and you can see straight out the terrace window. 
-
-The kitchen is very modern with all mod cons, followed by an open plan living space with dining table, large sofa, tv, sound system, wifi etc. The terrace doors open out to a hug terrace with beautiful views down over the beach and coast of Villefranche and Cap Ferrat. 
-
-The 3 ensuite bedrooms are located up stairs. The two front rooms have access to another terrace with a smaller balcony in the 3rd bedroom. The large master has also got a walk in wardrobe. 
-
-The town of Villefranche is only a few minutes’ walk and public transport links are right outside the property. This property is in a prime location for discovering the French Riviera.',
-  :facilities => '- Air-conditioning
-- Central heating
-- 3 bedrooms - sleeps 6
-- 4 bathrooms - 3 ensuite
-- Secure gated parking
-- Dishwasher * Freezer * Fridge * Grill * Hob * Microwave * Oven 
-- Living room living area seating for 8.
-- Dining room seating for 8
-- Full entertainment system 
-- Plasma TV
-- Outdoor dining area for 8
-- Large shared pool',
-  :purpose_ids => [ 'rental' ],
-  :price_sale => '',
-  :price_rental => 'Rental prices start from €3500 per week',
-  :coordinates => [ 43.702974, 7.307848 ],
-  :zoom => 11,
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/chambre-de-maitre-2.JPG')),
   :position => 5,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Chambre-de-maitre-terrasse.JPG')),
+  :position => 6,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Dining-1.JPG')),
+  :position => 7,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Ensuite-1.JPG')),
+  :position => 8,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Ensuite-2.JPG')),
+  :position => 9,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/garden-2.JPG')),
+  :position => 10,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Garden-to-right.JPG')),
+  :position => 11,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-1.JPG')),
+  :position => 12,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-3.JPG')),
+  :position => 13,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-4.JPG')),
+  :position => 14,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-5.JPG')),
+  :position => 15,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Lounge-6.JPG')),
+  :position => 16,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Pool-from-summer-kitchen.JPG')),
+  :position => 17,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Roof-garden-1.JPG')),
+  :position => 18,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Sejour-dining.jpg')),
+  :position => 19,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/Summer-kitchen.JPG')),
+  :position => 20,
+  :featured => false,
+  :published => true)
+p.photos.create(
+  :title => '',
+  :description => '',
+  :image => open(File.join('http://s3-eu-west-1.amazonaws.com/', 'bdp-assets-staging/properties/villa_cap_d_antibes/View-to-East.jpg')),
+  :position => 21,
   :featured => false,
   :published => true)
 puts 'All Properties & Photos created'

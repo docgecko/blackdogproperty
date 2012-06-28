@@ -101,13 +101,13 @@
 
 .column {
 	background-color: $black;
-	&#first, &#second {
+	&#one, &#two {
 		margin: 0 20px 0 0;
 	}
-	&#third {
+	&#three {
 		margin: 0 0 0 1px;
 	}
-	&#first, &#second, &#third {
+	&#one, &#two, &#three {
     position: relative;
 		float: left;
     overflow: hidden;
