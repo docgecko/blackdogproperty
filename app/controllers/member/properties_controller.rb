@@ -1,7 +1,7 @@
 class Member::PropertiesController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :find_property_photos, :only => :edit
-  before_filter :find_amenities, :only => :edit
+  before_filter :find_amenities, :only => [ :edit, :preview ]
   before_filter :prepare_google_maps, :only => :edit
   before_filter :find_edit_section, :only => [ :edit, :update, :update ]
   layout :resolve_layout
@@ -70,6 +70,8 @@ class Member::PropertiesController < InheritedResources::Base
       case action_name
       when "index", "new", "create"
         "dashboard"
+      when "preview"
+        'application'
       else
         "property"
       end

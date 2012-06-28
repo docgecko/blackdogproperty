@@ -2,6 +2,6 @@
 	Quick Navigation » 
 	= link_to_unless_current "All Lastminute Properties", lastminutes_path
 	»
-	= link_to_unless_current @property.country, lastminutes_search_path
+	= link_to_unless_current @property.country, lastminutes_search_path(country_id: @property.country.parameterize)
 	»
-	= link_to_unless_current @property.title, lastminute_path
+	= @property.title
