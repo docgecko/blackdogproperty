@@ -174,27 +174,35 @@
 		font-weight: normal;
 		font-size: 12px;
 	}
+	#mce-success-response {
+		margin: 0 0 10px 0;
+		padding: 10px;
+		border: 1px solid $light-green;
+		background: $bright-green;
+		color: lighten(green, 1);
+	}
 	.mc-field-group {
 		width: 100%;
 		float: left;
 		padding: 0;
-		margin: 0 0 10px 0;
+		margin: 0 0 20px 0;
 		label {
-			width: 100px;
+			width: 110px;
 			float: left;
 			font-size: 13px;
+			line-height: 25px;
 			color: $white;
-			margin: 8px 0 0 0;
+			margin: 0;
 		}
 		input {
 			float: right;
 			padding: 7px 5px;
-			margin: 0 4px 8px 2px;
+			margin: 0 4px 0 2px;
 			color: $black;
 			font-size: 12px;
 		}
 		select {
-			margin: 8px 0 0 0;
+			margin: 8px 5px 0 -5px;
 		}
 	}
 }

@@ -6,6 +6,9 @@
 		.indicates-required
 			%span.asterisk *
 			indicates a required field
+		#mce-responses.clear
+			#mce-error-response.response{:style => "display:none"}
+			#mce-success-response.response{:style => "display:none"}
 		.mc-field-group
 			= label_tag "mce-EMAIL" do
 				Email Address
@@ -21,10 +24,7 @@
 			= label_tag "mce-YCOUNTRY" do
 				Your Country
 				%span.asterisk *
-			= country_select "mce", "YCOUNTRY", ["-- Select a Country --", "France", "Italy", "Portugal", "Spain", "United Kingdom"], {}, :id => "mce-YCOUNTRY", :name => "YCOUNTRY", :class => "required"
-		#mce-responses.clear
-			#mce-error-response.response{:style => "display:none"}
-			#mce-success-response.response{:style => "display:none"}
+			= country_select "mce", "YCOUNTRY", ["", "France", "Italy", "Portugal", "Spain", "United Kingdom"], {}, {:id => "mce-YCOUNTRY", :name => "YCOUNTRY", :class => "required", :style => "width:160px;"}
 		.clear
 		.action
 			= submit_tag "Subscribe", :name => "subscribe", :type => "submit", :id => "mc-embedded-subscribe", :class => "btn btn-info subscribe"
