@@ -7,8 +7,16 @@ namespace :db do
   end
 
   desc "Copy local backup to staging db"
-  task :sync_local_to_staging => :environment do
+  task :sync_local_from_production_to_staging => :environment do
     system 'mongorestore -h staff.mongohq.com:10049 --drop -d app5401656 -u heroku -p c2bc28206bc3813c0a5a2ba56b440013 db/backups/app4264979/' 
+  end
+  
+  task :backup_local => :environment do
+    system 'mongodump -h localhost -d blackdogproperty_development -o db/backups/'
+  end
+
+  task :sync_local_from_dev_to_staging => :environment do
+    system 'mongorestore -h staff.mongohq.com:10049 --drop -d app5401656 -u heroku -p c2bc28206bc3813c0a5a2ba56b440013 db/backups/blackdogproperty_development/' 
   end
 
 end

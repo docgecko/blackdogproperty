@@ -3,6 +3,7 @@ class RentalsController < InheritedResources::Base
   
   before_filter :find_country, :only => [ :search, :show ]
   before_filter :property_purpose, :only => [ :index, :search ]
+  
   actions :index, :search, :show
   respond_to :html
   

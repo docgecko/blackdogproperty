@@ -96,6 +96,12 @@
 		text-align: center;
 		background-color: $black;
 		width: $site;
+		a {
+			color: $blue;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 	.property {
 		position: relative;

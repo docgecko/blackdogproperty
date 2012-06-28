@@ -7,6 +7,8 @@ mongohq:
 development:
   host: localhost
   database: blackdogproperty_development
+  # Use staging db
+  # uri: mongodb://heroku:c2bc28206bc3813c0a5a2ba56b440013@staff.mongohq.com:10049/app5401656
 
 test:
   host: localhost

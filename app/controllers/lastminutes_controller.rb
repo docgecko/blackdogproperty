@@ -2,16 +2,17 @@ class LastminutesController < InheritedResources::Base
   layout 'application'
   
   before_filter :find_country, :only => [ :search, :show ]
+  before_filter :property_purpose, :only => [ :index, :search ]
   before_filter :find_amenities, :only => :show
   actions :index, :search, :show
   respond_to :html
   
   def index
-    @properties = Property.where(:published => true, :purpose_ids => "lastminute").asc(:position).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => @purpose).asc(:position).page params[:page]
   end
   
   def search
-    @properties = Property.where(:published => true, :purpose_ids => "lastminute", :country => @country).asc(:position).page params[:page]
+    @properties = Property.where(:published => true, :purpose_ids => @purpose, :country => @country).asc(:position).page params[:page]
   end
   
   def show
@@ -24,6 +25,10 @@ class LastminutesController < InheritedResources::Base
   
   
   private
+  
+    def property_purpose
+      @purpose = 'lastminute'
+    end
   
     def find_country
       if params[:country_id].present?
