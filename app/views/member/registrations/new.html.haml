@@ -14,7 +14,7 @@
 	#flash_area
 		= render 'shared/email_errors', :resource => resource
 	
-	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
+	= form_for(resource, :as => resource_name, :url => "https://www.sandbox.paypal.com/cgi-bin/webscr", :html => { :autocomplete => "off" }) do |f|
 		
 		%h3	Create your personal "Lastminute" account
 		%p Complete the form below to get started immediately
@@ -53,6 +53,14 @@
 
 		= f.submit "Sign Up", :class => 'buttonBasic'
 		
+		= hidden_field "", {}, :id => "", :name => "business", :value => "seller_1341221930_biz@gmail.com"
+		= hidden_field "", {}, :id => "", :name => "cmd", :value => "_xclick"
+		= hidden_field "", {}, :id => "", :name => "upload", :value => "1"
+		= hidden_field "", {}, :id => "", :name => "return", :value => user_registration_url(resource_name)
+		= hidden_field "", {}, :id => "", :name => "currency_code", :value => "EUR"
+		= hidden_field "", {}, :id => "", :name => "amount", :value => "20.00"
+		= hidden_field "", {}, :id => "", :name => "item_name", :value => "BlackDog Property Lastminute Membership"
+		= hidden_field "", {}, :id => "", :name => "quantity", :value => "1"		
 	.details
 		%h3 BlackDog membership
 		%p Sign up to the BlackDog Property Lastminute membership by completing this form.

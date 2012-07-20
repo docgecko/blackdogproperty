@@ -45,6 +45,7 @@ class User
   field :username,            :type => String
   field :receive_newsletter,  :type => Boolean
   field :telephone,           :type => String
+  field :subscribed_at,       :type => DateTime
   
   # Setup accessible (or protected) attributes
   attr_accessor :login
