@@ -34,4 +34,10 @@ Blackdogproperty::Application.configure do
   
   ### ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'blackdogproperty.dev' }
+  
+  # Active Merchant for Paypal Gateway
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+  end
 end

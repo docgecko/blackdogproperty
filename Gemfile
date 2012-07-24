@@ -50,7 +50,7 @@ gem 'sanitize', '~> 2.0.3'
 gem 'nested_form', '~> 0.2.1'
 gem 'facebox-rails','~> 0.1.2'
 gem 'mongoid_slug', '~> 0.10.0'
-gem "foreman", "~> 0.47.0"
+gem 'foreman', '~> 0.47.0'
 gem 'activemerchant', :require => 'active_merchant'
 
 group :development, :test do
@@ -65,7 +65,7 @@ group :development, :test do
 	gem 'guard-brakeman'
 	gem 'em-websocket'
 	gem 'growl'
-	gem 'relish', '0.5.1'
+	gem 'relish'
 	gem 'colored'
 end
 

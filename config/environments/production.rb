@@ -68,5 +68,15 @@ Blackdogproperty::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # Active Merchant for Paypal Gateway
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :production
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+      :login => "",
+      :password => "",
+      :signature => ""
+    )
+  end
 
 end

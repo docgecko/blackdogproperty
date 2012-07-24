@@ -35,4 +35,14 @@ Blackdogproperty::Application.configure do
   # config.action_mailer.perform_deliveries = true
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.default :charset => "utf-8"
+  
+  # Active Merchant for Paypal Gateway
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+      :login => "seller_1342778658_biz_api1.gmail.com",
+      :password => "1342778700",
+      :signature => "AXZrrxV2tdhWR2DzSAKtzSlaLBwWAnabSAhk1-kGQHB-pt85GcUrZ2ok"
+    )
+  end
 end
