@@ -1,4 +1,5 @@
 class Member::AccountsController < InheritedResources::Base
+  authorize_resource :class => false
   before_filter :authenticate_user!
   before_filter :find_user, :only => [ :edit, :update ]
   layout 'account'
