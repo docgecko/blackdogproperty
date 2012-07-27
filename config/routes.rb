@@ -17,11 +17,11 @@ Blackdogproperty::Application.routes.draw do
                                :confirmations => 'member/confirmations',
                                :passwords => 'member/passwords' },
              :path_names => {  :sign_in => 'signin', 
-                               :sign_up => 'registration', 
-                               :sign_out => 'signout', 
+                               :sign_up => 'registration/account',
+                               :sign_out => 'signout',
                                :password => 'password', 
                                :confirmation => 'confirmation' }
-    
+                               
   match '/account/check_email' => "member/accounts#check_email"
   match '/account/check_username' => "member/accounts#check_username"
   
@@ -35,9 +35,13 @@ Blackdogproperty::Application.routes.draw do
         get :preview
       end
     end
-    resources :profiles, :only => [ :edit, :update ]
-    resources :accounts, :only => [ :edit, :update ]
+    resources :profiles, only: [ :edit, :update ]
+    resources :accounts, only: [ :edit, :update ]
+    resources :payments, only: [ :new, :create ]
   end
+  
+  match '/member/registration/payment' => 'member/payments#new'
+  match '/member/registration/complete' => 'member/payments#show'
   
   # match "/member/full_address" => "member/properties#full_address"
 

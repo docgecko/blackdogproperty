@@ -1,5 +1,27 @@
 module ApplicationHelper
   
+  # def role(current_user)
+  #   if current_user
+  #     user = current_user
+  #     today = Date.today
+  #     payments = user.payments.all
+  #     if payments
+  #       payments.each do |payment|
+  #         after = payment.start_date
+  #         before = payment.end_date
+  #         if payment.where(today => after..before)
+  #           payment_found = true
+  #         end
+  #       end
+  #       if payment_found == false
+  #         redirect_to member_registration_payment_path
+  #       end
+  #     else
+  #       redirect_to member_registration_payment_path
+  #     end
+  #   end
+  # end
+  
   def markdown(text)
     options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis, :fenced_code, :gh_blockcode]
     Redcarpet.new(text, *options).to_html.html_safe

@@ -1,15 +1,18 @@
 class Ability
   include CanCan::Ability
 
-  # def initialize(user)
-  #   user ||= User.new # guest user
-  #   
-  #   if user.admin?
-  #     can :manage, :all
-  #   else
-  #     cannot :manage, [ Member, Testimonial, User ]
-  #     can :manage, Property
-  #     can [ :edit, :destroy, :check_email ], User
-  #   end
-  # end
+  def initialize(user)
+    user || User.new # guest user
+    
+    if user.role == "admin"
+      can :manage, :all
+    elsif user.role == "subscribed"
+      can :manage, [ User, Property, Photo ]
+      can :create, Support
+    elsif user.role == "registered"
+      can :create, [ Payment, Support ]
+    else
+      can :create, [ User, Support ]
+    end
+  end
 end

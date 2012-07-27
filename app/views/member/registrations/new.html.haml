@@ -14,16 +14,32 @@
 	#flash_area
 		= render 'shared/email_errors', :resource => resource
 	
-	= form_for(resource, :as => resource_name, :url => "https://www.sandbox.paypal.com/cgi-bin/webscr", :html => { :autocomplete => "off" }) do |f|
+	= render 'shared/member/registration/steps'
 		
-		%h3	Create your personal "Lastminute" account
-		%p Complete the form below to get started immediately
-
+	= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :autocomplete => "off" }) do |f|
+		%h3	Begin by providing your account details
+		
+		%h2
+			= f.label :first_name, 'First name'
+			%br
+			= f.text_field :first_name, :maxlength => 255
+	
+		%h2
+			= f.label :last_name, 'Last name'
+			%br
+			= f.text_field :last_name, :maxlength => 255
+		
 		%h2
 			= f.label :email, 'Email'
 			%br
 			= f.text_field :email, :maxlength => 255
-			
+
+		%h2
+			= f.label :username, 'Your display name'
+			%span{:style => "font-size:11px;"} (a unique user name or display name)
+			%br
+			= f.text_field :username, :maxlength => 255
+
 		%h2
 			= f.label :password, 'Password'
 			%br
@@ -34,40 +50,10 @@
 			%span{:style => "font-size:11px;"} (again for confirmation)
 			%br
 			= f.password_field :password_confirmation, :maxlength => 20
-				
-		%h2
-			= f.label :first_name, 'First name'
-			%br
-			= f.text_field :first_name, :maxlength => 255
 			
-		%h2
-			= f.label :last_name, 'Last name'
-			%br
-			= f.text_field :last_name, :maxlength => 255
-			
-		%h2
-			= f.label :username, 'Your display name'
-			%span{:style => "font-size:11px;"} (a unique user name or display name)
-			%br
-			= f.text_field :username, :maxlength => 255
-
 		= f.submit "Sign Up", :class => 'buttonBasic'
 		
-		%h3	Create your personal "Lastminute" account
-		%p Finish signing up by completing the payment details below:
-	
-		
-	.details
-		%h3 BlackDog membership
-		%p Sign up to the BlackDog Property Lastminute membership by completing this form.
-
-		%h3 What do you get?
-		%p Once you have signed up, you can begin to post and advertise your luxury properties with us!
-		%p You will gain access to your own personal dashboard where you will be able to update and manage your listed properties, personal profile, notification settings and payment information.
-			
-		%h3 What does it cost?
-		%p BlackDog charges a small administration fee to get started, after which you can post as many properties as you like.
-		%p We then only charge a small commission each time you rent one of your properties through us.
+	= render 'shared/member/registration/details'
 		
 - content_for :auth_footer do
 	.footer

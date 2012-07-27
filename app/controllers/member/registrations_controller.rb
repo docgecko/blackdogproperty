@@ -1,11 +1,11 @@
 class Member::RegistrationsController < Devise::RegistrationsController
   layout :resolve_layout
+
   
-  
-  protected
+protected
 
     def after_sign_up_path_for(resource)
-      root_url
+      member_registration_payment_path
     end
     
     def resolve_layout

@@ -1,0 +1,49 @@
+- content_for :title do
+	Register Now your BlackDog Properties' Lastminute Membership
+	
+- content_for :link_canonical do
+	register
+	
+- content_for :meta_description do
+	Register now to create your BlackDog Properties' Lastminute account - manage all of your property adverts from one place
+
+- content_for :auth_header do
+	%h1 Register Now your BlackDog Properties' Lasminute Membership
+	
+- content_for :auth_main do
+	= render 'shared/member/registration/steps'
+
+	%h3	Next enter your payment details
+
+	/ = form_for(resource, :as => resource_name, :html => { :autocomplete => "off" }) do |f|
+	/ 	%h2
+	/ 		= f.label :first_name, 'First name'
+	/ 		%br
+	/ 		= f.text_field :first_name, :maxlength => 255
+	/ 
+	/ 	%h2
+	/ 		= f.label :last_name, 'Last name'
+	/ 		%br
+	/ 		= f.text_field :last_name, :maxlength => 255
+	/ 
+	/ 	%h2
+	/ 		= f.label :card_type, 'Card type'
+	/ 		%br
+	/ 		= f.text_field :card_type
+	/ 
+	/ 	%h2
+	/ 		= f.label :card_number, 'Card number'
+	/ 		%br
+	/ 		= f.text_field :card_number
+	/ 
+	/ 	%h2
+	/ 		= f.label :card_expires_on, 'Card expires on'
+	/ 		%br
+	/ 		= f.text_field :card_expires_on
+	/ 
+	/ 	%h2
+	/ 		= f.label :card_csv, 'Card CSV'
+	/ 		%br
+	/ 		= f.text_field :card_csv
+		
+	= render 'shared/member/registration/details'

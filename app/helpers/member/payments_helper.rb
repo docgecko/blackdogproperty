@@ -1,0 +1,2 @@
+module Member::PaymentsHelper
+end

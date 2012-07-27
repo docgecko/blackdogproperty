@@ -1,7 +1,7 @@
 class SupportsController < InheritedResources::Base
   layout 'application'
   
-  actions :only => [ :new, :create ]
+  actions :new, :create
   respond_to :html
   
   def new

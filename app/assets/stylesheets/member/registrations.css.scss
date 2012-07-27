@@ -1,3 +1,27 @@
 // Place all the styles related to the Member/Registrations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+ul {
+	&#steps {
+		list-style: none;
+		width: 450px;
+		float:left;
+		li {
+			font-size: 24px;
+			line-height: 25px;
+			float: left;
+			padding: 10px 50px 20px 0;
+			color: $gray;
+			&.current {
+				color: $light-gray;
+			}
+			span {
+				font-size: 11px;
+				display: block;
+			}
+		}
+	}
+}
