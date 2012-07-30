@@ -1,0 +1,61 @@
+- content_for :title do
+	Register Now your BlackDog Properties' Lastminute Membership
+	
+- content_for :link_canonical do
+	register
+	
+- content_for :meta_description do
+	Register now to create your BlackDog Properties' Lastminute account - manage all of your property adverts from one place
+
+- content_for :auth_header do
+	%h1
+		Subscription Payment Details
+		%br
+		%span BlackDog Properties' Lasminute Membership
+	
+- content_for :auth_main do
+	#flash_area
+		= render 'shared/flashes'
+		
+	= render 'shared/member/registration/steps'
+
+	= form_for([:member, @subscription], :html => { :autocomplete => "off" }) do |f|
+		%h3	Next enter your payment details
+		
+		%h2
+			= f.label :first_name, 'First Name (on Card)'
+			%br
+			= f.text_field :first_name, maxlength: 255, size: 40
+
+		%h2
+			= f.label :last_name, 'Last Name (on Card)'
+			%br
+			= f.text_field :last_name, maxlength: 255, size: 40
+	
+		%h2
+			= f.label :card_type, 'Credit Card Type'
+			%br
+			= f.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]]
+	
+		%h2
+			= f.label :card_number, 'Credit Card Number'
+			%br
+			= f.text_field :card_number, size: 40
+
+		%h2
+			= f.label :card_verification, 'Credit Card Code (CVV)'
+			%br
+			= f.text_field :card_verification, maxlength: 3, size: 5
+			%span= image_tag "subscription/cvv.png", style: "vertical-align:middle;"
+	
+		%h2
+			= f.label :card_expires_on, 'Credit Card Expiration'
+			%br
+			/ = select_month Date.today, :use_month_numbers => true, :field_name => 'card_expiration_month', :prefix => 'subscription'
+			/ = select_year Date.today, :start_year => Date.today.year, :end_year => (Date.today.year+10), :field_name => "card_expiration_year", :prefix => "subscription"
+			/ = f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true, :order => [:month, :year]
+			= f.date_select :card_expires_on, {:order => [:month, :year], :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}
+		
+		= f.submit "Submit Payment", :class => 'buttonBasic'
+		
+	= render 'shared/member/registration/details'

@@ -10,7 +10,7 @@ class Ability
       can :manage, [ User, Property, Photo ]
       can :create, Support
     elsif user.role == "registered"
-      can :create, [ Payment, Support ]
+      can :create, [ Subscription, Support ]
     else
       can :create, [ User, Support ]
     end

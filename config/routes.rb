@@ -1,5 +1,7 @@
 Blackdogproperty::Application.routes.draw do
   
+  namespace :member do resources :subscriptions end
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :admins,
@@ -37,11 +39,11 @@ Blackdogproperty::Application.routes.draw do
     end
     resources :profiles, only: [ :edit, :update ]
     resources :accounts, only: [ :edit, :update ]
-    resources :payments, only: [ :new, :create ]
+    # resources :subscriptions, only: [ :new, :create ]
   end
   
-  match '/member/registration/payment' => 'member/payments#new'
-  match '/member/registration/complete' => 'member/payments#show'
+  match '/member/registration/payment' => 'member/subscriptions#new', via: :get
+  match '/member/registration/complete' => 'member/subscriptions#show', via: :get
   
   # match "/member/full_address" => "member/properties#full_address"
 

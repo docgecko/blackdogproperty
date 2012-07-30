@@ -60,24 +60,24 @@ class User
   
   # References
   has_many :properties
-  embeds_many :payments
-  accepts_nested_attributes_for :payments
+  embeds_many :subscriptions
+  accepts_nested_attributes_for :subscriptions
   
   # Roles
   def role
     today = Date.today
-    payments = self.payments.all
-    subscription = false
-    if payments
-      payments.each do |payment|
-        after = payment.start_date
-        before = payment.end_date
-        if payment.where(today => after..before)
-          subscription = true
+    subscriptions = self.subscriptions.all
+    subscribed = false
+    if subscriptions
+      subscriptions.each do |subscription|
+        after = subscription.start_date
+        before = subscription.end_date
+        if subscription.where(today => after..before)
+          subscribed = true
           role = "subscribed"
         end
       end
-      if subscription == false
+      if subscribed == false
         role = "registered"
       end
     else
