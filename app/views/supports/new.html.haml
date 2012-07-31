@@ -13,6 +13,8 @@
 	
 		= form_for @support, :url => { :action => :create, :enquiry => params[:enquiry], :property_title => params[:property_title], :country => params[:country], :url => params[:url] }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 		
+			%h2 How to Contact BlackDog Property
+		
 			#contact_methods
 				%p You can contact us in a number of ways, choose one of the following methods:
 				%ul
