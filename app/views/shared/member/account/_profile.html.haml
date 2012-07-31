@@ -15,14 +15,14 @@
 %tr
 	%td.label{:style => "width:170px;"}= f.label :first_name
 	%td
-		= f.text_field :first_name, :size => (action_name == 'edit' ? 55 : 50), :maxlength => 255
+		= f.text_field :first_name, :size => (action_name == 'edit' ? 55 : 50), :maxlength => 255, :size => 40
 
 %tr
 	%td.label= f.label :last_name
 	%td
-		= f.text_field :last_name, :size => (action_name == 'edit' ? 55 : 50), :maxlength => 255
+		= f.text_field :last_name, :size => (action_name == 'edit' ? 55 : 50), :maxlength => 255, :size => 40
 
 %tr
 	%td.label= f.label :telephone, "Contact telephone no."
 	%td
-		= f.text_field :telephone, :size => (action_name == 'edit' ? 55 : 50), :maxlength => 255
+		= f.text_field :telephone, :size => (action_name == 'edit' ? 55 : 50), :maxlength => 255, :size => 40

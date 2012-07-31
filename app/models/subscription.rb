@@ -9,10 +9,11 @@ class Subscription
   field :card_type,             :type => String
   field :card_expires_on,       :type => Date
   field :amount,                :type => Float
-  field :type,                  :type => String
+  field :subscription_type,     :type => String
   field :start_date,            :type => Date
   field :end_date,              :type => Date
   field :recurring,             :type => Boolean
+  field :purchased_at,          :type => DateTime
 
   embedded_in :user
 
@@ -20,14 +21,26 @@ class Subscription
   
   validate :validate_card, :on => :create
   
+  def purchase
+    response = GATEWAY.purchase(price_subscription, credit_card, purchase_options)
+    logger.debug "response: #{response}"
+    # transactions.create!(:action => "purchase", :amount => price_subscription, :response => response)
+    self.update_attribute(:purchased_at, Time.now) if response.success?
+    response.success?
+  end
+
+  def price_subscription
+    20.00
+    logger.debug "price_subscription: #{price_subscription}"
+  end
   
 private
 
   def validate_card
     unless credit_card.valid?
       credit_card.errors.full_messages.each do |message|
-        # errors.add :base, message
-        errors[:base] << message
+        errors.add :base, message
+        # errors[:base] << message
         logger.debug "message: #{message}"
       end
     end

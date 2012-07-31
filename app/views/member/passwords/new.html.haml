@@ -21,7 +21,7 @@
 
 		%h2
 			= f.label :login, 'Enter your Display name or Email address'
-			= f.text_field :login, :maxlength => 255
+			= f.text_field :login, :maxlength => 255, :size => 40
 
 		= f.submit "Send me password reset instructions", :class => 'buttonBasic'
 

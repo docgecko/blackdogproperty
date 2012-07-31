@@ -1,6 +1,6 @@
 class Member::PropertiesController < InheritedResources::Base
-  load_and_authorize_resource
   before_filter :authenticate_user!
+  authorize_resource :class => false
   before_filter :find_property_photos, :only => :edit
   before_filter :find_amenities, :only => [ :edit, :preview ]
   before_filter :prepare_google_maps, :only => :edit

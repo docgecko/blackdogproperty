@@ -16,11 +16,11 @@
 		%h2
 			= f.label :password
 			%br
-			= f.password_field :password, :maxlength => 20
+			= f.password_field :password, :maxlength => 20, :size => 40
 
 		%h2
 			= f.label :password_confirmation
 			%br
-			= f.password_field :password_confirmation, :maxlength => 20
+			= f.password_field :password_confirmation, :maxlength => 20, :size => 40
 
 			= f.submit "Change my password", :class => 'buttonBasic'

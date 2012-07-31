@@ -70,9 +70,9 @@ class User
     subscribed = false
     if subscriptions
       subscriptions.each do |subscription|
-        after = subscription.start_date
-        before = subscription.end_date
-        if subscription.where(today => after..before)
+        sub_start = subscription.start_date
+        sub_end = subscription.end_date
+        if sub_start <= today && sub_end >= today
           subscribed = true
           role = "subscribed"
         end

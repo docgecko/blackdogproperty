@@ -1,7 +1,6 @@
 class Member::SubscriptionsController < InheritedResources::Base
   before_filter :authenticate_user!
   before_filter :find_user, only: [ :new, :create, :show ]
-  load_and_authorize_resource
 
   layout :resolve_layout
 
@@ -17,20 +16,27 @@ class Member::SubscriptionsController < InheritedResources::Base
   def create
     @subscription = @user.subscriptions.build(params[:subscription])
     @subscription.ip_address = request.remote_ip
-    respond_to do |format|
-      if @subscription.save
-        # ...
-        logger.debug "success"
-        format.html { redirect_to member_registration_complete_url }
+    @subscription.start_date = Date.today
+    @subscription.end_date = Date.today + 1.year
+    if @subscription.save
+      if @subscription.purchase
+        logger.debug "failed purchase"
+        render member_registration_payment_url, :notice => "There was a problem with the transaction with your credit card. Contact us to rectify this."
       else
-        logger.debug "failure"
-        # format.html { render action: :new }
-        format.html { redirect_to member_registration_payment_url }
+        logger.debug "successful purchase"
+        redirect_to member_registration_complete_url
       end
+    else
+      logger.debug "failed save"
+      # format.html { render action: :new }
+      redirect_to member_registration_payment_url
     end
   end
 
-
+  def show
+    @user.subscription
+  end
+  
 private
 
   def find_user

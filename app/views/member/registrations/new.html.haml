@@ -25,34 +25,34 @@
 		%h2
 			= f.label :first_name, 'First name'
 			%br
-			= f.text_field :first_name, :maxlength => 255
+			= f.text_field :first_name, :maxlength => 255, :size => 40
 	
 		%h2
 			= f.label :last_name, 'Last name'
 			%br
-			= f.text_field :last_name, :maxlength => 255
+			= f.text_field :last_name, :maxlength => 255, :size => 40
 		
 		%h2
 			= f.label :email, 'Email'
 			%br
-			= f.text_field :email, :maxlength => 255
+			= f.text_field :email, :maxlength => 255, :size => 40
 
 		%h2
 			= f.label :username, 'Your display name'
 			%span{:style => "font-size:11px;"} (a unique user name or display name)
 			%br
-			= f.text_field :username, :maxlength => 255
+			= f.text_field :username, :maxlength => 255, :size => 40
 
 		%h2
 			= f.label :password, 'Password'
 			%br
-			= f.password_field :password, :maxlength => 20
+			= f.password_field :password, :maxlength => 20, :size => 40
 
 		%h2
 			= f.label :password_confirmation, 'Password', :class => 'no_padding'
 			%span{:style => "font-size:11px;"} (again for confirmation)
 			%br
-			= f.password_field :password_confirmation, :maxlength => 20
+			= f.password_field :password_confirmation, :maxlength => 20, :size => 40
 			
 		= f.submit "Sign Up", :class => 'buttonBasic'
 		

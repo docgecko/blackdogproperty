@@ -1,11 +1,10 @@
 class Member::DashboardController < InheritedResources::Base
-  authorize_resource :class => false
   before_filter :authenticate_user!
-  
   layout 'dashboard'
-
+  authorize_resource :class => false
+  
   actions :index
-  respond_to :html, :xml
+  respond_to :html
 
   def index
     @user = User.find(current_user.id)
