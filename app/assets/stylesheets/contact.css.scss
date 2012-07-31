@@ -44,3 +44,32 @@
 	}
 }
 
+#contact_methods {
+	margin: 0;
+	ul {
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+		color: $white;
+		li {
+			list-style: inside;
+			margin: 0 7px;
+			a {
+				line-height: 17px;
+				overflow: hidden;
+				padding: 0 7px;
+				text-decoration: none;
+				color: $blue;
+				&:hover {
+					color: $white;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	#contact_address {
+		margin: 6px 35px;
+		color: $white;
+	}
+}
+

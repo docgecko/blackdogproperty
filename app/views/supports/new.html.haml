@@ -13,18 +13,31 @@
 	
 		= form_for @support, :url => { :action => :create, :enquiry => params[:enquiry], :property_title => params[:property_title], :country => params[:country], :url => params[:url] }, :html => { :method => :post, :autocomplete => "off", :class => "new_support", :id => "new_support" } do |f|
 		
-			#how
+			#contact_methods
 				%p You can contact us in a number of ways, choose one of the following methods:
 				%ul
-					%li Complete the form below
-					%li== Send us an #{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}.
-					%li Call us at: +44, or
+					%li Complete the contact form below
+					%li== Send us an#{mail_to "enquiries@blackdogproperty.com", "email", :encode => :hex, :subject => "Contact - BlackDog Property"}
+					%li Call us on +44 (0)7540 706994 (and ask for Mark), or
 					%li
 						Write to us at our head offices:
+				#contact_address
+					Black Dog Property Ltd.
+					%br
+					130 HIGH STREET
+					%br
+					HUNGERFORD 
+					%br
+					RG17 0DL
+					%br
+					United Kingdom
 					
 				%br
 
+				%hr
+				%h2 Contact Form
 				= render 'shared/mandatory'
+				
 			= render 'shared/contact_errors'
 			%br
 			%table
