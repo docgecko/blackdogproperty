@@ -1,6 +1,6 @@
 class Member::PhotosController < InheritedResources::Base
-  load_and_authorize_resource
   before_filter :authenticate_user!
+  authorize_resource :class => false
   before_filter :find_property, :only => [ :new, :create, :edit, :update ]
   before_filter :find_edit_section, :only => :new
   layout :resolve_layout

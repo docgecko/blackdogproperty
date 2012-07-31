@@ -16,22 +16,23 @@ class Subscription
   field :purchased_at,          :type => DateTime
 
   embedded_in :user
+  has_many :transactions
 
   attr_accessor :card_number, :card_verification
   
   validate :validate_card, :on => :create
   
   def purchase
-    response = GATEWAY.purchase(price_subscription, credit_card, purchase_options)
+    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
     logger.debug "response: #{response}"
-    # transactions.create!(:action => "purchase", :amount => price_subscription, :response => response)
+    transactions.create!(:action => "subscription", :amount => price_in_cents, :response => response)
     self.update_attribute(:purchased_at, Time.now) if response.success?
     response.success?
   end
 
-  def price_subscription
+  def price_in_cents
     20.00
-    logger.debug "price_subscription: #{price_subscription}"
+    logger.debug "price_in_cents: #{price_in_cents}"
   end
   
 private

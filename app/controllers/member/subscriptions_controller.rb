@@ -1,5 +1,6 @@
 class Member::SubscriptionsController < InheritedResources::Base
   before_filter :authenticate_user!
+  authorize_resource :class => false
   before_filter :find_user, only: [ :new, :create, :show ]
 
   layout :resolve_layout
@@ -28,13 +29,12 @@ class Member::SubscriptionsController < InheritedResources::Base
       end
     else
       logger.debug "failed save"
-      # format.html { render action: :new }
-      redirect_to member_registration_payment_url
+      render member_registration_payment_url
     end
   end
 
   def show
-    @user.subscription
+    @user.subscriptions.last
   end
   
 private

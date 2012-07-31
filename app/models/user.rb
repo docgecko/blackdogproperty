@@ -64,24 +64,27 @@ class User
   accepts_nested_attributes_for :subscriptions
   
   # Roles
-  def role
+  def role?(role)
     today = Date.today
     subscriptions = self.subscriptions.all
-    subscribed = false
-    if subscriptions
-      subscriptions.each do |subscription|
-        sub_start = subscription.start_date
-        sub_end = subscription.end_date
-        if sub_start <= today && sub_end >= today
-          subscribed = true
-          role = "subscribed"
+    count = subscriptions.count.to_i
+    logger.debug "subscriptions count: #{subscriptions.count}"
+    case count
+      when 0
+        logger.debug "role: registered - never subscribed"
+        return role == :registered
+      else
+        subscriptions.each do |subscription|
+          sub_start = subscription.start_date
+          sub_end = subscription.end_date
+          if sub_start <= today && sub_end >= today
+            return role == :subscribed
+            logger.debug "role: subscribed"
+          else
+            logger.debug "role: registered - out of date subscription"
+            return role == :registered
+          end
         end
-      end
-      if subscribed == false
-        role = "registered"
-      end
-    else
-      role = "registered"
     end
   end
   

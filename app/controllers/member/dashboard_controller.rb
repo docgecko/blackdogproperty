@@ -1,7 +1,7 @@
 class Member::DashboardController < InheritedResources::Base
   before_filter :authenticate_user!
-  layout 'dashboard'
   authorize_resource :class => false
+  layout 'dashboard'
   
   actions :index
   respond_to :html
