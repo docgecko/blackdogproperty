@@ -59,7 +59,7 @@ class Member::PropertiesController < InheritedResources::Base
   
   def preview
     @property = Property.find_by_slug(params[:id])
-    @photos = Photo.where(property_id: params[:id]).order_by([:position, :asc])
+    @photos = @property.photos.order_by([:position, :asc])
     @circles = @property.to_gmaps4rails do |property, circle|
       circle.json :lat => property.longitude, :lng => property.latitude, :radius => 600
     end
