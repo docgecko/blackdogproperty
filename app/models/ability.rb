@@ -9,11 +9,11 @@ class Ability
     elsif user.role? :subscribed
       can :show, :subscription
       can :index, :dashboard
-      can [ :edit, :update, :check_email, :check_username ], :account
-      can [ :manage, :preview ], :property
+      can [:edit, :update, :check_email, :check_username], :account
+      can [:manage, :preview], :property
       can :manage, Photo
     elsif user.role? :registered
-      can :new, :subscription
+      can [:new, :create], :subscription
     else
       cannot :manage, :all
     end

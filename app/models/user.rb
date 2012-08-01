@@ -68,10 +68,8 @@ class User
     today = Date.today
     subscriptions = self.subscriptions.all
     count = subscriptions.count.to_i
-    logger.debug "subscriptions count: #{subscriptions.count}"
     case count
       when 0
-        logger.debug "role: registered - never subscribed"
         return role == :registered
       else
         subscriptions.each do |subscription|
@@ -79,9 +77,7 @@ class User
           sub_end = subscription.end_date
           if sub_start <= today && sub_end >= today
             return role == :subscribed
-            logger.debug "role: subscribed"
           else
-            logger.debug "role: registered - out of date subscription"
             return role == :registered
           end
         end
