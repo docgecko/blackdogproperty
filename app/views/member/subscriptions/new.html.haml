@@ -56,6 +56,6 @@
 			/ = f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true, :order => [:month, :year]
 			= f.date_select :card_expires_on, {:order => [:month, :year], :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}
 		
-		= f.submit "Submit Payment", :class => 'buttonBasic'
+		= f.submit "Submit Payment", :class => 'buttonBasic', :onclick => "this.value = 'Processing payment, please wait...'"
 		
 	= render 'shared/member/registration/details'

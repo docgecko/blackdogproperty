@@ -7,13 +7,12 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :subscribed
-      can :success, :subscription
       can :index, :dashboard
       can [:edit, :update, :check_email, :check_username], :account
       can [:manage, :preview], :property
       can :manage, Photo
     elsif user.role? :registered
-      can [:new, :create, :failure], :subscription
+      can [:new, :create], :subscription
     else
       cannot :manage, :all
     end

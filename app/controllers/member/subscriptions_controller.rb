@@ -19,23 +19,19 @@ class Member::SubscriptionsController < InheritedResources::Base
     @subscription.ip_address = request.remote_ip
     @subscription.start_date = Date.today
     @subscription.end_date = Date.today + 1.year
-    if @subscription.save
-      if @subscription.purchase
-        redirect_to member_registration_complete_url
+    respond_to do |format|
+      if @subscription.save
+        if @subscription.purchase
+          format.html { redirect_to member_dashboard_index_url, notice: "Congratulations! You successfully completed your subscription to BlackDog Property Lasminute."}
+        else
+          format.html { redirect_to member_registration_payment_url, alert: "There was a problem processing your credit card. Contact us to rectify this." }
+        end
       else
-        render member_registration_payment_url, :notice => "There was a problem with the transaction with your credit card. Contact us to rectify this."
+        format.html { redirect_to member_registration_payment_url, alert: "We were unable complete this step, please try again or contact us for help." }
       end
-    else
-      render member_registration_payment_url, :notice => "We were complete this step, please try again or contact us for help."
     end
   end
 
-  def failure
-  end
-  
-  def success
-  end
-  
 private
 
   def find_user
