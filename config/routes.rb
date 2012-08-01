@@ -43,7 +43,7 @@ Blackdogproperty::Application.routes.draw do
   end
   
   match '/member/registration/payment' => 'member/subscriptions#new', via: :get
-  match '/member/registration/successful' => 'member/subscriptions#success', via: :get
+  match '/member/registration/complete' => 'member/subscriptions#success', via: :get
   match '/member/registration/payment/failed' => 'member/subscriptions#failed', via: :get
   
   # match "/member/full_address" => "member/properties#full_address"

@@ -40,9 +40,9 @@ Blackdogproperty::Application.configure do
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
     ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-      :login => "seller_1342778658_biz_api1.gmail.com",
-      :password => "1342778700",
-      :signature => "AXZrrxV2tdhWR2DzSAKtzSlaLBwWAnabSAhk1-kGQHB-pt85GcUrZ2ok"
+      :login => "seller_1343829925_biz_api1.gmail.com",
+      :password => "1343829974",
+      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AdieqhrtnrRaK5r-96r5e-nRQGA6"
     )
   end
 end

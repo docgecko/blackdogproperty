@@ -23,18 +23,17 @@ class Subscription
   validate :validate_card, :on => :create
   
   def purchase
-    logger.debug "subscription.purchase - started"
-    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+    response = GATEWAY.purchase(price_in_cents, credit_card, :ip => ip_address)
+    # response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
     logger.debug "subscription.purchase - passed response"
     logger.debug "response: #{response}"
-    transactions.create!(:action => "subscription", :amount => price_in_cents, :response => response)
-    self.update_attribute(:purchased_at, Time.now) if response.success?
+    # transactions.create!(:action => "subscription", :amount => price_in_cents, :response => response)
+    # self.update_attribute(:purchased_at, Time.now) if response.success?
     response.success?
   end
 
   def price_in_cents
-    20.00
-    logger.debug "price_in_cents: #{price_in_cents}"
+    2000
   end
   
 private
