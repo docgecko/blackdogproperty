@@ -7,7 +7,7 @@ class Transaction
   field :success,           :type => Boolean
   field :authorization,     :type => String
   field :message,           :type => String
-  field :params,            :type => Array
+  field :params,            :type => Hash
   
   belongs_to :subscription
   

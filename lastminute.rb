@@ -19,6 +19,11 @@ credit_card = ActiveMerchant::Billing::CreditCard.new(
   :last_name          => "Warburton"
 )
 
+payment_options = {
+  :ip => "127.0.0.1",
+  :currency => 'GBP'
+}
+
 # if credit_card.valid?
 #   puts "Credit card is valid."
 # else
@@ -28,10 +33,11 @@ credit_card = ActiveMerchant::Billing::CreditCard.new(
 if credit_card.valid?
   # or gateway.purchase to do both authorize and capture
   # response = gateway.purchase(1000, credit_card, :ip => "127.0.0.1")
-  response = gateway.authorize(1000, credit_card, :ip => "127.0.0.1")
+  response = gateway.authorize(2000, credit_card, payment_options)
   if response.success?
-    gateway.capture(1000, response.authorization)
+    gateway.capture(2000, response.authorization)
     puts "Purchase complete!"
+    puts "Success: #{response.message}"
   else
     puts "Error: #{response.message}"
   end

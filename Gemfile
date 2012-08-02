@@ -52,7 +52,6 @@ gem 'facebox-rails','~> 0.1.2'
 gem 'mongoid_slug', '~> 0.10.0'
 gem 'foreman', '~> 0.47.0'
 gem 'activemerchant', :require => 'active_merchant'
-gem 'wicked', '~> 0.1.6'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 2.6.1'

@@ -23,12 +23,10 @@ class Subscription
   validate :validate_card, :on => :create
   
   def purchase
-    response = GATEWAY.purchase(price_in_cents, credit_card, :ip => ip_address)
-    # response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
-    logger.debug "subscription.purchase - passed response"
+    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
     logger.debug "response: #{response}"
-    # transactions.create!(:action => "subscription", :amount => price_in_cents, :response => response)
-    # self.update_attribute(:purchased_at, Time.now) if response.success?
+    transactions.create!(:action => "subscription", :amount => price_in_cents, :response => response)
+    self.update_attribute(:purchased_at, Time.now) if response.success?
     response.success?
   end
 
@@ -36,7 +34,23 @@ class Subscription
     2000
   end
   
+  
 private
+
+  def purchase_options
+    {
+      ip:         ip_address,
+      currency:   'GBP'
+      # biling_address: {
+      #   name:     name_on_card,
+      #   address1: card_address1,
+      #   city:     card_city,
+      #   state:    card_city,
+      #   country:  card_country,
+      #   zip:      card_zip_code
+      # }     
+    }
+  end
 
   def validate_card
     unless credit_card.valid?
@@ -50,13 +64,13 @@ private
 
   def credit_card
     @credit_card ||= ActiveMerchant::Billing::CreditCard.new(
-      :type               => card_type,
-      :number             => card_number,
-      :verification_value => card_verification,
-      :month              => card_expires_on.month,
-      :year               => card_expires_on.year,
-      :first_name         => first_name,
-      :last_name          => last_name
+      type:               card_type,
+      number:             card_number,
+      verification_value: card_verification,
+      month:              card_expires_on.month,
+      year:               card_expires_on.year,
+      first_name:         first_name,
+      last_name:          last_name
     )
   end
 end
