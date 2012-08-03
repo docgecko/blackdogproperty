@@ -1,7 +1,6 @@
+#encoding:utf-8
 Blackdogproperty::Application.routes.draw do
   
-  namespace :member do resources :subscriptions end
-
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :admins,
@@ -39,14 +38,10 @@ Blackdogproperty::Application.routes.draw do
     end
     resources :profiles, only: [ :edit, :update ]
     resources :accounts, only: [ :edit, :update ]
-    # resources :subscriptions, only: [ :new, :create ]
+    resources :subscriptions, only: [ :create ]
   end
   
   match '/member/registration/payment' => 'member/subscriptions#new', via: :get
-  match '/member/registration/complete' => 'member/subscriptions#success', via: :get
-  match '/member/registration/payment/failed' => 'member/subscriptions#failed', via: :get
-  
-  # match "/member/full_address" => "member/properties#full_address"
 
   match "/member" => redirect("/member/dashboard")
   
@@ -79,7 +74,18 @@ Blackdogproperty::Application.routes.draw do
   match 'location/:id' => 'high_voltage/pages#show', :as => :location_static, :via => :get, :format => false
   match 'services/:id' => 'pages#show', :as => :services_static, :via => :get, :format => false
   match 'company/:id' => 'pages#show', :as => :company_static, :via => :get, :format => false
+
+  match '/en' => redirect('/')
+  match '/es' => redirect('/es/inicio')
+  match "/es/inicio" => 'welcome#index', :locale => :es
+  match '/fr' => redirect('/fr/accueil')
+  match "/fr/accueil" => 'welcome#index', :locale => :fr
+  # match '/zh' => redirect('/zh/欢迎')
+  # match "/zh/欢迎" => 'welcome#index', :locale => "zg-CN"
+  # match '/ru' => redirect('/ru/добро_пожаловать')
+  # match "/ru/добро_пожаловать" => 'welcome#index', :locale => :ru
+
   match '/:id' => 'pages#show', :as => :static, :via => :get, :format => false
-  
-  root :to => 'welcome#index'
+
+  root :to => 'welcome#index', :locale => :en  
 end

@@ -2,30 +2,30 @@
 #mc_embed_signup
 	%form#mc-embedded-subscribe-form.validate{:action => "http://blackdogproperty.us5.list-manage.com/subscribe/post?u=fa9353b7959aaf62d351360d8&id=2965719181", :method => "post", :name => "mc-embedded-subscribe-form", :target => "_blank"}
 		%h1
-			Signup to Receive the Latest Property Updates
+			= I18n.t(:header, :scope => [:welcome, :mailchimp])
 		.indicates-required
 			%span.asterisk *
-			indicates a required field
+			= I18n.t(:required, :scope => [:welcome, :mailchimp])
 		#mce-responses.clear
 			#mce-error-response.response{:style => "display:none"}
 			#mce-success-response.response{:style => "display:none"}
 		.mc-field-group
 			= label_tag "mce-EMAIL" do
-				Email Address
+				= I18n.t(:email, :scope => [:welcome, :mailchimp])
 				%span.asterisk *
 			= text_field_tag "Email", {}, :id => "mce-EMAIL", :name => "EMAIL", :type => "email", :value => "", :class => "required email", :size => 25
 		.mc-field-group
-			= label_tag "mce-FNAME", "First Name"
+			= label_tag "mce-FNAME", I18n.t(:first_name, :scope => [:welcome, :mailchimp])
 			= text_field_tag "", {}, :id => "mce-FNAME", :name => "FNAME", :type => "text", :value => "", :size => 25
 		.mc-field-group
-			= label_tag "mce-LNAME", "Last Name"
+			= label_tag "mce-LNAME", I18n.t(:last_name, :scope => [:welcome, :mailchimp])
 			= text_field_tag "", {}, :id => "mce-LNAME", :name => "LNAME", :type => "text", :value => "", :size => 25
 		.mc-field-group
 			= label_tag "mce-YCOUNTRY" do
-				Your Country
+				= I18n.t(:country, :scope => [:welcome, :mailchimp])
 				%span.asterisk *
 			= country_select "mce", "YCOUNTRY", ["", "France", "Italy", "Portugal", "Spain", "United Kingdom"], {}, {:id => "mce-YCOUNTRY", :name => "YCOUNTRY", :class => "required", :style => "width:160px;"}
 		.clear
 		.action
-			= submit_tag "Subscribe", :name => "subscribe", :type => "submit", :id => "mc-embedded-subscribe", :class => "btn btn-info subscribe"
+			= submit_tag I18n.t(:button, :scope => [:welcome, :mailchimp]), :name => "subscribe", :type => "submit", :id => "mc-embedded-subscribe", :class => "btn btn-info subscribe"
 / End mc_embed_signup

@@ -49,30 +49,30 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :welcome, 'Home', root_url
-    primary.item :locations, 'Finding', location_about_path
-    primary.item :rentals, 'Renting', rentals_path
-    primary.item :lastminute, 'Lastminute', lastminutes_path
-    primary.item :renovations, 'Renovation', renovations_about_path
-    primary.item :services, 'Services' do |s|
-      s.item :property, 'property management', services_static_path('property-management')
-      s.item :client, 'client management', services_static_path('client-management')
-      s.item :marketing, 'marketing', services_static_path('marketing')
-      s.item :investment, 'investment &amp; development', services_static_path('investment-development')
-      s.item :relocation, 'relocation', services_static_path('relocation')
-      s.item :chauffeur, 'chauffeur services', services_static_path('chauffeur')
-      s.item :jet, 'private jet', services_static_path('private-jet')
-      s.item :security, 'security advice', services_static_path('security')
-      s.item :language, 'language services', services_static_path('language')
-      s.item :maintenance, 'property maintenance', services_static_path('maintenance')
+    primary.item :welcome, I18n.t(:home, :scope => [:general, :menu]), root_url
+    primary.item :locations, I18n.t(:finding, :scope => [:general, :menu]), location_about_path
+    primary.item :rentals, I18n.t(:renting, :scope => [:general, :menu]), rentals_path
+    primary.item :lastminute, I18n.t(:lastminute, :scope => [:general, :menu]), lastminutes_path
+    primary.item :renovations, I18n.t(:renovation, :scope => [:general, :menu]), renovations_about_path
+    primary.item :services, I18n.t(:services, :scope => [:general, :menu]) do |s|
+      s.item :property, I18n.t(:property_management, :scope => [:general, :menu]), services_static_path('property-management')
+      s.item :client, I18n.t(:client_management, :scope => [:general, :menu]), services_static_path('client-management')
+      s.item :marketing, I18n.t(:marketing, :scope => [:general, :menu]), services_static_path('marketing')
+      s.item :investment, I18n.t(:investment_development, :scope => [:general, :menu]), services_static_path('investment-development')
+      s.item :relocation, I18n.t(:relocation, :scope => [:general, :menu]), services_static_path('relocation')
+      s.item :chauffeur, I18n.t(:chauffeur_services, :scope => [:general, :menu]), services_static_path('chauffeur')
+      s.item :jet, I18n.t(:private_jet, :scope => [:general, :menu]), services_static_path('private-jet')
+      s.item :security, I18n.t(:security_advice, :scope => [:general, :menu]), services_static_path('security')
+      s.item :language, I18n.t(:language_services, :scope => [:general, :menu]), services_static_path('language')
+      s.item :maintenance, I18n.t(:property_maintenance, :scope => [:general, :menu]), services_static_path('maintenance')
     end
-    primary.item :sales, 'Sales', sales_about_path
-    primary.item :company, 'Company' do |s|
-      s.item :about, 'about us', company_about_path
-      s.item :team, 'the team', company_team_path
-      s.item :accreditation, 'accreditation', company_static_path('blackdog-accreditation')
-      s.item :testimonials, 'testimonials', company_testimonials_path
-      s.item :show_case, 'gallery', company_static_path('gallery')
+    primary.item :sales, I18n.t(:sales, :scope => [:general, :menu]), sales_about_path
+    primary.item :company, I18n.t(:company, :scope => [:general, :menu]) do |s|
+      s.item :about, I18n.t(:about_us, :scope => [:general, :menu]), company_about_path
+      s.item :team, I18n.t(:the_team, :scope => [:general, :menu]), company_team_path
+      s.item :accreditation, I18n.t(:accreditation, :scope => [:general, :menu]), company_static_path('blackdog-accreditation')
+      s.item :testimonials, I18n.t(:testimonials, :scope => [:general, :menu]), company_testimonials_path
+      s.item :show_case, I18n.t(:gallery, :scope => [:general, :menu]), company_static_path('gallery')
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

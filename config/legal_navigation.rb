@@ -50,10 +50,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :privacy, 'Privacy Statement', static_path(:id => "privacy")
-    primary.item :terms, 'Terms of Use', static_path(:id => "terms")
-    # primary.item :statement, 'Copyright Statement', static_path(:id => "copyright")  
-    primary.item :copyright, '@2011-12 Black Dog Property', root_url
+    primary.item :privacy, I18n.t(:privacy, :scope => [:general, :footer]), static_path(:id => "privacy")
+    primary.item :terms, I18n.t(:terms, :scope => [:general, :footer]), static_path(:id => "terms")
+    primary.item :copyright, I18n.t(:copyright, :scope => [:general, :footer]), root_url
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

@@ -50,13 +50,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     
-    primary.item :locations, 'Finding', location_about_path
-    primary.item :rentals, 'Renting', rentals_path
-    primary.item :rentals, 'Lastminute', lastminutes_path
-    primary.item :renovations, 'Renovation', renovations_about_path
-    primary.item :sales, 'Sales', sales_about_path
-    # primary.item :show_case, 'Gallery', company_static_path('gallery')
-    
+    primary.item :locations, I18n.t(:finding, :scope => [:general, :menu]), location_about_path
+    primary.item :rentals, I18n.t(:renting, :scope => [:general, :menu]), rentals_path
+    primary.item :rentals, I18n.t(:lastminute, :scope => [:general, :menu]), lastminutes_path
+    primary.item :renovations, I18n.t(:renovation, :scope => [:general, :menu]), renovations_about_path
+    primary.item :sales, I18n.t(:sales, :scope => [:general, :menu]), sales_about_path    
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
