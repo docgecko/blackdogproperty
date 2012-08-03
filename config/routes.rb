@@ -2,9 +2,11 @@
 Blackdogproperty::Application.routes.draw do
   
   match '/en' => redirect('/')
-  match '/es' => redirect('/es/inicio')
+  # match '/es' => redirect('/es/inicio')
+  # match "/es/inicio" => 'welcome#index', :locale => :es
   match "/es/inicio" => 'welcome#index', :locale => :es
-  match '/fr' => redirect('/fr/accueil')
+  # match '/fr' => redirect('/fr/accueil')
+  # match "/fr/accueil" => 'welcome#index', :locale => :fr
   match "/fr/accueil" => 'welcome#index', :locale => :fr
   # match '/zh' => redirect('/zh/欢迎')
   # match "/zh/欢迎" => 'welcome#index', :locale => "zg-CN"
