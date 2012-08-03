@@ -56,7 +56,11 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :login, I18n.t(:signin, :scope => [:general, :upper_menu]), new_user_session_path, :unless => Proc.new { user_signed_in? }
     primary.item :login, I18n.t(:register, :scope => [:general, :upper_menu]), new_user_registration_path, :unless => Proc.new { user_signed_in? }
     primary.item :logout, 'Logout', destroy_user_session_path, :if => Proc.new { user_signed_in? }
-    primary.item :about, I18n.t(:about, :scope => [:general, :upper_menu]), company_about_path 
+    primary.item :language, I18n.t(:language, :scope => [:general, :upper_menu]) do |s|
+      s.item :property, "English", root_url
+      s.item :property, "Français", fr_url
+      s.item :property, "Español", es_url
+    end
     primary.item :contact, I18n.t(:contact, :scope => [:general, :upper_menu]), new_support_path 
     
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
@@ -69,6 +73,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
     # primary.dom_class = 'menu-class'
+    primary.dom_class = 'sf-menu'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

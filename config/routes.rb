@@ -1,6 +1,16 @@
 #encoding:utf-8
 Blackdogproperty::Application.routes.draw do
   
+  match '/en' => redirect('/')
+  match '/es' => redirect('/es/inicio')
+  match "/es/inicio" => 'welcome#index', :locale => :es
+  match '/fr' => redirect('/fr/accueil')
+  match "/fr/accueil" => 'welcome#index', :locale => :fr
+  # match '/zh' => redirect('/zh/欢迎')
+  # match "/zh/欢迎" => 'welcome#index', :locale => "zg-CN"
+  # match '/ru' => redirect('/ru/добро_пожаловать')
+  # match "/ru/добро_пожаловать" => 'welcome#index', :locale => :ru
+  
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :admins,
@@ -74,16 +84,6 @@ Blackdogproperty::Application.routes.draw do
   match 'location/:id' => 'high_voltage/pages#show', :as => :location_static, :via => :get, :format => false
   match 'services/:id' => 'pages#show', :as => :services_static, :via => :get, :format => false
   match 'company/:id' => 'pages#show', :as => :company_static, :via => :get, :format => false
-
-  match '/en' => redirect('/')
-  match '/es' => redirect('/es/inicio')
-  match "/es/inicio" => 'welcome#index', :locale => :es
-  match '/fr' => redirect('/fr/accueil')
-  match "/fr/accueil" => 'welcome#index', :locale => :fr
-  # match '/zh' => redirect('/zh/欢迎')
-  # match "/zh/欢迎" => 'welcome#index', :locale => "zg-CN"
-  # match '/ru' => redirect('/ru/добро_пожаловать')
-  # match "/ru/добро_пожаловать" => 'welcome#index', :locale => :ru
 
   match '/:id' => 'pages#show', :as => :static, :via => :get, :format => false
 

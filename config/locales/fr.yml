@@ -29,6 +29,7 @@ fr:
     upper_menu:
       signin: "Connectez-vous"
       register: "Inscris-toi!"
+      language: "Sélectionner la Langue"
       about: "A propos de nous"
       contact: "Nous contacter"
       list: "Liste de vos biens"

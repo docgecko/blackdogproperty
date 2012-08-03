@@ -29,6 +29,7 @@ es:
     upper_menu:
       signin: "Inicia sesión"
       register: "Regístrate ahora!"
+      language: "Seleccionar el Idioma"
       about: "Acerca de nosotros"
       contact: "Contacte con nosotros"
       list: "Anuncie su propiedad"
