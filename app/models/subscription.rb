@@ -31,7 +31,7 @@ class Subscription
   end
 
   def price_in_cents
-    2000
+    3000
   end
   
   
@@ -40,7 +40,7 @@ private
   def purchase_options
     {
       ip:         ip_address,
-      currency:   'GBP'
+      currency:   'EUR'
       # biling_address: {
       #   name:     name_on_card,
       #   address1: card_address1,
