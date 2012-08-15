@@ -30,6 +30,10 @@ module Blackdogproperty
       Devise::ConfirmationsController.layout "authentication"
       Devise::RegistrationsController.layout "authentication"
       # Devise::Mailer.layout "mailer"
+      Devise::SessionsController.force_ssl
+      Devise::RegistrationsController.force_ssl
+      Devise::PasswordsController.force_ssl
+      Devise::ConfirmationsController.force_ssl
     }
     
     # Custom directories with classes and modules you want to be autoloadable.

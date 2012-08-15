@@ -3,7 +3,7 @@ class Member::SubscriptionsController < InheritedResources::Base
   authorize_resource :class => false
   before_filter :find_user, only: [ :new, :create, :show ]
   
-  force_ssl only: :create
+  force_ssl
 
   layout :resolve_layout
 
