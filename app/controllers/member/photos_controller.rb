@@ -5,6 +5,8 @@ class Member::PhotosController < InheritedResources::Base
   before_filter :find_edit_section, :only => :new
   layout :resolve_layout
   
+  force_ssl
+  
   belongs_to :property, :polymorphic => true
   
   actions :all

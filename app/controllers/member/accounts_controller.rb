@@ -4,6 +4,8 @@ class Member::AccountsController < InheritedResources::Base
   before_filter :find_user, :only => [ :edit, :update ]
   layout 'account'
   
+  force_ssl
+  
   actions :edit, :update
   respond_to :html
   

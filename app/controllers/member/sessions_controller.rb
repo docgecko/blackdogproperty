@@ -1,4 +1,5 @@
 class Member::SessionsController < Devise::SessionsController
+  force_ssl
 
 protected
 

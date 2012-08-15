@@ -3,6 +3,8 @@ class Member::DashboardController < InheritedResources::Base
   authorize_resource :class => false
   layout 'dashboard'
   
+  force_ssl
+  
   actions :index
   respond_to :html
 

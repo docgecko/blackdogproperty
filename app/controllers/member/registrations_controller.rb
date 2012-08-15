@@ -1,5 +1,6 @@
 class Member::RegistrationsController < Devise::RegistrationsController
   layout :resolve_layout
+  force_ssl
 
   
 protected

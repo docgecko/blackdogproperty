@@ -7,6 +7,8 @@ class Member::PropertiesController < InheritedResources::Base
   before_filter :find_edit_section, :only => [ :edit, :update, :update ]
   layout :resolve_layout
   
+  force_ssl
+  
   actions :all
   respond_to :html
   
