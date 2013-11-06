@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,15 +16,13 @@ end
 
 gem 'jquery-rails'
 gem 'thin'
-gem 'json', '1.8.1'
-gem 'nokogiri', '1.5.2'
 
 gem 'inherited_resources', '1.3.0'
 gem 'devise', '~> 2.1.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'mongoid', '~> 2.4.12'
 gem 'cancan', '~> 1.6.8'
-gem 'bson_ext', '1.9.2'
+gem 'bson_ext'
 gem 'haml', '>= 3.0.0'
 gem 'haml-rails'
 gem 'redcarpet', '1.17.2'
