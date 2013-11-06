@@ -389,7 +389,7 @@ DEPENDENCIES
   autotest-rails (~> 4.1.1)
   bcrypt-ruby (~> 3.0.0)
   brakeman
-  bson_ext
+  bson_ext (= 1.9.2)
   cancan (~> 1.6.8)
   capybara
   carrierwave (~> 0.5.7)
