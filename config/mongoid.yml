@@ -19,4 +19,5 @@ staging:
   uri: mongodb://heroku:c2bc28206bc3813c0a5a2ba56b440013@staff.mongohq.com:10049/app5401656
 
 production:
-  uri: mongodb://heroku:dd90ddd95207fb164720e1a3e0ea9918@flame.mongohq.com:27028/app4264979
+  # uri: mongodb://heroku:dd90ddd95207fb164720e1a3e0ea9918@flame.mongohq.com:27028/app4264979
+  uri: mongodb://heroku:S_Jw1kAaFCiMgrTBzw50Vw16ndm3Mk1eMx_C1xxSUu6yGXzUQuF8dQLAm7UULHBTAtK5QVQPrOxHhyeVaoylOw@flame.mongohq.com:27028/app4264979

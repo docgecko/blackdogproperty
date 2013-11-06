@@ -16,3 +16,8 @@
 
 # Ignore local property images
 /app/assets/images/properties
+
+server.key
+web.crt
+chain.crt
+domain.pem
