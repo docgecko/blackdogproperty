@@ -55,37 +55,37 @@ gem 'mongoid_slug', '~> 0.10.0'
 gem 'foreman', '~> 0.47.0'
 gem 'activemerchant', :require => 'active_merchant'
 
-group :development, :test do
-  gem 'rspec-rails', '>= 2.6.1'
-  gem 'capybara'
-  gem 'autotest-rails', '~> 4.1.1'
-  gem 'autotest-growl', '~> 0.2.11'
-  gem 'guard-bundler'
-  gem 'guard-rspec'
-  gem 'guard-cucumber'
-  gem 'guard-livereload'
-  gem 'guard-brakeman'
-  gem 'em-websocket'
-  gem 'growl'
-  gem 'relish'
-  gem 'colored'
-end
-
-group :development do
-  gem 'hpricot'
-  gem 'ruby_parser'
-  gem 'brakeman'
-end
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-  gem 'cucumber-rails'
-  gem 'database_cleaner', '>= 0.6.7'
-  gem 'mongoid-rspec', '>= 1.4.4'
-  gem 'factory_girl_rails', '>= 1.1.0'
-  gem 'launchy', '>= 2.0.5'
-end
+# group :development, :test do
+#   gem 'rspec-rails', '>= 2.6.1'
+#   gem 'capybara'
+#   gem 'autotest-rails', '~> 4.1.1'
+#   gem 'autotest-growl', '~> 0.2.11'
+#   gem 'guard-bundler'
+#   gem 'guard-rspec'
+#   gem 'guard-cucumber'
+#   gem 'guard-livereload'
+#   gem 'guard-brakeman'
+#   gem 'em-websocket'
+#   gem 'growl'
+#   gem 'relish'
+#   gem 'colored'
+# end
+# 
+# group :development do
+#   gem 'hpricot'
+#   gem 'ruby_parser'
+#   gem 'brakeman'
+# end
+# 
+# # To use debugger
+# # gem 'ruby-debug19', :require => 'ruby-debug'
+# 
+# group :test do
+#   # Pretty printed test output
+#   gem 'turn', :require => false
+#   gem 'cucumber-rails'
+#   gem 'database_cleaner', '>= 0.6.7'
+#   gem 'mongoid-rspec', '>= 1.4.4'
+#   gem 'factory_girl_rails', '>= 1.1.0'
+#   gem 'launchy', '>= 2.0.5'
+# end
