@@ -17,14 +17,14 @@ end
 
 gem 'jquery-rails'
 gem 'thin'
-gem 'json', '~> 1.8.1'
+gem 'json', '1.8.1'
 
 gem 'inherited_resources', '1.3.0'
 gem 'devise', '~> 2.1.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'mongoid', '~> 2.4.1'
 gem 'cancan', '~> 1.6.8'
-gem 'bson_ext', '~> 1.4'
+gem 'bson_ext', '1.9.2'
 gem 'haml', '>= 3.0.0'
 gem 'haml-rails'
 gem 'redcarpet', '1.17.2'
