@@ -8,8 +8,5233 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require jquery.facebox
- *= require_tree .
+
+
+
 */
 
+#facebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  text-align: left;
+}
+
+
+#facebox .popup{
+  position:relative;
+  border:3px solid rgba(0,0,0,0);
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  -webkit-box-shadow:0 0 18px rgba(0,0,0,0.4);
+  -moz-box-shadow:0 0 18px rgba(0,0,0,0.4);
+  box-shadow:0 0 18px rgba(0,0,0,0.4);
+}
+
+#facebox .content {
+  display:table;
+  width: 370px;
+  padding: 10px;
+  background: #fff;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+}
+
+#facebox .content > p:first-child{
+  margin-top:0;
+}
+#facebox .content > p:last-child{
+  margin-bottom:0;
+}
+
+#facebox .close{
+  position:absolute;
+  top:5px;
+  right:5px;
+  padding:2px;
+  background:#fff;
+}
+#facebox .close img{
+  opacity:0.3;
+}
+#facebox .close:hover img{
+  opacity:1.0;
+}
+
+#facebox .loading {
+  text-align: center;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox img {
+  border: 0;
+  margin: 0;
+}
+
+#facebox_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+
+.facebox_hide {
+  z-index:-100;
+}
+
+.facebox_overlayBG {
+  background-color: #000;
+  z-index: 99;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/*!
+ * Bootstrap v2.0.3
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+
+.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
+.clearfix:after{clear:both;}
+.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
+.input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+/*.btn{display:inline-block;*display:inline;*zoom:1;padding:4px 10px 4px;margin-bottom:0;font-size:13px;line-height:18px;*line-height:20px;color:#333333;text-align:center;text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);vertical-align:middle;cursor:pointer;background-color:#f5f5f5;background-image:-moz-linear-gradient(top, #ffffff, #e6e6e6);background-image:-ms-linear-gradient(top, #ffffff, #e6e6e6);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));background-image:-webkit-linear-gradient(top, #ffffff, #e6e6e6);background-image:-o-linear-gradient(top, #ffffff, #e6e6e6);background-image:linear-gradient(top, #ffffff, #e6e6e6);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#e6e6e6;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);border:1px solid #cccccc;*border:0;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;*margin-left:.3em;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);}.btn:hover,.btn:active,.btn.active,.btn.disabled,.btn[disabled]{background-color:#e6e6e6;*background-color:#d9d9d9;}
+.btn:active,.btn.active{background-color:#cccccc \9;}
+.btn:first-child{*margin-left:0;}
+.btn:hover{color:#333333;text-decoration:none;background-color:#e6e6e6;*background-color:#d9d9d9;background-position:0 -15px;-webkit-transition:background-position 0.1s linear;-moz-transition:background-position 0.1s linear;-ms-transition:background-position 0.1s linear;-o-transition:background-position 0.1s linear;transition:background-position 0.1s linear;}
+.btn:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+.btn.active,.btn:active{background-color:#e6e6e6;background-color:#d9d9d9 \9;background-image:none;outline:0;-webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);box-shadow:inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);}
+.btn.disabled,.btn[disabled]{cursor:default;background-color:#e6e6e6;background-image:none;opacity:0.65;filter:alpha(opacity=65);-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+.btn-large{padding:9px 14px;font-size:15px;line-height:normal;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+.btn-large [class^="icon-"]{margin-top:1px;}
+.btn-small{padding:5px 9px;font-size:11px;line-height:16px;}
+.btn-small [class^="icon-"]{margin-top:-1px;}
+.btn-mini{padding:2px 6px;font-size:11px;line-height:14px;}
+.btn-primary,.btn-primary:hover,.btn-warning,.btn-warning:hover,.btn-danger,.btn-danger:hover,.btn-success,.btn-success:hover,.btn-info,.btn-info:hover,.btn-inverse,.btn-inverse:hover{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);}
+.btn-primary.active,.btn-warning.active,.btn-danger.active,.btn-success.active,.btn-info.active,.btn-inverse.active{color:rgba(255, 255, 255, 0.75);}
+.btn{border-color:#ccc;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}
+.btn-primary{background-color:#0074cc;background-image:-moz-linear-gradient(top, #0088cc, #0055cc);background-image:-ms-linear-gradient(top, #0088cc, #0055cc);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));background-image:-webkit-linear-gradient(top, #0088cc, #0055cc);background-image:-o-linear-gradient(top, #0088cc, #0055cc);background-image:linear-gradient(top, #0088cc, #0055cc);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);border-color:#0055cc #0055cc #003580;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#0055cc;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-primary:hover,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{background-color:#0055cc;*background-color:#004ab3;}
+.btn-primary:active,.btn-primary.active{background-color:#004099 \9;}
+.btn-warning{background-color:#faa732;background-image:-moz-linear-gradient(top, #fbb450, #f89406);background-image:-ms-linear-gradient(top, #fbb450, #f89406);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));background-image:-webkit-linear-gradient(top, #fbb450, #f89406);background-image:-o-linear-gradient(top, #fbb450, #f89406);background-image:linear-gradient(top, #fbb450, #f89406);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89406', GradientType=0);border-color:#f89406 #f89406 #ad6704;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#f89406;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-warning:hover,.btn-warning:active,.btn-warning.active,.btn-warning.disabled,.btn-warning[disabled]{background-color:#f89406;*background-color:#df8505;}
+.btn-warning:active,.btn-warning.active{background-color:#c67605 \9;}
+.btn-danger{background-color:#da4f49;background-image:-moz-linear-gradient(top, #ee5f5b, #bd362f);background-image:-ms-linear-gradient(top, #ee5f5b, #bd362f);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));background-image:-webkit-linear-gradient(top, #ee5f5b, #bd362f);background-image:-o-linear-gradient(top, #ee5f5b, #bd362f);background-image:linear-gradient(top, #ee5f5b, #bd362f);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);border-color:#bd362f #bd362f #802420;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#bd362f;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-danger:hover,.btn-danger:active,.btn-danger.active,.btn-danger.disabled,.btn-danger[disabled]{background-color:#bd362f;*background-color:#a9302a;}
+.btn-danger:active,.btn-danger.active{background-color:#942a25 \9;}
+.btn-success{background-color:#5bb75b;background-image:-moz-linear-gradient(top, #62c462, #51a351);background-image:-ms-linear-gradient(top, #62c462, #51a351);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));background-image:-webkit-linear-gradient(top, #62c462, #51a351);background-image:-o-linear-gradient(top, #62c462, #51a351);background-image:linear-gradient(top, #62c462, #51a351);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);border-color:#51a351 #51a351 #387038;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#51a351;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-success:hover,.btn-success:active,.btn-success.active,.btn-success.disabled,.btn-success[disabled]{background-color:#51a351;*background-color:#499249;}
+.btn-success:active,.btn-success.active{background-color:#408140 \9;}
+.btn-info{background-color:#49afcd;background-image:-moz-linear-gradient(top, #5bc0de, #2f96b4);background-image:-ms-linear-gradient(top, #5bc0de, #2f96b4);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));background-image:-webkit-linear-gradient(top, #5bc0de, #2f96b4);background-image:-o-linear-gradient(top, #5bc0de, #2f96b4);background-image:linear-gradient(top, #5bc0de, #2f96b4);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#2f96b4', GradientType=0);border-color:#2f96b4 #2f96b4 #1f6377;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#2f96b4;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-info:hover,.btn-info:active,.btn-info.active,.btn-info.disabled,.btn-info[disabled]{background-color:#2f96b4;*background-color:#2a85a0;}
+.btn-info:active,.btn-info.active{background-color:#24748c \9;}
+.btn-inverse{background-color:#414141;background-image:-moz-linear-gradient(top, #555555, #222222);background-image:-ms-linear-gradient(top, #555555, #222222);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#555555), to(#222222));background-image:-webkit-linear-gradient(top, #555555, #222222);background-image:-o-linear-gradient(top, #555555, #222222);background-image:linear-gradient(top, #555555, #222222);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#222222', GradientType=0);border-color:#222222 #222222 #000000;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#222222;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-inverse:hover,.btn-inverse:active,.btn-inverse.active,.btn-inverse.disabled,.btn-inverse[disabled]{background-color:#222222;*background-color:#151515;}
+.btn-inverse:active,.btn-inverse.active{background-color:#080808 \9;}
+button.btn,input[type="submit"].btn{*padding-top:2px;*padding-bottom:2px;}button.btn::-moz-focus-inner,input[type="submit"].btn::-moz-focus-inner{padding:0;border:0;}
+button.btn.btn-large,input[type="submit"].btn.btn-large{*padding-top:7px;*padding-bottom:7px;}
+button.btn.btn-small,input[type="submit"].btn.btn-small{*padding-top:3px;*padding-bottom:3px;}
+button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-bottom:1px;}*/
+.nav{margin:2px 0 2px 2px;list-style:none;}
+/*.nav>li{display:inline-block;padding: 0 .25em 0 0;}*/
+.nav>ul{margin:0;padding:0;list-style-type:none;}
+.nav>li{display:inline-block;float:left;margin-right:.5em;}
+.nav>li>a{display:inline;color:#97C3D6;margin:0;padding:0;}
+.nav>li:after{content: '\2022';color:#FFFFFF;display:inline;font-size:100%;margin:0;}
+.nav>li:last-child:after{content: '';}
+.nav>li>a:hover{color:#97C3D6;text-decoration:underline;}
+.nav>.pull-right{float:right;}
+.nav .nav-header{display:block;padding:0px 15px;font-size:11px;font-weight:bold;line-height:18px;color:#999999;text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);text-transform:uppercase;}
+.nav-tabs:after,.nav-pills:after{clear:both;}
+.nav-tabs>li,.nav-pills>li{float:left;}
+.nav-tabs>li>a,.nav-pills>li>a{padding-right:5px;padding-left:0px;margin-right:2px;line-height:14px;}
+.nav-tabs>.active>a,.nav-tabs>.active>a:hover{color:#FFFFFF;;cursor:default;}
+.nav-pills>li>a{padding-top:0px;padding-bottom:0px;margin-top:0px;margin-bottom:0px;}
+.nav-pills>.active>a,.nav-pills>.active>a:hover{color:#97C3D6;background-color:#0088cc;}
+.tabbable{*zoom:1;}.tabbable:before,.tabbable:after{display:table;content:"";}
+.tabbable:after{clear:both;}
+.tab-content{overflow:auto;}
+.tab-content>.tab-pane,.pill-content>.pill-pane{display:none;}
+.tab-content>.active,.pill-content>.active{display:block;}
+.tabs-below>.nav-tabs{border-top:1px solid #ddd;}
+.tabs-below>.nav-tabs>li{margin-top:-1px;margin-bottom:0;}
+.tabs-below>.nav-tabs>li>a{-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;}.tabs-below>.nav-tabs>li>a:hover{border-bottom-color:transparent;border-top-color:#ddd;}
+.tabs-below>.nav-tabs>.active>a,.tabs-below>.nav-tabs>.active>a:hover{border-color:transparent #ddd #ddd #ddd;}
+.tabs-left>.nav-tabs>li,.tabs-right>.nav-tabs>li{float:none;}
+.tabs-left>.nav-tabs>li>a,.tabs-right>.nav-tabs>li>a{min-width:74px;margin-right:0;margin-bottom:3px;}
+.tabs-left>.nav-tabs{float:left;margin-right:19px;border-right:1px solid #ddd;}
+.tabs-left>.nav-tabs>li>a{margin-right:-1px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px;}
+.tabs-left>.nav-tabs>li>a:hover{border-color:#eeeeee #dddddd #eeeeee #eeeeee;}
+.tabs-left>.nav-tabs .active>a,.tabs-left>.nav-tabs .active>a:hover{border-color:#ddd transparent #ddd #ddd;*border-right-color:#ffffff;}
+.tabs-right>.nav-tabs{float:right;margin-left:19px;border-left:1px solid #ddd;}
+.tabs-right>.nav-tabs>li>a{margin-left:-1px;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0;}
+.tabs-right>.nav-tabs>li>a:hover{border-color:#eeeeee #eeeeee #eeeeee #dddddd;}
+.tabs-right>.nav-tabs .active>a,.tabs-right>.nav-tabs .active>a:hover{border-color:#ddd #ddd #ddd transparent;*border-left-color:#ffffff;}
+.tooltip{position:absolute;z-index:1020;display:block;visibility:visible;padding:5px;font-size:12px;opacity:0;filter:alpha(opacity=0);}.tooltip.in{opacity:1.0;filter:alpha(opacity=100);}
+.tooltip.top{margin-top:-2px;}
+.tooltip.right{margin-left:2px;}
+.tooltip.bottom{margin-top:2px;}
+.tooltip.left{margin-left:-2px;}
+.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid #000000;}
+.tooltip.left .tooltip-arrow{top:50%;right:0;margin-top:-5px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid #000000;}
+.tooltip.bottom .tooltip-arrow{top:0;left:50%;margin-left:-5px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid #000000;}
+.tooltip.right .tooltip-arrow{top:50%;left:0;margin-top:-5px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:5px solid #000000;}
+.tooltip-inner{max-width:200px;padding:3px 8px;color:#ffffff;text-align:center;text-decoration:none;background-color:gray;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.tooltip-arrow{position:absolute;width:0;height:0;}
+
+/*.nav li+.nav-header{margin-top:9px;}*/
+/*.nav-list{padding-left:15px;padding-right:15px;margin-bottom:0;}*/
+/*.nav-list>li>a,.nav-list .nav-header{margin-left:-15px;margin-right:-15px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);}*/
+/*.nav-list>li>a{padding:3px 15px;}*/
+/*.nav-list>.active>a,.nav-list>.active>a:hover{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);background-color:#0088cc;}*/
+/*.nav-list [class^="icon-"]{margin-right:2px;}*/
+/*.nav-list .divider{*width:100%;height:1px;margin:8px 1px;*margin:-5px 0 5px;overflow:hidden;background-color:#e5e5e5;border-bottom:1px solid #ffffff;}*/
+/*.nav-tabs,.nav-pills{*zoom:1;}.nav-tabs:before,.nav-pills:before,.nav-tabs:after,.nav-pills:after{display:table;content:"";}*/
+/*.nav-tabs{border-bottom:1px solid #ddd;}*/
+/*.nav-tabs>li{margin-bottom:-1px;}*/
+/*.nav-tabs>li>a{padding-top:8px;padding-bottom:8px;line-height:18px;border:1px solid transparent;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;}.nav-tabs>li>a:hover{border-color:#eeeeee #eeeeee #dddddd;}*/
+/*.nav-stacked>li{float:none;}*/
+/*.nav-stacked>li>a{margin-right:0;}*/
+/*.nav-tabs.nav-stacked{border-bottom:0;}*/
+/*.nav-tabs.nav-stacked>li>a{border:1px solid #ddd;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}*/
+/*.nav-tabs.nav-stacked>li:first-child>a{-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;}*/
+/*.nav-tabs.nav-stacked>li:last-child>a{-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;}*/
+/*.nav-tabs.nav-stacked>li>a:hover{border-color:#ddd;z-index:2;}*/
+/*.nav-pills.nav-stacked>li>a{margin-bottom:3px;}*/
+/*.nav-pills.nav-stacked>li:last-child>a{margin-bottom:1px;}*/
+/*.nav-tabs .dropdown-menu{-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;}*/
+/*.nav-pills .dropdown-menu{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}*/
+/*.nav-tabs .dropdown-toggle .caret,.nav-pills .dropdown-toggle .caret{border-top-color:#0088cc;border-bottom-color:#0088cc;margin-top:6px;}*/
+/*.nav-tabs .dropdown-toggle:hover .caret,.nav-pills .dropdown-toggle:hover .caret{border-top-color:#005580;border-bottom-color:#005580;}*/
+/*.nav-tabs .active .dropdown-toggle .caret,.nav-pills .active .dropdown-toggle .caret{border-top-color:#333333;border-bottom-color:#333333;}*/
+/*.nav>.dropdown.active>a:hover{color:#000000;cursor:pointer;}*/
+/*.nav-tabs .open .dropdown-toggle,.nav-pills .open .dropdown-toggle,.nav>li.dropdown.open.active>a:hover{color:#ffffff;background-color:#999999;border-color:#999999;}*/
+/*.nav li.dropdown.open .caret,.nav li.dropdown.open.active .caret,.nav li.dropdown.open a:hover .caret{border-top-color:#ffffff;border-bottom-color:#ffffff;opacity:1;filter:alpha(opacity=100);}*/
+/*.tabs-stacked .open>a:hover{border-color:#999999;}*/
+/*.tabs-below>.nav-tabs,.tabs-right>.nav-tabs,.tabs-left>.nav-tabs{border-bottom:0;}*/
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 10, ../../app/assets/stylesheets/company.css.scss */
+.about {
+  display: block;
+  height: 120px;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  width: 744px;
+}
+/* line 16, ../../app/assets/stylesheets/company.css.scss */
+.about .image {
+  margin: 0 10px;
+}
+/* line 18, ../../app/assets/stylesheets/company.css.scss */
+.about .image img {
+  margin: 0;
+  padding: 0;
+}
+/* line 23, ../../app/assets/stylesheets/company.css.scss */
+.about .services {
+  position: relative;
+  height: 90px;
+  margin: 5px 0;
+}
+/* line 27, ../../app/assets/stylesheets/company.css.scss */
+.about .services p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 34, ../../app/assets/stylesheets/company.css.scss */
+.team {
+  position: relative;
+  float: left;
+  margin: 9px 0px 14px 10px;
+  padding: 0;
+  min-height: 287px;
+  width: 980px;
+}
+/* line 41, ../../app/assets/stylesheets/company.css.scss */
+.team .panel {
+  position: relative;
+  display: inline;
+  float: left;
+  background-image: url(company/panel_decor_line.gif);
+  background-repeat: no-repeat;
+  background-size: 450px 6px;
+  padding: 15px 0;
+  margin: 10px 0 0 0;
+  width: 450px;
+}
+/* line 51, ../../app/assets/stylesheets/company.css.scss */
+.team .panel.odd {
+  width: 500px;
+}
+/* line 54, ../../app/assets/stylesheets/company.css.scss */
+.team .panel .name {
+  position: relative;
+  z-index: 6;
+  width: 356px;
+}
+/* line 58, ../../app/assets/stylesheets/company.css.scss */
+.team .panel .name h2 {
+  text-align: left;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  color: white;
+  margin: 0 0 12px 0;
+}
+/* line 67, ../../app/assets/stylesheets/company.css.scss */
+.team .panel .frame {
+  float: left;
+  background-image: url(company/frame_thumb_team.gif);
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 166px;
+  width: 137px;
+  z-index: 7;
+}
+/* line 76, ../../app/assets/stylesheets/company.css.scss */
+.team .panel .frame .picture {
+  padding: 11px 10px 6px 9px;
+  margin: 0;
+  z-index: 8;
+}
+/* line 82, ../../app/assets/stylesheets/company.css.scss */
+.team .panel .profile {
+  float: left;
+  margin: 0 0 0 10px;
+  overflow: auto;
+  height: 217px;
+  width: 303px;
+  z-index: 6;
+}
+/* line 89, ../../app/assets/stylesheets/company.css.scss */
+.team .panel .profile p {
+  margin: 0 0 10px 0;
+  text-align: left;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+/* line 99, ../../app/assets/stylesheets/company.css.scss */
+.section {
+  position: relative;
+  margin: 22px 8px 8px 8px;
+  width: 980px -16px;
+  top: 0px;
+  left: 0px;
+  float: left;
+}
+/* line 106, ../../app/assets/stylesheets/company.css.scss */
+.section .testimonial {
+  position: relative;
+  width: 48%;
+  padding: 0 0 15px 0;
+}
+/* line 110, ../../app/assets/stylesheets/company.css.scss */
+.section .testimonial.odd {
+  float: left;
+}
+/* line 113, ../../app/assets/stylesheets/company.css.scss */
+.section .testimonial.even {
+  float: right;
+  margin-left: 8px;
+}
+/* line 117, ../../app/assets/stylesheets/company.css.scss */
+.section .testimonial .quotes {
+  float: left;
+}
+/* line 121, ../../app/assets/stylesheets/company.css.scss */
+.section .testimonial .details p {
+  margin-top: 0;
+  font-size: 11px;
+  line-height: 13px;
+}
+/* line 127, ../../app/assets/stylesheets/company.css.scss */
+.section .testimonial .person {
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  font-weight: bold;
+  color: silver;
+  padding: 0 0 15px 0;
+}
+
+/* line 138, ../../app/assets/stylesheets/company.css.scss */
+.show_case {
+  float: left;
+  margin: 24px 0 0 6px;
+  width: 832px;
+  min-height: 300px;
+}
+/* line 143, ../../app/assets/stylesheets/company.css.scss */
+.show_case .area {
+  margin: 19px 0 0 14px;
+  width: 36px;
+  height: 212px;
+}
+/* line 147, ../../app/assets/stylesheets/company.css.scss */
+.show_case .area h2 {
+  color: white;
+  text-align: center;
+  font-size: 32px;
+}
+/* line 11, ../../app/assets/stylesheets/contact.css.scss */
+.mandatory {
+  display: inline;
+  color: white;
+  font-size: xx-small;
+  vertical-align: top;
+}
+
+/* line 18, ../../app/assets/stylesheets/contact.css.scss */
+.new_support {
+  margin: 0 235px;
+  padding: 0;
+}
+
+/* line 23, ../../app/assets/stylesheets/contact.css.scss */
+.field_with_errors {
+  display: inline;
+}
+
+/* line 27, ../../app/assets/stylesheets/contact.css.scss */
+.error_messages {
+  margin: 10px 0;
+  padding: 0 0 10px 0;
+  border: 1px solid #cc0000;
+  background: #eeaaaa;
+  color: #cc0000;
+}
+/* line 33, ../../app/assets/stylesheets/contact.css.scss */
+.error_messages h2 {
+  font-size: 15px;
+  color: white;
+  background: #cc0000;
+}
+/* line 38, ../../app/assets/stylesheets/contact.css.scss */
+.error_messages ul {
+  list-style: none;
+  margin: 0 0 0 10px;
+}
+
+/* line 47, ../../app/assets/stylesheets/contact.css.scss */
+#contact_methods {
+  margin: 0;
+}
+/* line 49, ../../app/assets/stylesheets/contact.css.scss */
+#contact_methods ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+}
+/* line 54, ../../app/assets/stylesheets/contact.css.scss */
+#contact_methods ul li {
+  list-style: inside;
+  margin: 0 7px;
+}
+/* line 57, ../../app/assets/stylesheets/contact.css.scss */
+#contact_methods ul li a {
+  line-height: 17px;
+  overflow: hidden;
+  padding: 0 7px;
+  text-decoration: none;
+  color: #97c3d6;
+}
+/* line 63, ../../app/assets/stylesheets/contact.css.scss */
+#contact_methods ul li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+/* line 70, ../../app/assets/stylesheets/contact.css.scss */
+#contact_methods #contact_address {
+  margin: 6px 35px;
+  color: white;
+}
+/* line 5, ../../app/assets/stylesheets/devise.css.scss */
+body.signin {
+  color: #000;
+}
+/* line 7, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+/* line 11, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper a:hover {
+  color: #0033cc;
+  background: none;
+  text-decoration: underline;
+}
+/* line 17, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#LogoBox {
+  margin-top: 50px;
+}
+/* line 20, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div.signin_dialog {
+  zoom: 100%;
+}
+/* line 23, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div.signin {
+  padding: 0;
+  text-align: left;
+  width: 780px;
+  margin: 0 auto;
+  font-size: 13px;
+}
+/* line 30, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinHeader {
+  margin: 0;
+  padding: 0;
+}
+/* line 34, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinHeader .cap.top {
+  z-index: 1;
+  width: 100%;
+  padding-top: 10px;
+}
+/* line 41, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody {
+  float: left;
+  margin: 0;
+  padding: 25px;
+  width: 750px;
+}
+/* line 46, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody #flash_area {
+  width: 750px;
+}
+/* line 49, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody form {
+  width: 450px;
+  float: left;
+}
+/* line 53, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody h2 {
+  font-weight: normal;
+}
+/* line 56, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody h3 {
+  color: #97c3d6;
+}
+/* line 59, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody a {
+  color: white;
+}
+/* line 61, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinBody a:hover {
+  text-decoration: none;
+  background-color: white;
+  color: white;
+}
+/* line 68, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div .details {
+  margin: 0 0 0 15px;
+  padding: 0 0 0 20px;
+  width: 264px;
+  float: left;
+  border-left: thin solid white;
+}
+/* line 74, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div .details h3 {
+  color: #97c3d6;
+}
+/* line 78, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinFooter {
+  float: left;
+}
+/* line 80, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinFooter .footer {
+  float: left;
+  padding: 10px 25px 20px 25px;
+  margin-top: 0;
+}
+/* line 84, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinFooter .footer a {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3px;
+  color: white;
+  text-decoration: none;
+  line-height: 1.35em;
+}
+/* line 91, ../../app/assets/stylesheets/devise.css.scss */
+body.signin .wrapper div#signinFooter .footer a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 101, ../../app/assets/stylesheets/devise.css.scss */
+body:first-of-type.signin div.signin {
+  border: none;
+}
+/* line 105, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin p {
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+/* line 110, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin div.flash {
+  padding: 7px 5px;
+  font-size: 12px;
+  margin: 15px 0;
+}
+/* line 115, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin div.error {
+  border-top: 1px solid #900;
+  border-bottom: 1px solid #900;
+  color: #900;
+  background-color: #f5e6e6;
+}
+/* line 121, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin div.confirm {
+  border-top: 1px solid #393;
+  border-bottom: 1px solid #393;
+  color: #393;
+  background-color: #e6f5ea;
+}
+/* line 128, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin h1 {
+  color: white;
+  margin: 0;
+  padding: 20px 0 0 25px;
+}
+/* line 132, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin h1 span {
+  color: #e6e6e6;
+  margin: 0;
+  padding: 0;
+  font-family: Times New Roman, serif;
+  font-size: 20px;
+  line-height: 20px;
+}
+/* line 142, ../../app/assets/stylesheets/devise.css.scss */
+body.lethe div.signin h1 {
+  margin-bottom: 5px;
+}
+/* line 146, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin h2 {
+  color: white;
+  font-size: 14px;
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+/* line 152, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin input {
+  font-size: 14px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+/* line 157, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin input.auto {
+  width: auto;
+  margin: 0 3px 10px 0;
+}
+/* line 161, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin input.buttonBasic {
+  width: auto;
+  font-size: 14px;
+  padding: 3px;
+  margin: 10px 0 0 0;
+}
+/* line 168, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin label {
+  margin-bottom: 0;
+}
+/* line 170, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin label.remember_me {
+  font-weight: normal;
+  font-size: 12px;
+}
+/* line 174, ../../app/assets/stylesheets/devise.css.scss */
+body.signin div.signin label input {
+  margin-bottom: 0;
+}
+
+/* line 181, ../../app/assets/stylesheets/devise.css.scss */
+#after {
+  clear: both;
+  color: gray;
+  width: 780px;
+  font-size: 11px;
+  text-align: right;
+  margin: 0 auto;
+}
+/* line 188, ../../app/assets/stylesheets/devise.css.scss */
+#after a {
+  padding: 0.1em;
+  margin: 0;
+  color: white;
+  text-decoration: underline;
+}
+/* line 193, ../../app/assets/stylesheets/devise.css.scss */
+#after a:hover {
+  text-decoration: none;
+}
+
+/* line 199, ../../app/assets/stylesheets/devise.css.scss */
+table.signin, table.signup, table.secret, table.confirm {
+  margin: 0;
+}
+/* line 201, ../../app/assets/stylesheets/devise.css.scss */
+table.signin td, table.signup td, table.secret td, table.confirm td {
+  padding: 0 10px 0 0;
+}
+
+/* line 207, ../../app/assets/stylesheets/devise.css.scss */
+.block.authentication {
+  width: 774px;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 7, ../../app/assets/stylesheets/gmaps4rails.css.scss */
+.gmaps4rails_map {
+  width: 924px;
+  height: 440px;
+}
+.ad-gallery {
+  width: 600px;
+}
+.ad-gallery, .ad-gallery * {
+  margin: 0;
+  padding: 0;
+}
+  .ad-gallery .ad-image-wrapper {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+    .ad-gallery .ad-image-wrapper .ad-loader {
+      position: absolute;
+      z-index: 10;
+      top: 48%;
+      left: 48%;
+      border: 1px solid #CCC;
+    }
+    .ad-gallery .ad-image-wrapper .ad-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 100;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 100;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev, .ad-gallery .ad-image-wrapper .ad-next {
+      /* Or else IE will hide it */
+      background: url(non-existing.jpg)\9
+    }
+      .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image, .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
+        background: url(ad_prev.png);
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 47%;
+        left: 0;
+        z-index: 101;
+      }
+      .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
+        background: url(ad_next.png);
+        width: 30px;
+        height: 30px;
+        right: 0;
+        left: auto;
+      }
+    .ad-gallery .ad-image-wrapper .ad-image {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+      .ad-gallery .ad-image-wrapper .ad-image a img {
+        border: 0;
+      }
+      .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding: 7px;
+        text-align: left;
+        width: 100%;
+        z-index: 2;
+        background: url(opa75.png);
+        color: #000;
+      }
+      * html .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        background: none;
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+					enabled=true, 
+					src='opa75.png', 
+					sizingMethod='scale'
+				);
+      }
+        .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .ad-description-title {
+          display: block;
+        }
+  .ad-gallery .ad-controls {
+    height: 20px;
+  }
+    .ad-gallery .ad-info {
+      float: left;
+    }
+    .ad-gallery .ad-slideshow-controls {
+      float: right;
+    }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-start, .ad-gallery .ad-slideshow-controls .ad-slideshow-stop {
+        padding-left: 5px;
+        cursor: pointer;
+      }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-countdown {
+        padding-left: 5px;
+        font-size: 0.9em;
+      }
+    .ad-gallery .ad-slideshow-running .ad-slideshow-start {
+      cursor: default;
+      font-style: italic;
+    }
+  .ad-gallery .ad-nav {
+    width: 100%;
+    position: relative;
+  }
+    .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 10;
+    }
+    /* IE 6 doesn't like height: 100% */
+    * html .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      height: 100px;
+    }
+    .ad-gallery .ad-back {
+      cursor: pointer;
+      left: -20px;
+      width: 13px;
+      display: block;
+      background: url(ad_scroll_back.png) 0px 22px no-repeat;
+    }
+    .ad-gallery .ad-forward {
+      cursor: pointer;
+      display: block;
+      right: -20px;
+      width: 13px;
+      background: url(ad_scroll_forward.png) 0px 22px no-repeat;
+    }
+    .ad-gallery .ad-nav .ad-thumbs {
+      overflow: hidden;
+      width: 100%;
+    }
+      .ad-gallery .ad-thumbs .ad-thumb-list {
+        float: left;
+        width: 9000px;
+        list-style: none;
+      }
+        .ad-gallery .ad-thumbs li {
+          float: left;
+          padding-right: 5px;
+        }
+          .ad-gallery .ad-thumbs li a {
+            display: block;
+          }
+            .ad-gallery .ad-thumbs li a img {
+              border: 3px solid #CCC;
+              display: block;
+            }
+            .ad-gallery .ad-thumbs li a.ad-active img {
+              border: 3px solid #616161;
+            }
+/* Can't do display none, since Opera won't load the images then */
+.ad-preloads {
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}
+/* line 8, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description #description_text {
+  width: 697px;
+  float: left;
+}
+/* line 11, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description #description_text #description_text_wrapper {
+  padding: 0 20px 0 0;
+}
+/* line 15, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul {
+  list-style: none;
+}
+/* line 17, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details {
+  width: 240px;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #D9D9D6;
+  float: right;
+}
+/* line 23, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details li {
+  padding: 12px;
+  margin: 0;
+  float: left;
+}
+/* line 27, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details li:nth-child(odd) {
+  background: #e6e6e6;
+}
+/* line 30, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details li:nth-child(even) {
+  background: white;
+}
+/* line 33, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details li.details {
+  color: #252122;
+}
+/* line 35, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details li.details .name {
+  width: 148px;
+  float: left;
+}
+/* line 39, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_description ul#description_details li.details .value {
+  width: 68px;
+  float: right;
+  text-align: right;
+  word-wrap: break-word;
+  font-weight: bold;
+  color: #252122;
+}
+
+/* line 54, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list {
+  width: 940px;
+  float: left;
+}
+/* line 60, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns {
+  float: left;
+  width: 223px;
+  clear: right;
+}
+/* line 64, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns h3 {
+  color: #97c3d6;
+  margin: 0 0 6px 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 72, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns ul {
+  list-style: none;
+  margin: 0;
+}
+/* line 75, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns ul.groups {
+  float: left;
+}
+/* line 78, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns ul li {
+  float: left;
+  margin: 0 0 3px 0;
+  padding: 0;
+  font-size: 1.0em;
+  line-height: 15px;
+  color: white;
+  width: 215px;
+}
+/* line 86, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns ul li input {
+  float: left;
+  margin: 3px 8px 8px 2px;
+}
+/* line 90, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns ul li .yes_no {
+  float: left;
+  margin: 0 5px 0 0;
+  height: 16px;
+  width: 16px;
+}
+/* line 96, ../../app/assets/stylesheets/lastminutes.css.scss */
+#tab_facilities #facilities_list table tr td.columns ul li .question_mark {
+  margin: 1px 0 0 5px;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 10, ../../app/assets/stylesheets/locations.css.scss */
+.countries {
+  position: relative;
+  top: -37px;
+  float: right;
+  height: 36px;
+}
+/* line 15, ../../app/assets/stylesheets/locations.css.scss */
+.countries ul {
+  height: 36px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: center;
+}
+/* line 23, ../../app/assets/stylesheets/locations.css.scss */
+.countries ul li {
+  display: inline;
+  position: relative;
+  float: left;
+  padding: 9px 0px 7px 0px;
+  margin: 0 6px 0 0;
+  background: url(linecopy.gif) no-repeat 50% 100%;
+}
+/* line 30, ../../app/assets/stylesheets/locations.css.scss */
+.countries ul li.selected {
+  background: url(tab_gradient.gif) repeat-x;
+}
+/* line 33, ../../app/assets/stylesheets/locations.css.scss */
+.countries ul li a {
+  height: 36px;
+  padding: 13px 15px 11px 15px;
+  text-decoration: none;
+  color: white;
+}
+/* line 38, ../../app/assets/stylesheets/locations.css.scss */
+.countries ul li a:hover {
+  background: url(tab_gradient.gif) repeat-x;
+}
+
+/* line 48, ../../app/assets/stylesheets/locations.css.scss */
+.description h3 a {
+  color: #97c3d6;
+  text-decoration: none;
+}
+/* line 51, ../../app/assets/stylesheets/locations.css.scss */
+.description h3 a:hover {
+  text-decoration: underline;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 6, ../../app/assets/stylesheets/main.css.scss */
+#main {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  background-image: url(background_general.gif);
+  background-color: #252122;
+  color: gray;
+  margin: 0 auto;
+}
+/* line 14, ../../app/assets/stylesheets/main.css.scss */
+#main.home {
+  background-image: url(background_home.gif);
+}
+/* line 17, ../../app/assets/stylesheets/main.css.scss */
+#main #header {
+  height: 173px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 22, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 980px;
+}
+/* line 26, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #admin {
+  left: 0px;
+}
+/* line 29, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information {
+  right: 140px;
+}
+/* line 32, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information, #main #header .wrapper #admin {
+  position: absolute;
+  z-index: 8;
+  margin: 0;
+  top: 9px;
+}
+/* line 37, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul, #main #header .wrapper #admin ul {
+  height: 17px;
+  margin: 0px;
+  padding: 0px;
+  color: silver;
+  font-size: 10px;
+  text-align: center;
+}
+/* line 44, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li, #main #header .wrapper #admin ul li {
+  display: inline;
+  position: relative;
+  list-style: none outside;
+  float: left;
+  margin: 0 7px;
+}
+/* line 50, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li a, #main #header .wrapper #admin ul li a {
+  line-height: 17px;
+  color: silver;
+  overflow: hidden;
+  padding: 0 7px;
+  text-decoration: none;
+}
+/* line 56, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li a:hover, #main #header .wrapper #admin ul li a:hover {
+  color: white;
+}
+/* line 60, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li ul, #main #header .wrapper #admin ul li ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  color: white;
+}
+/* line 66, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li ul li, #main #header .wrapper #admin ul li ul li {
+  width: 95px;
+  position: relative;
+  float: left;
+  margin: 0;
+  color: white;
+}
+/* line 72, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li ul li span, #main #header .wrapper #information ul li ul li a, #main #header .wrapper #admin ul li ul li span, #main #header .wrapper #admin ul li ul li a {
+  width: 105px;
+  padding: 2px 5px 3px 5px;
+  margin: 0;
+  line-height: 12px;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+  text-align: left;
+  display: inline;
+  background-color: black;
+  color: white;
+  float: left;
+}
+/* line 84, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #information ul li ul li span:hover, #main #header .wrapper #information ul li ul li a:hover, #main #header .wrapper #admin ul li ul li span:hover, #main #header .wrapper #admin ul li ul li a:hover {
+  color: black;
+  background-color: silver;
+}
+/* line 95, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper:hover ul {
+  display: block;
+}
+/* line 99, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #logo {
+  position: absolute;
+  left: 80px;
+  top: 42px;
+  z-index: 3;
+  margin: 0;
+}
+/* line 106, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #social {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+}
+/* line 112, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #social a {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+/* line 114, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #social a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+/* line 117, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #social a img {
+  vertical-align: middle;
+  margin: -5px 2px 0 2px;
+}
+/* line 123, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation {
+  position: absolute;
+  left: 60px;
+  top: 133px;
+  z-index: 14;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+/* line 130, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul {
+  position: relative;
+  height: 22px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  line-height: 22px;
+  font-size: 15px;
+  font-family: Verdana, arial, helvetica, sans-serif;
+  text-align: center;
+}
+/* line 140, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li {
+  display: inline;
+  position: relative;
+  float: left;
+  margin: 4px 9px;
+}
+/* line 146, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li span, #main #header .wrapper #navigation ul li a {
+  padding: 4px 14px;
+  text-decoration: none;
+  color: white;
+}
+/* line 150, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li span:hover, #main #header .wrapper #navigation ul li a:hover {
+  background: black;
+}
+/* line 154, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  color: white;
+}
+/* line 160, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li ul li {
+  width: 152px;
+  position: relative;
+  float: left;
+  margin: 0;
+  color: white;
+}
+/* line 166, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li ul li span, #main #header .wrapper #navigation ul li ul li a {
+  width: 142px;
+  padding: 2px 5px 3px 15px;
+  margin: 0;
+  line-height: 15px;
+  font-size: 12px;
+  font-family: Verdana, sans-serif;
+  text-align: left;
+  display: inline;
+  background-color: black;
+  color: white;
+  float: left;
+}
+/* line 178, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li ul li span:hover, #main #header .wrapper #navigation ul li ul li a:hover {
+  color: black;
+  background-color: silver;
+}
+/* line 186, ../../app/assets/stylesheets/main.css.scss */
+#main #header .wrapper #navigation ul li:hover ul {
+  display: block;
+}
+/* line 195, ../../app/assets/stylesheets/main.css.scss */
+#main #page {
+  margin: 10px auto;
+  padding: 0 0 80px 0;
+  width: 100%;
+  float: left;
+}
+/* line 200, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper {
+  margin: 0 auto;
+  width: 980px;
+}
+/* line 203, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .title {
+  margin: 33px auto 0 auto;
+  padding: 0 0 0 3px;
+}
+/* line 206, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .title h1 {
+  padding: 0 15px;
+}
+/* line 210, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .line {
+  height: 6px;
+  background-image: url(linecopy.gif);
+  backgroud-repeat: repeat-x;
+  background-size: 100%;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+/* line 217, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .line.short {
+  width: 625px;
+  background-size: 625px 6px;
+}
+/* line 221, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .line.search {
+  width: 367px;
+  background-size: 367px 6px;
+}
+/* line 226, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block {
+  background-color: #252122;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+/* line 230, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block.site {
+  width: 980px;
+  float: left;
+}
+/* line 233, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block.site.flash {
+  margin: 0;
+}
+/* line 237, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block.borderless {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* line 240, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border {
+  width: 950px;
+  padding: 15px;
+  margin: 0;
+  background-color: #252122;
+  float: left;
+}
+/* line 242, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .image {
+  float: left;
+  border: 0px none;
+}
+/* line 247, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .details p {
+  margin-top: 0;
+  text-align: justify;
+  padding-bottom: 0px;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 255, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .enquiry {
+  float: left;
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+/* line 259, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .enquiry h3 {
+  font-size: 17px;
+  font-weight: normal;
+}
+/* line 262, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .enquiry h3 a {
+  color: #97c3d6;
+}
+/* line 264, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .enquiry h3 a:hover {
+  text-decoration: underline;
+}
+/* line 270, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border h2 {
+  text-align: left;
+  padding: 10px 0 0 0;
+  font-size: 16px;
+  line-height: 19px;
+}
+/* line 276, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 248px;
+}
+/* line 281, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .name {
+  text-align: center;
+  font-weight: bold;
+  padding: 7px 0;
+}
+/* line 285, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .name.silver {
+  background-color: silver;
+  color: black;
+}
+/* line 289, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .name.gold {
+  background-color: darkGoldenrod;
+  color: white;
+}
+/* line 293, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .name.platinum {
+  background-color: lightSteelBlue;
+  color: black;
+}
+/* line 298, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .points {
+  color: white;
+}
+/* line 300, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .points p {
+  text-align: center;
+  line-height: 13px;
+  font-size: 11px;
+}
+/* line 305, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .points ul {
+  display: block;
+  list-style-type: disc;
+}
+/* line 308, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .package .points ul li {
+  text-align: left;
+  padding-bottom: 0px;
+  line-height: 13px;
+  font-size: 11px;
+}
+/* line 317, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .prices {
+  clear: both;
+}
+/* line 319, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .prices .value {
+  float: left;
+  margin: 0;
+  padding: 7px 0;
+  width: 248px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  line-height: 13px;
+  font-size: 11px;
+  text-align: center;
+}
+/* line 332, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .box {
+  background-color: white;
+  width: 291px;
+  padding: 10px;
+  margin: 0 8px 0 0;
+  float: left;
+  height: 200px;
+}
+/* line 339, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .box.last {
+  margin: 0;
+}
+/* line 342, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .box h2 {
+  color: #252122;
+  text-align: left;
+  padding: 0;
+  font-size: 16px;
+  line-height: 19px;
+}
+/* line 349, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .box p {
+  font-size: 11px;
+  line-height: 13px;
+  color: black;
+  letter-spacing: 0px;
+  text-indent: 0px;
+  text-align: justify;
+}
+/* line 357, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .border .box .img {
+  text-align: center;
+}
+/* line 362, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .textual {
+  padding: 5px 100px;
+  margin: 0;
+  background-color: #252122;
+}
+/* line 364, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .textual h1 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+/* line 371, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .textual p {
+  text-align: justify;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 377, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .bottom {
+  float: left;
+  height: 4px;
+  position: relative;
+  margin-bottom: 20px;
+}
+/* line 383, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+/* line 389, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head .images {
+  float: left;
+  margin: 0 10px 0 0;
+}
+/* line 392, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head .images a {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+/* line 394, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head .images a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=75);
+  -moz-opacity: 0.75;
+  -khtml-opacity: 0.75;
+  opacity: 0.75;
+}
+/* line 398, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head .images img {
+  margin: 1px;
+}
+/* line 405, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head .description h1 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  text-align: left;
+  padding: 10px 0 0 0;
+  font-size: 16px;
+  line-height: 19px;
+}
+/* line 412, ../../app/assets/stylesheets/main.css.scss */
+#main #page .wrapper .block .head .description p {
+  text-align: justify;
+  padding-bottom: 0px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+/* line 422, ../../app/assets/stylesheets/main.css.scss */
+#main #page .break {
+  float: left;
+  background-image: url(location/line_full_width.gif);
+  background-repeat: repeat-x;
+  background-size: 980px 6px;
+  width: 980px;
+  height: 6px;
+  padding: 0;
+  margin: 6px 0;
+  z-index: 3;
+}
+
+/* line 436, ../../app/assets/stylesheets/main.css.scss */
+#footer {
+  position: relative;
+  clear: both;
+  margin: -120px 0 0 0;
+  padding: 0;
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #252122;
+  clear: both;
+}
+/* line 446, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper {
+  margin: 0 auto 15px auto;
+  padding: 15px 0;
+  width: 980px;
+  text-align: left;
+  font-size: 0.75em;
+}
+/* line 452, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper .column {
+  position: relative;
+  padding: 0 0 0 200px;
+  margin: 0;
+  float: left;
+}
+/* line 457, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper .column ul {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+/* line 463, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper .column ul li {
+  width: 100%;
+  margin: 0;
+  list-style: none outside;
+  font-size: 9px;
+  line-height: 13px;
+}
+/* line 469, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper .column ul li a {
+  padding: 0;
+  color: white;
+}
+/* line 472, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper .column ul li a:hover {
+  text-decoration: underline;
+}
+/* line 479, ../../app/assets/stylesheets/main.css.scss */
+#footer .wrapper #first {
+  padding: 0 0 0 150px;
+  margin: 0;
+}
+
+/* line 486, ../../app/assets/stylesheets/main.css.scss */
+.placeholder {
+  color: #999;
+  font-style: italic;
+}
+/* line 489, ../../app/assets/stylesheets/main.css.scss */
+.placeholder:active, .placeholder:focus {
+  cursor: text;
+  color: #000;
+}
+
+/* line 495, ../../app/assets/stylesheets/main.css.scss */
+.clear {
+  clear: both;
+}
+
+/*---------- FLASHES ----------*/
+/* line 501, ../../app/assets/stylesheets/main.css.scss */
+#flash {
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0 auto;
+  padding: 0;
+}
+/* line 507, ../../app/assets/stylesheets/main.css.scss */
+#flash .alert {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #cc0000;
+  background: #eeaaaa;
+  color: #cc0000;
+}
+/* line 514, ../../app/assets/stylesheets/main.css.scss */
+#flash .notice {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #99cc33;
+  background: #ccff66;
+  color: #008500;
+}
+
+/*--------- Errors ---------*/
+/* line 525, ../../app/assets/stylesheets/main.css.scss */
+.required {
+  color: #cc0000;
+  float: right;
+  margin-left: 5px;
+}
+
+/* line 532, ../../app/assets/stylesheets/main.css.scss */
+input.error, textarea.error {
+  border-color: #cc0000;
+}
+
+/* line 538, ../../app/assets/stylesheets/main.css.scss */
+label.error {
+  font-size: 12px;
+  font-weight: normal;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+/*------ Buttons -------*/
+/* line 549, ../../app/assets/stylesheets/main.css.scss */
+.list_your_property {
+  float: right;
+  margin: 4px 0 0 0;
+}
+
+/* line 554, ../../app/assets/stylesheets/main.css.scss */
+.btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 4px 10px 4px;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-family: Verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+  *line-height: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, white, #e6e6e6);
+  background-image: -ms-linear-gradient(top, white, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
+  background-image: -o-linear-gradient(top, white, #e6e6e6);
+  background-image: linear-gradient(top, white, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* line 587, ../../app/assets/stylesheets/main.css.scss */
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+
+/* line 590, ../../app/assets/stylesheets/main.css.scss */
+.btn:active, .btn.active {
+  background-color: #cccccc \9;
+}
+
+/* line 593, ../../app/assets/stylesheets/main.css.scss */
+.btn:first-child {
+  *margin-left: 0;
+}
+
+/* line 595, ../../app/assets/stylesheets/main.css.scss */
+.btn:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -ms-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+
+/* line 606, ../../app/assets/stylesheets/main.css.scss */
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/* line 611, ../../app/assets/stylesheets/main.css.scss */
+.btn.active, .btn:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* line 620, ../../app/assets/stylesheets/main.css.scss */
+.btn.disabled, .btn[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 630, ../../app/assets/stylesheets/main.css.scss */
+.btn {
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+/* line 634, ../../app/assets/stylesheets/main.css.scss */
+.btn-info {
+  background-color: #49afcd;
+  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -ms-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(top, #5bc0de, #2f96b4);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#2f96b4', GradientType=0);
+  border-color: #2f96b4 #2f96b4 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #2f96b4;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+/* line 648, ../../app/assets/stylesheets/main.css.scss */
+.btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+  background-color: #2f96b4;
+  *background-color: #2a85a0;
+}
+
+/* line 651, ../../app/assets/stylesheets/main.css.scss */
+.btn-info:active, .btn-info.active {
+  background-color: #24748c \9;
+}
+/* line 8, ../../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 4, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.member {
+  position: relative;
+  top: 0px;
+  float: left;
+  width: 950px;
+  height: 50px;
+}
+/* line 10, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.member ul {
+  height: 36px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: center;
+}
+/* line 18, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.member ul li {
+  display: inline;
+  position: relative;
+  float: left;
+  padding: 9px 0px 7px 0px;
+  margin: 0 6px 0 0;
+  background: url(linecopy.gif) no-repeat 50% 100%;
+}
+/* line 25, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.member ul li.selected {
+  background: url(tab_gradient.gif) repeat-x;
+}
+/* line 28, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.member ul li a {
+  height: 36px;
+  padding: 13px 15px 11px 15px;
+  text-decoration: none;
+  color: white;
+}
+/* line 33, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.member ul li a:hover {
+  background: url(tab_gradient.gif) repeat-x;
+}
+
+/* line 41, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.panel-container {
+  position: relative;
+  width: 938px;
+  float: left;
+  background: #252122;
+  padding: 0px;
+  margin-bottom: 0;
+}
+/* line 48, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.panel-container .no-listing {
+  background-color: #97c3d6;
+  margin: 10px 170px 40px 170px;
+  padding: 20px;
+  text-align: center;
+}
+/* line 53, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.panel-container .no-listing h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+/* line 57, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.panel-container .no-listing h3.black {
+  color: #252122;
+}
+/* line 60, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.panel-container .no-listing h3 a {
+  color: white;
+  text-decoration: underline;
+}
+/* line 63, ../../../app/assets/stylesheets/member/_member_layout.css.scss */
+.panel-container .no-listing h3 a:hover {
+  text-decoration: none;
+}
+/* line 7, ../../../app/assets/stylesheets/member/accounts.css.scss */
+.cancel_account_button {
+  margin: 10px 0 0 0;
+  overflow: hidden;
+  padding: 0;
+}
+/* line 11, ../../../app/assets/stylesheets/member/accounts.css.scss */
+.cancel_account_button input.button_cancel {
+  float: left;
+  margin: 1px 2px 0 0;
+  cursor: pointer;
+}
+/* line 16, ../../../app/assets/stylesheets/member/accounts.css.scss */
+.cancel_account_button .dont_cancel_account {
+  color: white;
+  font-size: 11px;
+  float: left;
+  margin: 0 0 0 2px;
+}
+/* line 21, ../../../app/assets/stylesheets/member/accounts.css.scss */
+.cancel_account_button .dont_cancel_account a {
+  color: #97c3d6;
+  text-decoration: none;
+}
+/* line 24, ../../../app/assets/stylesheets/member/accounts.css.scss */
+.cancel_account_button .dont_cancel_account a:hover {
+  text-decoration: underline;
+}
+/* line 8, ../../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 10, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle {
+  float: left;
+  clear: both;
+}
+/* line 14, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 18, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li {
+  position: relative;
+  padding: 0;
+  color: white;
+  width: 98px;
+  height: 65px;
+  border: 3px white solid;
+  border-radius: 3px;
+  float: left;
+  margin: 0 20px 20px 0;
+  cursor: move;
+  text-align: center;
+}
+/* line 32, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .featured_image {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background: #97c3d6;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 2px;
+}
+/* line 41, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .hover_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+/* line 49, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .hover_image span a {
+  color: transparent;
+}
+/* line 54, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .hover_image:hover span {
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: 20px auto 0 auto;
+  padding: 5px 15px;
+  background: rgba(255, 255, 255, 0.8);
+}
+/* line 63, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .hover_image:hover span a {
+  font-weight: bold;
+  font-size: 12px;
+  color: #333;
+}
+/* line 71, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .processing_image {
+  height: 65px;
+  width: 98px;
+  background-color: #CCCCCC;
+}
+/* line 75, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle ul#photos_list li .processing_image img {
+  padding: 16px 30px;
+}
+/* line 84, ../../../app/assets/stylesheets/member/photos.css.scss */
+#dashboard_content #show .box .middle p span.blue {
+  color: #97c3d6;
+}
+
+/* line 95, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup {
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+}
+/* line 99, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content {
+  background-color: transparent;
+}
+/* line 101, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container {
+  width: 794px;
+  height: 558px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: 3px white solid;
+}
+/* line 108, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_large {
+  float: left;
+  width: 780px;
+  height: 500px;
+  text-align: center;
+  background: black;
+  border: 7px black solid;
+}
+/* line 116, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_form {
+  float: left;
+  background: black;
+}
+/* line 120, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_form form table {
+  width: 794px;
+}
+/* line 122, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_form form table tr {
+  margin: 4px;
+  height: 40px;
+}
+/* line 126, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_form form table tr td label {
+  padding: 8px 0 0 7px;
+}
+/* line 129, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_form form table tr td input {
+  margin: 1px 4px 0 0;
+}
+/* line 132, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .content #photo_container #photo_form form table tr td .actions {
+  margin-top: 3px;
+}
+/* line 142, ../../../app/assets/stylesheets/member/photos.css.scss */
+#facebox .popup .close {
+  position: absolute;
+  top: 7px;
+  right: 14px;
+  padding: 2px;
+  background: transparent;
+}
+/* line 8, ../../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 9, ../../../app/assets/stylesheets/member/properties.css.scss */
+h2.section-title {
+  margin-bottom: 2px;
+}
+
+/* line 15, ../../../app/assets/stylesheets/member/properties.css.scss */
+p.sub-title {
+  font-size: 13px;
+  margin: 0 0 20px 0;
+}
+
+/* line 22, ../../../app/assets/stylesheets/member/properties.css.scss */
+table.property {
+  margin-bottom: 25px;
+}
+/* line 24, ../../../app/assets/stylesheets/member/properties.css.scss */
+table.property.edit {
+  margin-bottom: 0;
+}
+/* line 28, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td {
+  padding: 2px 10px 0 0;
+  vertical-align: top;
+}
+/* line 31, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td.width {
+  width: 200px;
+}
+/* line 34, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td label {
+  color: white;
+  display: block;
+  float: left;
+}
+/* line 38, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td label.right {
+  text-align: right;
+}
+/* line 41, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td label.centered {
+  margin: 7px 0 0 0;
+}
+/* line 45, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td input, table td select {
+  padding: 7px 5px;
+  margin: 0 4px 8px 2px;
+}
+/* line 49, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td textarea {
+  padding: 7px;
+}
+/* line 52, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td p.note {
+  margin: -5px 0 9px 2px;
+}
+/* line 55, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td span {
+  font-weight: normal;
+}
+/* line 57, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td span.label-info {
+  color: #cc0000;
+}
+/* line 60, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td span.label-warning {
+  color: #99cc33;
+}
+/* line 63, ../../../app/assets/stylesheets/member/properties.css.scss */
+table td span.label-important {
+  color: #99cc33;
+}
+/* line 68, ../../../app/assets/stylesheets/member/properties.css.scss */
+table #property_price_label {
+  padding-top: 9px;
+}
+/* line 71, ../../../app/assets/stylesheets/member/properties.css.scss */
+table .question_mark {
+  margin: 2px 0 0 5px;
+  height: 14px;
+  width: 14px;
+}
+
+/* line 78, ../../../app/assets/stylesheets/member/properties.css.scss */
+.note {
+  margin: 2px 0 2px 2px;
+  padding: 0;
+  font-size: 9px;
+  line-height: 12px;
+}
+
+/* line 86, ../../../app/assets/stylesheets/member/properties.css.scss */
+.block .listing {
+  padding: 0 15px 15px 15px;
+}
+
+/* line 91, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard {
+  margin: 0 0 0 0;
+  padding: 0;
+}
+/* line 94, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side {
+  float: left;
+  width: 310px;
+  margin: 0 20px 0 0;
+}
+/* line 98, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member, #dashboard #side #quick_links {
+  border: thin grey solid;
+  padding: 10px;
+  margin: 0 0 20px 0;
+}
+/* line 105, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member h2.title, #dashboard #side #quick_links h2.title {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 110, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details, #dashboard #side #quick_links .details {
+  margin: 0;
+  padding: 0;
+}
+/* line 113, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details p, #dashboard #side #quick_links .details p {
+  margin: 0 0 5px 0;
+}
+/* line 118, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details table tr td, #dashboard #side #quick_links .details table tr td {
+  color: white;
+  font-size: 12px;
+}
+/* line 121, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details table tr td.label, #dashboard #side #quick_links .details table tr td.label {
+  width: 40%;
+  margin: 0;
+  padding: 0;
+}
+/* line 126, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details table tr td.link, #dashboard #side #quick_links .details table tr td.link {
+  width: 60%;
+  margin: 0;
+  padding: 0;
+}
+/* line 131, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details table tr td a, #dashboard #side #quick_links .details table tr td a {
+  color: #97c3d6;
+  text-decoration: none;
+}
+/* line 134, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #side #member .details table tr td a:hover, #dashboard #side #quick_links .details table tr td a:hover {
+  text-decoration: underline;
+}
+/* line 144, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #body {
+  float: right;
+  width: 620px;
+  margin: 0;
+}
+/* line 148, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #body #notifications {
+  text-align: left;
+  border: thin grey solid;
+  padding: 10px;
+  margin: 0 0 20px 0;
+}
+/* line 154, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #body #notifications h2.title {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 159, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #body #notifications p {
+  margin: 0 0 10px 0;
+}
+/* line 164, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #back {
+  margin: 0 0 10px 15px;
+  padding: 0;
+}
+/* line 167, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #back a {
+  font-size: 13px;
+  color: #97c3d6;
+  text-decoration: underline;
+}
+/* line 171, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #back a:hover {
+  text-decoration: none;
+}
+/* line 176, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing {
+  background: #252122;
+  margin: 0;
+  padding: 0;
+  width: 948px;
+  float: left;
+  border: thin solid gray;
+}
+/* line 183, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing.first {
+  padding-top: 15px;
+}
+/* line 186, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content {
+  padding: 15px;
+  float: left;
+  width: 918px;
+}
+/* line 190, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_thumbnail {
+  padding: 3px;
+  background: #e6e6e6;
+  float: left;
+  border: 1px solid gray;
+  line-height: 0;
+  margin-right: 15px;
+}
+/* line 197, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_thumbnail:hover {
+  background: #f3f3f3;
+}
+/* line 200, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_thumbnail img {
+  height: 65px;
+  width: 98px;
+  border: 1px solid gray;
+}
+/* line 206, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_info {
+  display: block;
+  float: left;
+}
+/* line 209, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_info h3 {
+  font-family: Times New Roman,serif;
+  font-size: 30px;
+}
+/* line 213, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_info h3 a:link, #dashboard .listing .listing_content .listing_info h3 a:visited {
+  color: #97c3d6;
+}
+/* line 219, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_info .actions .action_button {
+  margin-right: 10px;
+  float: left;
+}
+/* line 226, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_status .current_status {
+  margin: 7px 0 0 0;
+  float: right;
+  text-align: right;
+  color: #97c3d6;
+  font-size: 10px;
+  color: #97c3d6;
+}
+/* line 233, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_status .current_status .green {
+  font-weight: bold;
+  color: #00e600;
+}
+/* line 237, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard .listing .listing_content .listing_status .current_status .red {
+  font-weight: bold;
+  color: #ff3333;
+}
+/* line 245, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading {
+  background: #252122;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  float: left;
+  border-bottom: thin solid gray;
+}
+/* line 252, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content {
+  padding: 15px;
+  float: left;
+  width: 950px;
+}
+/* line 256, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_photo {
+  padding: 3px;
+  background: #e6e6e6;
+  float: left;
+  border: 1px solid gray;
+  line-height: 0;
+  margin-right: 15px;
+}
+/* line 263, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_photo:hover {
+  background: #f3f3f3;
+}
+/* line 266, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_photo img {
+  height: 65px;
+  width: 98px;
+  border: 1px solid gray;
+}
+/* line 272, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_info {
+  display: block;
+  float: left;
+}
+/* line 275, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_info h3 {
+  font-family: Times New Roman,serif;
+  font-size: 30px;
+}
+/* line 279, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_info h3 a:link, #dashboard #heading #heading_content #property_info h3 a:visited {
+  color: white;
+}
+/* line 285, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status {
+  float: right;
+  width: 200px;
+}
+/* line 288, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status {
+  margin: 30px 0 0 0;
+  float: right;
+  text-align: right;
+  color: #97c3d6;
+  font-size: 10px;
+  color: #97c3d6;
+}
+/* line 295, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status .green {
+  font-weight: bold;
+  color: #00e600;
+}
+/* line 298, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status .green a {
+  font-weight: bold;
+  color: #00e600;
+}
+/* line 301, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status .green a:hover {
+  text-decoration: underline;
+}
+/* line 306, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status .red {
+  font-weight: bold;
+  color: #ff3333;
+}
+/* line 309, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status .red a {
+  font-weight: bold;
+  color: #ff3333;
+}
+/* line 312, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #heading #heading_content #property_status .current_status .red a:hover {
+  text-decoration: underline;
+}
+/* line 321, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer {
+  clear: left;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  background-color: #252122;
+}
+/* line 327, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner {
+  float: left;
+  width: 100%;
+  position: relative;
+  right: 735px;
+  background: #252122;
+}
+/* line 333, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav {
+  float: left;
+  width: 245px;
+  position: relative;
+  left: 735px;
+  overflow: hidden;
+}
+/* line 340, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul {
+  list-style: none;
+}
+/* line 342, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+/* line 346, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul li {
+  display: list-item;
+  height: 32px;
+}
+/* line 349, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul li.selected {
+  margin: 0;
+}
+/* line 351, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul li.selected a {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+  background: #97c3d6;
+}
+/* line 356, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul li.selected a:hover {
+  color: white;
+  background: #97c3d6;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+}
+/* line 363, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul li a {
+  display: block;
+  font-size: 1em;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 6px 15px 6px;
+}
+/* line 369, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #side_nav .side_nav_container ul li a:hover {
+  background: black;
+  color: white;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+/* line 379, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content {
+  float: left;
+  width: 734px;
+  position: relative;
+  left: 735px;
+  overflow: hidden;
+  border-left: thin solid gray;
+  min-height: 160px;
+}
+/* line 382, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content #notification_area #flash .notice, #dashboard #edit_outer #edit_inner #content #notification_area #flash .error, #dashboard #edit_outer #edit_inner #content #notification_area #flash .warning, #dashboard #edit_outer #edit_inner #content #notification_area #flash .alert {
+  margin-bottom: 0;
+}
+/* line 395, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .top {
+  width: 734px;
+  color: #97c3d6;
+}
+/* line 398, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .top h2 {
+  margin: -1px 0 0 0;
+  padding: 10px 16px 10px 15px;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  color: #393C3D;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 white;
+  background: #e6e6e6;
+}
+/* line 408, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .top h2.step {
+  text-transform: uppercase;
+}
+/* line 413, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text {
+  padding: 15px;
+  color: white;
+}
+/* line 416, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text h3 {
+  color: #97c3d6;
+  font-size: 15px;
+}
+/* line 420, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text p {
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+/* line 423, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text p .green {
+  font-weight: bold;
+  color: #00e600;
+}
+/* line 427, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text p .red {
+  font-weight: bold;
+  color: #ff3333;
+}
+/* line 432, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text ul {
+  list-style: disc inside;
+}
+/* line 434, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text ul:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+/* line 438, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .padded_text ul li {
+  font-size: 12px;
+  margin: 0;
+  padding: 0 0 7px 0;
+}
+/* line 447, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box #delete_possible p a, #dashboard #edit_outer #edit_inner #content .box #cancel_possible p a {
+  font-weight: bold;
+}
+/* line 452, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .delete_agreemment, #dashboard #edit_outer #edit_inner #content .box .cancel_agreement {
+  padding: 10px 0;
+  margin: 0;
+  clear: both;
+}
+/* line 456, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .delete_agreemment .agreement_text, #dashboard #edit_outer #edit_inner #content .box .cancel_agreement .agreement_text {
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 462, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle {
+  padding: 15px 15px 25px 40px;
+}
+/* line 465, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .bottom {
+  padding: 5px 15px 15px 40px;
+}
+/* line 472, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td.col_third, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td.col_third {
+  float: left;
+  width: 215px;
+  clear: right;
+}
+/* line 476, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td.col_third h2, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td.col_third h2 {
+  margin: 0 0 6px 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 483, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td.col_third ul, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td.col_third ul {
+  list-style: none;
+}
+/* line 485, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td.col_third ul.groups, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td.col_third ul.groups {
+  float: left;
+}
+/* line 488, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td.col_third ul li, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td.col_third ul li {
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-size: 1.0em;
+  line-height: 15px;
+  color: white;
+  width: 215px;
+}
+/* line 496, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td.col_third ul li input, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td.col_third ul li input {
+  float: left;
+  margin: 3px 8px 8px 2px;
+}
+/* line 504, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr .charleft.originalDisplayInfo, #dashboard #edit_outer #edit_inner #content .box .bottom table tr .charleft.originalDisplayInfo {
+  font-size: 11px;
+  color: white;
+  margin: 0 0 8px 3px;
+  padding: 0;
+  font-size: 11px;
+  line-height: 15px;
+}
+/* line 513, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr span.yes, #dashboard #edit_outer #edit_inner #content .box .bottom table tr span.yes {
+  color: #00e600;
+  font-size: 11px;
+}
+/* line 524, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle table tr td ul.notes, #dashboard #edit_outer #edit_inner #content .box .bottom table tr td ul.notes {
+  list-style: disc inside;
+  margin: 0 0 0 8px;
+  color: white;
+  font-size: 11px;
+}
+/* line 534, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle p, #dashboard #edit_outer #edit_inner #content .box .bottom p {
+  margin: 0 0 8px 3px;
+  padding: 0;
+  font-size: 11px;
+  line-height: 15px;
+}
+/* line 541, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle ul.groups, #dashboard #edit_outer #edit_inner #content .box .bottom ul.groups {
+  list-style: disc inside;
+  float: left;
+}
+/* line 545, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle ul li.group, #dashboard #edit_outer #edit_inner #content .box .bottom ul li.group {
+  margin: 0 0 3px 10px;
+  padding: 0;
+  font-size: 11px;
+  line-height: 15px;
+  color: white;
+}
+/* line 553, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view {
+  padding: 0;
+  margin: 0;
+  color: #393C3D;
+}
+/* line 557, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3 {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+/* line 561, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3.map_description, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3.map_description {
+  border: 1px solid #272929;
+  padding: 10px 12px;
+  background: #404343;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  vertical-align: top;
+}
+/* line 573, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3 span.change_address, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3 span.change_address {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 0.9em;
+  line-height: 15px;
+  display: block;
+  float: right;
+}
+/* line 580, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3 span.change_address a, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3 span.change_address a {
+  color: white;
+  text-decoration: underline;
+}
+/* line 583, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3 span.change_address a:hover, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3 span.change_address a:hover {
+  text-decoration: none;
+}
+/* line 588, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3 span.address, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3 span.address {
+  font-weight: normal;
+  margin-left: 15px;
+  display: inline-block;
+  width: 500px;
+}
+/* line 597, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view h3 p.note, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view h3 p.note {
+  font-weight: normal;
+  margin: 3px 0 0 0;
+  padding: 0;
+  font-style: italic;
+}
+/* line 606, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view .map_view .map_container, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view .map_view .map_container {
+  margin: 0;
+  padding: 0;
+}
+/* line 610, ../../../app/assets/stylesheets/member/properties.css.scss */
+#dashboard #edit_outer #edit_inner #content .box .middle.map_view .map_view .map_container #private_map.gmaps4rails_map, #dashboard #edit_outer #edit_inner #content .box .middle.map_view .map_view .map_container #public_map.gmaps4rails_map, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view .map_view .map_container #private_map.gmaps4rails_map, #dashboard #edit_outer #edit_inner #content .box .bottom.map_view .map_view .map_container #public_map.gmaps4rails_map {
+  height: 280px;
+  width: 734px;
+}
+
+/* line 628, ../../../app/assets/stylesheets/member/properties.css.scss */
+.actions {
+  display: block;
+  margin-top: 0px;
+}
+/* line 631, ../../../app/assets/stylesheets/member/properties.css.scss */
+.actions .action_button {
+  display: block;
+  float: right;
+  cursor: pointer;
+  border: 1px solid gray;
+  background: #e6e6e6;
+}
+/* line 637, ../../../app/assets/stylesheets/member/properties.css.scss */
+.actions .action_button a {
+  color: gray;
+}
+/* line 639, ../../../app/assets/stylesheets/member/properties.css.scss */
+.actions .action_button a.icon {
+  display: block;
+  padding: 4px 6px 0;
+  font-weight: bold;
+  font-size: 9px;
+  text-shadow: 0 1px 0 white;
+  text-transform: uppercase;
+}
+/* line 648, ../../../app/assets/stylesheets/member/properties.css.scss */
+.actions .action_button:hover {
+  background: #f3f3f3;
+}
+/* line 8, ../../../app/assets/stylesheets/member/registrations.css.scss */
+ul#steps {
+  list-style: none;
+  width: 450px;
+  float: left;
+}
+/* line 12, ../../../app/assets/stylesheets/member/registrations.css.scss */
+ul#steps li {
+  font-size: 24px;
+  line-height: 25px;
+  float: left;
+  padding: 10px 49px 20px 0;
+  color: gray;
+}
+/* line 18, ../../../app/assets/stylesheets/member/registrations.css.scss */
+ul#steps li.current {
+  color: #e6e6e6;
+}
+/* line 21, ../../../app/assets/stylesheets/member/registrations.css.scss */
+ul#steps li span {
+  font-size: 11px;
+  display: block;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 11, ../../app/assets/stylesheets/pages.css.scss */
+p.question {
+  margin-bottom: 0;
+}
+/* line 14, ../../app/assets/stylesheets/pages.css.scss */
+p.answer {
+  color: #ff6600;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 10, ../../app/assets/stylesheets/rentals.css.scss */
+#breadcrumbs {
+  margin: 0 0 12px 18px;
+  padding: 0;
+  color: white;
+}
+/* line 14, ../../app/assets/stylesheets/rentals.css.scss */
+#breadcrumbs a {
+  color: #97c3d6;
+}
+
+/* line 21, ../../app/assets/stylesheets/rentals.css.scss */
+#gallery {
+  margin: 0 auto;
+}
+
+/* line 27, ../../app/assets/stylesheets/rentals.css.scss */
+#search {
+  position: relative;
+  float: left;
+  margin: 33px auto 9px;
+  padding: 0;
+  width: 100%;
+  display: table-cell;
+}
+/* line 34, ../../app/assets/stylesheets/rentals.css.scss */
+#search #filter {
+  display: block;
+  margin: 12px 0 0 0;
+  float: right;
+}
+/* line 38, ../../app/assets/stylesheets/rentals.css.scss */
+#search #filter ul {
+  height: 36px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: center;
+}
+/* line 46, ../../app/assets/stylesheets/rentals.css.scss */
+#search #filter ul li {
+  display: inline;
+  position: relative;
+  float: left;
+  padding: 9px 0px 7px 0px;
+  margin: 0 6px 0 0;
+  background: url(linecopy.jpg) no-repeat 50% 100%;
+}
+/* line 53, ../../app/assets/stylesheets/rentals.css.scss */
+#search #filter ul li.selected {
+  background: url(tab_gradient.gif) repeat-x;
+}
+/* line 56, ../../app/assets/stylesheets/rentals.css.scss */
+#search #filter ul li a {
+  height: 36px;
+  padding: 13px 15px 11px 15px;
+  text-decoration: none;
+  color: white;
+}
+/* line 61, ../../app/assets/stylesheets/rentals.css.scss */
+#search #filter ul li a:hover {
+  background: url(tab_gradient.gif) repeat-x;
+}
+/* line 68, ../../app/assets/stylesheets/rentals.css.scss */
+#search #description {
+  display: block;
+  float: left;
+}
+/* line 71, ../../app/assets/stylesheets/rentals.css.scss */
+#search #description h1 {
+  vertical-align: top;
+  line-height: 56px;
+  padding: 0 8px 0 15px;
+}
+/* line 75, ../../app/assets/stylesheets/rentals.css.scss */
+#search #description h1.underline {
+  background-image: url(linecopy.jpg);
+  background-position: 0px 49px;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+/* line 85, ../../app/assets/stylesheets/rentals.css.scss */
+#results {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  min-height: 287px;
+  width: site;
+}
+/* line 92, ../../app/assets/stylesheets/rentals.css.scss */
+#results .paginate {
+  float: left;
+  padding: 10px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #252122;
+  width: 980px;
+}
+/* line 99, ../../app/assets/stylesheets/rentals.css.scss */
+#results .paginate a {
+  color: #97c3d6;
+}
+/* line 101, ../../app/assets/stylesheets/rentals.css.scss */
+#results .paginate a:hover {
+  text-decoration: underline;
+}
+/* line 106, ../../app/assets/stylesheets/rentals.css.scss */
+#results .property {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 10px;
+  background-color: #252122;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=95);
+  -moz-opacity: 0.95;
+  -khtml-opacity: 0.95;
+  opacity: 0.95;
+}
+/* line 113, ../../app/assets/stylesheets/rentals.css.scss */
+#results .property:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+/* line 116, ../../app/assets/stylesheets/rentals.css.scss */
+#results .property .featured {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 200px;
+  text-align: center;
+}
+/* line 127, ../../app/assets/stylesheets/rentals.css.scss */
+#results .property .short {
+  float: right;
+  width: 634px;
+  margin: 0 10px 0 16px;
+}
+/* line 131, ../../app/assets/stylesheets/rentals.css.scss */
+#results .property .short h2 {
+  color: #97c3d6;
+}
+
+/* line 142, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container {
+  margin: 0 6px;
+  padding: 0;
+  float: left;
+}
+/* line 146, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul {
+  color: white;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: center;
+}
+/* line 151, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs {
+  margin: 0;
+  padding: 0;
+}
+/* line 154, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li {
+  display: inline;
+  position: relative;
+  float: left;
+  padding: 9px 0px 7px 0px;
+  margin: 0 6px 0 0;
+  background: url(linecopy.jpg) no-repeat 50% 100%;
+}
+/* line 161, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li.active {
+  background: url(tab_gradient.gif) repeat-x;
+}
+/* line 164, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li.tab {
+  display: inline-block;
+  margin: 0 6px 0 0;
+  padding: 9px 0px 0px 0px;
+  zoom: 1;
+  *display: inline;
+}
+/* line 170, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li.tab a {
+  color: white;
+  font-size: 16px;
+  line-height: 2em;
+  display: block;
+  padding: 0 10px;
+  outline: none;
+  text-decoration: none;
+}
+/* line 178, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li.tab a:active {
+  font-weight: normal;
+}
+/* line 181, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li.tab a:hover {
+  background-color: transparent;
+}
+/* line 185, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container ul.etabs li.tab:hover {
+  background: url(tab_gradient.gif) repeat-x;
+}
+/* line 192, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container {
+  position: relative;
+  width: 938px;
+  float: left;
+  background: #252122;
+  padding: 0px;
+  margin-bottom: 0;
+}
+/* line 199, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container ul {
+  margin: 1em 6px;
+  padding: 0;
+  line-height: 18px;
+  font-size: 12px;
+  text-align: left;
+  list-style-position: inside;
+}
+/* line 209, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container #tab_description, #tab-container .panel-container #tab_facilities, #tab-container .panel-container #tab_location, #tab-container .panel-container #tab_price, #tab-container .panel-container #tab_contact {
+  float: left;
+  margin: 18px 0 0 0;
+  padding: 0;
+}
+/* line 213, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container #tab_description ul, #tab-container .panel-container #tab_facilities ul, #tab-container .panel-container #tab_location ul, #tab-container .panel-container #tab_price ul, #tab-container .panel-container #tab_contact ul {
+  margin-top: 0;
+}
+/* line 216, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container #tab_description .property_address, #tab-container .panel-container #tab_facilities .property_address, #tab-container .panel-container #tab_location .property_address, #tab-container .panel-container #tab_price .property_address, #tab-container .panel-container #tab_contact .property_address {
+  border: thin solid #e6e6e6;
+  border-bottom: none;
+  padding: 10px 12px;
+  font-size: 0.9em;
+  color: white;
+  background: #404343;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  vertical-align: top;
+}
+/* line 227, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container #tab_description .property_address .address, #tab-container .panel-container #tab_facilities .property_address .address, #tab-container .panel-container #tab_location .property_address .address, #tab-container .panel-container #tab_price .property_address .address, #tab-container .panel-container #tab_contact .property_address .address {
+  font-weight: normal;
+  margin-left: 15px;
+  display: inline-block;
+  width: 500px;
+  font-style: italic;
+}
+/* line 235, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container #tab_description .map_container, #tab-container .panel-container #tab_facilities .map_container, #tab-container .panel-container #tab_location .map_container, #tab-container .panel-container #tab_price .map_container, #tab-container .panel-container #tab_contact .map_container {
+  margin: 0 0 6px 0;
+  padding: 0;
+  border: thin solid #e6e6e6;
+  border-top: none;
+  -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+  -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+  box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+}
+/* line 244, ../../app/assets/stylesheets/rentals.css.scss */
+#tab-container .panel-container #tab_description .gmaps4rails_map, #tab-container .panel-container #tab_facilities .gmaps4rails_map, #tab-container .panel-container #tab_location .gmaps4rails_map, #tab-container .panel-container #tab_price .gmaps4rails_map, #tab-container .panel-container #tab_contact .gmaps4rails_map {
+  width: 936px;
+  height: 440px;
+}
+/* line 5, ../../app/assets/stylesheets/sales.css.scss */
+.image {
+  margin: 5px 15px 10px 0;
+}
+/* line 8, ../../app/assets/stylesheets/_layout.css.scss */
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, abbr, acronym, address, em, strong, img, dl, dt, dd, ol, ul, li, form, fieldset, legend, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  font-size: 1.0em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/assets/stylesheets/_layout.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/_layout.css.scss */
+body {
+  background-color: #666666;
+}
+/* line 24, ../../app/assets/stylesheets/_layout.css.scss */
+body.home {
+  background-color: #616161;
+}
+
+/* line 30, ../../app/assets/stylesheets/_layout.css.scss */
+a:active {
+  border: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/_layout.css.scss */
+body, p, ol, li ul, td {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 41, ../../app/assets/stylesheets/_layout.css.scss */
+h1 {
+  text-align: left;
+  padding-bottom: 0px;
+  font-family: Times New Roman, serif;
+  font-size: 38px;
+  line-height: 47px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-weight: normal;
+  text-indent: 0px;
+}
+
+/* line 56, ../../app/assets/stylesheets/_layout.css.scss */
+h2, h3 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* line 61, ../../app/assets/stylesheets/_layout.css.scss */
+h2 {
+  font-size: 23px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #97c3d6;
+}
+/* line 67, ../../app/assets/stylesheets/_layout.css.scss */
+h2 a {
+  text-decoration: none;
+}
+
+/* line 72, ../../app/assets/stylesheets/_layout.css.scss */
+h3 {
+  font-size: 18px;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 77, ../../app/assets/stylesheets/_layout.css.scss */
+h3 a {
+  text-decoration: none;
+}
+
+/* line 82, ../../app/assets/stylesheets/_layout.css.scss */
+p {
+  text-align: justify;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+}
+/* line 88, ../../app/assets/stylesheets/_layout.css.scss */
+p a {
+  color: #97c3d6;
+}
+/* line 90, ../../app/assets/stylesheets/_layout.css.scss */
+p a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, ../../app/assets/stylesheets/_layout.css.scss */
+img {
+  border: none;
+}
+
+/* line 100, ../../app/assets/stylesheets/_layout.css.scss */
+a {
+  margin: 0 0 3px 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 106, ../../app/assets/stylesheets/_layout.css.scss */
+a img {
+  border: none;
+}
+
+/* line 111, ../../app/assets/stylesheets/_layout.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 117, ../../app/assets/stylesheets/_layout.css.scss */
+hr {
+  color: #DDD;
+  background-color: #DDD;
+}
+
+/* line 122, ../../app/assets/stylesheets/_layout.css.scss */
+.left {
+  float: left;
+  display: inline;
+}
+
+/* line 127, ../../app/assets/stylesheets/_layout.css.scss */
+.right {
+  float: right;
+  display: inline;
+}
+
+/* line 132, ../../app/assets/stylesheets/_layout.css.scss */
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+/* line 139, ../../app/assets/stylesheets/_layout.css.scss */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 147, ../../app/assets/stylesheets/_layout.css.scss */
+.error_message {
+  clear: both;
+}
+
+/* line 151, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 153, ../../app/assets/stylesheets/_layout.css.scss */
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 10, ../../app/assets/stylesheets/welcome.css.scss */
+.featured {
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* line 15, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .picture {
+  float: right;
+  width: 550px;
+}
+/* line 19, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services {
+  padding: 0 5px 14px 0;
+  float: left;
+  width: 380px;
+  display: table-cell;
+}
+/* line 24, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services.last {
+  padding-bottom: 0px;
+}
+/* line 27, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow {
+  float: left;
+  height: 26px;
+  width: 110px;
+  margin: 15px 0 0 0;
+}
+/* line 32, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow:hover {
+  background-color: #97c3d6;
+}
+/* line 34, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow:hover .service {
+  float: left;
+  color: white;
+  background-color: #97c3d6;
+  width: 91px;
+}
+/* line 39, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow:hover .service a {
+  padding: 4px 50px 4px 6px;
+  font-size: 15px;
+  height: 26px;
+  line-height: 26px;
+  color: white;
+  text-decoration: none;
+}
+/* line 48, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow:hover .triangle {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+/* line 52, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow:hover .triangle.upper {
+  border-top: 13px solid #252122;
+  border-left: 13px solid #97c3d6;
+}
+/* line 56, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow:hover .triangle.lower {
+  border-bottom: 13px solid #252122;
+  border-left: 13px solid #97c3d6;
+}
+/* line 62, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow .service {
+  float: left;
+  color: black;
+  background-color: white;
+  width: 91px;
+}
+/* line 67, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow .service a {
+  width: 91px;
+  padding: 4px 50px 4px 6px;
+  font-size: 15px;
+  height: 26px;
+  line-height: 26px;
+  color: #252122;
+}
+/* line 76, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow .triangle {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+/* line 80, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow .triangle.upper {
+  border-top: 13px solid transparent;
+  border-left: 13px solid white;
+}
+/* line 84, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .arrow .triangle.lower {
+  border-bottom: 13px solid transparent;
+  border-left: 13px solid white;
+}
+/* line 90, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .more {
+  float: right;
+  width: 250px;
+}
+/* line 93, ../../app/assets/stylesheets/welcome.css.scss */
+.featured .services .more p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding-bottom: 10px;
+}
+
+/* line 102, ../../app/assets/stylesheets/welcome.css.scss */
+.column {
+  background-color: #252122;
+}
+/* line 104, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one, .column#two {
+  margin: 0 20px 0 0;
+}
+/* line 107, ../../app/assets/stylesheets/welcome.css.scss */
+.column#three {
+  margin: 0 0 0 1px;
+}
+/* line 110, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one, .column#two, .column#three {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 313px;
+}
+/* line 115, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame, .column#two .frame, .column#three .frame {
+  margin: 15px;
+}
+/* line 117, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame h1, .column#two .frame h1, .column#three .frame h1 {
+  font-family: Verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #97c3d6;
+  margin: 0 0 15px 0;
+  line-height: 21px;
+}
+/* line 125, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame p, .column#two .frame p, .column#three .frame p {
+  text-align: justify;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 130, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame ul, .column#two .frame ul, .column#three .frame ul {
+  margin: 0;
+  padding: 0 0 0 10px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+/* line 136, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame ul li, .column#two .frame ul li, .column#three .frame ul li {
+  margin: 0;
+  padding: 0 0 6px 6px;
+  list-style: inside;
+  line-height: 18px;
+  font-size: 12px;
+  text-indent: -1em;
+}
+/* line 143, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame ul li a, .column#two .frame ul li a, .column#three .frame ul li a {
+  padding: 0;
+  color: #97c3d6;
+}
+/* line 146, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .frame ul li a:hover, .column#two .frame ul li a:hover, .column#three .frame ul li a:hover {
+  text-decoration: underline;
+  color: #97c3d6;
+}
+/* line 154, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .action, .column#two .action, .column#three .action {
+  padding: 0 0 15px 0;
+  margin: 0;
+  text-align: center;
+}
+/* line 158, ../../app/assets/stylesheets/welcome.css.scss */
+.column#one .action .register, .column#one .action .subscribe, .column#two .action .register, .column#two .action .subscribe, .column#three .action .register, .column#three .action .subscribe {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* line 166, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup {
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  width: 283px;
+}
+/* line 170, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup .indicates-required {
+  float: left;
+  margin: 0 0 20px 0;
+  color: white;
+  font-weight: normal;
+  font-size: 12px;
+}
+/* line 177, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup #mce-success-response {
+  margin: 0 0 10px 0;
+  padding: 10px;
+  border: 1px solid #99cc33;
+  background: #ccff66;
+  color: #008500;
+}
+/* line 184, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup .mc-field-group {
+  width: 100%;
+  float: left;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+/* line 189, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup .mc-field-group label {
+  width: 110px;
+  float: left;
+  font-size: 13px;
+  line-height: 25px;
+  color: white;
+  margin: 0;
+}
+/* line 197, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup .mc-field-group input {
+  float: right;
+  padding: 7px 5px;
+  margin: 0 4px 0 2px;
+  color: #252122;
+  font-size: 12px;
+}
+/* line 204, ../../app/assets/stylesheets/welcome.css.scss */
+#mc_embed_signup .mc-field-group select {
+  margin: 8px 5px 0 -5px;
+}
