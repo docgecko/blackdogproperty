@@ -17,6 +17,7 @@ end
 
 gem 'jquery-rails'
 gem 'thin'
+gem 'json', '~> 1.8.1'
 
 gem 'inherited_resources', '1.3.0'
 gem 'devise', '~> 2.1.2'
@@ -28,7 +29,7 @@ gem 'haml', '>= 3.0.0'
 gem 'haml-rails'
 gem 'redcarpet', '1.17.2'
 gem 'dalli'
-gem 'i18n', '~> 0.6.0'
+gem 'i18n', '~> 0.6.1'
 gem 'high_voltage', '1.0.1'
 gem 'simple-navigation'
 gem 'carrierwave', '0.5.7'
