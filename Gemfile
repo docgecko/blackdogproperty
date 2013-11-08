@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '3.2.14'
+gem 'rails', '3.2.15'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -12,7 +12,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '~> 2.3.0'
 end
 
 gem 'jquery-rails', '~> 3.0.4'
