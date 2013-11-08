@@ -12,10 +12,10 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
 
-  gem 'uglifier', '~> 2.3.0'
+  gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails', '3.0.4'
+gem 'jquery-rails', '~> 3.0.4'
 gem 'thin'
 
 gem 'inherited_resources', '~> 1.3.1'
@@ -43,7 +43,7 @@ gem 'gmaps4rails', '~> 1.5.6'
 gem 'mongoid_spacial', '~> 0.2.16'
 gem 'geocoder', '~> 1.1.2'
 gem 'fog', '~> 1.3.1'
-gem 'rails_admin', '~> 0.4.9'
+gem 'rails_admin', '~> 0.4.6'
 gem 'rails_admin_map_field', :git => 'git://github.com/jasonl/rails_admin_map_field.git'
 gem 'ckeditor', '~> 3.7.3'
 gem 'country_select', '~> 0.0.2'
