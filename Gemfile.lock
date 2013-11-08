@@ -281,7 +281,7 @@ DEPENDENCIES
   nested_form (~> 0.3)
   rack-rewrite (~> 1.0.2)
   rails (= 3.2.15)
-  rails_admin (~> 0.4.6)
+  rails_admin (~> 0.4.8)
   rails_admin_map_field!
   redcarpet (~> 1.17.2)
   sanitize (~> 2.0.3)
