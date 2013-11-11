@@ -10,9 +10,9 @@
 	= stylesheet_link_tag "application"
 	= javascript_include_tag "application"
 	= csrf_meta_tag
-	= render "shared/script/google_analytics"
 	= render "shared/script/superfish"
 	= render "shared/script/placeholder"
+	= render "shared/script/google_analytics"
 	
 %body.signin{:class => controller_name == "welcome" ? "home" : ""}
 	#main{:class => controller_name == "welcome" ? "home" : ""}	

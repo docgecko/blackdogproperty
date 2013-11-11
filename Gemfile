@@ -16,7 +16,7 @@ group :assets do
   gem 'uglifier', '~> 2.3.0'
 end
 
-gem 'jquery-rails', '~> 3.0.4'
+gem 'jquery-rails', '~> 2.1.1'
 gem 'thin'
 
 gem "rails_12factor", "~> 0.0.2", group: :production
