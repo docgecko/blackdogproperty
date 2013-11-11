@@ -58,9 +58,9 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :logout, 'Logout', destroy_user_session_path, :if => Proc.new { user_signed_in? }
     if controller_name == "welcome"
       primary.item :language, I18n.t(:language, :scope => [:general, :upper_menu]), root_url do |s|
-        s.item :property, "English", root_url
-        s.item :property, "Français", fr_accueil_url
-        s.item :property, "Español", es_inicio_url
+        s.item :english, "English", root_url
+        s.item :francais, "Français", fr_accueil_url
+        s.item :espanol, "Español", es_inicio_url
       end
     end
     primary.item :about, I18n.t(:about, :scope => [:general, :upper_menu]), new_support_path 

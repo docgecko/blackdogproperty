@@ -8,6 +8,7 @@ gem 'rails', '3.2.15'
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
+  gem 'jquery-ui-rails', '~> 3.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
@@ -16,7 +17,6 @@ group :assets do
 end
 
 gem 'jquery-rails', '~> 3.0.4'
-gem 'jquery-ui-rails', '~> 3.0'
 gem 'thin'
 
 gem "rails_12factor", "~> 0.0.2", group: :production
