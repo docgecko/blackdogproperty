@@ -11,7 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui.min
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require bootstrap-tab
 //= require bootstrap-tooltip

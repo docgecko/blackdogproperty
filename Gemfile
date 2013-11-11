@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'jquery-rails', '~> 3.0.4'
+gem 'jquery-ui-rails', '~> 3.0'
 gem 'thin'
 
 gem "rails_12factor", "~> 0.0.2", group: :production
