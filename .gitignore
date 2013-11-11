@@ -21,3 +21,4 @@ server.key
 web.crt
 chain.crt
 domain.pem
+.idea
