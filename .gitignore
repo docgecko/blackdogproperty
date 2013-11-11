@@ -22,3 +22,4 @@ web.crt
 chain.crt
 domain.pem
 .idea
+.idea/**

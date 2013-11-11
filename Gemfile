@@ -17,6 +17,7 @@ end
 
 gem 'jquery-rails', '~> 3.0.4'
 gem 'thin'
+gem "rails_12factor", "~> 0.0.2"
 
 gem 'inherited_resources', '~> 1.3.1'
 gem 'devise', '~> 2.1.4'
