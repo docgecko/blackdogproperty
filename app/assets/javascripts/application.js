@@ -11,7 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery.ui.all
+//= require jquery-ui.min
 //= require jquery_ujs
 //= require bootstrap-tab
 //= require bootstrap-tooltip
@@ -23,8 +23,11 @@
 //= require jquery.easytabs.min
 //= require jquery.charcounter
 //= require jquery.ad-gallery
-//= require jquery.hashchange.min
 //= require jquery.placeholder.min
 //= require ckeditor/init
 //= require jquery_nested_form
+//= require hoverIntent
+//= require superfish.min
 //= require_tree .
+
+
